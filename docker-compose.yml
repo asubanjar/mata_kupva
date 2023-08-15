@@ -64,7 +64,7 @@ services:
             npm install -g npm
         fi
 
-        cd /workspace/app && composer install;
+        cd /workspace/src && composer install;
 
         echo "All done!";
         while sleep 1000; do :; done
@@ -97,7 +97,7 @@ services:
       <<: *php-environment
     volumes:
       - ./:/var/www
-    working_dir: /var/www/app
+    working_dir: /var/www/src
   php-worker:
     build:
       dockerfile: src/Dockerfile
@@ -113,7 +113,7 @@ services:
     volumes:
       - .workspace/supervisord.conf:/etc/supervisor/supervisord.conf
       - ./:/var/www
-    working_dir: /var/www/app
+    working_dir: /var/www/src
   ui:
     image: node:20.5-alpine
     command: sh -c 'npm install && npm run watch'
