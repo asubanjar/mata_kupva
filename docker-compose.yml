@@ -118,5 +118,5 @@ services:
     image: node:20.5-alpine
     command: sh -c 'npm install && npm run watch'
     volumes:
-      - ./app:/app:cached
+      - ./src:/app:cached
     working_dir: /app
