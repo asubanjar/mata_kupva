@@ -10,7 +10,11 @@
                 "esbenp.prettier-vscode",
                 "MehediDracula.php-namespace-resolver",
                 "SanderRonde.phpstan-vscode",
-                "valeryanm.vscode-phpsab"
+                "valeryanm.vscode-phpsab",
+                "amiralizadeh9480.laravel-extra-intellisense",
+                "ryannaddy.laravel-artisan",
+                "onecentlin.laravel5-snippets",
+                "onecentlin.laravel-blade"
             ]
         }
     },
