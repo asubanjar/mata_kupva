@@ -76,7 +76,7 @@ services:
     volumes:
       - ./.data/mssql:/var/opt/mssql/data:Z
       - ./:/workspace:cached
-      - ${SSH_HOST_DIR:-./.workspace/ssh}:${SSH_REMOTE_DIR:-/home/sipandai/.ssh}
+      - ${SSH_HOST_DIR:-./.workspace/ssh}:${SSH_REMOTE_DIR:-/home/dinamis/.ssh}
   app:
     image: nginx:stable-alpine
     depends_on:

@@ -1,4 +1,4 @@
-image: container-registry.ppatk.go.id/bpas/sipandai/direktori-pihak-pelapor/workspace:latest
+image: container-registry.ppatk.go.id/bpas/dinamis/workspace:latest
 variables:
     DOCKER_REGISTRY: "container-registry.ppatk.go.id"
     PHP_VERSION: "8.2"
@@ -61,5 +61,5 @@ workspace_build:
     services:
         - docker:23.0.2-dind
     script:
-        - docker build --build-arg="INSTALL_NODEJS=current" --build-arg="PHP_VERSION=$PHP_VERSION" -t $DOCKER_REGISTRY/bpas/sipandai/direktori-pihak-pelapor/workspace:latest -f src/Dockerfile .
-        - docker push $DOCKER_REGISTRY/bpas/sipandai/direktori-pihak-pelapor/workspace:latest
+        - docker build --build-arg="INSTALL_NODEJS=current" --build-arg="PHP_VERSION=$PHP_VERSION" -t $DOCKER_REGISTRY/bpas/dinamis/workspace:latest -f src/Dockerfile .
+        - docker push $DOCKER_REGISTRY/bpas/dinamis/workspace:latest
