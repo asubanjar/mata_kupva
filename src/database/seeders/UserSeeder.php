@@ -15,9 +15,17 @@ class UserSeeder extends Seeder
     public function run()
     {
         $user = User::factory()->create([
-            'username'  => 'admin',
+            'username'  => 'adminsikd',
             'name'      => 'Administrator',
             'email'     => 'admin@ppatk.go.id',
+            'password'  => bcrypt('secret'),
+            'phone'     => '6287812625858'
+        ]);
+
+        $user = User::factory()->create([
+            'username'  => 'nxs005',
+            'name'      => 'Nurman Setyawan',
+            'email'     => 'nurman.setyawan@ppatk.go.id',
             'password'  => bcrypt('secret'),
             'phone'     => '6287812625858'
         ]);

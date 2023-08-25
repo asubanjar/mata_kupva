@@ -85,7 +85,7 @@
 						<!--begin::Wrapper-->
 						<div class="d-flex flex-center flex-column flex-column-fluid pb-15 pb-lg-20">
 							<!--begin::Form-->
-							<form class="form w-100" novalidate="novalidate" method="POST" action="{{ route('login') }}">
+							<form class="form w-100" novalidate="novalidate" method="POST" action="{{ route('login.custom') }}">
                             @csrf
 								<!--begin::Heading-->
 								<div class="text-center mb-11">

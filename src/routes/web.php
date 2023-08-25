@@ -13,10 +13,11 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/', [LoginController::class, 'showLoginForm']);
+
+Route::post('custom-login', [LoginController::class, 'customLogin'])->name('login.custom');
 
 Route::get('/logout', [LoginController::class, 'logout']);
-
-Route::get('/', [LoginController::class, 'showLoginForm']);
 
 Auth::routes();
 
