@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class UrgensiController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('permission:master');
+    }
+
     /**
      * Display a listing of the resource.
      */

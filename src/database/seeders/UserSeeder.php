@@ -16,7 +16,7 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory()->create([
+        $user = User::factory()->create([
             'username' => 'adminsikd',
             'name'     => 'Administrator',
             'email'    => 'admin@ppatk.go.id',
@@ -24,12 +24,14 @@ class UserSeeder extends Seeder
             'phone'    => '6287812625858',
         ]);
 
-        User::factory()->create([
+        $user = User::factory()->create([
             'username' => 'nxs005',
             'name'     => 'Nurman Setyawan',
             'email'    => 'nurman.setyawan@ppatk.go.id',
             'password' => bcrypt('secret'),
             'phone'    => '6287812625858',
         ]);
+
+        $user->assignRole('Super Admin');
     }
 }
