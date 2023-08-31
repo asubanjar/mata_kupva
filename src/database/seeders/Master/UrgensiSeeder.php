@@ -14,22 +14,22 @@ class UrgensiSeeder extends Seeder
     {
         $urgensis = [
             [
-                'id'   => 'XxJyPn38Yh.1',
+                'code' => 'XxJyPn38Yh.1',
                 'name' => 'Segera',
             ],
             [
-                'id'   => 'XxJyPn38Yh.2',
+                'code' => 'XxJyPn38Yh.2',
                 'name' => 'Sangat Segera',
             ],
             [
-                'id'   => 'XxJyPn38Yh.3',
+                'code' => 'XxJyPn38Yh.3',
                 'name' => 'Biasa',
             ],
         ];
 
         foreach ($urgensis as $urgensi) {
             Urgensi::create([
-                'id'   => $urgensi['id'],
+                'code' => $urgensi['code'],
                 'name' => $urgensi['name'],
             ]);
         }

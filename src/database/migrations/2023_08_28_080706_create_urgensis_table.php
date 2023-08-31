@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('urgensis', function (Blueprint $table): void {
-            $table->string('id')->primary();
+            $table->id();
+            $table->string('code')->nullable()->unique();
             $table->string('name');
             $table->boolean('active')->default(true);
             $table->softDeletes();

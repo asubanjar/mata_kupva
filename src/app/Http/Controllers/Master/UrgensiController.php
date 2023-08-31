@@ -33,8 +33,17 @@ class UrgensiController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request): void
+    public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required|unique:urgensis|max:50',
+        ]);
+
+        Urgensi::create([
+            'name' => $request->name,
+        ]);
+
+        return redirect('/master/urgensi')->with('status', 'Sukses menambahkan urgensi');
     }
 
     /**

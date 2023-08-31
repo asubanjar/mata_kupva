@@ -81,7 +81,7 @@
                             src="assets/media/auth/agency-dark.png" alt="" />
                         <!--end::Image-->
                         <!--begin::Title-->
-                        <h1 class="fs-2qx fw-bold mb-7 text-center text-gray-800">Fast, Efficient and Productive</h1>
+                        <h1 class="fs-2qx fw-bold mb-7 text-center text-gray-800">Efisien dan Produktif</h1>
                         <!--end::Title-->
                         <!--begin::Text-->
                         <div class="fs-base fw-semibold text-center text-gray-600">In this kind of post,
@@ -113,72 +113,87 @@
                                     <!--begin::Heading-->
                                     <div class="mb-11 text-center">
                                         <!--begin::Title-->
-                                        <h1 class="text-dark fw-bolder mb-3">Sign In</h1>
+                                        <h1 class="text-dark fw-bolder mb-3">Masuk</h1>
                                         <!--end::Title-->
                                         <!--begin::Subtitle-->
-                                        <div class="fw-semibold fs-6 text-gray-500">Your Social Campaigns</div>
+                                        <div class="fw-semibold fs-6 text-gray-500">Arsip Digital dan Monitoring Tindak
+                                            Lanjut</div>
                                         <!--end::Subtitle=-->
                                     </div>
                                     <!--begin::Heading-->
-                                    <!--begin::Login options-->
-                                    <div class="row g-3 mb-9">
-                                        <!--begin::Col-->
-                                        <div class="col-md-6">
-                                            <!--begin::Google link=-->
-                                            <a href="#"
-                                                class="btn btn-flex btn-outline btn-text-gray-700 btn-active-color-primary bg-state-light flex-center text-nowrap w-100">
-                                                <img alt="Logo" src="assets/media/svg/brand-logos/google-icon.svg"
-                                                    class="h-15px me-3" />Sign in with Google</a>
-                                            <!--end::Google link=-->
-                                        </div>
-                                        <!--end::Col-->
-                                        <!--begin::Col-->
-                                        <div class="col-md-6">
-                                            <!--begin::Google link=-->
-                                            <a href="#"
-                                                class="btn btn-flex btn-outline btn-text-gray-700 btn-active-color-primary bg-state-light flex-center text-nowrap w-100">
-                                                <img alt="Logo" src="assets/media/svg/brand-logos/apple-black.svg"
-                                                    class="theme-light-show h-15px me-3" />
-                                                <img alt="Logo"
-                                                    src="assets/media/svg/brand-logos/apple-black-dark.svg"
-                                                    class="theme-dark-show h-15px me-3" />Sign in with Apple</a>
-                                            <!--end::Google link=-->
-                                        </div>
-                                        <!--end::Col-->
-                                    </div>
-                                    <!--end::Login options-->
-                                    <!--begin::Separator-->
-                                    <div class="separator separator-content my-14">
-                                        <span class="w-125px fw-semibold fs-7 text-gray-500">Or with email</span>
-                                    </div>
-                                    <!--end::Separator-->
                                     <!--begin::Input group=-->
                                     <div class="fv-row mb-8">
                                         <!--begin::Username-->
                                         <input id="username" type="text" placeholder="Username" name="username"
-                                            autocomplete="off" class="form-control bg-transparent" />
+                                            autocomplete="off"
+                                            class="form-control @error('username') is-invalid @enderror bg-transparent" />
                                         <!--end::Username-->
+                                        @error('username')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                     <!--end::Input group=-->
                                     <div class="fv-row mb-3">
                                         <!--begin::Password-->
                                         <input id="password" type="password" placeholder="Password" name="password"
-                                            autocomplete="off" class="form-control bg-transparent" />
+                                            autocomplete="off"
+                                            class="form-control @error('password') is-invalid @enderror bg-transparent" />
                                         <!--end::Password-->
+                                        @error('password')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                     <!--end::Input group=-->
                                     <!--begin::Wrapper-->
                                     <div class="d-flex flex-stack fs-base fw-semibold mb-8 flex-wrap gap-3">
-                                        <div></div>
-                                        <!--begin::Link-->
-                                        <a href="../../demo1/dist/authentication/layouts/overlay/reset-password.html"
-                                            class="link-primary">Forgot Password ?</a>
-                                        <!--end::Link-->
+                                        @if (session('status'))
+                                            <!--begin::Alert-->
+                                            <div
+                                                class="alert alert-dismissible bg-light-danger d-flex flex-center flex-column px-lg-20 mb-10 px-10 py-10">
+                                                <!--begin::Close-->
+                                                <button type="button"
+                                                    class="position-absolute btn btn-icon btn-icon-danger end-0 top-0 m-2"
+                                                    data-bs-dismiss="alert">
+                                                    <i class="ki-duotone ki-cross fs-1"><span
+                                                            class="path1"></span><span class="path2"></span></i>
+                                                </button>
+                                                <!--end::Close-->
+
+                                                <!--begin::Icon-->
+                                                <i class="ki-duotone ki-information-5 fs-5tx text-danger mb-5"><span
+                                                        class="path1"></span><span class="path2"></span><span
+                                                        class="path3"></span></i>
+                                                <!--end::Icon-->
+
+                                                <!--begin::Wrapper-->
+                                                <div class="text-center">
+                                                    <!--begin::Title-->
+                                                    <h1 class="fw-bold mb-5">Gagal Masuk</h1>
+                                                    <!--end::Title-->
+
+                                                    <!--begin::Separator-->
+                                                    <div
+                                                        class="separator separator-dashed border-danger mb-5 opacity-25">
+                                                    </div>
+                                                    <!--end::Separator-->
+
+                                                    <!--begin::Content-->
+                                                    <div class="text-dark mb-9">
+                                                        Username Atau Password Anda Salah. Apabila username dan password
+                                                        sudah sesuai, mohon dipastikan user domain tidak dalam status
+                                                        "expired".
+                                                    </div>
+                                                    <!--end::Content-->
+                                                </div>
+                                                <!--end::Wrapper-->
+                                            </div>
+                                            <!--end::Alert-->
+                                        @endif
                                     </div>
                                     <!--end::Wrapper-->
                                     <!--begin::Submit button-->
                                     <div class="d-grid mb-10">
-                                        <button type="submit" id="kt_sign_in_submit" class="btn btn-primary">
+                                        <button type="submit" class="btn btn-primary">
                                             <!--begin::Indicator label-->
                                             <span class="indicator-label">Sign In</span>
                                             <!--end::Indicator label-->
@@ -190,102 +205,15 @@
                                         </button>
                                     </div>
                                     <!--end::Submit button-->
-                                    <!--begin::Sign up-->
-                                    <div class="fw-semibold fs-6 text-center text-gray-500">Not a Member yet?
-                                        <a href="../../demo1/dist/authentication/layouts/overlay/sign-up.html"
-                                            class="link-primary">Sign up</a>
-                                    </div>
-                                    <!--end::Sign up-->
                                 </form>
                                 <!--end::Form-->
                             </div>
-                            <!--end::Wrapper-->
-                            <!--begin::Footer-->
-                            <div class="d-flex flex-stack">
-                                <!--begin::Languages-->
-                                <div class="me-10">
-                                    <!--begin::Toggle-->
-                                    <button
-                                        class="btn btn-flex btn-link btn-color-gray-700 btn-active-color-primary rotate fs-base"
-                                        data-kt-menu-trigger="click" data-kt-menu-placement="bottom-start"
-                                        data-kt-menu-offset="0px, 0px">
-                                        <img data-kt-element="current-lang-flag" class="w-20px h-20px me-3 rounded"
-                                            src="assets/media/flags/united-states.svg" alt="" />
-                                        <span data-kt-element="current-lang-name" class="me-1">English</span>
-                                        <i class="ki-duotone ki-down fs-5 text-muted m-0 rotate-180"></i>
-                                    </button>
-                                    <!--end::Toggle-->
-                                    <!--begin::Menu-->
-                                    <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-200px fs-7 py-4"
-                                        data-kt-menu="true" id="kt_auth_lang_menu">
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link d-flex px-5" data-kt-lang="English">
-                                                <span class="symbol symbol-20px me-4">
-                                                    <img data-kt-element="lang-flag" class="rounded-1"
-                                                        src="assets/media/flags/united-states.svg" alt="" />
-                                                </span>
-                                                <span data-kt-element="lang-name">English</span>
-                                            </a>
-                                        </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link d-flex px-5" data-kt-lang="Spanish">
-                                                <span class="symbol symbol-20px me-4">
-                                                    <img data-kt-element="lang-flag" class="rounded-1"
-                                                        src="assets/media/flags/spain.svg" alt="" />
-                                                </span>
-                                                <span data-kt-element="lang-name">Spanish</span>
-                                            </a>
-                                        </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link d-flex px-5" data-kt-lang="German">
-                                                <span class="symbol symbol-20px me-4">
-                                                    <img data-kt-element="lang-flag" class="rounded-1"
-                                                        src="assets/media/flags/germany.svg" alt="" />
-                                                </span>
-                                                <span data-kt-element="lang-name">German</span>
-                                            </a>
-                                        </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link d-flex px-5" data-kt-lang="Japanese">
-                                                <span class="symbol symbol-20px me-4">
-                                                    <img data-kt-element="lang-flag" class="rounded-1"
-                                                        src="assets/media/flags/japan.svg" alt="" />
-                                                </span>
-                                                <span data-kt-element="lang-name">Japanese</span>
-                                            </a>
-                                        </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link d-flex px-5" data-kt-lang="French">
-                                                <span class="symbol symbol-20px me-4">
-                                                    <img data-kt-element="lang-flag" class="rounded-1"
-                                                        src="assets/media/flags/france.svg" alt="" />
-                                                </span>
-                                                <span data-kt-element="lang-name">French</span>
-                                            </a>
-                                        </div>
-                                        <!--end::Menu item-->
-                                    </div>
-                                    <!--end::Menu-->
-                                </div>
-                                <!--end::Languages-->
-                                <!--begin::Links-->
-                                <div class="d-flex fw-semibold text-primary fs-base gap-5">
-                                    <a href="../../demo1/dist/pages/team.html" target="_blank">Terms</a>
-                                    <a href="../../demo1/dist/pages/pricing/column.html" target="_blank">Plans</a>
-                                    <a href="../../demo1/dist/pages/contact.html" target="_blank">Contact Us</a>
-                                </div>
-                                <!--end::Links-->
+                            <!--begin::Sign up-->
+                            <div class="fw-semibold fs-6 text-center text-gray-500">Copyright &copy; 2024. Pusat
+                                Teknologi Informasi - PPATK</p>
                             </div>
-                            <!--end::Footer-->
+                            <!--end::Sign up-->
+                            <!--end::Wrapper-->
                         </div>
                         <!--end::Content-->
                     </div>
@@ -304,9 +232,6 @@
         <script src="{{ asset('assets/plugins/global/plugins.bundle.js') }}"></script>
         <script src="{{ asset('assets/js/scripts.bundle.js') }}"></script>
         <!--end::Global Javascript Bundle-->
-        <!--begin::Custom Javascript(used for this page only)-->
-        <script src="{{ asset('assets/js/custom/authentication/sign-in/general.js') }}"></script>
-        <!--end::Custom Javascript-->
         <!--end::Javascript-->
     </body>
     <!--end::Body-->
