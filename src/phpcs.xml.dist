@@ -24,6 +24,7 @@
     <rule ref="Generic.Files.LineLength.TooLong">
         <exclude-pattern>routes/*</exclude-pattern>
     </rule>
+    <rule ref="Generic.PHP.RequireStrictTypes" />
     <rule ref="Generic.WhiteSpace.LanguageConstructSpacing.IncorrectSingle" />
     <rule ref="Generic.WhiteSpace.ScopeIndent">
         <properties>
@@ -151,7 +152,7 @@
     <rule ref="SlevomatCodingStandard.PHP.UselessSemicolon" />
     <rule ref="SlevomatCodingStandard.TypeHints.LongTypeHints" />
     <rule ref="SlevomatCodingStandard.TypeHints.NullTypeHintOnLastPosition" />
-    <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint" />
+    <!-- <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint" /> -->
     <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHint">
         <exclude name="SlevomatCodingStandard.TypeHints.ReturnTypeHint.MissingAnyTypeHint" />
         <exclude name="SlevomatCodingStandard.TypeHints.ReturnTypeHint.MissingTraversableTypeHintSpecification" />
