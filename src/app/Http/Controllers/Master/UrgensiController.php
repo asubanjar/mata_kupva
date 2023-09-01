@@ -43,7 +43,7 @@ class UrgensiController extends Controller
             'name' => $request->name,
         ]);
 
-        return redirect('/master/urgensi')->with('status', 'Sukses menambahkan urgensi');
+        return redirect('/master/urgensi')->with('success', 'Sukses menambahkan urgensi');
     }
 
     /**
@@ -70,7 +70,10 @@ class UrgensiController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id): void
+    public function destroy(Urgensi $id)
     {
+        $id->delete();
+
+        return redirect('/master/urgensi')->with('success', 'Sukses menghapus urgensi');
     }
 }

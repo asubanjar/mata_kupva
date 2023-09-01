@@ -234,6 +234,25 @@ License: For each use you must have a valid license purchased only from above li
                 <!--end::Wrapper-->
             </div>
             <!--end::Page-->
+            <!--begin::Toast-->
+            @if (session('success'))
+                <div class="position-fixed z-index-3 end-0 top-0 px-10 py-20">
+                    <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-header">
+                            <i class="ki-duotone ki-abstract-23 fs-2 text-success me-3"><span
+                                    class="path1"></span><span class="path2"></span></i>
+                            <strong class="me-auto">Sukses</strong>
+                            <small>baru saja</small>
+                            <button type="button" class="btn-close" data-bs-dismiss="toast"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="toast-body">
+                            {{ session('success') }}
+                        </div>
+                    </div>
+                </div>
+            @endif
+            <!--end::Toast-->
         </div>
         <!--end::App-->
 

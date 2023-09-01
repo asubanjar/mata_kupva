@@ -4,7 +4,6 @@ namespace App\Models\Master;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\DB;
 
 class Urgensi extends Model
 {
@@ -31,16 +30,8 @@ class Urgensi extends Model
         });
     }
 
-    public function generateCode(): string
+    public function getCodeAttribute(string $value = null): string
     {
-        $urgensi = DB::table('urgensis')->latest('code')->whereNotNull('code')->first();
-
-        if (!$urgensi) {
-            $codeNumber = 1;
-        } else {
-            $codeNumber = (int) explode('.', $urgensi->id) + 1;
-        }
-
-        return 'XxJyPn38Yh' . '-' . $codeNumber;
+        return $value ?? 'XxJyPn38Yh' . '.' . $this->id;
     }
 }
