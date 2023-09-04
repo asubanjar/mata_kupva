@@ -70,9 +70,9 @@ class UrgensiController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Urgensi $id)
+    public function destroy(Urgensi $urgensi)
     {
-        $id->delete();
+        $urgensi->delete();
 
         return redirect('/master/urgensi')->with('success', 'Sukses menghapus urgensi');
     }

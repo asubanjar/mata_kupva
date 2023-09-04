@@ -259,6 +259,14 @@
                                                     <a href="#" class="menu-link px-3"
                                                         data-kt-customer-table-filter="delete_row">Delete</a>
                                                 </div>
+                                                <div class="menu-item px-3">
+                                                    <form method="post"
+                                                        action="{{ route('urgensi.destroy', $urgensi->id) }}">
+                                                        @method('delete')
+                                                        @csrf
+                                                        <button type="submit" class="menu-link px-3">Hapus</button>
+                                                    </form>
+                                                </div>
                                                 <!--end::Menu item-->
                                             </div>
                                             <!--end::Menu-->
@@ -320,6 +328,6 @@
 
 @section('script')
     <script src="{{ asset('assets/js/custom/master/urgensi/listing.js') }}"></script>
-    <script src="{{ asset('assets/js/custom/apps/ecommerce/customers/listing/add.js') }}"></script>
-    <script src="{{ asset('assets/js/custom/apps/ecommerce/customers/listing/export.js') }}"></script>
+    <script src="{{ asset('assets/js/custom/master/urgensi/add.js') }}"></script>
+    <script src="{{ asset('assets/js/custom/master/urgensi/export.js') }}"></script>
 @endsection

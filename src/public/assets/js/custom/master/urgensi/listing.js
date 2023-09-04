@@ -9,7 +9,7 @@ var KTCustomersList = (function () {
                 e.addEventListener("click", function (e) {
                     e.preventDefault();
                     const o = e.target.closest("tr"),
-                        n = o.querySelectorAll("td")[1].innerText;
+                        n = o.querySelectorAll("td")[2].innerText;
                     Swal.fire({
                         text: "Are you sure you want to delete " + n + "?",
                         icon: "warning",
