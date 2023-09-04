@@ -250,15 +250,17 @@
                                                 data-kt-menu="true">
                                                 <!--begin::Menu item-->
                                                 <div class="menu-item px-3">
-                                                    <a href="{{ url('/master/urgensi/' . $urgensi->id . '/edit') }}"
-                                                        class="menu-link px-3">View</a>
+                                                    <a href="javascript:void(0)" data-toggle="tooltip"
+                                                        data-id="{{ $urgensi->id }}" data-csrf="{{ csrf_token() }}"
+                                                        data-original-title="Edit"
+                                                        class="menu-link edit-urgensi px-3">Ubah</a>
                                                 </div>
                                                 <!--end::Menu item-->
                                                 <!--begin::Menu item-->
                                                 <div class="menu-item px-3">
                                                     <a href="#" class="menu-link px-3"
-                                                        data-id="{{ $urgensi->id }}"
-                                                        data-kt-customer-table-filter="delete_row">Delete</a>
+                                                        data-id="{{ $urgensi->id }}" data-csrf="{{ csrf_token() }}"
+                                                        data-kt-customer-table-filter="delete_row">Hapus</a>
                                                 </div>
                                                 <!--end::Menu item-->
                                             </div>
@@ -280,7 +282,7 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h3 class="modal-title">Modal title</h3>
+                                <h3 class="modal-title">Tambah Urgensi</h3>
 
                                 <!--begin::Close-->
                                 <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal"
@@ -290,8 +292,8 @@
                                 </div>
                                 <!--end::Close-->
                             </div>
-                            <form method="post" action="{{ url('/master/urgensi') }}" class="needs-validation"
-                                novalidate="">
+                            <form id="kt_add_form_text" method="post" action="{{ url('/master/urgensi') }}"
+                                class="needs-validation" novalidate="">
                                 @csrf
                                 <div class="modal-body">
                                     <div class="mb-10">
@@ -306,6 +308,40 @@
                                     <button type="submit" class="btn btn-primary">Save changes</button>
                                 </div>
                             </form>
+                        </div>
+                    </div>
+                </div>
+                <!--end::Modal - Urgensi - Add-->
+
+                <!--begin::Modal - Urgensi - Edit-->
+                <div class="modal fade" tabindex="-1" id="modal_edit">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 class="modal-title">Ubah Urgensi</h3>
+
+                                <!--begin::Close-->
+                                <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal"
+                                    aria-label="Close">
+                                    <i class="ki-duotone ki-cross fs-1"><span class="path1"></span><span
+                                            class="path2"></span></i>
+                                </div>
+                                <!--end::Close-->
+                            </div>
+                            <div class="modal-body">
+                                <input type="hidden" id="csrf" value="{{ csrf_token() }}">
+                                <input type="hidden" id="id">
+                                <div class="mb-10">
+                                    <label for="exampleFormControlInput1" class="required form-label">Nama</label>
+                                    <input type="text" class="form-control form-control-solid" id="name"
+                                        name="name" placeholder="Contoh: Sangat Segera" value="" required />
+                                </div>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary" id="update">Save changes</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -347,4 +383,44 @@
     <script src="{{ asset('assets/js/custom/master/urgensi/listing.js') }}"></script>
     <script src="{{ asset('assets/js/custom/master/urgensi/add.js') }}"></script>
     <script src="{{ asset('assets/js/custom/master/urgensi/export.js') }}"></script>
+
+    <script type="text/javascript">
+        $('body').on('click', '.edit-urgensi', function() {
+            var id = $(this).data('id');
+            $.get("{{ url('master/urgensi') }}" + '/' + id + '/edit', function(data) {
+                $('#modelHeading').html("Edit Team");
+                $('#editdata').val("edit-urgensi");
+                $('#modal_edit').modal('show');
+                $('#id').val(data.id);
+                $('#name').val(data.name);
+            })
+        });
+
+        $('#update').click(function(e) {
+            e.preventDefault();
+
+            //define variable
+            let id = $('#id').val();
+            let name = $('#name').val();
+            let token = $('#csrf').val();
+
+            //ajax
+            $.ajax({
+
+                url: `/master/urgensi/${id}`,
+                type: "PUT",
+                cache: false,
+                data: {
+                    "name": name,
+                    "_token": token
+                },
+                success: function(response) {
+                    window.location.reload();
+                },
+                error: function(error) {
+                    window.location.reload();
+                }
+            });
+        });
+    </script>
 @endsection

@@ -56,15 +56,25 @@ class UrgensiController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id): void
+    public function edit(Urgensi $urgensi)
     {
+        return response()->json($urgensi);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id): void
+    public function update(Request $request, Urgensi $urgensi)
     {
+        $request->validate([
+            'name'                => 'required',
+        ]);
+
+        $urgensi->update([
+            'name' => $request->name,
+        ]);
+
+        return redirect('/master/urgensi')->with('success', 'Sukses mengubah urgensi');
     }
 
     /**

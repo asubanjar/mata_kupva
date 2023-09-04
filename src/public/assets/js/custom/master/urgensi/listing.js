@@ -11,15 +11,15 @@ var KTCustomersList = (function () {
                     const o = e.target.closest("tr"),
                         n = o.querySelectorAll("td")[2].innerText;
                     let urg_id = $(this).data("id");
-                    let token = $("meta[name='csrf-token']").attr("content");
+                    let token = $(this).data("csrf");
 
                     Swal.fire({
-                        text: "Are you sure you want to delete " + n + " ?",
+                        text: "Apakah anda yakin akan menghapus " + n + " ?",
                         icon: "warning",
                         showCancelButton: !0,
                         buttonsStyling: !1,
-                        confirmButtonText: "Yes, delete!",
-                        cancelButtonText: "No, cancel",
+                        confirmButtonText: "Ya, hapus!",
+                        cancelButtonText: "Tidak, batalkan",
                         customClass: {
                             confirmButton: "btn fw-bold btn-danger",
                             cancelButton:
@@ -28,10 +28,10 @@ var KTCustomersList = (function () {
                     }).then(function (e) {
                         e.value
                             ? Swal.fire({
-                                  text: "You have deleted " + n + "!.",
+                                  text: "Kamu telah menghapus " + n + "!.",
                                   icon: "success",
                                   buttonsStyling: !1,
-                                  confirmButtonText: "Ok, got it!",
+                                  confirmButtonText: "Baik",
                                   customClass: {
                                       confirmButton: "btn fw-bold btn-primary",
                                   },
