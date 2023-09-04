@@ -10,8 +10,11 @@ var KTCustomersList = (function () {
                     e.preventDefault();
                     const o = e.target.closest("tr"),
                         n = o.querySelectorAll("td")[2].innerText;
+                    let urg_id = $(this).data("id");
+                    let token = $("meta[name='csrf-token']").attr("content");
+
                     Swal.fire({
-                        text: "Are you sure you want to delete " + n + "?",
+                        text: "Are you sure you want to delete " + n + " ?",
                         icon: "warning",
                         showCancelButton: !0,
                         buttonsStyling: !1,
@@ -33,7 +36,17 @@ var KTCustomersList = (function () {
                                       confirmButton: "btn fw-bold btn-primary",
                                   },
                               }).then(function () {
-                                  t.row($(o)).remove().draw();
+                                  console.log("tes");
+                                  $.ajax({
+                                      url: `/master/urgensi/${urg_id}`,
+                                      type: "DELETE",
+                                      cache: false,
+                                      data: {
+                                          _token: token,
+                                      },
+                                  });
+
+                                  window.location.reload();
                               })
                             : "cancel" === e.dismiss &&
                               Swal.fire({

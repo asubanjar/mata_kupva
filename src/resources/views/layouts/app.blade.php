@@ -20,6 +20,7 @@ License: For each use you must have a valid license purchased only from above li
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta property="og:locale" content="en_US" />
         <meta property="og:type" content="article" />
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <link rel="shortcut icon" href="{{ asset('assets/img/ppatk.ico') }}" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
         <link href="{{ asset('assets/plugins/custom/fullcalendar/fullcalendar.bundle.css') }}" rel="stylesheet"

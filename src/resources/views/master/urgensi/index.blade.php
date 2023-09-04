@@ -257,15 +257,8 @@
                                                 <!--begin::Menu item-->
                                                 <div class="menu-item px-3">
                                                     <a href="#" class="menu-link px-3"
+                                                        data-id="{{ $urgensi->id }}"
                                                         data-kt-customer-table-filter="delete_row">Delete</a>
-                                                </div>
-                                                <div class="menu-item px-3">
-                                                    <form method="post"
-                                                        action="{{ route('urgensi.destroy', $urgensi->id) }}">
-                                                        @method('delete')
-                                                        @csrf
-                                                        <button type="submit" class="menu-link px-3">Hapus</button>
-                                                    </form>
                                                 </div>
                                                 <!--end::Menu item-->
                                             </div>
@@ -318,6 +311,30 @@
                 </div>
                 <!--end::Modal - Urgensi - Add-->
                 <!--end::Modals-->
+
+                {{-- Modal --}}
+                <div class="modal fade" id="deleteCategory" data-backdrop="static" tabindex="-1" role="dialog"
+                    aria-labelledby="deleteCategory" aria-hidden="true">
+                    <div class="modal-dialog modal-sm" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">This action is not reversible.</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                Are you sure you want to delete <span id="modal-category_name"></span>?
+                                <input type="hidden" id="category" name="category_id">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn bg-white" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-danger" id="modal-confirm_delete">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{-- End Modal --}}
             </div>
             <!--end::Content container-->
         </div>
