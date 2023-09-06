@@ -332,9 +332,16 @@
                                 <input type="hidden" id="csrf" value="{{ csrf_token() }}">
                                 <input type="hidden" id="id">
                                 <div class="mb-10">
-                                    <label for="exampleFormControlInput1" class="required form-label">Nama</label>
+                                    <label for="name" class="required form-label">Nama</label>
                                     <input type="text" class="form-control form-control-solid" id="name"
                                         name="name" placeholder="Contoh: Sangat Segera" value="" required />
+                                </div>
+                                <div class="mb-10">
+                                    <input class="form-check-input" type="checkbox" value="" id="active"
+                                        name="active" checked />
+                                    <label class="form-check-label" for="active">
+                                        Aktif
+                                    </label>
                                 </div>
                             </div>
 
@@ -345,32 +352,8 @@
                         </div>
                     </div>
                 </div>
-                <!--end::Modal - Urgensi - Add-->
+                <!--end::Modal - Urgensi - Edit-->
                 <!--end::Modals-->
-
-                {{-- Modal --}}
-                <div class="modal fade" id="deleteCategory" data-backdrop="static" tabindex="-1" role="dialog"
-                    aria-labelledby="deleteCategory" aria-hidden="true">
-                    <div class="modal-dialog modal-sm" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title">This action is not reversible.</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                Are you sure you want to delete <span id="modal-category_name"></span>?
-                                <input type="hidden" id="category" name="category_id">
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn bg-white" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-danger" id="modal-confirm_delete">Delete</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {{-- End Modal --}}
             </div>
             <!--end::Content container-->
         </div>
@@ -393,7 +376,9 @@
                 $('#modal_edit').modal('show');
                 $('#id').val(data.id);
                 $('#name').val(data.name);
+                $('#active').prop('checked', data.active);
             })
+
         });
 
         $('#update').click(function(e) {
@@ -402,6 +387,7 @@
             //define variable
             let id = $('#id').val();
             let name = $('#name').val();
+            let active = document.getElementById('active').checked;
             let token = $('#csrf').val();
 
             //ajax
@@ -412,6 +398,7 @@
                 cache: false,
                 data: {
                     "name": name,
+                    "active": active,
                     "_token": token
                 },
                 success: function(response) {

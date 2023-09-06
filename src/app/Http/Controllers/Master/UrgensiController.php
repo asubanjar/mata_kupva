@@ -67,11 +67,12 @@ class UrgensiController extends Controller
     public function update(Request $request, Urgensi $urgensi)
     {
         $request->validate([
-            'name'                => 'required',
+            'name'   => 'required',
         ]);
 
         $urgensi->update([
-            'name' => $request->name,
+            'name'   => $request->name,
+            'active' => $request->active === 'true' ? '1' : '0',
         ]);
 
         return redirect('/master/urgensi')->with('success', 'Sukses mengubah urgensi');
