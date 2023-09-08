@@ -158,8 +158,8 @@
                                     <span class="path1"></span>
                                     <span class="path2"></span>
                                 </i>
-                                <input type="text" data-kt-urgensi-table-filter="search"
-                                    class="form-control form-control-solid w-250px ps-13" placeholder="Search Customers" />
+                                <input type="text" data-table-filter="search"
+                                    class="form-control form-control-solid w-250px ps-13" placeholder="Search Urgensi" />
                             </div>
                             <!--end::Search-->
                         </div>
@@ -167,7 +167,7 @@
                         <!--begin::Card toolbar-->
                         <div class="card-toolbar">
                             <!--begin::Toolbar-->
-                            <div class="d-flex justify-content-end" data-kt-customer-table-toolbar="base">
+                            <div class="d-flex justify-content-end" data-table-toolbar="base">
                                 <!--begin::Filter-->
                                 <div class="w-150px me-3">
                                     <!--begin::Select2-->
@@ -190,12 +190,12 @@
                             <!--end::Toolbar-->
                             <!--begin::Group actions-->
                             <div class="d-flex justify-content-end align-items-center d-none"
-                                data-kt-customer-table-toolbar="selected">
+                                data-table-toolbar="selected">
                                 <div class="fw-bold me-5">
-                                    <span class="me-2" data-kt-customer-table-select="selected_count"></span>Selected
+                                    <span class="me-2" data-table-select="selected_count"></span>Selected
                                 </div>
-                                <button type="button" class="btn btn-danger"
-                                    data-kt-customer-table-select="delete_selected">Delete Selected</button>
+                                <button type="button" class="btn btn-danger" data-table-select="delete_selected">Delete
+                                    Selected</button>
                             </div>
                             <!--end::Group actions-->
                         </div>
@@ -260,7 +260,7 @@
                                                 <div class="menu-item px-3">
                                                     <a href="#" class="menu-link px-3"
                                                         data-id="{{ $urgensi->id }}" data-csrf="{{ csrf_token() }}"
-                                                        data-kt-customer-table-filter="delete_row">Hapus</a>
+                                                        data-table-filter="delete_row">Hapus</a>
                                                 </div>
                                                 <!--end::Menu item-->
                                             </div>
@@ -292,11 +292,11 @@
                                 </div>
                                 <!--end::Close-->
                             </div>
-                            <form id="kt_add_form_text" method="post" action="{{ url('/master/urgensi') }}"
+                            <form id="add_form" method="post" action="{{ url('/master/urgensi') }}"
                                 class="needs-validation" novalidate="">
                                 @csrf
                                 <div class="modal-body">
-                                    <div class="mb-10">
+                                    <div class="fv-row mb-10">
                                         <label for="exampleFormControlInput1" class="required form-label">Nama</label>
                                         <input type="text" class="form-control form-control-solid" name="name"
                                             placeholder="Contoh: Sangat Segera" />
@@ -363,10 +363,34 @@
 @endsection
 
 @section('script')
-    <script src="{{ asset('assets/js/custom/master/urgensi/listing.js') }}"></script>
-    <script src="{{ asset('assets/js/custom/master/urgensi/add.js') }}"></script>
-    <script src="{{ asset('assets/js/custom/master/urgensi/export.js') }}"></script>
+    <script>
+        // Define form element
+        const form = document.getElementById('add_form');
 
+        // Init form validation rules. For more info check the FormValidation plugin's official documentation:https://formvalidation.io/
+        var validator = FormValidation.formValidation(
+            form, {
+                fields: {
+                    'name': {
+                        validators: {
+                            notEmpty: {
+                                message: 'Text input is required'
+                            }
+                        }
+                    },
+                },
+
+                plugins: {
+                    trigger: new FormValidation.plugins.Trigger(),
+                    bootstrap: new FormValidation.plugins.Bootstrap5({
+                        rowSelector: '.fv-row',
+                        eleInvalidClass: '',
+                        eleValidClass: ''
+                    })
+                }
+            }
+        );
+    </script>
     <script type="text/javascript">
         $('body').on('click', '.edit-urgensi', function() {
             var id = $(this).data('id');
@@ -408,6 +432,195 @@
                     window.location.reload();
                 }
             });
+        });
+    </script>
+
+    <script>
+        "use strict";
+        var List = (function() {
+            var t,
+                e,
+                o = () => {
+                    e.querySelectorAll('[data-table-filter="delete_row"]').forEach(
+                        (e) => {
+                            e.addEventListener("click", function(e) {
+                                e.preventDefault();
+                                const o = e.target.closest("tr"),
+                                    n = o.querySelectorAll("td")[2].innerText;
+                                let urg_id = $(this).data("id");
+                                let token = $(this).data("csrf");
+
+                                Swal.fire({
+                                    text: "Apakah anda yakin akan menghapus " + n + " ?",
+                                    icon: "warning",
+                                    showCancelButton: !0,
+                                    buttonsStyling: !1,
+                                    confirmButtonText: "Ya, hapus!",
+                                    cancelButtonText: "Tidak, batalkan",
+                                    customClass: {
+                                        confirmButton: "btn fw-bold btn-danger",
+                                        cancelButton: "btn fw-bold btn-active-light-primary",
+                                    },
+                                }).then(function(e) {
+                                    e.value ?
+                                        Swal.fire({
+                                            text: "Kamu telah menghapus " + n + "!.",
+                                            icon: "success",
+                                            buttonsStyling: !1,
+                                            confirmButtonText: "Baik",
+                                            customClass: {
+                                                confirmButton: "btn fw-bold btn-primary",
+                                            },
+                                        }).then(function() {
+                                            $.ajax({
+                                                url: `/master/urgensi/${urg_id}`,
+                                                type: "DELETE",
+                                                cache: false,
+                                                data: {
+                                                    _token: token,
+                                                },
+                                            });
+
+                                            window.location.reload();
+                                        }) :
+                                        "cancel" === e.dismiss &&
+                                        Swal.fire({
+                                            text: n + " was not deleted.",
+                                            icon: "error",
+                                            buttonsStyling: !1,
+                                            confirmButtonText: "Ok, got it!",
+                                            customClass: {
+                                                confirmButton: "btn fw-bold btn-primary",
+                                            },
+                                        });
+                                });
+                            });
+                        },
+                    );
+                },
+                n = () => {
+                    const o = e.querySelectorAll('[type="checkbox"]'),
+                        n = document.querySelector(
+                            '[data-table-select="delete_selected"]',
+                        );
+                    o.forEach((t) => {
+                            t.addEventListener("click", function() {
+                                setTimeout(function() {
+                                    c();
+                                }, 50);
+                            });
+                        }),
+                        n.addEventListener("click", function() {
+                            Swal.fire({
+                                text: "Are you sure you want to delete selected customers?",
+                                icon: "warning",
+                                showCancelButton: !0,
+                                buttonsStyling: !1,
+                                confirmButtonText: "Yes, delete!",
+                                cancelButtonText: "No, cancel",
+                                customClass: {
+                                    confirmButton: "btn fw-bold btn-danger",
+                                    cancelButton: "btn fw-bold btn-active-light-primary",
+                                },
+                            }).then(function(n) {
+                                n.value ?
+                                    Swal.fire({
+                                        text: "You have deleted all selected customers!.",
+                                        icon: "success",
+                                        buttonsStyling: !1,
+                                        confirmButtonText: "Ok, got it!",
+                                        customClass: {
+                                            confirmButton: "btn fw-bold btn-primary",
+                                        },
+                                    }).then(function() {
+                                        o.forEach((e) => {
+                                            e.checked &&
+                                                t
+                                                .row($(e.closest("tbody tr")))
+                                                .remove()
+                                                .draw();
+                                        });
+                                        e.querySelectorAll(
+                                            '[type="checkbox"]',
+                                        )[0].checked = !1;
+                                    }) :
+                                    "cancel" === n.dismiss &&
+                                    Swal.fire({
+                                        text: "Selected customers was not deleted.",
+                                        icon: "error",
+                                        buttonsStyling: !1,
+                                        confirmButtonText: "Ok, got it!",
+                                        customClass: {
+                                            confirmButton: "btn fw-bold btn-primary",
+                                        },
+                                    });
+                            });
+                        });
+                };
+            const c = () => {
+                const t = document.querySelector('[data-table-toolbar="base"]'),
+                    o = document.querySelector(
+                        '[data-table-toolbar="selected"]',
+                    ),
+                    n = document.querySelector(
+                        '[data-table-select="selected_count"]',
+                    ),
+                    c = e.querySelectorAll('tbody [type="checkbox"]');
+                let r = !1,
+                    l = 0;
+                c.forEach((t) => {
+                        t.checked && ((r = !0), l++);
+                    }),
+                    r ?
+                    ((n.innerHTML = l),
+                        t.classList.add("d-none"),
+                        o.classList.remove("d-none")) :
+                    (t.classList.remove("d-none"), o.classList.add("d-none"));
+            };
+            return {
+                init: function() {
+                    (e = document.querySelector("#kt_urgensi_table")) &&
+                    (e.querySelectorAll("tbody tr").forEach((t) => {
+                            const e = t.querySelectorAll("td"),
+                                o = moment(e[2].innerHTML, "DD MMM YYYY, LT").format();
+                            e[2].setAttribute("data-order", o);
+                        }),
+                        (t = $(e).DataTable({
+                            info: !1,
+                            order: [],
+                            columnDefs: [{
+                                    orderable: !1,
+                                    targets: 0
+                                },
+                                {
+                                    orderable: !1,
+                                    targets: 4
+                                },
+                            ],
+                        })).on("draw", function() {
+                            n(), o(), c();
+                        }),
+                        n(),
+                        document
+                        .querySelector('[data-table-filter="search"]')
+                        .addEventListener("keyup", function(e) {
+                            t.search(e.target.value).draw();
+                        }),
+                        o(),
+                        (() => {
+                            const e = document.querySelector(
+                                '[data-kt-urgensi-status-filter="status"]',
+                            );
+                            $(e).on("change", (e) => {
+                                let o = e.target.value;
+                                "all" === o && (o = ""), t.column(3).search(o).draw();
+                            });
+                        })());
+                },
+            };
+        })();
+        KTUtil.onDOMContentLoaded(function() {
+            List.init();
         });
     </script>
 @endsection
