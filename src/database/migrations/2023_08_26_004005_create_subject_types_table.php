@@ -11,8 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('subject_types', function (Blueprint $table) {
+        Schema::create('subject_types', function (Blueprint $table): void {
             $table->id();
+            $table->string('name');
+            $table->string('code_name');
+            $table->boolean('active')->default(true);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

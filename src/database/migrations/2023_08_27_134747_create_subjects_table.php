@@ -11,8 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('subjects', function (Blueprint $table) {
+        Schema::create('subjects', function (Blueprint $table): void {
             $table->id();
+            $table->string('name');
+            $table->text('comment')->nullable();
+            $table->text('closed_comment')->nullable();
+            $table->dateTime('opened');
+            $table->dateTime('closed')->nullable();
+            $table->unsignedBigInteger('subject_type_id');
+            $table->boolean('active')->default(true);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

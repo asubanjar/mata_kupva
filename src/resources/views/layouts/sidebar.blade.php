@@ -312,12 +312,12 @@
                                     <!--begin:Menu item-->
                                     <div class="menu-item">
                                         <!--begin:Menu link-->
-                                        <a class="menu-link {{ (request()->is('master/urgensi') ? 'active' : request()->is('master/urgensi/*')) ? 'active' : '' }}"
-                                            href="{{ url('/master/urgensi') }}">
+                                        <a class="menu-link {{ (request()->is('master/subject-type') ? 'active' : request()->is('master/subject-type/*')) ? 'active' : '' }}"
+                                            href="{{ url('/master/subject-type') }}">
                                             <span class="menu-bullet">
                                                 <span class="bullet bullet-dot"></span>
                                             </span>
-                                            <span class="menu-title">Urgensi</span>
+                                            <span class="menu-title">Jenis Subjek</span>
                                         </a>
                                         <a class="menu-link {{ (request()->is('master/sifat') ? 'active' : request()->is('master/sifat/*')) ? 'active' : '' }}"
                                             href="{{ url('/master/sifat') }}">
@@ -325,6 +325,13 @@
                                                 <span class="bullet bullet-dot"></span>
                                             </span>
                                             <span class="menu-title">Sifat</span>
+                                        </a>
+                                        <a class="menu-link {{ (request()->is('master/urgensi') ? 'active' : request()->is('master/urgensi/*')) ? 'active' : '' }}"
+                                            href="{{ url('/master/urgensi') }}">
+                                            <span class="menu-bullet">
+                                                <span class="bullet bullet-dot"></span>
+                                            </span>
+                                            <span class="menu-title">Urgensi</span>
                                         </a>
                                         <!--end:Menu link-->
                                     </div>
