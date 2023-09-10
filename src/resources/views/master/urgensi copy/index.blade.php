@@ -172,7 +172,8 @@
                                 <div class="w-150px me-3">
                                     <!--begin::Select2-->
                                     <select class="form-select form-select-solid" data-control="select2"
-                                        data-hide-search="true" data-placeholder="Status" data-kt-status-filter="status">
+                                        data-hide-search="true" data-placeholder="Status"
+                                        data-kt-urgensi-status-filter="status">
                                         <option></option>
                                         <option value="all">All</option>
                                         <option value="aktif">Aktif</option>
@@ -204,13 +205,14 @@
                     <!--begin::Card body-->
                     <div class="card-body pt-0">
                         <!--begin::Table-->
-                        <table class="table-row-dashed fs-6 gy-5 table align-middle" id="kt_table">
+                        <table class="table-row-dashed fs-6 gy-5 table align-middle" id="kt_urgensi_table">
                             <thead>
                                 <tr class="fw-bold fs-7 text-uppercase gs-0 text-start text-gray-400">
                                     <th class="w-10px pe-2">
                                         <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
                                             <input class="form-check-input" type="checkbox" data-kt-check="true"
-                                                data-kt-check-target="#kt_table .form-check-input" value="1" />
+                                                data-kt-check-target="#kt_urgensi_table .form-check-input"
+                                                value="1" />
                                         </div>
                                     </th>
                                     <th class="min-w-125px">Kode</th>
@@ -577,7 +579,7 @@
             };
             return {
                 init: function() {
-                    (e = document.querySelector("#kt_table")) &&
+                    (e = document.querySelector("#kt_urgensi_table")) &&
                     (e.querySelectorAll("tbody tr").forEach((t) => {
                             const e = t.querySelectorAll("td"),
                                 o = moment(e[2].innerHTML, "DD MMM YYYY, LT").format();
@@ -607,7 +609,7 @@
                         o(),
                         (() => {
                             const e = document.querySelector(
-                                '[data-kt-status-filter="status"]',
+                                '[data-kt-urgensi-status-filter="status"]',
                             );
                             $(e).on("change", (e) => {
                                 let o = e.target.value;

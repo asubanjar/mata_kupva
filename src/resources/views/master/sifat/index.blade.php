@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Master Urgensi')
+@section('title', 'Master Sifat')
 @section('content')
     <!--begin::Content wrapper-->
     <div class="d-flex flex-column flex-column-fluid">
@@ -11,7 +11,7 @@
                 <div class="page-title d-flex flex-column justify-content-center me-3 flex-wrap">
                     <!--begin::Title-->
                     <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Master
-                        Urgensi</h1>
+                        Sifat</h1>
                     <!--end::Title-->
                     <!--begin::Breadcrumb-->
                     <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -26,7 +26,7 @@
                         </li>
                         <!--end::Item-->
                         <!--begin::Item-->
-                        <li class="breadcrumb-item text-muted">Master Urgensi</li>
+                        <li class="breadcrumb-item text-muted">Master Sifat</li>
                         <!--end::Item-->
                     </ul>
                     <!--end::Breadcrumb-->
@@ -159,7 +159,7 @@
                                     <span class="path2"></span>
                                 </i>
                                 <input type="text" data-table-filter="search"
-                                    class="form-control form-control-solid w-250px ps-13" placeholder="Search Urgensi" />
+                                    class="form-control form-control-solid w-250px ps-13" placeholder="Search Sifat" />
                             </div>
                             <!--end::Search-->
                         </div>
@@ -181,10 +181,10 @@
                                     <!--end::Select2-->
                                 </div>
                                 <!--end::Filter-->
-                                <!--begin::Add urgensi-->
+                                <!--begin::Add Sifat-->
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#modal_add">Tambah Urgensi</button>
-                                <!--end::Add urgensi-->
+                                    data-bs-target="#modal_add">Tambah Sifat</button>
+                                <!--end::Add Sifat-->
                             </div>
                             <!--end::Toolbar-->
                             <!--begin::Group actions-->
@@ -215,29 +215,31 @@
                                     </th>
                                     <th class="min-w-125px">Kode</th>
                                     <th class="min-w-125px">Nama</th>
+                                    <th class="min-w-125px">Kode Nama</th>
                                     <th class="min-w-125px">Status</th>
                                     <th class="min-w-125px">Tanggal Dibuat</th>
                                     <th class="min-w-70px text-end">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody class="fw-semibold text-gray-600">
-                                @foreach ($urgensis as $urgensi)
+                                @foreach ($sifats as $sifat)
                                     <tr>
                                         <td>
                                             <div class="form-check form-check-sm form-check-custom form-check-solid">
                                                 <input class="form-check-input" type="checkbox" value="1" />
                                             </div>
                                         </td>
-                                        <td>{{ $urgensi->code }}</td>
-                                        <td>{{ $urgensi->name }}</td>
+                                        <td>{{ $sifat->code }}</td>
+                                        <td>{{ $sifat->name }}</td>
+                                        <td>{{ $sifat->code_name }}</td>
                                         <td>
-                                            @if ($urgensi->active === true)
+                                            @if ($sifat->active === true)
                                                 <div class="badge badge-light-success">Aktif</div>
                                             @else
                                                 <div class="badge badge-light-danger">Tidak Aktif</div>
                                             @endif
                                         </td>
-                                        <td>{{ $urgensi->created_at }}</td>
+                                        <td>{{ $sifat->created_at }}</td>
                                         <td class="text-end">
                                             <a href="#"
                                                 class="btn btn-sm btn-light btn-flex btn-center btn-active-light-primary"
@@ -249,15 +251,15 @@
                                                 <!--begin::Menu item-->
                                                 <div class="menu-item px-3">
                                                     <a href="javascript:void(0)" data-toggle="tooltip"
-                                                        data-id="{{ $urgensi->id }}" data-csrf="{{ csrf_token() }}"
+                                                        data-id="{{ $sifat->id }}" data-csrf="{{ csrf_token() }}"
                                                         data-original-title="Edit"
-                                                        class="menu-link edit-urgensi px-3">Ubah</a>
+                                                        class="menu-link edit-sifat px-3">Ubah</a>
                                                 </div>
                                                 <!--end::Menu item-->
                                                 <!--begin::Menu item-->
                                                 <div class="menu-item px-3">
                                                     <a href="#" class="menu-link px-3"
-                                                        data-id="{{ $urgensi->id }}" data-csrf="{{ csrf_token() }}"
+                                                        data-id="{{ $sifat->id }}" data-csrf="{{ csrf_token() }}"
                                                         data-table-filter="delete_row">Hapus</a>
                                                 </div>
                                                 <!--end::Menu item-->
@@ -275,12 +277,12 @@
                 </div>
                 <!--end::Card-->
                 <!--begin::Modals-->
-                <!--begin::Modal - Urgensi - Add-->
+                <!--begin::Modal - Sifat - Add-->
                 <div class="modal fade" tabindex="-1" id="modal_add">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h3 class="modal-title">Tambah Urgensi</h3>
+                                <h3 class="modal-title">Tambah Sifat</h3>
 
                                 <!--begin::Close-->
                                 <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal"
@@ -290,14 +292,20 @@
                                 </div>
                                 <!--end::Close-->
                             </div>
-                            <form id="add_form" method="post" action="{{ url('/master/urgensi') }}"
+                            <form id="add_form" method="post" action="{{ url('/master/sifat') }}"
                                 class="needs-validation" novalidate="">
                                 @csrf
                                 <div class="modal-body">
                                     <div class="fv-row mb-10">
                                         <label for="exampleFormControlInput1" class="required form-label">Nama</label>
                                         <input type="text" class="form-control form-control-solid" name="name"
-                                            placeholder="Contoh: Sangat Segera" />
+                                            placeholder="Contoh: Sangat Rahasia" />
+                                        <div class="fv-row mb-10">
+                                            <label for="exampleFormControlInput1" class="required form-label">Kode
+                                                Nama</label>
+                                            <input type="text" class="form-control form-control-solid"
+                                                name="code_name" placeholder="Contoh: SR" />
+                                        </div>
                                     </div>
                                 </div>
 
@@ -309,14 +317,14 @@
                         </div>
                     </div>
                 </div>
-                <!--end::Modal - Urgensi - Add-->
+                <!--end::Modal - Sifat - Add-->
 
-                <!--begin::Modal - Urgensi - Edit-->
+                <!--begin::Modal - Sifat - Edit-->
                 <div class="modal fade" tabindex="-1" id="modal_edit">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h3 class="modal-title">Ubah Urgensi</h3>
+                                <h3 class="modal-title">Ubah Sifat</h3>
 
                                 <!--begin::Close-->
                                 <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal"
@@ -332,7 +340,12 @@
                                 <div class="mb-10">
                                     <label for="name" class="required form-label">Nama</label>
                                     <input type="text" class="form-control form-control-solid" id="name"
-                                        name="name" placeholder="Contoh: Sangat Segera" value="" required />
+                                        name="name" placeholder="Contoh: Sangat Rahasia" value="" required />
+                                </div>
+                                <div class="mb-10">
+                                    <label for="name" class="required form-label">Kode Nama</label>
+                                    <input type="text" class="form-control form-control-solid" id="code_name"
+                                        name="code_name" placeholder="Contoh: SR" value="" required />
                                 </div>
                                 <div class="mb-10">
                                     <input class="form-check-input" type="checkbox" value="" id="active"
@@ -350,7 +363,7 @@
                         </div>
                     </div>
                 </div>
-                <!--end::Modal - Urgensi - Edit-->
+                <!--end::Modal - Sifat - Edit-->
                 <!--end::Modals-->
             </div>
             <!--end::Content container-->
@@ -390,14 +403,15 @@
         );
     </script>
     <script type="text/javascript">
-        $('body').on('click', '.edit-urgensi', function() {
+        $('body').on('click', '.edit-sifat', function() {
             var id = $(this).data('id');
-            $.get("{{ url('master/urgensi') }}" + '/' + id + '/edit', function(data) {
+            $.get("{{ url('master/sifat') }}" + '/' + id + '/edit', function(data) {
                 $('#modelHeading').html("Edit Team");
-                $('#editdata').val("edit-urgensi");
+                $('#editdata').val("edit-sifat");
                 $('#modal_edit').modal('show');
                 $('#id').val(data.id);
                 $('#name').val(data.name);
+                $('#code_name').val(data.code_name);
                 $('#active').prop('checked', data.active);
             })
 
@@ -409,17 +423,19 @@
             //define variable
             let id = $('#id').val();
             let name = $('#name').val();
+            let code_name = $('#code_name').val();
             let active = document.getElementById('active').checked;
             let token = $('#csrf').val();
 
             //ajax
             $.ajax({
 
-                url: `/master/urgensi/${id}`,
+                url: `/master/sifat/${id}`,
                 type: "PUT",
                 cache: false,
                 data: {
                     "name": name,
+                    "code_name": code_name,
                     "active": active,
                     "_token": token
                 },
@@ -445,7 +461,7 @@
                                 e.preventDefault();
                                 const o = e.target.closest("tr"),
                                     n = o.querySelectorAll("td")[2].innerText;
-                                let urg_id = $(this).data("id");
+                                let sif_id = $(this).data("id");
                                 let token = $(this).data("csrf");
 
                                 Swal.fire({
@@ -471,7 +487,7 @@
                                             },
                                         }).then(function() {
                                             $.ajax({
-                                                url: `/master/urgensi/${urg_id}`,
+                                                url: `/master/sifat/${sif_id}`,
                                                 type: "DELETE",
                                                 cache: false,
                                                 data: {
