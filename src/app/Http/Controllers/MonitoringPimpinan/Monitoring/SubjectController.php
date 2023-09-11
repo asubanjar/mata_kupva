@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\MonitoringPimpinan\Monitoring;
 
 use App\Http\Controllers\Controller;
+use App\Models\Master\SubjectType;
 use App\Models\MonitoringPimpinan\Monitoring\Subject;
 use Illuminate\Http\Request;
 
@@ -20,7 +21,15 @@ class SubjectController extends Controller
     {
         $subjects = Subject::all();
 
-        return view('monitoring-pimpinan/monitoring/subject/index', compact('subjects'));
+        $subject_types = SubjectType::all();
+
+        return view(
+            'monitoring-pimpinan/monitoring/subject/index',
+            compact(
+                'subjects',
+                'subject_types'
+            )
+        );
     }
 
     /**
@@ -36,15 +45,16 @@ class SubjectController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name'   => 'required|max:50',
-            // 'opened' => 'required|date',
+            'name'            => 'required|max:50',
+            'subject_type_id' => 'required|exists:subject_types,id',
+            'opened'          => 'required|date',
         ]);
 
         Subject::create([
             'name'            => $request->name,
             'comment'         => $request->comment,
-            'subject_type_id' => '1',
-            'opened'          => now(),
+            'subject_type_id' => $request->subject_type_id,
+            'opened'          => $request->opened,
         ]);
 
         return redirect('/monitoring-pimpinan/monitoring/subject')->with('success', 'Sukses menambahkan subjek');
@@ -74,7 +84,10 @@ class SubjectController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id): void
+    public function destroy(Subject $subject)
     {
+        $subject->delete();
+
+        return redirect('/monitoring-pimpinan/monitoring/subject')->with('success', 'Sukses menghapus subjek');
     }
 }
