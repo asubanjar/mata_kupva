@@ -210,7 +210,8 @@
                         </div>
                         <!--end:Menu item-->
                         <!--begin:Menu item-->
-                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                        <div data-kt-menu-trigger="click"
+                            class="menu-item {{ request()->is('*monitoring-pimpinan/monitoring*') ? 'here show' : '' }} menu-accordion">
                             <!--begin:Menu link-->
                             <span class="menu-link">
                                 <span class="menu-icon">
@@ -222,7 +223,7 @@
                                         <span class="path5"></span>
                                     </i>
                                 </span>
-                                <span class="menu-title">Kegiatan</span>
+                                <span class="menu-title">Kegiatan/Subjek</span>
                                 <span class="menu-arrow"></span>
                             </span>
                             <!--end:Menu link-->
@@ -231,11 +232,12 @@
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link" href="../../demo1/dist/account/overview.html">
+                                    <a class="menu-link {{ (request()->is('monitoring-pimpinan/monitoring/subject') ? 'active' : request()->is('monitoring-pimpinan/monitoring/subject/*')) ? 'active' : '' }}"
+                                        href="{{ url('/monitoring-pimpinan/monitoring/subject') }}">
                                         <span class="menu-bullet">
                                             <span class="bullet bullet-dot"></span>
                                         </span>
-                                        <span class="menu-title">Overview</span>
+                                        <span class="menu-title">Daftar</span>
                                     </a>
                                     <!--end:Menu link-->
                                 </div>

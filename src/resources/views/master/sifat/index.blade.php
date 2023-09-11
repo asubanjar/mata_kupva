@@ -300,12 +300,12 @@
                                         <label for="exampleFormControlInput1" class="required form-label">Nama</label>
                                         <input type="text" class="form-control form-control-solid" name="name"
                                             placeholder="Contoh: Sangat Rahasia" />
-                                        <div class="fv-row mb-10">
-                                            <label for="exampleFormControlInput1" class="required form-label">Kode
-                                                Nama</label>
-                                            <input type="text" class="form-control form-control-solid"
-                                                name="code_name" placeholder="Contoh: SR" />
-                                        </div>
+                                    </div>
+                                    <div class="fv-row mb-10">
+                                        <label for="exampleFormControlInput1" class="required form-label">Kode
+                                            Nama</label>
+                                        <input type="text" class="form-control form-control-solid" name="code_name"
+                                            placeholder="Contoh: SR" />
                                     </div>
                                 </div>
 

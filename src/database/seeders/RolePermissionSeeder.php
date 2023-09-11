@@ -18,11 +18,13 @@ class RolePermissionSeeder extends Seeder
 
         /** PERMISSION */
         Permission::updateOrCreate(['name' => 'master']);
+        Permission::updateOrCreate(['name' => 'subject']);
 
         /** ROLE */
         $adminRole = Role::create(['name' => 'Admin']);
         $adminRole->syncPermissions([
             'master',
+            'subject',
         ]);
 
         Role::create(['name' => 'Super Admin']);

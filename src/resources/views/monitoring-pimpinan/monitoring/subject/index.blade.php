@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Master Jenis Subjek')
+@section('title', 'Daftar Subjek')
 @section('content')
     <!--begin::Content wrapper-->
     <div class="d-flex flex-column flex-column-fluid">
@@ -10,8 +10,8 @@
                 <!--begin::Page title-->
                 <div class="page-title d-flex flex-column justify-content-center me-3 flex-wrap">
                     <!--begin::Title-->
-                    <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Master
-                        Jenis Subjek</h1>
+                    <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Daftar
+                        Kegiatan/Subjek</h1>
                     <!--end::Title-->
                     <!--begin::Breadcrumb-->
                     <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -26,7 +26,7 @@
                         </li>
                         <!--end::Item-->
                         <!--begin::Item-->
-                        <li class="breadcrumb-item text-muted">Master Jenis Subjek</li>
+                        <li class="breadcrumb-item text-muted">Daftar Kegiatan/Subjek</li>
                         <!--end::Item-->
                     </ul>
                     <!--end::Breadcrumb-->
@@ -160,7 +160,7 @@
                                 </i>
                                 <input type="text" data-table-filter="search"
                                     class="form-control form-control-solid w-250px ps-13"
-                                    placeholder="Search Jenis Subjek" />
+                                    placeholder="Search Kegiatan / Subjek" />
                             </div>
                             <!--end::Search-->
                         </div>
@@ -182,10 +182,10 @@
                                     <!--end::Select2-->
                                 </div>
                                 <!--end::Filter-->
-                                <!--begin::Add Jenis Subjek-->
+                                <!--begin::Add Kegiatan/Subjek-->
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#modal_add">Tambah Jenis Subjek</button>
-                                <!--end::Add Jenis Subjek-->
+                                    data-bs-target="#modal_add">Tambah Kegiatan/Subjek</button>
+                                <!--end::Add Kegiatan/Subjek-->
                             </div>
                             <!--end::Toolbar-->
                             <!--begin::Group actions-->
@@ -215,30 +215,34 @@
                                         </div>
                                     </th>
                                     <th class="min-w-125px">Nama</th>
-                                    <th class="min-w-125px">Kode Nama</th>
+                                    <th class="min-w-125px">Jenis Subjek</th>
+                                    <th class="min-w-125px">Deskripsi</th>
+                                    <th class="min-w-125px">Tanggal Dimulai</th>
+                                    <th class="min-w-125px">Tanggal Ditutup</th>
                                     <th class="min-w-125px">Status</th>
-                                    <th class="min-w-125px">Tanggal Dibuat</th>
                                     <th class="min-w-70px text-end">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody class="fw-semibold text-gray-600">
-                                @foreach ($subject_types as $subject_type)
+                                @foreach ($subjects as $subject)
                                     <tr>
                                         <td>
                                             <div class="form-check form-check-sm form-check-custom form-check-solid">
                                                 <input class="form-check-input" type="checkbox" value="1" />
                                             </div>
                                         </td>
-                                        <td>{{ $subject_type->name }}</td>
-                                        <td>{{ $subject_type->code_name }}</td>
+                                        <td>{{ $subject->name }}</td>
+                                        <td>{{ $subject->subject_type_id }}</td>
+                                        <td>{{ $subject->comment }}</td>
+                                        <td>{{ $subject->opened }}</td>
+                                        <td>{{ $subject->closed }}</td>
                                         <td>
-                                            @if ($subject_type->active === true)
+                                            @if ($subject->active === true)
                                                 <div class="badge badge-light-success">Aktif</div>
                                             @else
                                                 <div class="badge badge-light-danger">Tidak Aktif</div>
                                             @endif
                                         </td>
-                                        <td>{{ $subject_type->created_at }}</td>
                                         <td class="text-end">
                                             <a href="#"
                                                 class="btn btn-sm btn-light btn-flex btn-center btn-active-light-primary"
@@ -250,15 +254,14 @@
                                                 <!--begin::Menu item-->
                                                 <div class="menu-item px-3">
                                                     <a href="javascript:void(0)" data-toggle="tooltip"
-                                                        data-id="{{ $subject_type->id }}" data-csrf="{{ csrf_token() }}"
-                                                        data-original-title="Edit"
-                                                        class="menu-link edit-subject-type px-3">Ubah</a>
+                                                        data-id="{{ $subject->id }}" data-csrf="{{ csrf_token() }}"
+                                                        data-original-title="Edit" class="menu-link px-3">Ubah</a>
                                                 </div>
                                                 <!--end::Menu item-->
                                                 <!--begin::Menu item-->
                                                 <div class="menu-item px-3">
                                                     <a href="#" class="menu-link px-3"
-                                                        data-id="{{ $subject_type->id }}" data-csrf="{{ csrf_token() }}"
+                                                        data-id="{{ $subject->id }}" data-csrf="{{ csrf_token() }}"
                                                         data-table-filter="delete_row">Hapus</a>
                                                 </div>
                                                 <!--end::Menu item-->
@@ -276,12 +279,12 @@
                 </div>
                 <!--end::Card-->
                 <!--begin::Modals-->
-                <!--begin::Modal - Jenis Subjek - Add-->
+                <!--begin::Modal - Subject - Add-->
                 <div class="modal fade" tabindex="-1" id="modal_add">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h3 class="modal-title">Tambah Subject Type</h3>
+                                <h3 class="modal-title">Tambah Kegiatan / Subjek</h3>
 
                                 <!--begin::Close-->
                                 <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal"
@@ -291,20 +294,19 @@
                                 </div>
                                 <!--end::Close-->
                             </div>
-                            <form id="add_form" method="post" action="{{ url('/master/subject-type') }}"
-                                class="needs-validation" novalidate="">
+                            <form id="add_form" method="post"
+                                action="{{ url('/monitoring-pimpinan/monitoring/subject') }}" class="needs-validation"
+                                novalidate="">
                                 @csrf
                                 <div class="modal-body">
                                     <div class="fv-row mb-10">
                                         <label for="exampleFormControlInput1" class="required form-label">Nama</label>
                                         <input type="text" class="form-control form-control-solid" name="name"
-                                            placeholder="Contoh: Rapat Pimpinan Terbatas" />
+                                            placeholder="Nama Kegiatan atau Subjek" />
                                     </div>
                                     <div class="fv-row mb-10">
-                                        <label for="exampleFormControlInput1" class="required form-label">Kode
-                                            Nama</label>
-                                        <input type="text" class="form-control form-control-solid" name="code_name"
-                                            placeholder="Contoh: RAPIMTAS" />
+                                        <label for="exampleFormControlInput1" class="form-label">Keterangan</label>
+                                        <textarea class="form-control form-control-solid" name="comment"></textarea>
                                     </div>
                                 </div>
 
@@ -316,53 +318,7 @@
                         </div>
                     </div>
                 </div>
-                <!--end::Modal - Jenis Subjek - Add-->
-
-                <!--begin::Modal - Jenis Subjek - Edit-->
-                <div class="modal fade" tabindex="-1" id="modal_edit">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h3 class="modal-title">Ubah Jenis Subjek</h3>
-
-                                <!--begin::Close-->
-                                <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal"
-                                    aria-label="Close">
-                                    <i class="ki-duotone ki-cross fs-1"><span class="path1"></span><span
-                                            class="path2"></span></i>
-                                </div>
-                                <!--end::Close-->
-                            </div>
-                            <div class="modal-body">
-                                <input type="hidden" id="csrf" value="{{ csrf_token() }}">
-                                <input type="hidden" id="id">
-                                <div class="mb-10">
-                                    <label for="name" class="required form-label">Nama</label>
-                                    <input type="text" class="form-control form-control-solid" id="name"
-                                        name="name" placeholder="Contoh: Sangat Rahasia" value="" required />
-                                </div>
-                                <div class="mb-10">
-                                    <label for="name" class="required form-label">Kode Nama</label>
-                                    <input type="text" class="form-control form-control-solid" id="code_name"
-                                        name="code_name" placeholder="Contoh: SR" value="" required />
-                                </div>
-                                <div class="mb-10">
-                                    <input class="form-check-input" type="checkbox" value="" id="active"
-                                        name="active" checked />
-                                    <label class="form-check-label" for="active">
-                                        Aktif
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary" id="update">Save changes</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--end::Modal - Jenis Subjek - Edit-->
+                <!--end::Modal - Subject - Add-->
                 <!--end::Modals-->
             </div>
             <!--end::Content container-->
@@ -400,240 +356,5 @@
                 }
             }
         );
-    </script>
-    <script type="text/javascript">
-        $('body').on('click', '.edit-subject-type', function() {
-            var id = $(this).data('id');
-            $.get("{{ url('master/subject-type') }}" + '/' + id + '/edit', function(data) {
-                $('#modelHeading').html("Edit Team");
-                $('#editdata').val("edit-subject-type");
-                $('#modal_edit').modal('show');
-                $('#id').val(data.id);
-                $('#name').val(data.name);
-                $('#code_name').val(data.code_name);
-                $('#active').prop('checked', data.active);
-            })
-
-        });
-
-        $('#update').click(function(e) {
-            e.preventDefault();
-
-            //define variable
-            let id = $('#id').val();
-            let name = $('#name').val();
-            let code_name = $('#code_name').val();
-            let active = document.getElementById('active').checked;
-            let token = $('#csrf').val();
-
-            //ajax
-            $.ajax({
-
-                url: `/master/subject-type/${id}`,
-                type: "PUT",
-                cache: false,
-                data: {
-                    "name": name,
-                    "code_name": code_name,
-                    "active": active,
-                    "_token": token
-                },
-                success: function(response) {
-                    window.location.reload();
-                },
-                error: function(error) {
-                    window.location.reload();
-                }
-            });
-        });
-    </script>
-
-    <script>
-        "use strict";
-        var List = (function() {
-            var t,
-                e,
-                o = () => {
-                    e.querySelectorAll('[data-table-filter="delete_row"]').forEach(
-                        (e) => {
-                            e.addEventListener("click", function(e) {
-                                e.preventDefault();
-                                const o = e.target.closest("tr"),
-                                    n = o.querySelectorAll("td")[2].innerText;
-                                let subtype_id = $(this).data("id");
-                                let token = $(this).data("csrf");
-
-                                Swal.fire({
-                                    text: "Apakah anda yakin akan menghapus " + n + " ?",
-                                    icon: "warning",
-                                    showCancelButton: !0,
-                                    buttonsStyling: !1,
-                                    confirmButtonText: "Ya, hapus!",
-                                    cancelButtonText: "Tidak, batalkan",
-                                    customClass: {
-                                        confirmButton: "btn fw-bold btn-danger",
-                                        cancelButton: "btn fw-bold btn-active-light-primary",
-                                    },
-                                }).then(function(e) {
-                                    e.value ?
-                                        Swal.fire({
-                                            text: "Kamu telah menghapus " + n + "!.",
-                                            icon: "success",
-                                            buttonsStyling: !1,
-                                            confirmButtonText: "Baik",
-                                            customClass: {
-                                                confirmButton: "btn fw-bold btn-primary",
-                                            },
-                                        }).then(function() {
-                                            $.ajax({
-                                                url: `/master/subject-type/${subtype_id}`,
-                                                type: "DELETE",
-                                                cache: false,
-                                                data: {
-                                                    _token: token,
-                                                },
-                                            });
-
-                                            window.location.reload();
-                                        }) :
-                                        "cancel" === e.dismiss &&
-                                        Swal.fire({
-                                            text: n + " was not deleted.",
-                                            icon: "error",
-                                            buttonsStyling: !1,
-                                            confirmButtonText: "Ok, got it!",
-                                            customClass: {
-                                                confirmButton: "btn fw-bold btn-primary",
-                                            },
-                                        });
-                                });
-                            });
-                        },
-                    );
-                },
-                n = () => {
-                    const o = e.querySelectorAll('[type="checkbox"]'),
-                        n = document.querySelector(
-                            '[data-table-select="delete_selected"]',
-                        );
-                    o.forEach((t) => {
-                            t.addEventListener("click", function() {
-                                setTimeout(function() {
-                                    c();
-                                }, 50);
-                            });
-                        }),
-                        n.addEventListener("click", function() {
-                            Swal.fire({
-                                text: "Are you sure you want to delete selected customers?",
-                                icon: "warning",
-                                showCancelButton: !0,
-                                buttonsStyling: !1,
-                                confirmButtonText: "Yes, delete!",
-                                cancelButtonText: "No, cancel",
-                                customClass: {
-                                    confirmButton: "btn fw-bold btn-danger",
-                                    cancelButton: "btn fw-bold btn-active-light-primary",
-                                },
-                            }).then(function(n) {
-                                n.value ?
-                                    Swal.fire({
-                                        text: "You have deleted all selected customers!.",
-                                        icon: "success",
-                                        buttonsStyling: !1,
-                                        confirmButtonText: "Ok, got it!",
-                                        customClass: {
-                                            confirmButton: "btn fw-bold btn-primary",
-                                        },
-                                    }).then(function() {
-                                        o.forEach((e) => {
-                                            e.checked &&
-                                                t
-                                                .row($(e.closest("tbody tr")))
-                                                .remove()
-                                                .draw();
-                                        });
-                                        e.querySelectorAll(
-                                            '[type="checkbox"]',
-                                        )[0].checked = !1;
-                                    }) :
-                                    "cancel" === n.dismiss &&
-                                    Swal.fire({
-                                        text: "Selected customers was not deleted.",
-                                        icon: "error",
-                                        buttonsStyling: !1,
-                                        confirmButtonText: "Ok, got it!",
-                                        customClass: {
-                                            confirmButton: "btn fw-bold btn-primary",
-                                        },
-                                    });
-                            });
-                        });
-                };
-            const c = () => {
-                const t = document.querySelector('[data-table-toolbar="base"]'),
-                    o = document.querySelector(
-                        '[data-table-toolbar="selected"]',
-                    ),
-                    n = document.querySelector(
-                        '[data-table-select="selected_count"]',
-                    ),
-                    c = e.querySelectorAll('tbody [type="checkbox"]');
-                let r = !1,
-                    l = 0;
-                c.forEach((t) => {
-                        t.checked && ((r = !0), l++);
-                    }),
-                    r ?
-                    ((n.innerHTML = l),
-                        t.classList.add("d-none"),
-                        o.classList.remove("d-none")) :
-                    (t.classList.remove("d-none"), o.classList.add("d-none"));
-            };
-            return {
-                init: function() {
-                    (e = document.querySelector("#kt_table")) &&
-                    (e.querySelectorAll("tbody tr").forEach((t) => {
-                            const e = t.querySelectorAll("td"),
-                                o = moment(e[2].innerHTML, "DD MMM YYYY, LT").format();
-                            e[2].setAttribute("data-order", o);
-                        }),
-                        (t = $(e).DataTable({
-                            info: !1,
-                            order: [],
-                            columnDefs: [{
-                                    orderable: !1,
-                                    targets: 0
-                                },
-                                {
-                                    orderable: !1,
-                                    targets: 4
-                                },
-                            ],
-                        })).on("draw", function() {
-                            n(), o(), c();
-                        }),
-                        n(),
-                        document
-                        .querySelector('[data-table-filter="search"]')
-                        .addEventListener("keyup", function(e) {
-                            t.search(e.target.value).draw();
-                        }),
-                        o(),
-                        (() => {
-                            const e = document.querySelector(
-                                '[data-kt-status-filter="status"]',
-                            );
-                            $(e).on("change", (e) => {
-                                let o = e.target.value;
-                                "all" === o && (o = ""), t.column(3).search(o).draw();
-                            });
-                        })());
-                },
-            };
-        })();
-        KTUtil.onDOMContentLoaded(function() {
-            List.init();
-        });
     </script>
 @endsection

@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Master\SifatController;
 use App\Http\Controllers\Master\SubjectTypeController;
 use App\Http\Controllers\Master\UrgensiController;
+use App\Http\Controllers\MonitoringPimpinan\Monitoring\SubjectController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -24,15 +25,21 @@ Route::get('/', [LoginController::class, 'showLoginForm']);
 
 Route::post('custom-login', [LoginController::class, 'customLogin'])->name('login.custom');
 
-Route::get('/logout', [LoginController::class, 'logout']);
-
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::group(['middleware' => ['auth']], function (): void {
+    Route::get('/logout', [LoginController::class, 'logout']);
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-//MENU MASTER
-Route::prefix('master')->group(function (): void {
-    Route::resource('sifat', SifatController::class);
-    Route::resource('subject-type', SubjectTypeController::class);
-    Route::resource('urgensi', UrgensiController::class);
+    //MONITORING PIMPINAN
+    Route::prefix('monitoring-pimpinan')->group(function (): void {
+        Route::resource('monitoring/subject', SubjectController::class);
+    });
+
+    //MENU MASTER
+    Route::prefix('master')->group(function (): void {
+        Route::resource('sifat', SifatController::class);
+        Route::resource('subject-type', SubjectTypeController::class);
+        Route::resource('urgensi', UrgensiController::class);
+    });
 });
