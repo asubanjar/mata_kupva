@@ -127,12 +127,13 @@ License: For each use you must have a valid license purchased only from above li
                                                 <!--end::Avatar-->
                                                 <!--begin::Username-->
                                                 <div class="d-flex flex-column">
-                                                    <div class="fw-bold d-flex align-items-center fs-5">Robert Fox
+                                                    <div class="fw-bold d-flex align-items-center fs-5">
+                                                        {{ Auth::user()->name }}
                                                         <span
                                                             class="badge badge-light-success fw-bold fs-8 ms-2 px-2 py-1">Pro</span>
                                                     </div>
                                                     <a href="#"
-                                                        class="fw-semibold text-muted text-hover-primary fs-7">robert@kt.com</a>
+                                                        class="fw-semibold text-muted text-hover-primary fs-7">@ppatk.go.id</a>
                                                 </div>
                                                 <!--end::Username-->
                                             </div>

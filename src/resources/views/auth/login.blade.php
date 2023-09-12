@@ -75,13 +75,13 @@
                     <!--begin::Content-->
                     <div class="d-flex flex-column flex-center pb-lg-10 w-100 p-10 pb-0">
                         <!--begin::Image-->
-                        <img class="theme-light-show mw-100 w-150px w-lg-300px mb-lg-20 mx-auto mb-10"
-                            src="assets/media/auth/agency.png" alt="" />
+                        <img class="theme-light-show mw-100 w-200px w-lg-400px mb-lg-20 mx-auto mb-10"
+                            src="assets/media/logos/dinamis-red.png" alt="" />
                         <img class="theme-dark-show mw-100 w-150px w-lg-300px mb-lg-20 mx-auto mb-10"
                             src="assets/media/auth/agency-dark.png" alt="" />
                         <!--end::Image-->
                         <!--begin::Title-->
-                        <h1 class="fs-2qx fw-bold mb-7 text-center text-gray-800">Efisien dan Produktif</h1>
+                        <h1 class="fs-2qx fw-bold mb-7 text-center text-gray-800">Digital Monitoring dan Kearsipan</h1>
                         <!--end::Title-->
                         <!--begin::Text-->
                         <div class="fs-base fw-semibold text-center text-gray-600">In this kind of post,
