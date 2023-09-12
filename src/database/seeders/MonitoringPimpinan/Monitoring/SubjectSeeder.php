@@ -13,21 +13,21 @@ class SubjectSeeder extends Seeder
      */
     public function run(): void
     {
-        $subject_types = [
+        $subjects = [
             [
-                'name'            => 'Note Rakin 2021',
-                'comment'         => 'Rapat Pimpinan Terbatas',
-                'opened'          => now(),
+                'name'            => 'Note Taking 2021',
+                'comment'         => 'Catatan kepala PPATK',
+                'opened'          => '2021-09-11 00:00:00.000',
                 'subject_type_id' => SubjectType::where('code_name', 'NOTETAKING')->first()->id,
             ],
         ];
 
-        foreach ($subject_types as $subject_type) {
+        foreach ($subjects as $subject) {
             Subject::create([
-                'name'            => $subject_type['name'],
-                'comment'         => $subject_type['comment'],
-                'opened'          => $subject_type['opened'],
-                'subject_type_id' => $subject_type['subject_type_id'],
+                'name'            => $subject['name'],
+                'comment'         => $subject['comment'],
+                'opened'          => $subject['opened'],
+                'subject_type_id' => $subject['subject_type_id'],
             ]);
         }
     }

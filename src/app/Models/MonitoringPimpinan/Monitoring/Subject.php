@@ -31,4 +31,9 @@ class Subject extends Model
     {
         return $this->belongsTo(SubjectType::class);
     }
+
+    public function subjectDetails(): Relations\HasMany
+    {
+        return $this->hasMany(SubjectDetail::class);
+    }
 }

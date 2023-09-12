@@ -11,21 +11,22 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('subjects', function (Blueprint $table): void {
+        Schema::create('subject_details', function (Blueprint $table): void {
             $table->id();
+            $table->unsignedBigInteger('subject_id');
             $table->string('name');
             $table->text('comment')->nullable();
             $table->text('closed_comment')->nullable();
-            $table->dateTime('opened');
-            $table->dateTime('closed')->nullable();
-            $table->unsignedBigInteger('subject_type_id');
+            $table->dateTime('start');
+            $table->dateTime('end')->nullable();
+            $table->boolean('is_done')->default(false);
             $table->boolean('active')->default(true);
             $table->softDeletes();
             $table->timestamps();
 
-            $table->foreign('subject_type_id')
+            $table->foreign('subject_id')
             ->references('id')
-            ->on('subject_types')
+            ->on('subjects')
             ->onDelete('cascade');
         });
     }
@@ -35,6 +36,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('subjects');
+        Schema::dropIfExists('subject_details');
     }
 };

@@ -237,7 +237,7 @@ License: For each use you must have a valid license purchased only from above li
             <!--end::Page-->
             <!--begin::Success Toast-->
             @if (session('success'))
-                <div class="position-fixed z-index-3 end-0 top-0 px-10 py-20">
+                <div class="position-fixed z-index-3 end-0 px-10 py-20" style="top: 2%">
                     <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
                         <div class="toast-header">
                             <i class="ki-duotone ki-abstract-23 fs-2 text-success me-3"><span

@@ -187,7 +187,7 @@
                                         <span class="path3"></span>
                                     </i>
                                 </span>
-                                <span class="menu-title">Monitoring</span>
+                                <span class="menu-title">Agenda</span>
                                 <span class="menu-arrow"></span>
                             </span>
                             <!--end:Menu link-->
@@ -200,7 +200,7 @@
                                         <span class="menu-bullet">
                                             <span class="bullet bullet-dot"></span>
                                         </span>
-                                        <span class="menu-title">Overview</span>
+                                        <span class="menu-title">Daftar</span>
                                     </a>
                                     <!--end:Menu link-->
                                 </div>
