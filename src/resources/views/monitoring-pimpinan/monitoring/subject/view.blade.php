@@ -37,7 +37,7 @@
                         </li>
                         <!--end::Item-->
                         <!--begin::Item-->
-                        <li class="breadcrumb-item text-muted"><a href="#">Detail</a></li>
+                        <li class="breadcrumb-item text-muted"><a href="#">Detail Subjek</a></li>
                         <!--end::Item-->
                     </ul>
                     <!--end::Breadcrumb-->
@@ -363,57 +363,6 @@
                     <!--end::Col-->
                     <!--begin::Col-->
                     <div class="col-xl-6">
-                        <!--begin::Chart widget 36-->
-                        <div class="card card-flush h-lg-100 overflow-hidden">
-                            <!--begin::Header-->
-                            <div class="card-header pt-5">
-                                <!--begin::Title-->
-                                <h3 class="card-title align-items-start flex-column">
-                                    <span class="card-label fw-bold text-dark">Performance</span>
-                                    <span class="fw-semibold fs-6 mt-1 text-gray-400">1,046 Inbound Calls today</span>
-                                </h3>
-                                <!--end::Title-->
-                                <!--begin::Toolbar-->
-                                <div class="card-toolbar">
-                                    <!--begin::Daterangepicker(defined in src/js/layout/app.js)-->
-                                    <div data-kt-daterangepicker="true" data-kt-daterangepicker-opens="left"
-                                        data-kt-daterangepicker-range="today"
-                                        class="btn btn-sm btn-light d-flex align-items-center px-4">
-                                        <!--begin::Display range-->
-                                        <div class="fw-bold text-gray-600">Loading date range...</div>
-                                        <!--end::Display range-->
-                                        <i class="ki-duotone ki-calendar-8 fs-1 me-0 ms-2">
-                                            <span class="path1"></span>
-                                            <span class="path2"></span>
-                                            <span class="path3"></span>
-                                            <span class="path4"></span>
-                                            <span class="path5"></span>
-                                            <span class="path6"></span>
-                                        </i>
-                                    </div>
-                                    <!--end::Daterangepicker-->
-                                </div>
-                                <!--end::Toolbar-->
-                            </div>
-                            <!--end::Header-->
-                            <!--begin::Card body-->
-                            <div class="card-body d-flex align-items-end p-0">
-                                <!--begin::Chart-->
-                                <div id="kt_charts_widget_36" class="min-h-auto w-100 pe-6 ps-4" style="height: 300px">
-                                </div>
-                                <!--end::Chart-->
-                            </div>
-                            <!--end::Card body-->
-                        </div>
-                        <!--end::Chart widget 36-->
-                    </div>
-                    <!--end::Col-->
-                </div>
-                <!--end::Row-->
-                <!--begin::Row-->
-                <div class="row g-5 g-xl-10 mb-xl-10 mb-5">
-                    <!--begin::Col-->
-                    <div class="col-xl-6">
                         <!--begin::Card widget 19-->
                         <div class="card card-flush h-lg-100">
                             <!--begin::Header-->
@@ -508,107 +457,6 @@
                         <!--end::Card widget 19-->
                     </div>
                     <!--end::Col-->
-                    <!--begin::Col-->
-                    <div class="col-xl-6">
-                        <!--begin::Engage widget 9-->
-                        <div class="card h-lg-100"
-                            style="background: linear-gradient(112.14deg, #FF8A00 0%, #E96922 100%)">
-                            <!--begin::Body-->
-                            <div class="card-body">
-                                <!--begin::Row-->
-                                <div class="row align-items-center">
-                                    <!--begin::Col-->
-                                    <div class="col-sm-7 mb-sm-0 mb-5 pe-0">
-                                        <!--begin::Wrapper-->
-                                        <div
-                                            class="d-flex justify-content-between h-100 flex-column pt-xl-5 pb-xl-2 ps-xl-7">
-                                            <!--begin::Container-->
-                                            <div class="mb-7">
-                                                <!--begin::Title-->
-                                                <div class="mb-6">
-                                                    <h3 class="fs-2x fw-semibold text-white">Upgrade Your Plan</h3>
-                                                    <span class="fw-semibold text-white opacity-75">Flat cartoony and
-                                                        illustrations with vivid color</span>
-                                                </div>
-                                                <!--end::Title-->
-                                                <!--begin::Items-->
-                                                <div class="d-flex align-items-center d-grid flex-wrap gap-2">
-                                                    <!--begin::Item-->
-                                                    <div class="d-flex align-items-center me-xl-13 me-5">
-                                                        <!--begin::Symbol-->
-                                                        <div class="symbol symbol-30px symbol-circle me-3">
-                                                            <span class="symbol-label"
-                                                                style="background: rgba(255, 255, 255, 0.15);">
-                                                                <i class="ki-duotone ki-abstract-41 fs-4 text-white">
-                                                                    <span class="path1"></span>
-                                                                    <span class="path2"></span>
-                                                                </i>
-                                                            </span>
-                                                        </div>
-                                                        <!--end::Symbol-->
-                                                        <!--begin::Info-->
-                                                        <div class="m-0">
-                                                            <a href="../../demo1/dist/pages/user-profile/projects.html"
-                                                                class="fs-8 text-white text-opacity-75">Projects</a>
-                                                            <span class="fw-bold fs-7 d-block text-white">Up to 500</span>
-                                                        </div>
-                                                        <!--end::Info-->
-                                                    </div>
-                                                    <!--end::Item-->
-                                                    <!--begin::Item-->
-                                                    <div class="d-flex align-items-center">
-                                                        <!--begin::Symbol-->
-                                                        <div class="symbol symbol-30px symbol-circle me-3">
-                                                            <span class="symbol-label"
-                                                                style="background: rgba(255, 255, 255, 0.15);">
-                                                                <i class="ki-duotone ki-abstract-26 fs-4 text-white">
-                                                                    <span class="path1"></span>
-                                                                    <span class="path2"></span>
-                                                                </i>
-                                                            </span>
-                                                        </div>
-                                                        <!--end::Symbol-->
-                                                        <!--begin::Info-->
-                                                        <div class="m-0">
-                                                            <a href="../../demo1/dist/apps/user-management/users/list.html"
-                                                                class="fs-8 text-white text-opacity-75">Tasks</a>
-                                                            <span class="fw-bold fs-7 d-block text-white">Unlimited</span>
-                                                        </div>
-                                                        <!--end::Info-->
-                                                    </div>
-                                                    <!--end::Item-->
-                                                </div>
-                                                <!--end::Items-->
-                                            </div>
-                                            <!--end::Container-->
-                                            <!--begin::Action-->
-                                            <div class="m-0">
-                                                <a href="#"
-                                                    class="btn btn-color-white bg-opacity-15 bg-hover-opacity-25 fw-semibold bg-white"
-                                                    data-bs-toggle="modal" data-bs-target="#kt_modal_upgrade_plan">Upgrade
-                                                    Plan</a>
-                                            </div>
-                                            <!--begin::Action-->
-                                        </div>
-                                        <!--end::Wrapper-->
-                                    </div>
-                                    <!--begin::Col-->
-                                    <!--begin::Col-->
-                                    <div class="col-sm-5">
-                                        <!--begin::Illustration-->
-                                        <img src="assets/media/svg/illustrations/easy/7.svg"
-                                            class="h-200px h-lg-250px my-n6" alt="" />
-                                        <!--end::Illustration-->
-                                    </div>
-                                    <!--begin::Col-->
-                                </div>
-                                <!--begin::Row-->
-                            </div>
-                            <!--end::Body-->
-                        </div>
-                        <!--end::Engage widget 9-->
-                    </div>
-                    <!--end::Col-->
                 </div>
                 <!--end::Row-->
                 <!--begin::Row-->
@@ -694,7 +542,6 @@
                                                 <th class="min-w-125px">Deskripsi</th>
                                                 <th class="min-w-125px">Target</th>
                                                 <th class="min-w-125px">Selesai</th>
-                                                <th class="min-w-125px">Keterangan Aksi</th>
                                                 <th class="min-w-125px">Status</th>
                                                 <th class="min-w-70px text-end">Aksi</th>
                                             </tr>
@@ -721,7 +568,6 @@
                                                             <div class="badge badge-light-danger">Dalam Proses</div>
                                                         @endif
                                                     </td>
-                                                    <td>{{ $subject_detail->action_comment }}</td>
                                                     <td>
                                                         @if ($subject_detail->active === true)
                                                             <div class="badge badge-light-success">Aktif</div>
@@ -740,16 +586,9 @@
                                                             data-kt-menu="true">
                                                             <!--begin::Menu item-->
                                                             <div class="menu-item px-3">
-                                                                <a href="{{ url('/monitoring-pimpinan/monitoring/subject/' . $subject->id) }}"
-                                                                    data-toggle="tooltip" data-original-title="Edit"
+                                                                <a href="{{ url('/monitoring-pimpinan/monitoring/subject-detail/' . $subject_detail->id) }}"
+                                                                    data-toggle="tooltip" data-original-title="Lihat"
                                                                     class="menu-link px-3">Lihat</a>
-                                                            </div>
-                                                            <div class="menu-item px-3">
-                                                                <a href="javascript:void(0)" data-toggle="tooltip"
-                                                                    data-id="{{ $subject_detail->id }}"
-                                                                    data-csrf="{{ csrf_token() }}"
-                                                                    data-original-title="Edit"
-                                                                    class="menu-link edit-subject-detail px-3">Ubah</a>
                                                             </div>
                                                             <!--end::Menu item-->
                                                             <!--begin::Menu item-->
@@ -779,91 +618,6 @@
                     <!--end::Content-->
                 </div>
                 <!--end::Row-->
-
-                <!--begin::Modals-->
-                <!--begin::Modal - Sifat - Edit-->
-                <div class="modal fade" tabindex="-1" id="modal_edit">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h3 class="modal-title">Ubah Subjek Detail</h3>
-                                <!--begin::Close-->
-                                <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal"
-                                    aria-label="Close">
-                                    <i class="ki-duotone ki-cross fs-1"><span class="path1"></span><span
-                                            class="path2"></span></i>
-                                </div>
-                                <!--end::Close-->
-                            </div>
-                            <div class="modal-body">
-                                <input type="hidden" id="csrf" value="{{ csrf_token() }}">
-                                <input type="hidden" id="id">
-                                <div class="mb-10">
-                                    <label for="name" class="required form-label">Nama</label>
-                                    <input type="text" class="form-control form-control-solid" id="name"
-                                        name="name" placeholder="Nama kegiatan / subjek" value="" required />
-                                </div>
-                                <div class="fv-row mb-10">
-                                    <label for="exampleFormControlInput1" class="form-label">Keterangan</label>
-                                    <textarea class="form-control form-control-solid" id="comment" name="comment"></textarea>
-                                </div>
-                                <div class="fv-row mb-10">
-                                    <label for="exampleFormControlInput1" class="required form-label">Tanggal
-                                        Mulai</label>
-                                    <div class="fv-row input-group mb-10" id="kt_td_picker_date_only"
-                                        data-td-target-input="nearest" data-td-target-toggle="nearest">
-                                        <input type="text" class="form-control form-control-solid"
-                                            data-td-target="#kt_td_picker_date_only" id="start" name="start" />
-                                        <span class="input-group-text" data-td-target="#kt_td_picker_date_only"
-                                            data-td-toggle="datetimepicker">
-                                            <i class="ki-duotone ki-calendar fs-2"><span class="path1"></span><span
-                                                    class="path2"></span></i>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="fv-row mb-10">
-                                    <label for="exampleFormControlInput1" class="required form-label">Target Tanggal
-                                        Selesai</label>
-                                    <div class="fv-row input-group mb-10" id="kt_td_picker_date_only"
-                                        data-td-target-input="nearest" data-td-target-toggle="nearest">
-                                        <input type="text" class="form-control form-control-solid"
-                                            data-td-target="#kt_td_picker_date_only" id="end" name="end" />
-                                        <span class="input-group-text" data-td-target="#kt_td_picker_date_only"
-                                            data-td-toggle="datetimepicker">
-                                            <i class="ki-duotone ki-calendar fs-2"><span class="path1"></span><span
-                                                    class="path2"></span></i>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="mb-10">
-                                    <input class="form-check-input" type="checkbox" value="" id="active"
-                                        name="active" checked />
-                                    <label class="form-check-label" for="active">
-                                        Aktif
-                                    </label>
-                                </div>
-                                <div class="fv-row mb-10">
-                                    <label for="exampleFormControlInput1" class="form-label">Keterangan Aksi</label>
-                                    <textarea class="form-control form-control-solid" id="action_comment" name="action_comment"></textarea>
-                                </div>
-                                <div class="mb-10">
-                                    <input class="form-check-input" type="checkbox" value="" id="is_done"
-                                        name="is_done" checked />
-                                    <label class="form-check-label" for="is_done">
-                                        Selesai
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary" id="update">Save changes</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--end::Modal - Sifat - Edit-->
-                <!--end::Modals-->
             </div>
             <!--end::Content container-->
         </div>
@@ -873,86 +627,6 @@
 @endsection
 
 @section('script')
-    <script>
-        new tempusDominus.TempusDominus(document.getElementById("kt_td_picker_date_only"), {
-            localization: {
-
-            }
-        });
-    </script>
-    <script type="text/javascript">
-        $('body').on('click', '.edit-subject-detail', function() {
-            var id = $(this).data('id');
-            $.get("{{ url('monitoring-pimpinan/monitoring/subject-detail') }}" + '/' + id + '/edit', function(
-                data) {
-                var date = new Date(data.start);
-                var start_format = ((
-                        date.getDate() > 9) ? date.getDate() : ('0' + date.getDate())) + '/' + ((date
-                        .getMonth() > 8) ? (date.getMonth() + 1) : ('0' + (date.getMonth() +
-                        1))) + '/' + date
-                    .getFullYear()
-
-                var date = new Date(data.end);
-                var end_format = ((
-                        date.getDate() > 9) ? date.getDate() : ('0' + date.getDate())) + '/' + ((date
-                        .getMonth() > 8) ? (date.getMonth() + 1) : ('0' + (date.getMonth() +
-                        1))) + '/' + date
-                    .getFullYear()
-                $('#modelHeading').html("Edit Team");
-                $('#editdata').val("edit-subject-detail");
-                $('#modal_edit').modal('show');
-                $('#id').val(data.id);
-                $('#name').val(data.name);
-                $('#comment').val(data.comment);
-                $('#start').val(data.start);
-                $('#end').val(end_format);
-                $('#active').prop('checked', data.active);
-                $('#action_comment').val(data.action_comment);
-                $('#is_done').prop('checked', data.is_done);
-            })
-
-        });
-
-        $('#update').click(function(e) {
-            e.preventDefault();
-
-            //define variable
-            let id = $('#id').val();
-            let name = $('#name').val();
-            let comment = $('#comment').val();
-            let start = $('#start').val();
-            let end = $('#end').val();
-            let action_comment = $('#action_comment').val();
-            let is_done = document.getElementById('is_done').checked;
-            let active = document.getElementById('active').checked;
-            let token = $('#csrf').val();
-
-            //ajax
-            $.ajax({
-
-                url: `/monitoring-pimpinan/monitoring/subject-detail/${id}`,
-                type: "PUT",
-                cache: false,
-                data: {
-                    "name": name,
-                    "comment": comment,
-                    "start": start,
-                    "end": end,
-                    "action_comment": comment,
-                    "is_done": is_done,
-                    "active": active,
-                    "_token": token
-                },
-                success: function(response) {
-                    // window.location.reload();
-                },
-                error: function(error) {
-                    // window.location.reload();
-                }
-            });
-        });
-    </script>
-
     <script>
         "use strict";
         var List = (function() {

@@ -32,16 +32,23 @@ class SubjectDetailController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id): void
+    public function show(SubjectDetail $subject_detail)
     {
+        $interval = $subject_detail->start->diff($subject_detail->end);
+
+        $diff_days = $interval->format('%a');
+
+        return view('monitoring-pimpinan/monitoring/subject-detail/view', compact(
+            'subject_detail',
+            'diff_days'
+        ));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(SubjectDetail $subject_detail)
+    public function edit(SubjectDetail $subject_detail): void
     {
-        return response()->json($subject_detail);
     }
 
     /**
@@ -49,13 +56,11 @@ class SubjectDetailController extends Controller
      */
     public function update(Request $request, SubjectDetail $subject_detail)
     {
-        // dd($request->start);
-
         $request->validate([
             'name'    => 'required',
             'comment' => 'required',
             'start'   => 'required|date',
-            // 'end'     => 'required|date',
+            'end'     => 'required|date',
         ]);
 
         if ($request->is_done === 'true') {

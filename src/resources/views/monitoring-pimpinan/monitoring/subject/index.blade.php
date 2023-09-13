@@ -254,13 +254,8 @@
                                                 <!--begin::Menu item-->
                                                 <div class="menu-item px-3">
                                                     <a href="{{ url('/monitoring-pimpinan/monitoring/subject/' . $subject->id) }}"
-                                                        data-toggle="tooltip" data-original-title="Edit"
+                                                        data-toggle="tooltip" data-original-title="Lihat"
                                                         class="menu-link px-3">Lihat</a>
-                                                </div>
-                                                <div class="menu-item px-3">
-                                                    <a href="javascript:void(0)" data-toggle="tooltip"
-                                                        data-id="{{ $subject->id }}" data-csrf="{{ csrf_token() }}"
-                                                        data-original-title="Edit" class="menu-link px-3">Ubah</a>
                                                 </div>
                                                 <!--end::Menu item-->
                                                 <!--begin::Menu item-->
