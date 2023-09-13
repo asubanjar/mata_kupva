@@ -13,15 +13,17 @@ class SubjectDetail extends Model
     protected $casts = [
         'active'  => 'boolean',
         'end'     => 'datetime',
+        'finish'  => 'datetime',
         'is_done' => 'boolean',
         'start'   => 'datetime',
     ];
 
     protected $fillable = [
+        'action_comment',
         'active',
-        'closed_comment',
         'comment',
         'end',
+        'finish',
         'is_done',
         'name',
         'start',

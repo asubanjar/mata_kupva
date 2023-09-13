@@ -27,7 +27,8 @@
                         <!--end::Item-->
                         <!--begin::Item-->
                         <li class="breadcrumb-item text-muted">
-                            <a href="{{ url('/monitoring-pimpinan/monitoring/subject') }}">Daftar</a>
+                            <a href="{{ url('/monitoring-pimpinan/monitoring/subject') }}"
+                                class="text-muted text-hover-primary">Daftar</a>
                         </li>
                         <!--end::Item-->
                         <!--begin::Item-->
@@ -36,7 +37,7 @@
                         </li>
                         <!--end::Item-->
                         <!--begin::Item-->
-                        <li class="breadcrumb-item text-muted">Detail</li>
+                        <li class="breadcrumb-item text-muted"><a href="#">Detail</a></li>
                         <!--end::Item-->
                     </ul>
                     <!--end::Breadcrumb-->
@@ -691,8 +692,9 @@
                                                 </th>
                                                 <th class="min-w-125px">Nama</th>
                                                 <th class="min-w-125px">Deskripsi</th>
-                                                <th class="min-w-125px">Tanggal Dimulai</th>
-                                                <th class="min-w-125px">Tanggal Selesai</th>
+                                                <th class="min-w-125px">Target</th>
+                                                <th class="min-w-125px">Selesai</th>
+                                                <th class="min-w-125px">Keterangan Aksi</th>
                                                 <th class="min-w-125px">Status</th>
                                                 <th class="min-w-70px text-end">Aksi</th>
                                             </tr>
@@ -709,8 +711,17 @@
                                                     </td>
                                                     <td>{{ $subject_detail->name }}</td>
                                                     <td>{{ $subject_detail->comment }}</td>
-                                                    <td>{{ $subject_detail->start }}</td>
-                                                    <td>{{ $subject_detail->end }}</td>
+                                                    <td>{{ $subject_detail->start->format('d/m/Y') }} s/d
+                                                        {{ $subject_detail->end->format('d/m/Y') }}</td>
+                                                    <td>
+                                                        @if ($subject_detail->is_done === true)
+                                                            <div class="badge badge-light-success">
+                                                                {{ $subject_detail->finish }}</div>
+                                                        @else
+                                                            <div class="badge badge-light-danger">Dalam Proses</div>
+                                                        @endif
+                                                    </td>
+                                                    <td>{{ $subject_detail->action_comment }}</td>
                                                     <td>
                                                         @if ($subject_detail->active === true)
                                                             <div class="badge badge-light-success">Aktif</div>
@@ -735,10 +746,10 @@
                                                             </div>
                                                             <div class="menu-item px-3">
                                                                 <a href="javascript:void(0)" data-toggle="tooltip"
-                                                                    data-id="{{ $subject->id }}"
+                                                                    data-id="{{ $subject_detail->id }}"
                                                                     data-csrf="{{ csrf_token() }}"
                                                                     data-original-title="Edit"
-                                                                    class="menu-link px-3">Ubah</a>
+                                                                    class="menu-link edit-subject-detail px-3">Ubah</a>
                                                             </div>
                                                             <!--end::Menu item-->
                                                             <!--begin::Menu item-->
@@ -768,10 +779,366 @@
                     <!--end::Content-->
                 </div>
                 <!--end::Row-->
+
+                <!--begin::Modals-->
+                <!--begin::Modal - Sifat - Edit-->
+                <div class="modal fade" tabindex="-1" id="modal_edit">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 class="modal-title">Ubah Subjek Detail</h3>
+                                <!--begin::Close-->
+                                <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal"
+                                    aria-label="Close">
+                                    <i class="ki-duotone ki-cross fs-1"><span class="path1"></span><span
+                                            class="path2"></span></i>
+                                </div>
+                                <!--end::Close-->
+                            </div>
+                            <div class="modal-body">
+                                <input type="hidden" id="csrf" value="{{ csrf_token() }}">
+                                <input type="hidden" id="id">
+                                <div class="mb-10">
+                                    <label for="name" class="required form-label">Nama</label>
+                                    <input type="text" class="form-control form-control-solid" id="name"
+                                        name="name" placeholder="Nama kegiatan / subjek" value="" required />
+                                </div>
+                                <div class="fv-row mb-10">
+                                    <label for="exampleFormControlInput1" class="form-label">Keterangan</label>
+                                    <textarea class="form-control form-control-solid" id="comment" name="comment"></textarea>
+                                </div>
+                                <div class="fv-row mb-10">
+                                    <label for="exampleFormControlInput1" class="required form-label">Tanggal
+                                        Mulai</label>
+                                    <div class="fv-row input-group mb-10" id="kt_td_picker_date_only"
+                                        data-td-target-input="nearest" data-td-target-toggle="nearest">
+                                        <input type="text" class="form-control form-control-solid"
+                                            data-td-target="#kt_td_picker_date_only" id="start" name="start" />
+                                        <span class="input-group-text" data-td-target="#kt_td_picker_date_only"
+                                            data-td-toggle="datetimepicker">
+                                            <i class="ki-duotone ki-calendar fs-2"><span class="path1"></span><span
+                                                    class="path2"></span></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="fv-row mb-10">
+                                    <label for="exampleFormControlInput1" class="required form-label">Target Tanggal
+                                        Selesai</label>
+                                    <div class="fv-row input-group mb-10" id="kt_td_picker_date_only"
+                                        data-td-target-input="nearest" data-td-target-toggle="nearest">
+                                        <input type="text" class="form-control form-control-solid"
+                                            data-td-target="#kt_td_picker_date_only" id="end" name="end" />
+                                        <span class="input-group-text" data-td-target="#kt_td_picker_date_only"
+                                            data-td-toggle="datetimepicker">
+                                            <i class="ki-duotone ki-calendar fs-2"><span class="path1"></span><span
+                                                    class="path2"></span></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="mb-10">
+                                    <input class="form-check-input" type="checkbox" value="" id="active"
+                                        name="active" checked />
+                                    <label class="form-check-label" for="active">
+                                        Aktif
+                                    </label>
+                                </div>
+                                <div class="fv-row mb-10">
+                                    <label for="exampleFormControlInput1" class="form-label">Keterangan Aksi</label>
+                                    <textarea class="form-control form-control-solid" id="action_comment" name="action_comment"></textarea>
+                                </div>
+                                <div class="mb-10">
+                                    <input class="form-check-input" type="checkbox" value="" id="is_done"
+                                        name="is_done" checked />
+                                    <label class="form-check-label" for="is_done">
+                                        Selesai
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary" id="update">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end::Modal - Sifat - Edit-->
+                <!--end::Modals-->
             </div>
             <!--end::Content container-->
         </div>
         <!--end::Content-->
     </div>
     <!--end::Content wrapper-->
+@endsection
+
+@section('script')
+    <script>
+        new tempusDominus.TempusDominus(document.getElementById("kt_td_picker_date_only"), {
+            localization: {
+
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        $('body').on('click', '.edit-subject-detail', function() {
+            var id = $(this).data('id');
+            $.get("{{ url('monitoring-pimpinan/monitoring/subject-detail') }}" + '/' + id + '/edit', function(
+                data) {
+                var date = new Date(data.start);
+                var start_format = ((
+                        date.getDate() > 9) ? date.getDate() : ('0' + date.getDate())) + '/' + ((date
+                        .getMonth() > 8) ? (date.getMonth() + 1) : ('0' + (date.getMonth() +
+                        1))) + '/' + date
+                    .getFullYear()
+
+                var date = new Date(data.end);
+                var end_format = ((
+                        date.getDate() > 9) ? date.getDate() : ('0' + date.getDate())) + '/' + ((date
+                        .getMonth() > 8) ? (date.getMonth() + 1) : ('0' + (date.getMonth() +
+                        1))) + '/' + date
+                    .getFullYear()
+                $('#modelHeading').html("Edit Team");
+                $('#editdata').val("edit-subject-detail");
+                $('#modal_edit').modal('show');
+                $('#id').val(data.id);
+                $('#name').val(data.name);
+                $('#comment').val(data.comment);
+                $('#start').val(data.start);
+                $('#end').val(end_format);
+                $('#active').prop('checked', data.active);
+                $('#action_comment').val(data.action_comment);
+                $('#is_done').prop('checked', data.is_done);
+            })
+
+        });
+
+        $('#update').click(function(e) {
+            e.preventDefault();
+
+            //define variable
+            let id = $('#id').val();
+            let name = $('#name').val();
+            let comment = $('#comment').val();
+            let start = $('#start').val();
+            let end = $('#end').val();
+            let action_comment = $('#action_comment').val();
+            let is_done = document.getElementById('is_done').checked;
+            let active = document.getElementById('active').checked;
+            let token = $('#csrf').val();
+
+            //ajax
+            $.ajax({
+
+                url: `/monitoring-pimpinan/monitoring/subject-detail/${id}`,
+                type: "PUT",
+                cache: false,
+                data: {
+                    "name": name,
+                    "comment": comment,
+                    "start": start,
+                    "end": end,
+                    "action_comment": comment,
+                    "is_done": is_done,
+                    "active": active,
+                    "_token": token
+                },
+                success: function(response) {
+                    // window.location.reload();
+                },
+                error: function(error) {
+                    // window.location.reload();
+                }
+            });
+        });
+    </script>
+
+    <script>
+        "use strict";
+        var List = (function() {
+            var t,
+                e,
+                o = () => {
+                    e.querySelectorAll('[data-table-filter="delete_row"]').forEach(
+                        (e) => {
+                            e.addEventListener("click", function(e) {
+                                e.preventDefault();
+                                const o = e.target.closest("tr"),
+                                    n = o.querySelectorAll("td")[2].innerText;
+                                let sub_id = $(this).data("id");
+                                let token = $(this).data("csrf");
+
+                                Swal.fire({
+                                    text: "Apakah anda yakin akan menghapus " + n + " ?",
+                                    icon: "warning",
+                                    showCancelButton: !0,
+                                    buttonsStyling: !1,
+                                    confirmButtonText: "Ya, hapus!",
+                                    cancelButtonText: "Tidak, batalkan",
+                                    customClass: {
+                                        confirmButton: "btn fw-bold btn-danger",
+                                        cancelButton: "btn fw-bold btn-active-light-primary",
+                                    },
+                                }).then(function(e) {
+                                    e.value ?
+                                        Swal.fire({
+                                            text: "Kamu telah menghapus " + n + "!.",
+                                            icon: "success",
+                                            buttonsStyling: !1,
+                                            confirmButtonText: "Baik",
+                                            customClass: {
+                                                confirmButton: "btn fw-bold btn-primary",
+                                            },
+                                        }).then(function() {
+                                            $.ajax({
+                                                url: `/monitoring-pimpinan/monitoring/subject/${sub_id}`,
+                                                type: "DELETE",
+                                                cache: false,
+                                                data: {
+                                                    _token: token,
+                                                },
+                                            });
+
+                                            window.location.reload();
+                                        }) :
+                                        "cancel" === e.dismiss &&
+                                        Swal.fire({
+                                            text: n + " was not deleted.",
+                                            icon: "error",
+                                            buttonsStyling: !1,
+                                            confirmButtonText: "Ok, got it!",
+                                            customClass: {
+                                                confirmButton: "btn fw-bold btn-primary",
+                                            },
+                                        });
+                                });
+                            });
+                        },
+                    );
+                },
+                n = () => {
+                    const o = e.querySelectorAll('[type="checkbox"]'),
+                        n = document.querySelector(
+                            '[data-table-select="delete_selected"]',
+                        );
+                    o.forEach((t) => {
+                            t.addEventListener("click", function() {
+                                setTimeout(function() {
+                                    c();
+                                }, 50);
+                            });
+                        }),
+                        n.addEventListener("click", function() {
+                            Swal.fire({
+                                text: "Are you sure you want to delete selected customers?",
+                                icon: "warning",
+                                showCancelButton: !0,
+                                buttonsStyling: !1,
+                                confirmButtonText: "Yes, delete!",
+                                cancelButtonText: "No, cancel",
+                                customClass: {
+                                    confirmButton: "btn fw-bold btn-danger",
+                                    cancelButton: "btn fw-bold btn-active-light-primary",
+                                },
+                            }).then(function(n) {
+                                n.value ?
+                                    Swal.fire({
+                                        text: "You have deleted all selected customers!.",
+                                        icon: "success",
+                                        buttonsStyling: !1,
+                                        confirmButtonText: "Ok, got it!",
+                                        customClass: {
+                                            confirmButton: "btn fw-bold btn-primary",
+                                        },
+                                    }).then(function() {
+                                        o.forEach((e) => {
+                                            e.checked &&
+                                                t
+                                                .row($(e.closest("tbody tr")))
+                                                .remove()
+                                                .draw();
+                                        });
+                                        e.querySelectorAll(
+                                            '[type="checkbox"]',
+                                        )[0].checked = !1;
+                                    }) :
+                                    "cancel" === n.dismiss &&
+                                    Swal.fire({
+                                        text: "Selected customers was not deleted.",
+                                        icon: "error",
+                                        buttonsStyling: !1,
+                                        confirmButtonText: "Ok, got it!",
+                                        customClass: {
+                                            confirmButton: "btn fw-bold btn-primary",
+                                        },
+                                    });
+                            });
+                        });
+                };
+            const c = () => {
+                const t = document.querySelector('[data-table-toolbar="base"]'),
+                    o = document.querySelector(
+                        '[data-table-toolbar="selected"]',
+                    ),
+                    n = document.querySelector(
+                        '[data-table-select="selected_count"]',
+                    ),
+                    c = e.querySelectorAll('tbody [type="checkbox"]');
+                let r = !1,
+                    l = 0;
+                c.forEach((t) => {
+                        t.checked && ((r = !0), l++);
+                    }),
+                    r ?
+                    ((n.innerHTML = l),
+                        t.classList.add("d-none"),
+                        o.classList.remove("d-none")) :
+                    (t.classList.remove("d-none"), o.classList.add("d-none"));
+            };
+            return {
+                init: function() {
+                    (e = document.querySelector("#kt_table")) &&
+                    (e.querySelectorAll("tbody tr").forEach((t) => {
+                            const e = t.querySelectorAll("td"),
+                                o = moment(e[2].innerHTML, "DD MMM YYYY, LT").format();
+                            e[2].setAttribute("data-order", o);
+                        }),
+                        (t = $(e).DataTable({
+                            info: !1,
+                            order: [],
+                            columnDefs: [{
+                                    orderable: !1,
+                                    targets: 0
+                                },
+                                {
+                                    orderable: !1,
+                                    targets: 4
+                                },
+                            ],
+                        })).on("draw", function() {
+                            n(), o(), c();
+                        }),
+                        n(),
+                        document
+                        .querySelector('[data-table-filter="search"]')
+                        .addEventListener("keyup", function(e) {
+                            t.search(e.target.value).draw();
+                        }),
+                        o(),
+                        (() => {
+                            const e = document.querySelector(
+                                '[data-kt-status-filter="status"]',
+                            );
+                            $(e).on("change", (e) => {
+                                let o = e.target.value;
+                                "all" === o && (o = ""), t.column(6).search(o).draw();
+                            });
+                        })());
+                },
+            };
+        })();
+        KTUtil.onDOMContentLoaded(function() {
+            List.init();
+        });
+    </script>
 @endsection

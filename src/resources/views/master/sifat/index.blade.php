@@ -416,37 +416,6 @@
             })
 
         });
-
-        $('#update').click(function(e) {
-            e.preventDefault();
-
-            //define variable
-            let id = $('#id').val();
-            let name = $('#name').val();
-            let code_name = $('#code_name').val();
-            let active = document.getElementById('active').checked;
-            let token = $('#csrf').val();
-
-            //ajax
-            $.ajax({
-
-                url: `/master/sifat/${id}`,
-                type: "PUT",
-                cache: false,
-                data: {
-                    "name": name,
-                    "code_name": code_name,
-                    "active": active,
-                    "_token": token
-                },
-                success: function(response) {
-                    window.location.reload();
-                },
-                error: function(error) {
-                    window.location.reload();
-                }
-            });
-        });
     </script>
 
     <script>

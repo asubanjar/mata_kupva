@@ -8,6 +8,7 @@ use App\Http\Controllers\Master\SifatController;
 use App\Http\Controllers\Master\SubjectTypeController;
 use App\Http\Controllers\Master\UrgensiController;
 use App\Http\Controllers\MonitoringPimpinan\Monitoring\SubjectController;
+use App\Http\Controllers\MonitoringPimpinan\Monitoring\SubjectDetailController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -34,6 +35,7 @@ Route::group(['middleware' => ['auth']], function (): void {
     //MONITORING PIMPINAN
     Route::prefix('monitoring-pimpinan')->group(function (): void {
         Route::resource('monitoring/subject', SubjectController::class);
+        Route::resource('monitoring/subject-detail', SubjectDetailController::class);
     });
 
     //MENU MASTER

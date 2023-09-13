@@ -16,9 +16,10 @@ return new class extends Migration
             $table->unsignedBigInteger('subject_id');
             $table->string('name');
             $table->text('comment')->nullable();
-            $table->text('closed_comment')->nullable();
+            $table->text('action_comment')->nullable();
             $table->dateTime('start');
-            $table->dateTime('end')->nullable();
+            $table->dateTime('end');
+            $table->dateTime('finish')->nullable();
             $table->boolean('is_done')->default(false);
             $table->boolean('active')->default(true);
             $table->softDeletes();
