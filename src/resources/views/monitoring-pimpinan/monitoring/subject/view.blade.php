@@ -286,7 +286,7 @@
                                 <!--begin::Info-->
                                 <div class="d-flex align-items-center">
                                     <span
-                                        class="fs-4hx fw-bold me-6 text-white">{{ $subject_detail_pendings->count() }}</span>
+                                        class="fs-4hx fw-bold me-6 text-white">{{ $subject_detail_pending->count() }}</span>
                                     <div class="fw-bold fs-4 text-white">
                                         <span class="d-block">Dalam Proses</span>
                                     </div>
@@ -337,8 +337,7 @@
                             <div class="card-body d-flex align-items-end mb-3">
                                 <!--begin::Info-->
                                 <div class="d-flex align-items-center">
-                                    <span
-                                        class="fs-4hx fw-bold me-6 text-white">{{ $subject_detail_dones->count() }}</span>
+                                    <span class="fs-4hx fw-bold me-6 text-white">{{ $subject_detail_done->count() }}</span>
                                     <div class="fw-bold fs-3 text-white">
                                         <span class="d-block">Selesai</span>
                                     </div>
@@ -363,98 +362,133 @@
                     <!--end::Col-->
                     <!--begin::Col-->
                     <div class="col-xl-6">
-                        <!--begin::Card widget 19-->
-                        <div class="card card-flush h-lg-100">
+                        <!--begin::Chart widget 17-->
+                        <div class="card card-flush h-xl-100">
                             <!--begin::Header-->
-                            <div class="card-header pt-5">
+                            <div class="card-header pt-7">
                                 <!--begin::Title-->
                                 <h3 class="card-title align-items-start flex-column">
-                                    <span class="card-label fw-bold text-dark">Performance</span>
-                                    <span class="fw-semibold fs-6 mt-1 text-gray-400">1,046 Inbound Calls today</span>
+                                    <span class="card-label fw-bold text-dark">Performa</span>
+                                    <span class="fw-semibold fs-6 pt-2 text-gray-400">Terdapat 12 unit kerja
+                                        terlibat</span>
                                 </h3>
                                 <!--end::Title-->
                                 <!--begin::Toolbar-->
                                 <div class="card-toolbar">
-                                    <!--begin::Label-->
-                                    <span class="badge badge-light-danger fs-base mt-n3">
-                                        <i class="ki-duotone ki-arrow-down fs-5 text-danger ms-n1">
+                                    <!--begin::Menu-->
+                                    <button
+                                        class="btn btn-icon btn-color-gray-400 btn-active-color-primary justify-content-end"
+                                        data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end"
+                                        data-kt-menu-overflow="true">
+                                        <i class="ki-duotone ki-dots-square fs-1 me-n1 text-gray-400">
                                             <span class="path1"></span>
                                             <span class="path2"></span>
-                                        </i>7.4%</span>
-                                    <!--end::Label-->
+                                            <span class="path3"></span>
+                                            <span class="path4"></span>
+                                        </i>
+                                    </button>
+                                    <!--begin::Menu 3-->
+                                    <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-200px py-3"
+                                        data-kt-menu="true">
+                                        <!--begin::Heading-->
+                                        <div class="menu-item px-3">
+                                            <div class="menu-content text-muted fs-7 text-uppercase px-3 pb-2">Payments
+                                            </div>
+                                        </div>
+                                        <!--end::Heading-->
+                                        <!--begin::Menu item-->
+                                        <div class="menu-item px-3">
+                                            <a href="#" class="menu-link px-3">Create Invoice</a>
+                                        </div>
+                                        <!--end::Menu item-->
+                                        <!--begin::Menu item-->
+                                        <div class="menu-item px-3">
+                                            <a href="#" class="menu-link flex-stack px-3">Create Payment
+                                                <span class="ms-2" data-bs-toggle="tooltip"
+                                                    title="Specify a target name for future usage and reference">
+                                                    <i class="ki-duotone ki-information fs-6">
+                                                        <span class="path1"></span>
+                                                        <span class="path2"></span>
+                                                        <span class="path3"></span>
+                                                    </i>
+                                                </span></a>
+                                        </div>
+                                        <!--end::Menu item-->
+                                        <!--begin::Menu item-->
+                                        <div class="menu-item px-3">
+                                            <a href="#" class="menu-link px-3">Generate Bill</a>
+                                        </div>
+                                        <!--end::Menu item-->
+                                        <!--begin::Menu item-->
+                                        <div class="menu-item px-3" data-kt-menu-trigger="hover"
+                                            data-kt-menu-placement="right-end">
+                                            <a href="#" class="menu-link px-3">
+                                                <span class="menu-title">Subscription</span>
+                                                <span class="menu-arrow"></span>
+                                            </a>
+                                            <!--begin::Menu sub-->
+                                            <div class="menu-sub menu-sub-dropdown w-175px py-4">
+                                                <!--begin::Menu item-->
+                                                <div class="menu-item px-3">
+                                                    <a href="#" class="menu-link px-3">Plans</a>
+                                                </div>
+                                                <!--end::Menu item-->
+                                                <!--begin::Menu item-->
+                                                <div class="menu-item px-3">
+                                                    <a href="#" class="menu-link px-3">Billing</a>
+                                                </div>
+                                                <!--end::Menu item-->
+                                                <!--begin::Menu item-->
+                                                <div class="menu-item px-3">
+                                                    <a href="#" class="menu-link px-3">Statements</a>
+                                                </div>
+                                                <!--end::Menu item-->
+                                                <!--begin::Menu separator-->
+                                                <div class="separator my-2"></div>
+                                                <!--end::Menu separator-->
+                                                <!--begin::Menu item-->
+                                                <div class="menu-item px-3">
+                                                    <div class="menu-content px-3">
+                                                        <!--begin::Switch-->
+                                                        <label
+                                                            class="form-check form-switch form-check-custom form-check-solid">
+                                                            <!--begin::Input-->
+                                                            <input class="form-check-input w-30px h-20px" type="checkbox"
+                                                                value="1" checked="checked" name="notifications" />
+                                                            <!--end::Input-->
+                                                            <!--end::Label-->
+                                                            <span class="form-check-label text-muted fs-6">Recuring</span>
+                                                            <!--end::Label-->
+                                                        </label>
+                                                        <!--end::Switch-->
+                                                    </div>
+                                                </div>
+                                                <!--end::Menu item-->
+                                            </div>
+                                            <!--end::Menu sub-->
+                                        </div>
+                                        <!--end::Menu item-->
+                                        <!--begin::Menu item-->
+                                        <div class="menu-item my-1 px-3">
+                                            <a href="#" class="menu-link px-3">Settings</a>
+                                        </div>
+                                        <!--end::Menu item-->
+                                    </div>
+                                    <!--end::Menu 3-->
+                                    <!--end::Menu-->
                                 </div>
                                 <!--end::Toolbar-->
                             </div>
                             <!--end::Header-->
-                            <!--begin::Card body-->
-                            <div class="card-body d-flex align-items-end pt-6">
-                                <!--begin::Row-->
-                                <div class="row align-items-center w-100 mx-0">
-                                    <!--begin::Col-->
-                                    <div class="col-7 px-0">
-                                        <!--begin::Labels-->
-                                        <div class="d-flex flex-column content-justify-center">
-                                            <!--begin::Label-->
-                                            <div class="d-flex fs-6 fw-semibold align-items-center">
-                                                <!--begin::Bullet-->
-                                                <div class="bullet bg-success me-3"
-                                                    style="border-radius: 3px;width: 12px;height: 12px"></div>
-                                                <!--end::Bullet-->
-                                                <!--begin::Label-->
-                                                <div class="fs-5 fw-bold me-5 text-gray-600">CRM Team Performance:</div>
-                                                <!--end::Label-->
-                                                <!--begin::Stats-->
-                                                <div class="fw-bolder ms-auto text-end text-gray-700">72.56%</div>
-                                                <!--end::Stats-->
-                                            </div>
-                                            <!--end::Label-->
-                                            <!--begin::Label-->
-                                            <div class="d-flex fs-6 fw-semibold align-items-center my-4">
-                                                <!--begin::Bullet-->
-                                                <div class="bullet bg-primary me-3"
-                                                    style="border-radius: 3px;width: 12px;height: 12px"></div>
-                                                <!--end::Bullet-->
-                                                <!--begin::Label-->
-                                                <div class="fs-5 fw-bold me-5 text-gray-600">Recurring Calls:</div>
-                                                <!--end::Label-->
-                                                <!--begin::Stats-->
-                                                <div class="fw-bolder ms-auto text-end text-gray-700">29.34%</div>
-                                                <!--end::Stats-->
-                                            </div>
-                                            <!--end::Label-->
-                                            <!--begin::Label-->
-                                            <div class="d-flex fs-6 fw-semibold align-items-center">
-                                                <!--begin::Bullet-->
-                                                <div class="bullet me-3"
-                                                    style="border-radius: 3px;background-color: #E4E6EF;width: 12px;height: 12px">
-                                                </div>
-                                                <!--end::Bullet-->
-                                                <!--begin::Label-->
-                                                <div class="fs-5 fw-bold me-5 text-gray-600">Tickets Raised:</div>
-                                                <!--end::Label-->
-                                                <!--begin::Stats-->
-                                                <div class="fw-bolder ms-auto text-end text-gray-700">17.83%</div>
-                                                <!--end::Stats-->
-                                            </div>
-                                            <!--end::Label-->
-                                        </div>
-                                        <!--end::Labels-->
-                                    </div>
-                                    <!--end::Col-->
-                                    <!--begin::Col-->
-                                    <div class="col-5 d-flex justify-content-end px-0">
-                                        <!--begin::Chart-->
-                                        <div id="kt_card_widget_19_chart" class="min-h-auto h-150px w-150px"
-                                            data-kt-size="150" data-kt-line="25"></div>
-                                        <!--end::Chart-->
-                                    </div>
-                                    <!--end::Col-->
-                                </div>
-                                <!--end::Row-->
+                            <!--begin::Body-->
+                            <div class="card-body pt-5">
+                                <!--begin::Chart container-->
+                                <div id="kt_charts_widget_17_chart" class="w-100 h-400px"></div>
+                                <!--end::Chart container-->
                             </div>
-                            <!--end::Card body-->
+                            <!--end::Body-->
                         </div>
-                        <!--end::Card widget 19-->
+                        <!--end::Chart widget 17-->
                     </div>
                     <!--end::Col-->
                 </div>
@@ -814,5 +848,128 @@
         KTUtil.onDOMContentLoaded(function() {
             List.init();
         });
+    </script>
+    <script src="{{ asset('assets/js/custom/apps/chat/chat.js') }}"></script>
+    <!--begin::Vendors Javascript(used for this page only)-->
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/radar.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+
+    <script>
+        // Class definition
+        var KTChartsWidget17 = (function() {
+            // Private methods
+            var initChart = function() {
+                // Check if amchart library is included
+                if (typeof am5 === "undefined") {
+                    return;
+                }
+
+                var element = document.getElementById("kt_charts_widget_17_chart");
+
+                if (!element) {
+                    return;
+                }
+
+                var root;
+
+                var init = function() {
+                    // Create root element
+                    // https://www.amcharts.com/docs/v5/getting-started/#Root_element
+                    root = am5.Root.new(element);
+
+                    // Set themes
+                    // https://www.amcharts.com/docs/v5/concepts/themes/
+                    root.setThemes([am5themes_Animated.new(root)]);
+
+                    // Create chart
+                    // https://www.amcharts.com/docs/v5/charts/percent-charts/pie-chart/
+                    // start and end angle must be set both for chart and series
+                    var chart = root.container.children.push(
+                        am5percent.PieChart.new(root, {
+                            startAngle: 180,
+                            endAngle: 360,
+                            layout: root.verticalLayout,
+                            innerRadius: am5.percent(50),
+                        })
+                    );
+
+                    // Create series
+                    // https://www.amcharts.com/docs/v5/charts/percent-charts/pie-chart/#Series
+                    // start and end angle must be set both for chart and series
+                    var series = chart.series.push(
+                        am5percent.PieSeries.new(root, {
+                            startAngle: 180,
+                            endAngle: 360,
+                            valueField: "value",
+                            categoryField: "category",
+                            alignLabels: false,
+                        })
+                    );
+
+                    series.labels.template.setAll({
+                        fontWeight: "400",
+                        fontSize: 13,
+                        fill: am5.color(KTUtil.getCssVariableValue('--bs-gray-500'))
+                    });
+
+                    series.states.create("hidden", {
+                        startAngle: 180,
+                        endAngle: 180,
+                    });
+
+                    series.slices.template.setAll({
+                        cornerRadius: 5,
+                    });
+
+                    series.ticks.template.setAll({
+                        forceHidden: true,
+                    });
+
+                    // Set data
+                    // https://www.amcharts.com/docs/v5/charts/percent-charts/pie-chart/#Setting_data
+                    series.data.setAll([{
+                            value: {{ $subject_detail_done->count() }},
+                            category: "Selesai",
+                            fill: am5.color(KTUtil.getCssVariableValue('--bs-success'))
+                        },
+                        {
+                            value: {{ $subject_detail_pending->count() }},
+                            category: "Dalam Proses",
+                            fill: am5.color("#00ff00")
+                        },
+                    ]);
+
+                    series.appear(1000, 100);
+                }
+
+                am5.ready(function() {
+                    init();
+                });
+
+                // Update chart on theme mode change
+                KTThemeMode.on("kt.thememode.change", function() {
+                    // Destroy chart
+                    root.dispose();
+
+                    // Reinit chart
+                    init();
+                });
+            };
+
+            // Public methods
+            return {
+                init: function() {
+                    initChart();
+                },
+            };
+        })();
+
+        // Webpack support
+        if (typeof module !== "undefined") {
+            module.exports = KTChartsWidget17;
+        }
     </script>
 @endsection

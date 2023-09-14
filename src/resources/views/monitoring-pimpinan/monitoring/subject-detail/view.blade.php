@@ -272,7 +272,9 @@
                     <div class="col-xl-12">
                         <!--begin::Engage widget 9-->
                         <div class="card h-lg-100"
-                            style="background: linear-gradient(112.14deg, #F1416C 0%, #d63031 100%)">
+                            @if ($subject_detail->is_done) style="background: linear-gradient(112.14deg, #00cec9 0%, #00b894 100%)"
+                            @else
+                            style="background: linear-gradient(112.14deg, #F1416C 0%, #d63031 100%)" @endif>
                             <!--begin::Body-->
                             <div class="card-body">
                                 <!--begin::Row-->
