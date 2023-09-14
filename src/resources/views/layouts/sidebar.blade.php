@@ -335,6 +335,13 @@
                                             </span>
                                             <span class="menu-title">Urgensi</span>
                                         </a>
+                                        <a class="menu-link {{ (request()->is('master/dipa') ? 'active' : request()->is('master/dipa/*')) ? 'active' : '' }}"
+                                            href="{{ url('/master/dipa') }}">
+                                            <span class="menu-bullet">
+                                                <span class="bullet bullet-dot"></span>
+                                            </span>
+                                            <span class="menu-title">DIPA</span>
+                                        </a>
                                         <!--end:Menu link-->
                                     </div>
                                     <!--end:Menu item-->

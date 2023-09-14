@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('dipas', function (Blueprint $table): void {
             $table->uuid('id')->primary();
             $table->string('kode');
-            $table->date('tanggal');
             $table->string('tahun');
             $table->string('pembiayaan');
             $table->softDeletes();

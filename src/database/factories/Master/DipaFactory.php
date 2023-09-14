@@ -22,7 +22,6 @@ class DipaFactory extends Factory
         return [
             'id'         => Str::uuid(),
             'kode'       => fake()->numerify(),
-            'tanggal'    => fake()->date(),
             'tahun'      => fake()->year(),
             'pembiayaan' => fake()->word(),
         ];

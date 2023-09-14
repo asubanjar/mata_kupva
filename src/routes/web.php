@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Master\DipaController;
 use App\Http\Controllers\Master\SifatController;
 use App\Http\Controllers\Master\SubjectTypeController;
 use App\Http\Controllers\Master\UrgensiController;
@@ -45,5 +46,6 @@ Route::group(['middleware' => ['auth']], function (): void {
         Route::resource('sifat', SifatController::class);
         Route::resource('subject-type', SubjectTypeController::class);
         Route::resource('urgensi', UrgensiController::class);
+        Route::resource('dipa', DipaController::class);
     });
 });
