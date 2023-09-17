@@ -45,13 +45,9 @@
                 <!--end::Page title-->
                 <!--begin::Actions-->
                 <div class="d-flex align-items-center gap-lg-3 gap-2">
-                    <!--begin::Secondary button-->
-                    <a href="#" class="btn btn-sm fw-bold btn-secondary" data-bs-toggle="modal"
-                        data-bs-target="#kt_modal_share_earn">Share & Earn</a>
-                    <!--end::Secondary button-->
                     <!--begin::Primary button-->
-                    <a href="#" class="btn btn-sm fw-bold btn-primary" data-bs-toggle="modal"
-                        data-bs-target="#kt_modal_offer_a_deal">Start a Call</a>
+                    <a href="{{ url('/monitoring-pimpinan/monitoring/subject/') }}"
+                        class="btn btn-sm fw-bold btn-primary">Kembali</a>
                     <!--end::Primary button-->
                 </div>
                 <!--end::Actions-->
@@ -258,106 +254,183 @@
                 <!--begin::Row-->
                 <div class="row g-5 g-xl-10 mb-xl-10 mb-5">
                     <!--begin::Col-->
-                    <div class="col-xl-3">
-                        <!--begin::Card widget 3-->
-                        <div class="card card-flush bgi-no-repeat bgi-size-contain bgi-position-x-end h-xl-100"
-                            style="background-color: #F1416C;background-image:url('assets/media/svg/shapes/wave-bg-red.svg')">
-                            <!--begin::Header-->
-                            <div class="card-header mb-3 pt-5">
-                                <!--begin::Icon-->
-                                <div class="d-flex flex-center rounded-circle h-80px w-80px"
-                                    style="border: 1px dashed rgba(255, 255, 255, 0.4);background-color: #F1416C">
-                                    <i class="ki-duotone ki-call fs-2qx lh-0 text-white">
-                                        <span class="path1"></span>
-                                        <span class="path2"></span>
-                                        <span class="path3"></span>
-                                        <span class="path4"></span>
-                                        <span class="path5"></span>
-                                        <span class="path6"></span>
-                                        <span class="path7"></span>
-                                        <span class="path8"></span>
-                                    </i>
-                                </div>
-                                <!--end::Icon-->
-                            </div>
-                            <!--end::Header-->
-                            <!--begin::Card body-->
-                            <div class="card-body d-flex align-items-end mb-3">
-                                <!--begin::Info-->
-                                <div class="d-flex align-items-center">
-                                    <span
-                                        class="fs-4hx fw-bold me-6 text-white">{{ $subject_detail_pending->count() }}</span>
-                                    <div class="fw-bold fs-4 text-white">
-                                        <span class="d-block">Dalam Proses</span>
+                    <div class="col-xl-6">
+                        <!--begin::Row-->
+                        <div class="row">
+                            <!--begin::Col-->
+                            <div class="col-xl-6">
+                                <!--begin::Card widget 3-->
+                                <div class="card card-flush bgi-no-repeat bgi-size-contain bgi-position-x-end h-xl-100"
+                                    style="background-color: #F1416C;background-image:url('assets/media/svg/shapes/wave-bg-red.svg')">
+                                    <!--begin::Header-->
+                                    <div class="card-header mb-3 pt-5">
+                                        <!--begin::Icon-->
+                                        <div class="d-flex flex-center rounded-circle h-80px w-80px"
+                                            style="border: 1px dashed rgba(255, 255, 255, 0.4);background-color: #F1416C">
+                                            <i class="ki-duotone ki-call fs-2qx lh-0 text-white">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                                <span class="path3"></span>
+                                                <span class="path4"></span>
+                                                <span class="path5"></span>
+                                                <span class="path6"></span>
+                                                <span class="path7"></span>
+                                                <span class="path8"></span>
+                                            </i>
+                                        </div>
+                                        <!--end::Icon-->
                                     </div>
-                                </div>
-                                <!--end::Info-->
-                            </div>
-                            <!--end::Card body-->
-                            <!--begin::Card footer-->
-                            <div class="card-footer"
-                                style="border-top: 1px solid rgba(255, 255, 255, 0.3);background: rgba(0, 0, 0, 0.15);">
-                                <!--begin::Progress-->
-                                <div class="fw-bold py-2 text-white">
-                                    <span class="fs-1 d-block">12</span>
-                                    <span class="opacity-50">Melewati Batas Waktu</span>
-                                </div>
-                                <!--end::Progress-->
-                            </div>
-                            <!--end::Card footer-->
-                        </div>
-                        <!--end::Card widget 3-->
-                    </div>
-                    <!--end::Col-->
-                    <!--begin::Col-->
-                    <div class="col-xl-3">
-                        <!--begin::Card widget 3-->
-                        <div class="card card-flush bgi-no-repeat bgi-size-contain bgi-position-x-end h-xl-100"
-                            style="background-color: #00cec9;background-image:url('assets/media/svg/shapes/wave-bg-purple.svg')">
-                            <!--begin::Header-->
-                            <div class="card-header mb-3 pt-5">
-                                <!--begin::Icon-->
-                                <div class="d-flex flex-center rounded-circle h-80px w-80px"
-                                    style="border: 1px dashed rgba(255, 255, 255, 0.4);background-color: #00cec9">
-                                    <i class="ki-duotone ki-call fs-2qx lh-0 text-white">
-                                        <span class="path1"></span>
-                                        <span class="path2"></span>
-                                        <span class="path3"></span>
-                                        <span class="path4"></span>
-                                        <span class="path5"></span>
-                                        <span class="path6"></span>
-                                        <span class="path7"></span>
-                                        <span class="path8"></span>
-                                    </i>
-                                </div>
-                                <!--end::Icon-->
-                            </div>
-                            <!--end::Header-->
-                            <!--begin::Card body-->
-                            <div class="card-body d-flex align-items-end mb-3">
-                                <!--begin::Info-->
-                                <div class="d-flex align-items-center">
-                                    <span class="fs-4hx fw-bold me-6 text-white">{{ $subject_detail_done->count() }}</span>
-                                    <div class="fw-bold fs-3 text-white">
-                                        <span class="d-block">Selesai</span>
+                                    <!--end::Header-->
+                                    <!--begin::Card body-->
+                                    <div class="card-body d-flex align-items-end mb-3">
+                                        <!--begin::Info-->
+                                        <div class="d-flex align-items-center">
+                                            <span
+                                                class="fs-4hx fw-bold me-6 text-white">{{ $subject_detail_pending->count() }}</span>
+                                            <div class="fw-bold fs-4 text-white">
+                                                <span class="d-block">Dalam Proses</span>
+                                            </div>
+                                        </div>
+                                        <!--end::Info-->
                                     </div>
+                                    <!--end::Card body-->
+                                    <!--begin::Card footer-->
+                                    <div class="card-footer"
+                                        style="border-top: 1px solid rgba(255, 255, 255, 0.3);background: rgba(0, 0, 0, 0.15);">
+                                        <!--begin::Progress-->
+                                        <div class="fw-bold py-2 text-white">
+                                            <span class="fs-1 d-block">12</span>
+                                            <span class="opacity-50">Melewati Batas Waktu</span>
+                                        </div>
+                                        <!--end::Progress-->
+                                    </div>
+                                    <!--end::Card footer-->
                                 </div>
-                                <!--end::Info-->
+                                <!--end::Card widget 3-->
                             </div>
-                            <!--end::Card body-->
-                            <!--begin::Card footer-->
-                            <div class="card-footer"
-                                style="border-top: 1px solid rgba(255, 255, 255, 0.3);background: rgba(0, 0, 0, 0.15);">
-                                <!--begin::Progress-->
-                                <div class="fw-bold py-2 text-white">
-                                    <span class="fs-1 d-block">12</span>
-                                    <span class="opacity-50">Melewati Batas Waktu</span>
+                            <!--end::Col-->
+                            <!--begin::Col-->
+                            <div class="col-xl-6">
+                                <!--begin::Card widget 3-->
+                                <div class="card card-flush bgi-no-repeat bgi-size-contain bgi-position-x-end h-xl-100"
+                                    style="background-color: #00cec9;background-image:url('assets/media/svg/shapes/wave-bg-purple.svg')">
+                                    <!--begin::Header-->
+                                    <div class="card-header mb-3 pt-5">
+                                        <!--begin::Icon-->
+                                        <div class="d-flex flex-center rounded-circle h-80px w-80px"
+                                            style="border: 1px dashed rgba(255, 255, 255, 0.4);background-color: #00cec9">
+                                            <i class="ki-duotone ki-call fs-2qx lh-0 text-white">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                                <span class="path3"></span>
+                                                <span class="path4"></span>
+                                                <span class="path5"></span>
+                                                <span class="path6"></span>
+                                                <span class="path7"></span>
+                                                <span class="path8"></span>
+                                            </i>
+                                        </div>
+                                        <!--end::Icon-->
+                                    </div>
+                                    <!--end::Header-->
+                                    <!--begin::Card body-->
+                                    <div class="card-body d-flex align-items-end mb-3">
+                                        <!--begin::Info-->
+                                        <div class="d-flex align-items-center">
+                                            <span
+                                                class="fs-4hx fw-bold me-6 text-white">{{ $subject_detail_done->count() }}</span>
+                                            <div class="fw-bold fs-3 text-white">
+                                                <span class="d-block">Selesai</span>
+                                            </div>
+                                        </div>
+                                        <!--end::Info-->
+                                    </div>
+                                    <!--end::Card body-->
+                                    <!--begin::Card footer-->
+                                    <div class="card-footer"
+                                        style="border-top: 1px solid rgba(255, 255, 255, 0.3);background: rgba(0, 0, 0, 0.15);">
+                                        <!--begin::Progress-->
+                                        <div class="fw-bold py-2 text-white">
+                                            <span class="fs-1 d-block">12</span>
+                                            <span class="opacity-50">Melewati Batas Waktu</span>
+                                        </div>
+                                        <!--end::Progress-->
+                                    </div>
+                                    <!--end::Card footer-->
                                 </div>
-                                <!--end::Progress-->
+                                <!--end::Card widget 3-->
                             </div>
-                            <!--end::Card footer-->
+                            <!--end::Col-->
                         </div>
-                        <!--end::Card widget 3-->
+                        <!--end::Row-->
+                        <!--begin::Row-->
+                        <div class="row g-5 g-xl-10 mb-xl-10 mb-5">
+                            <!--begin::Col-->
+                            <div class="col-xl-12">
+                                <!--begin::Chart widget 15-->
+                                <div class="card card-flush h-xl-100">
+                                    <!--begin::Header-->
+                                    <div class="card-header pt-7">
+                                        <!--begin::Title-->
+                                        <h3 class="card-title align-items-start flex-column">
+                                            <span class="card-label fw-bold text-dark">Author Sales</span>
+                                            <span class="fw-semibold fs-6 pt-2 text-gray-400">Statistics by
+                                                Countries</span>
+                                        </h3>
+                                        <!--end::Title-->
+                                        <!--begin::Toolbar-->
+                                        <div class="card-toolbar">
+                                            <!--begin::Menu-->
+                                            <button
+                                                class="btn btn-icon btn-color-gray-400 btn-active-color-primary justify-content-end"
+                                                data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end"
+                                                data-kt-menu-overflow="true">
+                                                <i class="ki-duotone ki-dots-square fs-1 me-n1 text-gray-400">
+                                                    <span class="path1"></span>
+                                                    <span class="path2"></span>
+                                                    <span class="path3"></span>
+                                                    <span class="path4"></span>
+                                                </i>
+                                            </button>
+                                            <!--begin::Menu-->
+                                            <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold w-100px py-4"
+                                                data-kt-menu="true">
+                                                <!--begin::Menu item-->
+                                                <div class="menu-item px-3">
+                                                    <a href="#" class="menu-link px-3">Remove</a>
+                                                </div>
+                                                <!--end::Menu item-->
+                                                <!--begin::Menu item-->
+                                                <div class="menu-item px-3">
+                                                    <a href="#" class="menu-link px-3">Mute</a>
+                                                </div>
+                                                <!--end::Menu item-->
+                                                <!--begin::Menu item-->
+                                                <div class="menu-item px-3">
+                                                    <a href="#" class="menu-link px-3">Settings</a>
+                                                </div>
+                                                <!--end::Menu item-->
+                                            </div>
+                                            <!--end::Menu-->
+                                            <!--end::Menu-->
+                                        </div>
+                                        <!--end::Toolbar-->
+                                    </div>
+                                    <!--end::Header-->
+                                    <!--begin::Body-->
+                                    <div class="card-body pt-5">
+                                        <!--begin::Chart container-->
+                                        <div id="kt_charts_widget_15_chart" class="min-h-auto h-350px mb-3 pe-6 ps-4">
+                                        </div>
+                                        <!--end::Chart container-->
+                                    </div>
+                                    <!--end::Body-->
+                                </div>
+                                <!--end::Chart widget 15-->
+                            </div>
+                            <!--end::Col-->
+                        </div>
+                        <!--end::Row-->
                     </div>
                     <!--end::Col-->
                     <!--begin::Col-->
@@ -931,13 +1004,13 @@
                     // Set data
                     // https://www.amcharts.com/docs/v5/charts/percent-charts/pie-chart/#Setting_data
                     series.data.setAll([{
-                            value: {{ $subject_detail_done->count() }},
-                            category: "Selesai",
+                            value: {{ $subject_detail_pending->count() }},
+                            category: "Dalam Proses",
                             fill: am5.color(KTUtil.getCssVariableValue('--bs-success'))
                         },
                         {
-                            value: {{ $subject_detail_pending->count() }},
-                            category: "Dalam Proses",
+                            value: {{ $subject_detail_done->count() }},
+                            category: "Selesai",
                             fill: am5.color("#00ff00")
                         },
                     ]);

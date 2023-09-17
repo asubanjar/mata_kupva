@@ -18,7 +18,7 @@ class SubjectSeeder extends Seeder
                 'name'            => 'Note Taking 2021',
                 'comment'         => 'Catatan kepala PPATK',
                 'opened'          => '2021-09-11 00:00:00.000',
-                'subject_type_id' => SubjectType::where('code_name', 'NOTETAKING')->first()->id,
+                'subject_type_id' => SubjectType::where('code', 'NOTETAKING')->first()->id,
             ],
         ];
 

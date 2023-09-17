@@ -5,7 +5,7 @@ namespace App\Models\Master;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class SubjectType extends Model
+class Jabatan extends Model
 {
     use HasFactory;
 
@@ -16,6 +16,8 @@ class SubjectType extends Model
     protected $fillable = [
         'active',
         'code',
+        'description',
         'name',
+        'parent_code',
     ];
 }

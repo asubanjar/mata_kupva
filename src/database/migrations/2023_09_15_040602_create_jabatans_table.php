@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('subject_types', function (Blueprint $table): void {
+        Schema::create('jabatans', function (Blueprint $table): void {
             $table->id();
             $table->string('name');
-            $table->string('code');
+            $table->string('code')->nullable()->unique();
+            $table->string('parent_code')->nullable();
+            $table->text('description')->nullable();
             $table->boolean('active')->default(true);
             $table->softDeletes();
             $table->timestamps();
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('subject_types');
+        Schema::dropIfExists('jabatans');
     }
 };

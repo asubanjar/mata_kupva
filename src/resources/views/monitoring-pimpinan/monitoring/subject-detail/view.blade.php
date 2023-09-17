@@ -101,7 +101,7 @@
                                         <a href="#" class="btn btn-sm btn-bg-light btn-active-color-primary me-3"
                                             data-bs-toggle="modal" data-bs-target="#kt_modal_users_search">Add User</a>
                                         <a href="#" class="btn btn-sm btn-primary me-3" data-bs-toggle="modal"
-                                            data-bs-target="#kt_modal_new_target">Ubah Subjek</a>
+                                            data-bs-target="#modal_edit_subject_detail">Ubah Subjek Detail</a>
                                         <!--begin::Menu-->
                                         <div class="me-0">
                                             <button class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary"
@@ -353,7 +353,7 @@
                 </div>
                 <!--end::Row-->
                 <!--begin::Modals-->
-                <!--begin::Modal - Subject - Add-->
+                <!--begin::Modal - Action - Edit-->
                 <div class="modal fade" tabindex="-1" id="modal_edit_action">
                     <div class="modal-dialog modal-xl">
                         <div class="modal-content">
@@ -396,7 +396,85 @@
                         </div>
                     </div>
                 </div>
-                <!--end::Modal - Subject - Add-->
+                <!--end::Modal - Action - Edit-->
+                <!--begin::Modal - Action - Edit-->
+                <div class="modal fade" tabindex="-1" id="modal_edit_subject_detail">
+                    <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 class="modal-title">Ubah Subject Detail</h3>
+                                <!--begin::Close-->
+                                <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal"
+                                    aria-label="Close">
+                                    <i class="ki-duotone ki-cross fs-1"><span class="path1"></span><span
+                                            class="path2"></span></i>
+                                </div>
+                                <!--end::Close-->
+                            </div>
+                            <form id="add_form" method="post"
+                                action="{{ route('subject-detail.update', $subject_detail->id) }}"
+                                class="needs-validation" enctype="multipart/form-data" novalidate="">
+                                @csrf
+                                @method('PUT')
+                                {{ csrf_field() }}
+                                <div class="modal-body">
+                                    <div class="fv-row mb-10">
+                                        <label for="exampleFormControlInput1" class="required form-label">Nama</label>
+                                        <input type="text" class="form-control form-control-solid" name="name"
+                                            value="{{ $subject_detail->name }}"
+                                            placeholder="Nama Kegiatan atau Subjek" />
+                                    </div>
+                                    <div class="fv-row mb-10">
+                                        <label for="exampleFormControlInput1"
+                                            class="required form-label">Keterangan</label>
+                                        <textarea rows="10" class="form-control form-control-solid" name="comment">{{ $subject_detail->comment }}</textarea>
+                                    </div>
+                                    <div class="fv-row mb-10">
+                                        <label for="exampleFormControlInput1" class="form-label">Start</label>
+                                        <div class="fv-row input-group mb-10" id="kt_td_picker_date_only_start"
+                                            data-td-target-input="nearest" data-td-target-toggle="nearest">
+                                            <input id="kt_td_picker_date_only_start" type="text" class="form-control"
+                                                data-td-target="#kt_td_picker_date_only_start" name="start"
+                                                value="{{ $subject_detail->start }}" />
+                                            <span class="input-group-text" data-td-target="#kt_td_picker_date_only_start"
+                                                data-td-toggle="datetimepicker">
+                                                <i class="ki-duotone ki-calendar fs-2"><span class="path1"></span><span
+                                                        class="path2"></span></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="fv-row mb-10">
+                                        <label for="exampleFormControlInput1" class="form-label">End</label>
+                                        <div class="fv-row input-group mb-10" id="kt_td_picker_date_only_end"
+                                            data-td-target-input="nearest" data-td-target-toggle="nearest">
+                                            <input id="kt_td_picker_date_only_end" type="text" class="form-control"
+                                                data-td-target="#kt_td_picker_date_only_end" name="end"
+                                                value="{{ $subject_detail->end }}" />
+                                            <span class="input-group-text" data-td-target="#kt_td_picker_date_only_end"
+                                                data-td-toggle="datetimepicker">
+                                                <i class="ki-duotone ki-calendar fs-2"><span class="path1"></span><span
+                                                        class="path2"></span></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="mb-10">
+                                        <input class="form-check-input" type="checkbox" value="" name="active"
+                                            {{ $subject_detail->active ? 'checked' : '' }} />
+                                        <label class="form-check-label" for="active">
+                                            Selesai
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!--end::Modal - Action - Edit-->
                 <!--end::Modals-->
             </div>
             <!--end::Content container-->
@@ -408,9 +486,17 @@
 
 @section('script')
     <script>
-        new tempusDominus.TempusDominus(document.getElementById("kt_td_picker_date_only"), {
+        new tempusDominus.TempusDominus(document.getElementById("kt_td_picker_date_only_start"), {
             localization: {
-                format: "dd/MM/yyyy HH:mm"
+                format: "yyyy/MM/dd"
+            }
+        });
+    </script>
+
+    <script>
+        new tempusDominus.TempusDominus(document.getElementById("kt_td_picker_date_only_end"), {
+            localization: {
+                format: "yyyy/MM/dd"
             }
         });
     </script>

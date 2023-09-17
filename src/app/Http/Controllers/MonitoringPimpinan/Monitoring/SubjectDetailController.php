@@ -56,31 +56,23 @@ class SubjectDetailController extends Controller
      */
     public function update(Request $request, SubjectDetail $subject_detail)
     {
+        // dd($request->start);
         $request->validate([
             'name'    => 'required',
             'comment' => 'required',
-            'start'   => 'required|date',
-            'end'     => 'required|date',
+            // 'start'   => 'required|date',
+            // 'end'     => 'required|date',
         ]);
-
-        if ($request->is_done === 'true') {
-            $finish = now();
-        } else {
-            $finish = null;
-        }
 
         $subject_detail->update([
-            'name'           => $request->name,
-            'comment'        => $request->comment,
-            'start'          => $request->start,
-            'end'            => $request->end,
-            'is_done'        => $request->is_done === 'true' ? '1' : '0',
-            'finish'         => $finish,
-            'action_comment' => $request->action_comment,
-            'active'         => $request->active === 'true' ? '1' : '0',
+            'name'    => $request->name,
+            'comment' => $request->comment,
+            'start'   => $request->start,
+            'end'     => $request->end,
+            'active'  => $request->has('active'),
         ]);
 
-        return redirect('/monitoring-pimpinan/monitoring/subject/' . $subject_detail->subject_id)->with('success', 'Sukses mengubah subject detail');
+        return redirect('/monitoring-pimpinan/monitoring/subject-detail/' . $subject_detail->id)->with('success', 'Sukses mengubah subject detail');
     }
 
     /**

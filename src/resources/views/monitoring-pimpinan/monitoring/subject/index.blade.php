@@ -323,15 +323,18 @@
                                         <textarea class="form-control form-control-solid" name="comment"></textarea>
                                     </div>
 
-                                    <div class="fv-row input-group mb-10" id="kt_td_picker_date_only"
-                                        data-td-target-input="nearest" data-td-target-toggle="nearest">
-                                        <input id="kt_td_picker_date_only_input" type="text" class="form-control"
-                                            data-td-target="#kt_td_picker_date_only" name="opened" />
-                                        <span class="input-group-text" data-td-target="#kt_td_picker_date_only"
-                                            data-td-toggle="datetimepicker">
-                                            <i class="ki-duotone ki-calendar fs-2"><span class="path1"></span><span
-                                                    class="path2"></span></i>
-                                        </span>
+                                    <div class="fv-row mb-10">
+                                        <label for="exampleFormControlInput1" class="form-label">Tanggal</label>
+                                        <div class="fv-row input-group mb-10" id="kt_td_picker_date_only"
+                                            data-td-target-input="nearest" data-td-target-toggle="nearest">
+                                            <input id="kt_td_picker_date_only_input" type="text" class="form-control"
+                                                data-td-target="#kt_td_picker_date_only" name="opened" />
+                                            <span class="input-group-text" data-td-target="#kt_td_picker_date_only"
+                                                data-td-toggle="datetimepicker">
+                                                <i class="ki-duotone ki-calendar fs-2"><span class="path1"></span><span
+                                                        class="path2"></span></i>
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
 
