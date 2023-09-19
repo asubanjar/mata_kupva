@@ -44,7 +44,6 @@ class SubjectController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->opened);
         $request->validate([
             'name'            => 'required|max:50',
             'subject_type_id' => 'required|exists:subject_types,id',

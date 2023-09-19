@@ -16,7 +16,7 @@ class JabatanSeeder extends Seeder
             [
                 'code'        => 'uk.1',
                 'parent_code' => 'uk',
-                'name'        => 'Kepala PPATK',
+                'name'        => 'KEPALA PPATK',
                 'description' => 'Kepala PPATK',
             ],
             [

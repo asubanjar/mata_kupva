@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\MonitoringPimpinan\Monitoring;
 
 use App\Http\Controllers\Controller;
+use App\Models\Master\Jabatan;
 use App\Models\MonitoringPimpinan\Monitoring\SubjectDetail;
 use Illuminate\Http\Request;
 
@@ -34,11 +35,14 @@ class SubjectDetailController extends Controller
      */
     public function show(SubjectDetail $subject_detail)
     {
+        $jabatans = Jabatan::all();
+
         $interval = $subject_detail->start->diff($subject_detail->end);
 
         $diff_days = $interval->format('%a');
 
         return view('monitoring-pimpinan/monitoring/subject-detail/view', compact(
+            'jabatans',
             'subject_detail',
             'diff_days'
         ));
