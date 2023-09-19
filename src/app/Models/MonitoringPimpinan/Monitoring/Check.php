@@ -2,12 +2,11 @@
 
 namespace App\Models\MonitoringPimpinan\Monitoring;
 
-use App\Models\Master\Jabatan;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations;
 
-class Action extends Model
+class Check extends Model
 {
     use HasFactory;
 
@@ -19,29 +18,17 @@ class Action extends Model
     ];
 
     protected $fillable = [
+        'action_id',
         'active',
         'closed_comment',
-        'comment',
         'end',
         'finish',
-        'jabatan_id',
         'name',
         'start',
-        'subject_detail_id',
     ];
 
-    public function subjectDetail(): Relations\BelongsTo
+    public function action(): Relations\BelongsTo
     {
-        return $this->belongsTo(SubjectDetail::class);
-    }
-
-    public function jabatan(): Relations\BelongsTo
-    {
-        return $this->belongsTo(Jabatan::class);
-    }
-
-    public function checks(): Relations\HasMany
-    {
-        return $this->hasMany(Check::class);
+        return $this->belongsTo(Action::class);
     }
 }

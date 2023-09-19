@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('actions', function (Blueprint $table): void {
+        Schema::create('checks', function (Blueprint $table): void {
             $table->id();
-            $table->unsignedBigInteger('subject_detail_id');
-            $table->unsignedBigInteger('jabatan_id');
+            $table->unsignedBigInteger('action_id');
             $table->string('name');
-            $table->text('comment')->nullable();
             $table->dateTime('start');
             $table->dateTime('end');
             $table->text('closed_comment')->nullable();
@@ -25,14 +23,9 @@ return new class extends Migration
             $table->softDeletes();
             $table->timestamps();
 
-            $table->foreign('subject_detail_id')
+            $table->foreign('action_id')
             ->references('id')
-            ->on('subject_details')
-            ->onDelete('cascade');
-
-            $table->foreign('jabatan_id')
-            ->references('id')
-            ->on('jabatans')
+            ->on('actions')
             ->onDelete('cascade');
         });
     }
@@ -42,6 +35,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('actions');
+        Schema::dropIfExists('checks');
     }
 };

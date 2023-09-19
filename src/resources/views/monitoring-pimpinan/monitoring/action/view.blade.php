@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Detail Subjek Detail')
+@section('title', 'Detail Action')
 @section('content')
     <!--begin::Content wrapper-->
     <div class="d-flex flex-column flex-column-fluid">
@@ -11,7 +11,7 @@
                 <div class="page-title d-flex flex-column justify-content-center me-3 flex-wrap">
                     <!--begin::Title-->
                     <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Detail
-                        Aksi</h1>
+                        Ceklist</h1>
                     <!--end::Title-->
                     <!--begin::Breadcrumb-->
                     <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -37,8 +37,8 @@
                         </li>
                         <!--end::Item-->
                         <!--begin::Item-->
-                        <li class="breadcrumb-item text-muted"><a
-                                href="{{ url('/monitoring-pimpinan/monitoring/subject/' . $subject_detail->subject_id) }}"
+                        <li class="breadcrumb-item text-muted">
+                            <a href="{{ url('/monitoring-pimpinan/monitoring/subject/' . $action->subjectDetail->subject_id) }}"
                                 class="text-muted text-hover-primary">Detail Subjek</a>
                         </li>
                         <!--end::Item-->
@@ -48,7 +48,18 @@
                         </li>
                         <!--end::Item-->
                         <!--begin::Item-->
-                        <li class="breadcrumb-item text-muted"><a href="#">Aksi</a></li>
+                        <li class="breadcrumb-item text-muted"><a
+                                href="{{ url('/monitoring-pimpinan/monitoring/subject-detail/' . $action->subject_detail_id) }}"
+                                class="text-muted text-hover-primary">Aksi</a>
+                        </li>
+                        <!--end::Item-->
+                        <!--begin::Item-->
+                        <li class="breadcrumb-item">
+                            <span class="bullet w-5px h-2px bg-gray-400"></span>
+                        </li>
+                        <!--end::Item-->
+                        <!--begin::Item-->
+                        <li class="breadcrumb-item text-muted"><a href="#">Ceklist</a></li>
                         <!--end::Item-->
                     </ul>
                     <!--end::Breadcrumb-->
@@ -57,7 +68,7 @@
                 <!--begin::Actions-->
                 <div class="d-flex align-items-center gap-lg-3 gap-2">
                     <!--begin::Primary button-->
-                    <a href="{{ url('/monitoring-pimpinan/monitoring/subject/' . $subject_detail->subject_id) }}"
+                    <a href="{{ url('/monitoring-pimpinan/monitoring/subject-detail/' . $action->subject_detail_id) }}"
                         class="btn btn-sm fw-bold btn-primary">Kembali</a>
                     <!--end::Primary button-->
                 </div>
@@ -84,24 +95,23 @@
                                         <!--begin::Status-->
                                         <div class="d-flex align-items-center mb-1">
                                             <div class="text-hover-primary fs-2 fw-bold me-3 text-gray-800">
-                                                {{ $subject_detail->name }}</div>
-
-                                            <a href="{{ url('/monitoring-pimpinan/monitoring/subject/' . $subject_detail->subject_id) }}"
-                                                class="badge badge-light-success me-auto">{{ $subject_detail->subject->name }}</a>
+                                                {{ $action->name }}</div>
+                                            <div class="badge badge-light-primary fs-2 me-auto">
+                                                {{ $action->jabatan->description }}</div>
+                                            <a href="{{ url('/monitoring-pimpinan/monitoring/subject-detail/' . $action->subject_detail_id) }}"
+                                                class="badge badge-light-success me-auto">{{ $action->subjectDetail->name }}</a>
                                         </div>
                                         <!--end::Status-->
                                         <!--begin::Description-->
                                         <div class="d-flex fw-semibold fs-5 mb-4 flex-wrap text-gray-400">
-                                            {{ $subject_detail->comment }}</div>
+                                            {{ $action->comment }}</div>
                                         <!--end::Description-->
                                     </div>
                                     <!--end::Details-->
                                     <!--begin::Actions-->
                                     <div class="d-flex mb-4">
-                                        <a href="#" class="btn btn-sm btn-bg-light btn-active-color-primary me-3"
-                                            data-bs-toggle="modal" data-bs-target="#kt_modal_users_search">Add User</a>
                                         <a href="#" class="btn btn-sm btn-primary me-3" data-bs-toggle="modal"
-                                            data-bs-target="#modal_edit_subject_detail">Ubah Subjek Detail</a>
+                                            data-bs-target="#modal_edit_subject_detail">Ubah Aksi</a>
                                         <!--begin::Menu-->
                                         <div class="me-0">
                                             <button class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary"
@@ -213,7 +223,7 @@
                                             class="min-w-125px mb-3 me-6 rounded border border-dashed border-gray-300 px-4 py-3">
                                             <!--begin::Number-->
                                             <div class="d-flex align-items-center">
-                                                <div class="fs-4 fw-bold">{{ $subject_detail->start->format('d/m/Y') }}
+                                                <div class="fs-4 fw-bold">{{ $action->start->format('d/m/Y') }}
                                                 </div>
                                             </div>
                                             <!--end::Number-->
@@ -228,7 +238,7 @@
                                             <!--begin::Number-->
                                             <div class="d-flex align-items-center">
                                                 <div class="fs-4 fw-bold">
-                                                    {{ $subject_detail->end->format('d/m/Y') }}</div>
+                                                    {{ $action->end->format('d/m/Y') }}</div>
                                             </div>
                                             <!--end::Number-->
                                             <!--begin::Label-->
@@ -265,93 +275,6 @@
                     </div>
                 </div>
                 <!--end::Navbar-->
-
-                <!--begin::Row-->
-                <div class="row g-5 g-xl-10 mb-xl-10 mb-5">
-                    <!--begin::Col-->
-                    <div class="col-xl-12">
-                        <!--begin::Engage widget 9-->
-                        <div class="card h-lg-100"
-                            @if ($subject_detail->is_done) style="background: linear-gradient(112.14deg, #00cec9 0%, #00b894 100%)"
-                            @else
-                            style="background: linear-gradient(112.14deg, #F1416C 0%, #d63031 100%)" @endif>
-                            <!--begin::Body-->
-                            <div class="card-body">
-                                <!--begin::Row-->
-                                <div class="row align-items-center">
-                                    <!--begin::Col-->
-                                    <div class="col-sm-12 mb-sm-0 mb-5 pe-0">
-                                        <!--begin::Wrapper-->
-                                        <div
-                                            class="d-flex justify-content-between h-100 flex-column pt-xl-5 pb-xl-2 ps-xl-7">
-                                            <!--begin::Container-->
-                                            <div class="mb-12">
-                                                <!--begin::Title-->
-                                                <div class="mb-6">
-                                                    <h3 class="fs-2x fw-semibold text-white">Keterangan Aksi</h3>
-                                                    <span
-                                                        class="fw-semibold text-white opacity-75">{{ $subject_detail->action_comment ? $subject_detail->action_comment : '-' }}</span>
-                                                </div>
-                                                <!--end::Title-->
-                                                <!--begin::Items-->
-                                                <div class="d-flex align-items-center d-grid flex-wrap gap-2">
-                                                    <!--begin::Item-->
-                                                    <div class="d-flex align-items-center me-xl-13 me-5">
-                                                        <!--begin::Symbol-->
-                                                        <div class="symbol symbol-30px symbol-circle me-3">
-                                                            <span class="symbol-label"
-                                                                style="background: rgba(255, 255, 255, 0.15);">
-                                                                <i class="ki-duotone ki-abstract-41 fs-4 text-white">
-                                                                    <span class="path1"></span>
-                                                                    <span class="path2"></span>
-                                                                </i>
-                                                            </span>
-                                                        </div>
-                                                        <!--end::Symbol-->
-                                                        <!--begin::Info-->
-                                                        <div class="m-0">
-                                                            <div class="fs-8 text-white text-opacity-75">Tanggal Selesai
-                                                            </div>
-                                                            <span
-                                                                class="fw-bold fs-7 d-block text-white">{{ $subject_detail->finish ? $subject_detail->finish->format('d/m/Y') : '-' }}</span>
-                                                        </div>
-                                                        <!--end::Info-->
-                                                    </div>
-                                                    <!--end::Item-->
-                                                </div>
-                                                <!--end::Items-->
-                                            </div>
-                                            <!--end::Container-->
-                                            <!--begin::Action-->
-                                            <div class="m-0">
-                                                <a href="#"
-                                                    class="btn btn-color-white bg-opacity-15 bg-hover-opacity-25 fw-semibold bg-white"
-                                                    data-bs-toggle="modal" data-bs-target="#modal_edit_action">Ubah
-                                                    Aksi</a>
-                                            </div>
-                                            <!--begin::Action-->
-                                        </div>
-                                        <!--end::Wrapper-->
-                                    </div>
-                                    <!--begin::Col-->
-                                    <!--begin::Col-->
-                                    <div class="col-sm-5">
-                                        <!--begin::Illustration-->
-                                        <img src="assets/media/svg/illustrations/easy/7.svg"
-                                            class="h-200px h-lg-250px my-n6" alt="" />
-                                        <!--end::Illustration-->
-                                    </div>
-                                    <!--begin::Col-->
-                                </div>
-                                <!--begin::Row-->
-                            </div>
-                            <!--end::Body-->
-                        </div>
-                        <!--end::Engage widget 9-->
-                    </div>
-                    <!--end::Col-->
-                </div>
-                <!--end::Row-->
 
                 <!--begin::Row-->
                 <div class="row g-5 g-xl-10 mb-xl-10 mb-5">
@@ -433,16 +356,14 @@
                                                     </div>
                                                 </th>
                                                 <th class="min-w-125px">Nama</th>
-                                                <th class="min-w-125px">Deskripsi</th>
                                                 <th class="min-w-125px">Target</th>
                                                 <th class="min-w-125px">Selesai</th>
                                                 <th class="min-w-125px">Status</th>
-                                                <th class="min-w-125px">Unit Kerja</th>
                                                 <th class="min-w-70px text-end">Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody class="fw-semibold text-gray-600">
-                                            @foreach ($subject_detail->actions as $action)
+                                            @foreach ($action->checks as $check)
                                                 <tr>
                                                     <td>
                                                         <div
@@ -451,26 +372,36 @@
                                                                 value="1" />
                                                         </div>
                                                     </td>
-                                                    <td>{{ $action->name }}</td>
-                                                    <td>{{ $action->comment }}</td>
-                                                    <td>{{ $action->start->format('d/m/Y') }} s/d
-                                                        {{ $action->end->format('d/m/Y') }}</td>
                                                     <td>
-                                                        @if ($action->finish)
+                                                        @if ($check->finish === null && $check->end < now())
+                                                            <div class="badge badge-light-danger">
+                                                                {{ $check->name }}
+                                                            </div>
+                                                        @elseif ($check->finish != null || $check->end >= now())
                                                             <div class="badge badge-light-success">
-                                                                {{ $subject_detail->finish }}</div>
+                                                                {{ $check->name }}
+                                                            </div>
+                                                        @endif
+
+                                                    </td>
+
+                                                    <td>{{ $check->start->format('d/m/Y') }} s/d
+                                                        {{ $check->end->format('d/m/Y') }}</td>
+                                                    <td>
+                                                        @if ($check->finish)
+                                                            <div class="badge badge-light-success">
+                                                                {{ $check->finish->format('d/m/Y') }}</div>
                                                         @else
                                                             <div class="badge badge-light-danger">Dalam Proses</div>
                                                         @endif
                                                     </td>
                                                     <td>
-                                                        @if ($action->active === true)
+                                                        @if ($check->active === true)
                                                             <div class="badge badge-light-success">Aktif</div>
                                                         @else
                                                             <div class="badge badge-light-danger">Tidak Aktif</div>
                                                         @endif
                                                     </td>
-                                                    <td>{{ $action->jabatan->name }}</td>
                                                     <td class="text-end">
                                                         <a href="#"
                                                             class="btn btn-sm btn-light btn-flex btn-center btn-active-light-primary"
@@ -480,17 +411,26 @@
                                                         <!--begin::Menu-->
                                                         <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-125px py-4"
                                                             data-kt-menu="true">
-                                                            <!--begin::Menu item-->
-                                                            <div class="menu-item px-3">
-                                                                <a href="{{ url('/monitoring-pimpinan/monitoring/action/' . $action->id) }}"
-                                                                    data-toggle="tooltip" data-original-title="Lihat"
-                                                                    class="menu-link px-3">Lihat</a>
-                                                            </div>
-                                                            <!--end::Menu item-->
+                                                            @if ($check->finish != null)
+                                                                <!--begin::Menu item-->
+                                                                <div class="menu-item px-3">
+                                                                    <a href="{{ url('/monitoring-pimpinan/monitoring/check/' . $check->id . '/unfinish') }}"
+                                                                        class="menu-link px-3">Belum Selesai</a>
+                                                                </div>
+                                                                <!--end::Menu item-->
+                                                            @else
+                                                                <!--begin::Menu item-->
+                                                                <div class="menu-item px-3">
+                                                                    <a href="{{ url('/monitoring-pimpinan/monitoring/check/' . $check->id . '/finish') }}"
+                                                                        class="menu-link px-3">Selesai</a>
+                                                                </div>
+                                                                <!--end::Menu item-->
+                                                            @endif
+
                                                             <!--begin::Menu item-->
                                                             <div class="menu-item px-3">
                                                                 <a href="#" class="menu-link px-3"
-                                                                    data-id="{{ $action->id }}"
+                                                                    data-id="{{ $check->id }}"
                                                                     data-csrf="{{ csrf_token() }}"
                                                                     data-table-filter="delete_row">Hapus</a>
                                                             </div>
@@ -514,210 +454,9 @@
                     <!--end::Content-->
                 </div>
                 <!--end::Row-->
+
                 <!--begin::Modals-->
-                <!--begin::Modal - Subject Detail Action - Edit-->
-                <div class="modal fade" tabindex="-1" id="modal_edit_action">
-                    <div class="modal-dialog modal-xl">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h3 class="modal-title">Ubah Aksi</h3>
 
-                                <!--begin::Close-->
-                                <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal"
-                                    aria-label="Close">
-                                    <i class="ki-duotone ki-cross fs-1"><span class="path1"></span><span
-                                            class="path2"></span></i>
-                                </div>
-                                <!--end::Close-->
-                            </div>
-                            <form id="add_form" method="post"
-                                action="{{ route('subject-detail.action', $subject_detail->id) }}"
-                                class="needs-validation" enctype="multipart/form-data" novalidate="">
-                                @csrf
-                                @method('PUT')
-                                {{ csrf_field() }}
-                                <div class="modal-body">
-                                    <div class="fv-row mb-10">
-                                        <label for="exampleFormControlInput1" class="form-label">Keterangan Aksi</label>
-                                        <textarea rows="10" class="form-control form-control-solid" name="action_comment">{{ $subject_detail->action_comment }}</textarea>
-                                    </div>
-                                    <div class="mb-10">
-                                        <input class="form-check-input" type="checkbox" value="" name="is_done"
-                                            {{ $subject_detail->is_done ? 'checked' : '' }} />
-                                        <label class="form-check-label" for="is_done">
-                                            Selesai
-                                        </label>
-                                    </div>
-                                </div>
-
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-primary">Save changes</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <!--end::Modal - Subject Detail Action - Edit-->
-                <!--begin::Modal - Subject Detail - Edit-->
-                <div class="modal fade" tabindex="-1" id="modal_edit_subject_detail">
-                    <div class="modal-dialog modal-xl">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h3 class="modal-title">Ubah Subject Detail</h3>
-                                <!--begin::Close-->
-                                <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal"
-                                    aria-label="Close">
-                                    <i class="ki-duotone ki-cross fs-1"><span class="path1"></span><span
-                                            class="path2"></span></i>
-                                </div>
-                                <!--end::Close-->
-                            </div>
-                            <form id="add_form" method="post"
-                                action="{{ route('subject-detail.update', $subject_detail->id) }}"
-                                class="needs-validation" enctype="multipart/form-data" novalidate="">
-                                @csrf
-                                @method('PUT')
-                                {{ csrf_field() }}
-                                <div class="modal-body">
-                                    <div class="fv-row mb-10">
-                                        <label for="exampleFormControlInput1" class="required form-label">Nama</label>
-                                        <input type="text" class="form-control form-control-solid" name="name"
-                                            value="{{ $subject_detail->name }}"
-                                            placeholder="Nama Kegiatan atau Subjek" />
-                                    </div>
-                                    <div class="fv-row mb-10">
-                                        <label for="exampleFormControlInput1"
-                                            class="required form-label">Keterangan</label>
-                                        <textarea rows="10" class="form-control form-control-solid" name="comment">{{ $subject_detail->comment }}</textarea>
-                                    </div>
-                                    <div class="fv-row mb-10">
-                                        <label for="exampleFormControlInput1" class="form-label">Start</label>
-                                        <div class="fv-row input-group mb-10" id="kt_td_picker_date_only_start"
-                                            data-td-target-input="nearest" data-td-target-toggle="nearest">
-                                            <input id="kt_td_picker_date_only_start" type="text" class="form-control"
-                                                data-td-target="#kt_td_picker_date_only_start" name="start"
-                                                value="{{ $subject_detail->start }}" />
-                                            <span class="input-group-text" data-td-target="#kt_td_picker_date_only_start"
-                                                data-td-toggle="datetimepicker">
-                                                <i class="ki-duotone ki-calendar fs-2"><span class="path1"></span><span
-                                                        class="path2"></span></i>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="fv-row mb-10">
-                                        <label for="exampleFormControlInput1" class="form-label">End</label>
-                                        <div class="fv-row input-group mb-10" id="kt_td_picker_date_only_end"
-                                            data-td-target-input="nearest" data-td-target-toggle="nearest">
-                                            <input id="kt_td_picker_date_only_end" type="text" class="form-control"
-                                                data-td-target="#kt_td_picker_date_only_end" name="end"
-                                                value="{{ $subject_detail->end }}" />
-                                            <span class="input-group-text" data-td-target="#kt_td_picker_date_only_end"
-                                                data-td-toggle="datetimepicker">
-                                                <i class="ki-duotone ki-calendar fs-2"><span class="path1"></span><span
-                                                        class="path2"></span></i>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="mb-10">
-                                        <input class="form-check-input" type="checkbox" value="" name="active"
-                                            {{ $subject_detail->active ? 'checked' : '' }} />
-                                        <label class="form-check-label" for="active">
-                                            Selesai
-                                        </label>
-                                    </div>
-                                </div>
-
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-primary">Save changes</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <!--end::Modal - Subject Detail - Edit-->
-                <!--begin::Modal - Action - Add-->
-                <div class="modal fade" tabindex="-1" id="modal_add">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h3 class="modal-title">Tambah Aksi</h3>
-
-                                <!--begin::Close-->
-                                <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal"
-                                    aria-label="Close">
-                                    <i class="ki-duotone ki-cross fs-1"><span class="path1"></span><span
-                                            class="path2"></span></i>
-                                </div>
-                                <!--end::Close-->
-                            </div>
-                            <form id="add_form" method="post"
-                                action="{{ route('subject-detail-store.action', $subject_detail->id) }}"
-                                class="needs-validation" novalidate="">
-                                @csrf
-                                <div class="modal-body">
-                                    <div class="fv-row mb-10">
-                                        <label for="exampleFormControlInput1" class="required form-label">Nama</label>
-                                        <input type="text" class="form-control form-control-solid" name="name"
-                                            placeholder="Nama Aksi" />
-                                    </div>
-                                    <div class="fv-row mb-10">
-                                        <label for="exampleFormControlInput1" class="form-label">Keterangan</label>
-                                        <textarea class="form-control form-control-solid" name="comment"></textarea>
-                                    </div>
-                                    <div class="fv-row mb-10">
-                                        <label for="exampleFormControlInput1" class="required form-label">Jabatan</label>
-                                        <select class="form-select form-select-solid" aria-label="Select example"
-                                            name="jabatan_id">
-                                            <option>Pilih..</option>
-                                            @foreach ($jabatans as $jabatan)
-                                                <option value="{{ $jabatan->id }}">{{ $jabatan->name }}
-                                                </option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                    <div class="fv-row mb-10">
-                                        <label for="exampleFormControlInput1" class="form-label">Start</label>
-                                        <div class="fv-row input-group mb-10" id="kt_td_picker_date_only_start_action"
-                                            data-td-target-input="nearest" data-td-target-toggle="nearest">
-                                            <input id="kt_td_picker_date_only_start_action" type="text"
-                                                class="form-control" data-td-target="#kt_td_picker_date_only_start_action"
-                                                name="start" value="" />
-                                            <span class="input-group-text"
-                                                data-td-target="#kt_td_picker_date_only_start_action"
-                                                data-td-toggle="datetimepicker">
-                                                <i class="ki-duotone ki-calendar fs-2"><span class="path1"></span><span
-                                                        class="path2"></span></i>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="fv-row mb-10">
-                                        <label for="exampleFormControlInput1" class="form-label">End</label>
-                                        <div class="fv-row input-group mb-10" id="kt_td_picker_date_only_end_action"
-                                            data-td-target-input="nearest" data-td-target-toggle="nearest">
-                                            <input id="kt_td_picker_date_only_end_action" type="text"
-                                                class="form-control" data-td-target="#kt_td_picker_date_only_end_action"
-                                                name="end" value="" />
-                                            <span class="input-group-text"
-                                                data-td-target="#kt_td_picker_date_only_end_action"
-                                                data-td-toggle="datetimepicker">
-                                                <i class="ki-duotone ki-calendar fs-2"><span class="path1"></span><span
-                                                        class="path2"></span></i>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-primary">Save changes</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <!--end::Modal - Action - Add-->
                 <!--end::Modals-->
             </div>
             <!--end::Content container-->
@@ -740,7 +479,7 @@
                                 e.preventDefault();
                                 const o = e.target.closest("tr"),
                                     n = o.querySelectorAll("td")[2].innerText;
-                                let act_id = $(this).data("id");
+                                let check_id = $(this).data("id");
                                 let token = $(this).data("csrf");
 
                                 Swal.fire({
@@ -766,7 +505,7 @@
                                             },
                                         }).then(function() {
                                             $.ajax({
-                                                url: `/monitoring-pimpinan/monitoring/action/${act_id}`,
+                                                url: `/monitoring-pimpinan/monitoring/check/${check_id}`,
                                                 type: "DELETE",
                                                 cache: false,
                                                 data: {

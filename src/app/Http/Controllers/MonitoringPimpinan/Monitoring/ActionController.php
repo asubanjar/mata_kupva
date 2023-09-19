@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\MonitoringPimpinan\Monitoring;
 
 use App\Http\Controllers\Controller;
+use App\Models\Master\Jabatan;
 use App\Models\MonitoringPimpinan\Monitoring\Action;
 use Illuminate\Http\Request;
 
@@ -32,8 +33,19 @@ class ActionController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id): void
+    public function show(Action $action)
     {
+        $jabatans = Jabatan::all();
+
+        $interval = $action->start->diff($action->end);
+
+        $diff_days = $interval->format('%a');
+
+        return view('monitoring-pimpinan/monitoring/action/view', compact(
+            'action',
+            'jabatans',
+            'diff_days'
+        ));
     }
 
     /**

@@ -9,6 +9,7 @@ use App\Http\Controllers\Master\SifatController;
 use App\Http\Controllers\Master\SubjectTypeController;
 use App\Http\Controllers\Master\UrgensiController;
 use App\Http\Controllers\MonitoringPimpinan\Monitoring\ActionController;
+use App\Http\Controllers\MonitoringPimpinan\Monitoring\CheckFinishController;
 use App\Http\Controllers\MonitoringPimpinan\Monitoring\SubjectController;
 use App\Http\Controllers\MonitoringPimpinan\Monitoring\SubjectDetailActionController;
 use App\Http\Controllers\MonitoringPimpinan\Monitoring\SubjectDetailActionStoreController;
@@ -43,6 +44,7 @@ Route::group(['middleware' => ['auth']], function (): void {
         Route::resource('monitoring/action', ActionController::class);
         Route::put('monitoring/subject-detail/{subject_detail}/action', SubjectDetailActionController::class)->name('subject-detail.action');
         Route::post('monitoring/subject-detail/{subject_detail}/action', SubjectDetailActionStoreController::class)->name('subject-detail-store.action');
+        Route::get('monitoring/check/{check}/{status}', CheckFinishController::class)->name('monitoring.check.finish');
     });
 
     //MENU MASTER
