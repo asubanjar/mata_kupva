@@ -8,6 +8,7 @@ use App\Http\Controllers\Master\DipaController;
 use App\Http\Controllers\Master\SifatController;
 use App\Http\Controllers\Master\SubjectTypeController;
 use App\Http\Controllers\Master\UrgensiController;
+use App\Http\Controllers\MonitoringPimpinan\Monitoring\ActionCheckStoreController;
 use App\Http\Controllers\MonitoringPimpinan\Monitoring\ActionController;
 use App\Http\Controllers\MonitoringPimpinan\Monitoring\CheckFinishController;
 use App\Http\Controllers\MonitoringPimpinan\Monitoring\SubjectController;
@@ -45,6 +46,7 @@ Route::group(['middleware' => ['auth']], function (): void {
         Route::put('monitoring/subject-detail/{subject_detail}/action', SubjectDetailActionController::class)->name('subject-detail.action');
         Route::post('monitoring/subject-detail/{subject_detail}/action', SubjectDetailActionStoreController::class)->name('subject-detail-store.action');
         Route::get('monitoring/check/{check}/{status}', CheckFinishController::class)->name('monitoring.check.finish');
+        Route::post('monitoring/action/{action}/check', ActionCheckStoreController::class)->name('monitoring.action-store.check');
     });
 
     //MENU MASTER
