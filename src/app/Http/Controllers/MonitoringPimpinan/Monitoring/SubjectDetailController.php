@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Master\Jabatan;
 use App\Models\MonitoringPimpinan\Monitoring\SubjectDetail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SubjectDetailController extends Controller
 {
@@ -37,14 +38,20 @@ class SubjectDetailController extends Controller
     {
         $jabatans = Jabatan::all();
 
+        $dist_jabatan_count = DB::table('actions')
+        ->where('subject_detail_id', $subject_detail->id)
+        ->distinct('jabatan_id')
+        ->count('jabatan_id');
+
         $interval = $subject_detail->start->diff($subject_detail->end);
 
         $diff_days = $interval->format('%a');
 
         return view('monitoring-pimpinan/monitoring/subject-detail/view', compact(
+            'diff_days',
+            'dist_jabatan_count',
             'jabatans',
             'subject_detail',
-            'diff_days'
         ));
     }
 

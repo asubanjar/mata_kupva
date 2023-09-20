@@ -602,7 +602,7 @@
                                                     <td>
                                                         @if ($subject_detail->is_done === true)
                                                             <div class="badge badge-light-success">
-                                                                {{ $subject_detail->finish }}</div>
+                                                                {{ $subject_detail->finish->format('d/m/Y') }}</div>
                                                         @else
                                                             <div class="badge badge-light-danger">Dalam Proses</div>
                                                         @endif

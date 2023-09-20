@@ -254,6 +254,24 @@
                                             <!--end::Label-->
                                         </div>
                                         <!--end::Stat-->
+                                        <!--begin::Stat-->
+                                        <div
+                                            class="min-w-125px mb-3 me-6 rounded border border-dashed border-gray-300 px-4 py-3">
+                                            <!--begin::Number-->
+                                            <div class="d-flex align-items-center">
+                                                <i class="ki-duotone ki-arrow-up fs-3 text-success me-2">
+                                                    <span class="path1"></span>
+                                                    <span class="path2"></span>
+                                                </i>
+                                                <div class="fs-4 fw-bold" data-kt-countup="true"
+                                                    data-kt-countup-value="{{ $dist_jabatan_count }}">0</div>
+                                            </div>
+                                            <!--end::Number-->
+                                            <!--begin::Label-->
+                                            <div class="fw-semibold fs-6 text-gray-400">Unit Terlibat</div>
+                                            <!--end::Label-->
+                                        </div>
+                                        <!--end::Stat-->
                                     </div>
                                     <!--end::Stats-->
                                 </div>
