@@ -641,7 +641,7 @@
                                         <input class="form-check-input" type="checkbox" value="" name="active"
                                             {{ $subject_detail->active ? 'checked' : '' }} />
                                         <label class="form-check-label" for="active">
-                                            Selesai
+                                            Aktif
                                         </label>
                                     </div>
                                 </div>

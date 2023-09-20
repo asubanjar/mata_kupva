@@ -67,7 +67,6 @@ class SubjectDetailController extends Controller
      */
     public function update(Request $request, SubjectDetail $subject_detail)
     {
-        // dd($request->start);
         $request->validate([
             'name'    => 'required',
             'comment' => 'required',

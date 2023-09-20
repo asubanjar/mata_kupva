@@ -111,7 +111,7 @@
                                     <!--begin::Actions-->
                                     <div class="d-flex mb-4">
                                         <a href="#" class="btn btn-sm btn-primary me-3" data-bs-toggle="modal"
-                                            data-bs-target="#modal_edit_subject_detail">Ubah Aksi</a>
+                                            data-bs-target="#modal_edit_action">Ubah Aksi</a>
                                         <!--begin::Menu-->
                                         <div class="me-0">
                                             <button class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary"
@@ -474,6 +474,94 @@
                 <!--end::Row-->
 
                 <!--begin::Modals-->
+                <!--begin::Modal - Subject Action - Edit-->
+                <div class="modal fade" tabindex="-1" id="modal_edit_action">
+                    <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 class="modal-title">Ubah Detail Aksi</h3>
+                                <!--begin::Close-->
+                                <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal"
+                                    aria-label="Close">
+                                    <i class="ki-duotone ki-cross fs-1"><span class="path1"></span><span
+                                            class="path2"></span></i>
+                                </div>
+                                <!--end::Close-->
+                            </div>
+                            <form id="add_form" method="post" action="{{ route('action.update', $action->id) }}"
+                                class="needs-validation" enctype="multipart/form-data" novalidate="">
+                                @csrf
+                                @method('PUT')
+                                {{ csrf_field() }}
+                                <div class="modal-body">
+                                    <div class="fv-row mb-10">
+                                        <label for="exampleFormControlInput1" class="required form-label">Nama</label>
+                                        <input type="text" class="form-control form-control-solid" name="name"
+                                            value="{{ $action->name }}" placeholder="Nama Kegiatan atau Subjek" />
+                                    </div>
+                                    <div class="fv-row mb-10">
+                                        <label for="exampleFormControlInput1"
+                                            class="required form-label">Keterangan</label>
+                                        <textarea rows="10" class="form-control form-control-solid" name="comment">{{ $action->comment }}</textarea>
+                                    </div>
+                                    <div class="fv-row mb-10">
+                                        <label for="exampleFormControlInput1" class="required form-label">Jabatan</label>
+                                        <select class="form-select form-select-solid" aria-label="Select example"
+                                            name="jabatan_id">
+                                            @foreach ($jabatans as $jabatan)
+                                                <option @selected($jabatan->id == $action->jabatan_id) value="{{ $jabatan->id }}">
+                                                    {{ $jabatan->name }}</option>
+                                            @endforeach
+
+                                        </select>
+                                    </div>
+                                    <div class="fv-row mb-10">
+                                        <label for="exampleFormControlInput1" class="form-label">Start</label>
+                                        <div class="fv-row input-group mb-10" id="kt_td_picker_date_only_start"
+                                            data-td-target-input="nearest" data-td-target-toggle="nearest">
+                                            <input id="kt_td_picker_date_only_start" type="text" class="form-control"
+                                                data-td-target="#kt_td_picker_date_only_start" name="start"
+                                                value="{{ $action->start }}" />
+                                            <span class="input-group-text" data-td-target="#kt_td_picker_date_only_start"
+                                                data-td-toggle="datetimepicker">
+                                                <i class="ki-duotone ki-calendar fs-2"><span class="path1"></span><span
+                                                        class="path2"></span></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="fv-row mb-10">
+                                        <label for="exampleFormControlInput1" class="form-label">End</label>
+                                        <div class="fv-row input-group mb-10" id="kt_td_picker_date_only_end"
+                                            data-td-target-input="nearest" data-td-target-toggle="nearest">
+                                            <input id="kt_td_picker_date_only_end" type="text" class="form-control"
+                                                data-td-target="#kt_td_picker_date_only_end" name="end"
+                                                value="{{ $action->end }}" />
+                                            <span class="input-group-text" data-td-target="#kt_td_picker_date_only_end"
+                                                data-td-toggle="datetimepicker">
+                                                <i class="ki-duotone ki-calendar fs-2"><span class="path1"></span><span
+                                                        class="path2"></span></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="mb-10">
+                                        <input class="form-check-input" type="checkbox" value="" name="active"
+                                            {{ $action->active ? 'checked' : '' }} />
+                                        <label class="form-check-label" for="active">
+                                            Aktif
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!--end::Modal - Action Detail - Edit-->
+
                 <!--begin::Modal - Action - Add-->
                 <div class="modal fade" tabindex="-1" id="modal_add">
                     <div class="modal-dialog">

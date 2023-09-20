@@ -58,8 +58,25 @@ class ActionController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id): void
+    public function update(Request $request, Action $action)
     {
+        $request->validate([
+            'name'       => 'required',
+            'start'      => 'required|date',
+            'end'        => 'required|date',
+            'jabatan_id' => 'required|exists:jabatans,id',
+        ]);
+
+        $action->update([
+            'name'       => $request->name,
+            'comment'    => $request->comment,
+            'start'      => $request->start,
+            'end'        => $request->end,
+            'active'     => $request->has('active'),
+            'jabatan_id' => $request->jabatan_id,
+        ]);
+
+        return redirect('/monitoring-pimpinan/monitoring/action/' . $action->id)->with('success', 'Sukses mengubah detail aksi');
     }
 
     /**
