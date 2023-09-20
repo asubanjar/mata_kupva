@@ -21,12 +21,24 @@ class SubjectController extends Controller
     {
         $subjects = Subject::all();
 
+        $subject_actives = Subject::where('active', true)->get();
+
+        $subject_openeds = $subject_actives->whereNull('closed');
+
+        $subject_closeds = $subject_actives->whereNotNull('closed');
+
         $subject_types = SubjectType::all();
+
+        $progress_percentage = ($subject_closeds->count() / $subject_actives->count());
 
         return view(
             'monitoring-pimpinan/monitoring/subject/index',
             compact(
+                'progress_percentage',
                 'subjects',
+                'subject_actives',
+                'subject_closeds',
+                'subject_openeds',
                 'subject_types'
             )
         );
