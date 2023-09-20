@@ -51,7 +51,7 @@ class JabatanSeeder extends Seeder
             ], [
                 'code'        => 'uk.1.1.12',
                 'parent_code' => 'uk.1.1',
-                'name'        => 'Plt. PENGASUH',
+                'name'        => 'PENGASUH',
                 'description' => 'Deputi Bidang Pelaporan dan Pengawasan Kepatuhan',
             ],
             [
@@ -70,6 +70,72 @@ class JabatanSeeder extends Seeder
                 'parent_code' => 'uk.1.1.12',
                 'name'        => 'PATUH',
                 'description' => 'Direktorat Pengawasan Kepatuhan Penyedia Barang dan/ atau Jasa Lain dan Profesi',
+            ],
+            [
+                'code'        => 'uk.1.1.2',
+                'parent_code' => 'uk.1.1',
+                'name'        => 'TEGAS',
+                'description' => 'Deputi Bidang Strategi dan Kerja Sama',
+            ],
+            [
+                'code'        => 'uk.1.1.2.4',
+                'parent_code' => 'uk.1.1.2',
+                'name'        => 'SALAM',
+                'description' => 'Direktorat Strategi dan Kerja Sama Dalam Negeri',
+            ],
+            [
+                'code'        => 'uk.1.1.2.5',
+                'parent_code' => 'uk.1.1.2',
+                'name'        => 'SERASI',
+                'description' => 'Direktorat Strategi dan Kerja Sama Internasional',
+            ],
+            [
+                'code'        => 'uk.1.1.2.6',
+                'parent_code' => 'uk.1.1.2',
+                'name'        => 'KREASI',
+                'description' => 'Direktorat Hukum dan Regulasi',
+            ],
+            [
+                'code'        => 'uk.1.1.4',
+                'parent_code' => 'uk.1.1',
+                'name'        => 'PEKA',
+                'description' => 'Inspektorat',
+            ],
+            [
+                'code'        => 'uk.1.1.5',
+                'parent_code' => 'uk.1.1',
+                'name'        => 'LOGIS',
+                'description' => 'Pusat Teknologi Informasi',
+            ],
+            [
+                'code'        => 'uk.1.1.6',
+                'parent_code' => 'uk.1.1',
+                'name'        => 'PATIH',
+                'description' => 'Pusdiklat APU PPT',
+            ],
+            [
+                'code'        => 'uk.1.1.9',
+                'parent_code' => 'uk.1.1',
+                'name'        => 'ASA',
+                'description' => 'Deputi Bidang Analisis dan Pemeriksaan',
+            ],
+            [
+                'code'        => 'uk.1.1.9.1',
+                'parent_code' => 'uk.1.1.9',
+                'name'        => 'SIASAT',
+                'description' => 'Direktorat Analisis dan Pemeriksaan I',
+            ],
+            [
+                'code'        => 'uk.1.1.9.2',
+                'parent_code' => 'uk.1.1.9',
+                'name'        => 'SIDIK',
+                'description' => 'Direktorat Analisis dan Pemeriksaan II',
+            ],
+            [
+                'code'        => 'uk.1.1.9.3',
+                'parent_code' => 'uk.1.1.9',
+                'name'        => 'SIAGA',
+                'description' => 'Direktorat Analisis dan Pemeriksaan III',
             ],
         ];
 

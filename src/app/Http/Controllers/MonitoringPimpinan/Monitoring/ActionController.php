@@ -76,7 +76,9 @@ class ActionController extends Controller
             'jabatan_id' => $request->jabatan_id,
         ]);
 
-        return redirect('/monitoring-pimpinan/monitoring/action/' . $action->id)->with('success', 'Sukses mengubah detail aksi');
+        return redirect(
+            '/monitoring-pimpinan/monitoring/action/' . $action->id
+        )->with('success', 'Sukses mengubah detail aksi');
     }
 
     /**
