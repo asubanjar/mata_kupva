@@ -657,6 +657,80 @@
                     <!--end::Content-->
                 </div>
                 <!--end::Row-->
+
+                <!--begin::Modals-->
+
+                <!--begin::Modal - Action - Add-->
+                <div class="modal fade" tabindex="-1" id="modal_add">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 class="modal-title">Tambah Detail Subjek</h3>
+
+                                <!--begin::Close-->
+                                <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal"
+                                    aria-label="Close">
+                                    <i class="ki-duotone ki-cross fs-1"><span class="path1"></span><span
+                                            class="path2"></span></i>
+                                </div>
+                                <!--end::Close-->
+                            </div>
+                            <form id="add_form" method="post"
+                                action="{{ route('monitoring.subject-detail-store.subject', $subject->id) }}"
+                                class="needs-validation" novalidate="">
+                                @csrf
+                                <div class="modal-body">
+                                    <div class="fv-row mb-10">
+                                        <label for="exampleFormControlInput1" class="required form-label">Nama</label>
+                                        <input type="text" class="form-control form-control-solid" name="name"
+                                            placeholder="Nama Subjek Detail" />
+                                    </div>
+                                    <div class="fv-row mb-10">
+                                        <label for="exampleFormControlInput1"
+                                            class="required form-label">Keterangan</label>
+                                        <textarea rows="10" class="form-control form-control-solid" name="comment"></textarea>
+                                    </div>
+                                    <div class="fv-row mb-10">
+                                        <label for="exampleFormControlInput1" class="form-label">Start</label>
+                                        <div class="fv-row input-group mb-10" id="kt_td_picker_date_only_start"
+                                            data-td-target-input="nearest" data-td-target-toggle="nearest">
+                                            <input id="kt_td_picker_date_only_start" type="text" class="form-control"
+                                                data-td-target="#kt_td_picker_date_only_start" name="start"
+                                                value="" />
+                                            <span class="input-group-text" data-td-target="#kt_td_picker_date_only_start"
+                                                data-td-toggle="datetimepicker">
+                                                <i class="ki-duotone ki-calendar fs-2"><span class="path1"></span><span
+                                                        class="path2"></span></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="fv-row mb-10">
+                                        <label for="exampleFormControlInput1" class="form-label">End</label>
+                                        <div class="fv-row input-group mb-10" id="kt_td_picker_date_only_end"
+                                            data-td-target-input="nearest" data-td-target-toggle="nearest">
+                                            <input id="kt_td_picker_date_only_end" type="text" class="form-control"
+                                                data-td-target="#kt_td_picker_date_only_end" name="end"
+                                                value="" />
+                                            <span class="input-group-text" data-td-target="#kt_td_picker_date_only_end"
+                                                data-td-toggle="datetimepicker">
+                                                <i class="ki-duotone ki-calendar fs-2"><span class="path1"></span><span
+                                                        class="path2"></span></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!--end::Modal - Action - Add-->
+
+                <!--end::Modals-->
             </div>
             <!--end::Content container-->
         </div>
@@ -976,5 +1050,20 @@
         if (typeof module !== "undefined") {
             module.exports = KTChartsWidget17;
         }
+    </script>
+    <script>
+        new tempusDominus.TempusDominus(document.getElementById("kt_td_picker_date_only_start"), {
+            localization: {
+                format: "yyyy/MM/dd"
+            }
+        });
+    </script>
+
+    <script>
+        new tempusDominus.TempusDominus(document.getElementById("kt_td_picker_date_only_end"), {
+            localization: {
+                format: "yyyy/MM/dd"
+            }
+        });
     </script>
 @endsection

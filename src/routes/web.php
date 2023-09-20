@@ -15,6 +15,7 @@ use App\Http\Controllers\MonitoringPimpinan\Monitoring\SubjectController;
 use App\Http\Controllers\MonitoringPimpinan\Monitoring\SubjectDetailActionController;
 use App\Http\Controllers\MonitoringPimpinan\Monitoring\SubjectDetailActionStoreController;
 use App\Http\Controllers\MonitoringPimpinan\Monitoring\SubjectDetailController;
+use App\Http\Controllers\MonitoringPimpinan\Monitoring\SubjectDetailStoreController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -47,6 +48,7 @@ Route::group(['middleware' => ['auth']], function (): void {
         Route::post('monitoring/subject-detail/{subject_detail}/action', SubjectDetailActionStoreController::class)->name('subject-detail-store.action');
         Route::get('monitoring/check/{check}/{status}', CheckFinishController::class)->name('monitoring.check.finish');
         Route::post('monitoring/action/{action}/check', ActionCheckStoreController::class)->name('monitoring.action-store.check');
+        Route::post('monitoring/subject/{subject}/subject-detail', SubjectDetailStoreController::class)->name('monitoring.subject-detail-store.subject');
     });
 
     //MENU MASTER
