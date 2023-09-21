@@ -194,10 +194,11 @@
                                 <!--begin::Title-->
                                 <div class="card-title d-flex flex-column">
                                     <!--begin::Amount-->
-                                    <span class="fs-2hx fw-bold text-dark lh-1 ls-n2 me-2">357</span>
+                                    <span
+                                        class="fs-2hx fw-bold text-dark lh-1 ls-n2 me-2">{{ $actions_active->count() }}</span>
                                     <!--end::Amount-->
                                     <!--begin::Subtitle-->
-                                    <span class="fw-semibold fs-6 pt-1 text-gray-400">Professionals</span>
+                                    <span class="fw-semibold fs-6 pt-1 text-gray-400">Aksi belum selesai</span>
                                     <!--end::Subtitle-->
                                 </div>
                                 <!--end::Title-->
@@ -206,8 +207,8 @@
                             <!--begin::Card body-->
                             <div class="card-body d-flex flex-column justify-content-end pe-0">
                                 <!--begin::Title-->
-                                <span class="fs-6 fw-bolder d-block mb-2 text-gray-800">Today’s
-                                    Heroes</span>
+                                <span class="fs-6 fw-bolder d-block mb-2 text-gray-800">Unit kerja dengan aksi selesai
+                                    terbanyak</span>
                                 <!--end::Title-->
                                 <!--begin::Users group-->
                                 <div class="symbol-group symbol-hover flex-nowrap">
@@ -258,10 +259,11 @@
                                     <!--begin::Info-->
                                     <div class="d-flex align-items-center">
                                         <!--begin::Currency-->
-                                        <span class="fs-4 fw-semibold align-self-start me-1 text-gray-400">$</span>
+                                        <span class="fs-4 fw-semibold align-self-start me-1 text-gray-400">+</span>
                                         <!--end::Currency-->
                                         <!--begin::Amount-->
-                                        <span class="fs-2hx fw-bold text-dark lh-1 ls-n2 me-2">69,700</span>
+                                        <span
+                                            class="fs-2hx fw-bold text-dark lh-1 ls-n2 me-2">{{ $subject_detail_actives->count() }}</span>
                                         <!--end::Amount-->
                                         <!--begin::Badge-->
                                         <span class="badge badge-light-success fs-base">
@@ -273,8 +275,7 @@
                                     </div>
                                     <!--end::Info-->
                                     <!--begin::Subtitle-->
-                                    <span class="fw-semibold fs-6 pt-1 text-gray-400">Projects Earnings
-                                        in April</span>
+                                    <span class="fw-semibold fs-6 pt-1 text-gray-400">Jumlah Detail Subjek</span>
                                     <!--end::Subtitle-->
                                 </div>
                                 <!--end::Title-->
@@ -296,10 +297,11 @@
                                         <div class="bullet w-8px h-3px rounded-2 bg-success me-3"></div>
                                         <!--end::Bullet-->
                                         <!--begin::Label-->
-                                        <div class="flex-grow-1 me-4 text-gray-500">Leaf CRM</div>
+                                        <div class="flex-grow-1 me-4 text-gray-500">Selesai</div>
                                         <!--end::Label-->
                                         <!--begin::Stats-->
-                                        <div class="fw-bolder text-xxl-end text-gray-700">$7,660</div>
+                                        <div class="fw-bolder text-xxl-end text-gray-700">
+                                            {{ $subject_detail_closeds->count() }}</div>
                                         <!--end::Stats-->
                                     </div>
                                     <!--end::Label-->
@@ -309,24 +311,11 @@
                                         <div class="bullet w-8px h-3px rounded-2 bg-primary me-3"></div>
                                         <!--end::Bullet-->
                                         <!--begin::Label-->
-                                        <div class="flex-grow-1 me-4 text-gray-500">Mivy App</div>
+                                        <div class="flex-grow-1 me-4 text-gray-500">Progress</div>
                                         <!--end::Label-->
                                         <!--begin::Stats-->
-                                        <div class="fw-bolder text-xxl-end text-gray-700">$2,820</div>
-                                        <!--end::Stats-->
-                                    </div>
-                                    <!--end::Label-->
-                                    <!--begin::Label-->
-                                    <div class="d-flex fw-semibold align-items-center">
-                                        <!--begin::Bullet-->
-                                        <div class="bullet w-8px h-3px rounded-2 me-3" style="background-color: #E4E6EF">
-                                        </div>
-                                        <!--end::Bullet-->
-                                        <!--begin::Label-->
-                                        <div class="flex-grow-1 me-4 text-gray-500">Others</div>
-                                        <!--end::Label-->
-                                        <!--begin::Stats-->
-                                        <div class="fw-bolder text-xxl-end text-gray-700">$45,257</div>
+                                        <div class="fw-bolder text-xxl-end text-gray-700">
+                                            {{ $subject_detail_openeds->count() }}</div>
                                         <!--end::Stats-->
                                     </div>
                                     <!--end::Label-->
@@ -370,7 +359,7 @@
                                 <!--begin::Item-->
                                 <div class="d-flex flex-stack">
                                     <!--begin::Section-->
-                                    <div class="fw-semibold fs-6 me-2 text-gray-700">Avg. Client Rating
+                                    <div class="fw-semibold fs-6 me-2 text-gray-700">Rata-rata subjek
                                     </div>
                                     <!--end::Section-->
                                     <!--begin::Statistics-->
@@ -393,7 +382,7 @@
                                 <!--begin::Item-->
                                 <div class="d-flex flex-stack">
                                     <!--begin::Section-->
-                                    <div class="fw-semibold fs-6 me-2 text-gray-700">Avg. Quotes</div>
+                                    <div class="fw-semibold fs-6 me-2 text-gray-700">Rata-rata subjek detail</div>
                                     <!--end::Section-->
                                     <!--begin::Statistics-->
                                     <div class="d-flex align-items-senter">
@@ -414,7 +403,7 @@
                                 <!--begin::Item-->
                                 <div class="d-flex flex-stack">
                                     <!--begin::Section-->
-                                    <div class="fw-semibold fs-6 me-2 text-gray-700">Avg. Agent Earnings
+                                    <div class="fw-semibold fs-6 me-2 text-gray-700">Rata-rata aksi
                                     </div>
                                     <!--end::Section-->
                                     <!--begin::Statistics-->
@@ -424,7 +413,7 @@
                                             <span class="path2"></span>
                                         </i>
                                         <!--begin::Number-->
-                                        <span class="fw-bolder fs-6 text-gray-900">$2,309</span>
+                                        <span class="fw-bolder fs-6 text-gray-900">2,309</span>
                                         <!--end::Number-->
                                     </div>
                                     <!--end::Statistics-->
@@ -443,13 +432,13 @@
                             <!--begin::Header-->
                             <div class="card-header border-0 pt-5">
                                 <h3 class="card-title align-items-start flex-column">
-                                    <span class="card-label fw-bold text-dark">What’s up Today</span>
-                                    <span class="text-muted fw-semibold fs-7 mt-1">Total 424,567
-                                        deliveries</span>
+                                    <span class="card-label fw-bold text-dark">Info Baru Hari Ini</span>
+                                    <span class="text-muted fw-semibold fs-7 mt-1">Total 4.567
+                                        aksi</span>
                                 </h3>
                                 <!--begin::Toolbar-->
                                 <div class="card-toolbar">
-                                    <a href="#" class="btn btn-sm btn-light">Report Cecnter</a>
+                                    <a href="#" class="btn btn-sm btn-light">Pusat laporan</a>
                                 </div>
                                 <!--end::Toolbar-->
                             </div>

@@ -4,7 +4,9 @@ namespace App\Http\Controllers\MonitoringPimpinan\Monitoring;
 
 use App\Http\Controllers\Controller;
 use App\Models\Master\SubjectType;
+use App\Models\MonitoringPimpinan\Monitoring\Action;
 use App\Models\MonitoringPimpinan\Monitoring\Subject;
+use App\Models\MonitoringPimpinan\Monitoring\SubjectDetail;
 use Illuminate\Http\Request;
 
 class SubjectController extends Controller
@@ -23,9 +25,18 @@ class SubjectController extends Controller
 
         $subject_actives = Subject::where('active', true)->get();
 
+        //TODO HARUSNYA SUBJECT NYA JUGA YANG AKTIF
+        $subject_detail_actives = SubjectDetail::where('active', true)->get();
+
+        $subject_detail_openeds = $subject_detail_actives->whereNull('finish');
+
+        $subject_detail_closeds = $subject_detail_actives->whereNotNull('finish');
+
         $subject_openeds = $subject_actives->whereNull('closed');
 
         $subject_closeds = $subject_actives->whereNotNull('closed');
+
+        $actions_active = Action::where('active', true)->whereNull('finish')->get();
 
         $subject_types = SubjectType::all();
 
@@ -34,10 +45,14 @@ class SubjectController extends Controller
         return view(
             'monitoring-pimpinan/monitoring/subject/index',
             compact(
+                'actions_active',
                 'progress_percentage',
                 'subjects',
                 'subject_actives',
                 'subject_closeds',
+                'subject_detail_actives',
+                'subject_detail_closeds',
+                'subject_detail_openeds',
                 'subject_openeds',
                 'subject_types'
             )
