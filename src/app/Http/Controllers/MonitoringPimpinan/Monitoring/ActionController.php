@@ -5,6 +5,7 @@ namespace App\Http\Controllers\MonitoringPimpinan\Monitoring;
 use App\Http\Controllers\Controller;
 use App\Models\Master\Jabatan;
 use App\Models\MonitoringPimpinan\Monitoring\Action;
+use App\Models\MonitoringPimpinan\Monitoring\Check;
 use Illuminate\Http\Request;
 
 class ActionController extends Controller
@@ -41,8 +42,16 @@ class ActionController extends Controller
 
         $diff_days = $interval->format('%a');
 
+        $checks = Check::where('action_id', $action->id)
+                    ->where('active', true);
+
+        $checks_over_target = $checks->whereDate('end', '>', now())
+                                ->whereNull('finish')
+                                ->get();
+
         return view('monitoring-pimpinan/monitoring/action/view', compact(
             'action',
+            'checks_over_target',
             'jabatans',
             'diff_days'
         ));
