@@ -74,7 +74,11 @@
                                         <div class="d-flex align-items-center mb-1">
                                             <div class="text-hover-primary fs-2 fw-bold me-3 text-gray-800">
                                                 {{ $subject->name }}</div>
-                                            <span class="badge badge-light-success me-auto">Dalam proses</span>
+                                            @if ($subject->closed)
+                                                <span class="badge badge-light-success me-auto">Selesai</span>
+                                            @else
+                                                <span class="badge badge-light-danger me-auto">Dalam proses</span>
+                                            @endif
                                         </div>
                                         <!--end::Status-->
                                         <!--begin::Description-->
@@ -85,8 +89,6 @@
                                     <!--end::Details-->
                                     <!--begin::Actions-->
                                     <div class="d-flex mb-4">
-                                        <a href="#" class="btn btn-sm btn-bg-light btn-active-color-primary me-3"
-                                            data-bs-toggle="modal" data-bs-target="#kt_modal_users_search">Add User</a>
                                         <a href="#" class="btn btn-sm btn-primary me-3" data-bs-toggle="modal"
                                             data-bs-target="#kt_modal_new_target">Ubah Subjek</a>
                                         <!--begin::Menu-->
@@ -299,7 +301,7 @@
                                         style="border-top: 1px solid rgba(255, 255, 255, 0.3);background: rgba(0, 0, 0, 0.15);">
                                         <!--begin::Progress-->
                                         <div class="fw-bold py-2 text-white">
-                                            <span class="fs-1 d-block">12</span>
+                                            <span class="fs-1 d-block">0</span>
                                             <span class="opacity-50">Melewati Batas Waktu</span>
                                         </div>
                                         <!--end::Progress-->
@@ -351,7 +353,7 @@
                                         style="border-top: 1px solid rgba(255, 255, 255, 0.3);background: rgba(0, 0, 0, 0.15);">
                                         <!--begin::Progress-->
                                         <div class="fw-bold py-2 text-white">
-                                            <span class="fs-1 d-block">12</span>
+                                            <span class="fs-1 d-block">0</span>
                                             <span class="opacity-50">Melewati Batas Waktu</span>
                                         </div>
                                         <!--end::Progress-->

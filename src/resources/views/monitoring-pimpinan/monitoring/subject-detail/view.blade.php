@@ -246,6 +246,25 @@
                                                     <span class="path2"></span>
                                                 </i>
                                                 <div class="fs-4 fw-bold" data-kt-countup="true"
+                                                    data-kt-countup-value="{{ $subject_detail->actions->count() }}">0
+                                                </div>
+                                            </div>
+                                            <!--end::Number-->
+                                            <!--begin::Label-->
+                                            <div class="fw-semibold fs-6 text-gray-400">Jumlah Aksi</div>
+                                            <!--end::Label-->
+                                        </div>
+                                        <!--end::Stat-->
+                                        <!--begin::Stat-->
+                                        <div
+                                            class="min-w-125px mb-3 me-6 rounded border border-dashed border-gray-300 px-4 py-3">
+                                            <!--begin::Number-->
+                                            <div class="d-flex align-items-center">
+                                                <i class="ki-duotone ki-arrow-up fs-3 text-success me-2">
+                                                    <span class="path1"></span>
+                                                    <span class="path2"></span>
+                                                </i>
+                                                <div class="fs-4 fw-bold" data-kt-countup="true"
                                                     data-kt-countup-value="{{ $diff_days }}">0</div>
                                             </div>
                                             <!--end::Number-->
@@ -393,6 +412,20 @@
                         <div class="card-toolbar">
                             <!--begin::Toolbar-->
                             <div class="d-flex justify-content-end" data-table-toolbar="base">
+                                <!--begin::Filter-->
+                                <div class="w-150px me-3">
+                                    <!--begin::Select2-->
+                                    <select class="form-select form-select-solid" data-control="select2"
+                                        data-hide-search="true" data-placeholder="Unit Kerja" data-kt-unit-filter="unit">
+                                        <option></option>
+                                        <option value="all">All</option>
+                                        @foreach ($dist_jabatan_names as $dist_jabatan_name)
+                                            <option value="{{ $dist_jabatan_name->name }}">{{ $dist_jabatan_name->name }}</option>
+                                        @endforeach
+                                    </select>
+                                    <!--end::Select2-->
+                                </div>
+                                <!--end::Filter-->
                                 <!--begin::Filter-->
                                 <div class="w-150px me-3">
                                     <!--begin::Select2-->
@@ -905,6 +938,15 @@
                             $(e).on("change", (e) => {
                                 let o = e.target.value;
                                 "all" === o && (o = ""), t.column(6).search(o).draw();
+                            });
+                        }),
+                        (() => {
+                            const e = document.querySelector(
+                                '[data-kt-unit-filter="unit"]',
+                            );
+                            $(e).on("change", (e) => {
+                                let o = e.target.value;
+                                "all" === o && (o = ""), t.column(7).search(o).draw();
                             });
                         })());
                 },

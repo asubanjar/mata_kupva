@@ -38,10 +38,13 @@ class SubjectDetailController extends Controller
     {
         $jabatans = Jabatan::all();
 
-        $dist_jabatan_count = DB::table('actions')
+        $dist_jabatan = DB::table('actions')
         ->where('subject_detail_id', $subject_detail->id)
-        ->distinct('jabatan_id')
-        ->count('jabatan_id');
+        ->distinct('jabatan_id');
+
+        $dist_jabatan_count = $dist_jabatan->count('jabatan_id');
+
+        $dist_jabatan_names = Jabatan::whereIn('id', $dist_jabatan->pluck('jabatan_id'))->get();
 
         $interval = $subject_detail->start->diff($subject_detail->end);
 
@@ -49,7 +52,9 @@ class SubjectDetailController extends Controller
 
         return view('monitoring-pimpinan/monitoring/subject-detail/view', compact(
             'diff_days',
+            'dist_jabatan',
             'dist_jabatan_count',
+            'dist_jabatan_names',
             'jabatans',
             'subject_detail',
         ));
