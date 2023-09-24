@@ -17,6 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('jabatan_id');
             $table->string('name');
             $table->text('comment')->nullable();
+            $table->text('success_indicator')->nullable();
             $table->dateTime('start');
             $table->dateTime('end');
             $table->text('closed_comment')->nullable();

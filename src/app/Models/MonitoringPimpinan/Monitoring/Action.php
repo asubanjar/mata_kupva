@@ -26,6 +26,7 @@ class Action extends Model
         'finish',
         'jabatan_id',
         'name',
+        'success_indicator',
         'start',
         'subject_detail_id',
     ];

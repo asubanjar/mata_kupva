@@ -440,6 +440,7 @@
                                     </th>
                                     <th class="min-w-125px">Nama</th>
                                     <th class="min-w-125px">Deskripsi</th>
+                                    <th class="min-w-125px">Indikator Keberhasilan</th>
                                     <th class="min-w-125px">Target</th>
                                     <th class="min-w-125px">Selesai</th>
                                     <th class="min-w-125px">Status</th>
@@ -457,6 +458,7 @@
                                         </td>
                                         <td>{{ $action->name }}</td>
                                         <td>{{ $action->comment }}</td>
+                                        <td>{{ $action->success_indicator }}</td>
                                         <td>{{ $action->start->format('d/m/Y') }} s/d
                                             {{ $action->end->format('d/m/Y') }}</td>
                                         <td>
