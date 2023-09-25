@@ -5,10 +5,13 @@ namespace App\Models\MonitoringPimpinan\Monitoring;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations;
+use Spatie\Activitylog\LogOptions;
+use Spatie\Activitylog\Traits\LogsActivity;
 
 class Check extends Model
 {
     use HasFactory;
+    use LogsActivity;
 
     protected $casts = [
         'active' => 'boolean',
@@ -26,6 +29,12 @@ class Check extends Model
         'name',
         'start',
     ];
+
+    public function getActivitylogOptions(): LogOptions
+    {
+        return LogOptions::defaults()
+        ->logFillable();
+    }
 
     public function action(): Relations\BelongsTo
     {
