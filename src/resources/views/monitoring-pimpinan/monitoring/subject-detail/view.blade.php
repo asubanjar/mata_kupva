@@ -85,15 +85,16 @@
                                         <div class="d-flex align-items-center mb-1">
                                             <div class="text-hover-primary fs-2 fw-bold me-3 text-gray-800">
                                                 {{ $subject_detail->name }}</div>
-
-                                            <a href="{{ url('/monitoring-pimpinan/monitoring/subject/' . $subject_detail->subject_id) }}"
-                                                class="badge badge-light-success me-auto">{{ $subject_detail->subject->name }}</a>
                                         </div>
                                         <!--end::Status-->
                                         <!--begin::Description-->
                                         <div class="d-flex fw-semibold fs-5 mb-4 flex-wrap text-gray-400">
                                             {{ $subject_detail->comment }}</div>
                                         <!--end::Description-->
+                                        <!--begin::Parent-->
+                                        <a href="{{ url('/monitoring-pimpinan/monitoring/subject/' . $subject_detail->subject_id) }}"
+                                            class="badge badge-light-success me-auto">{{ $subject_detail->subject->name }}</a>
+                                        <!--end::Parent-->
                                     </div>
                                     <!--end::Details-->
                                     <!--begin::Actions-->
@@ -402,8 +403,7 @@
                                     <span class="path2"></span>
                                 </i>
                                 <input type="text" data-table-filter="search"
-                                    class="form-control form-control-solid w-250px ps-13"
-                                    placeholder="Search Kegiatan / Subjek" />
+                                    class="form-control form-control-solid w-250px ps-13" placeholder="Search Aksi" />
                             </div>
                             <!--end::Search-->
                         </div>
@@ -420,7 +420,8 @@
                                         <option></option>
                                         <option value="all">All</option>
                                         @foreach ($dist_jabatan_names as $dist_jabatan_name)
-                                            <option value="{{ $dist_jabatan_name->name }}">{{ $dist_jabatan_name->name }}</option>
+                                            <option value="{{ $dist_jabatan_name->name }}">{{ $dist_jabatan_name->name }}
+                                            </option>
                                         @endforeach
                                     </select>
                                     <!--end::Select2-->
@@ -478,6 +479,7 @@
                                     <th class="min-w-125px">Selesai</th>
                                     <th class="min-w-125px">Status</th>
                                     <th class="min-w-125px">Unit Kerja</th>
+                                    <th class="min-w-40px">Jumlah Ceklist</th>
                                     <th class="min-w-70px text-end">Aksi</th>
                                 </tr>
                             </thead>
@@ -492,8 +494,19 @@
                                         <td>{{ $action->name }}</td>
                                         <td>{{ $action->comment }}</td>
                                         <td>{{ $action->success_indicator }}</td>
-                                        <td>{{ $action->start->format('d/m/Y') }} s/d
-                                            {{ $action->end->format('d/m/Y') }}</td>
+                                        <td>
+                                            @if ($action->finish === null && $action->end < now())
+                                                <div class="badge badge-light-danger">
+                                                    {{ $subject_detail->start->format('d/m/Y') }} s/d
+                                                    {{ $subject_detail->end->format('d/m/Y') }}
+                                                </div>
+                                            @elseif ($action->finish != null || $action->end >= now())
+                                                <div class="badge badge-light-success">
+                                                    {{ $subject_detail->start->format('d/m/Y') }} s/d
+                                                    {{ $subject_detail->end->format('d/m/Y') }}
+                                                </div>
+                                            @endif
+                                        </td>
                                         <td>
                                             @if ($action->finish)
                                                 <div class="badge badge-light-success">
@@ -510,6 +523,7 @@
                                             @endif
                                         </td>
                                         <td>{{ $action->jabatan->name }}</td>
+                                        <td>{{ $action->checks->count() }}</td>
                                         <td class="text-end">
                                             <a href="#"
                                                 class="btn btn-sm btn-light btn-flex btn-center btn-active-light-primary"

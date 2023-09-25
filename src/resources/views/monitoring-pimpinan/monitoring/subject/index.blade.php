@@ -178,7 +178,7 @@
                                         <span>{{ $progress_percentage }}% Selesai</span>
                                     </div>
                                     <div class="h-8px w-100 bg-light-danger mx-3 rounded">
-                                        <div class="bg-danger h-8px rounded" role="progressbar" style="width: 72%;"
+                                        <div class="bg-danger h-8px rounded" role="progressbar" style="width: 10%;"
                                             aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </div>
@@ -207,8 +207,7 @@
                             <!--begin::Card body-->
                             <div class="card-body d-flex flex-column justify-content-end pe-0">
                                 <!--begin::Title-->
-                                <span class="fs-6 fw-bolder d-block mb-2 text-gray-800">Unit kerja dengan aksi selesai
-                                    terbanyak</span>
+                                <span class="fs-6 fw-bolder d-block mb-2 text-gray-800">Pengguna paling aktif</span>
                                 <!--end::Title-->
                                 <!--begin::Users group-->
                                 <div class="symbol-group symbol-hover flex-nowrap">
@@ -218,7 +217,7 @@
                                     </div>
                                     <div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip"
                                         title="Michael Eberon">
-                                        <img alt="Pic" src="assets/media/avatars/300-11.jpg" />
+                                        <img alt="Pic" src="{{ asset('assets/media/avatars/300-11.jpg') }}" />
                                     </div>
                                     <div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip"
                                         title="Susan Redwood">
@@ -226,7 +225,7 @@
                                     </div>
                                     <div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip"
                                         title="Melody Macy">
-                                        <img alt="Pic" src="assets/media/avatars/300-2.jpg" />
+                                        <img alt="Pic" src="{{ asset('assets/media/avatars/300-2.jpg') }}" />
                                     </div>
                                     <div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip"
                                         title="Perry Matthew">
@@ -234,7 +233,7 @@
                                     </div>
                                     <div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip"
                                         title="Barry Walter">
-                                        <img alt="Pic" src="assets/media/avatars/300-12.jpg" />
+                                        <img alt="Pic" src="{{ asset('assets/media/avatars/300-12.jpg') }}" />
                                     </div>
                                     <a href="#" class="symbol symbol-35px symbol-circle" data-bs-toggle="modal"
                                         data-bs-target="#kt_modal_view_users">
@@ -330,7 +329,7 @@
                             <!--begin::Header-->
                             <div class="card-header pt-5">
                                 <!--begin::Title-->
-                                <h3 class="card-title text-gray-800">Highlights</h3>
+                                <h3 class="card-title text-gray-800">Highlight</h3>
                                 <!--end::Title-->
                                 <!--begin::Toolbar-->
                                 <div class="card-toolbar d-none">
@@ -734,8 +733,8 @@
                                                 </div>
                                                 <!--end::Time-->
                                                 <!--begin::Description-->
-                                                <div class="fw-semibold fs-6 text-gray-700">9 Degree
-                                                    Project Estimation Meeting</div>
+                                                <div class="fw-semibold fs-6 text-gray-700">Penambahan Rencana Aksi
+                                                    Pengawasan Pihak Pelapor yang Tepat Sasaran</div>
                                                 <!--end::Description-->
                                                 <!--begin::Link-->
                                                 <div class="fw-semibold fs-7 text-gray-400">Lead by
@@ -808,8 +807,8 @@
                                                 </div>
                                                 <!--end::Time-->
                                                 <!--begin::Description-->
-                                                <div class="fw-semibold fs-6 text-gray-700">9 Degree
-                                                    Project Estimation Meeting</div>
+                                                <div class="fw-semibold fs-6 text-gray-700">Penambahan Rencana Aksi
+                                                    Pengawasan Pihak Pelapor yang Tepat Sasaran</div>
                                                 <!--end::Description-->
                                                 <!--begin::Link-->
                                                 <div class="fw-semibold fs-7 text-gray-400">Lead by
@@ -911,14 +910,13 @@
                                             <!--begin::Info-->
                                             <div class="flex-grow-1 me-5">
                                                 <!--begin::Time-->
-                                                <div class="fw-semibold fs-2 text-gray-800">10:20 -
-                                                    11:00
-                                                    <span class="fw-semibold fs-7 text-gray-400">AM</span>
+                                                <div class="fw-semibold fs-2 text-gray-800">03.10
+                                                    <span class="fw-semibold fs-7 text-gray-400">PM</span>
                                                 </div>
                                                 <!--end::Time-->
                                                 <!--begin::Description-->
-                                                <div class="fw-semibold fs-6 text-gray-700">9 Degree
-                                                    Project Estimation Meeting</div>
+                                                <div class="fw-semibold fs-6 text-gray-700">Penambahan Rencana Aksi
+                                                    Pengawasan Pihak Pelapor yang Tepat Sasaran</div>
                                                 <!--end::Description-->
                                                 <!--begin::Link-->
                                                 <div class="fw-semibold fs-7 text-gray-400">Lead by
@@ -946,14 +944,13 @@
                                             <!--begin::Info-->
                                             <div class="flex-grow-1 me-5">
                                                 <!--begin::Time-->
-                                                <div class="fw-semibold fs-2 text-gray-800">16:30 -
-                                                    17:00
+                                                <div class="fw-semibold fs-2 text-gray-800">03.00
                                                     <span class="fw-semibold fs-7 text-gray-400">PM</span>
                                                 </div>
                                                 <!--end::Time-->
                                                 <!--begin::Description-->
-                                                <div class="fw-semibold fs-6 text-gray-700">Dashboard
-                                                    UI/UX Design Review</div>
+                                                <div class="fw-semibold fs-6 text-gray-700">Penambahan Rencana Aksi
+                                                    Laporan berkualitas yang tepat sasaran</div>
                                                 <!--end::Description-->
                                                 <!--begin::Link-->
                                                 <div class="fw-semibold fs-7 text-gray-400">Lead by
@@ -981,14 +978,13 @@
                                             <!--begin::Info-->
                                             <div class="flex-grow-1 me-5">
                                                 <!--begin::Time-->
-                                                <div class="fw-semibold fs-2 text-gray-800">12:00 -
-                                                    13:40
-                                                    <span class="fw-semibold fs-7 text-gray-400">AM</span>
+                                                <div class="fw-semibold fs-2 text-gray-800">03.40
+                                                    <span class="fw-semibold fs-7 text-gray-400">PM</span>
                                                 </div>
                                                 <!--end::Time-->
                                                 <!--begin::Description-->
-                                                <div class="fw-semibold fs-6 text-gray-700">Marketing
-                                                    Campaign Discussion</div>
+                                                <div class="fw-semibold fs-6 text-gray-700">Penambahan Rencana Aksi
+                                                    Pola kerja yang memanfaatkan seluruh basis data PPATK</div>
                                                 <!--end::Description-->
                                                 <!--begin::Link-->
                                                 <div class="fw-semibold fs-7 text-gray-400">Lead by
@@ -3191,8 +3187,8 @@
                                         <td>{{ $subject->name }}</td>
                                         <td>{{ $subject->subjectType->name }}</td>
                                         <td>{{ $subject->comment }}</td>
-                                        <td>{{ $subject->opened }}</td>
-                                        <td>{{ $subject->closed }}</td>
+                                        <td>{{ $subject->opened->format('d/m/Y') }}</td>
+                                        <td>{{ $subject->closed ? $subject->closed->format('d/m/Y') : '-' }}</td>
                                         <td>
                                             @if ($subject->active === true)
                                                 <div class="badge badge-light-success">Aktif</div>

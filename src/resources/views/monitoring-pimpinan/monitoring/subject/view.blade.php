@@ -586,8 +586,19 @@
                                         </td>
                                         <td>{{ $subject_detail->name }}</td>
                                         <td>{{ $subject_detail->comment }}</td>
-                                        <td>{{ $subject_detail->start->format('d/m/Y') }} s/d
-                                            {{ $subject_detail->end->format('d/m/Y') }}</td>
+                                        <td>
+                                            @if ($subject_detail->finish === null && $subject_detail->end < now())
+                                                <div class="badge badge-light-danger">
+                                                    {{ $subject_detail->start->format('d/m/Y') }} s/d
+                                                    {{ $subject_detail->end->format('d/m/Y') }}
+                                                </div>
+                                            @elseif ($subject_detail->finish != null || $subject_detail->end >= now())
+                                                <div class="badge badge-light-success">
+                                                    {{ $subject_detail->start->format('d/m/Y') }} s/d
+                                                    {{ $subject_detail->end->format('d/m/Y') }}
+                                                </div>
+                                            @endif
+                                        </td>
                                         <td>
                                             @if ($subject_detail->is_done === true)
                                                 <div class="badge badge-light-success">

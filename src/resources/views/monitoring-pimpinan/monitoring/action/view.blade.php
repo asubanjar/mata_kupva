@@ -96,16 +96,22 @@
                                         <div class="d-flex align-items-center mb-1">
                                             <div class="text-hover-primary fs-2 fw-bold me-3 text-gray-800">
                                                 {{ $action->name }}</div>
-                                            <div class="badge badge-light-primary fs-2 me-auto">
-                                                {{ $action->jabatan->description }}</div>
-                                            <a href="{{ url('/monitoring-pimpinan/monitoring/subject-detail/' . $action->subject_detail_id) }}"
-                                                class="badge badge-light-success me-auto">{{ $action->subjectDetail->name }}</a>
                                         </div>
                                         <!--end::Status-->
                                         <!--begin::Description-->
                                         <div class="d-flex fw-semibold fs-5 mb-4 flex-wrap text-gray-400">
                                             {{ $action->comment }}</div>
                                         <!--end::Description-->
+                                        <!--begin::Jabatan-->
+                                        <div class="d-flex align-items-center mb-1">
+                                            <div class="badge badge-light-primary fs-2 me-auto">
+                                                {{ $action->jabatan->description }}</div>
+                                        </div>
+                                        <!--end::Jabatan-->
+                                        <!--begin::Parent-->
+                                        <a href="{{ url('/monitoring-pimpinan/monitoring/subject-detail/' . $action->subject_detail_id) }}"
+                                            class="badge badge-light-success me-auto">{{ $action->subjectDetail->name }}</a>
+                                        <!--end::Parent-->
                                     </div>
                                     <!--end::Details-->
                                     <!--begin::Actions-->
@@ -582,7 +588,7 @@
                                             placeholder="Nama Ceklist" />
                                     </div>
                                     <div class="fv-row mb-10">
-                                        <label for="exampleFormControlInput1" class="form-label">Start</label>
+                                        <label for="exampleFormControlInput1" class="form-label">Dimulai</label>
                                         <div class="fv-row input-group mb-10" id="kt_td_picker_date_only_start_check"
                                             data-td-target-input="nearest" data-td-target-toggle="nearest">
                                             <input id="kt_td_picker_date_only_start_check" type="text"
@@ -597,7 +603,8 @@
                                         </div>
                                     </div>
                                     <div class="fv-row mb-10">
-                                        <label for="exampleFormControlInput1" class="form-label">End</label>
+                                        <label for="exampleFormControlInput1" class="form-label">Target
+                                            Penyelesaian</label>
                                         <div class="fv-row input-group mb-10" id="kt_td_picker_date_only_end_check"
                                             data-td-target-input="nearest" data-td-target-toggle="nearest">
                                             <input id="kt_td_picker_date_only_end_check" type="text"

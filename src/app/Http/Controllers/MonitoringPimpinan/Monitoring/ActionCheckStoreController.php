@@ -15,7 +15,7 @@ class ActionCheckStoreController extends Controller
     public function __invoke(Request $request, Action $action)
     {
         $request->validate([
-            'name'  => 'required|max:50',
+            'name'  => 'required|max:255',
             'start' => 'required|date',
             'end'   => 'required|date',
         ]);

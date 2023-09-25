@@ -17,7 +17,7 @@ class SubjectSeeder extends Seeder
             [
                 'name'            => 'Resolusi Kerja Hebat (ROKET) - RAJA 2023',
                 'comment'         => 'Penetapan Quick Win dan Rencana Aksi Atas Resolusi Kerja Hebat (ROKET) - Rapat Kerja PPATK 2023',
-                'opened'          => '2021-09-25 00:00:00.000',
+                'opened'          => '2023-09-25 00:00:00.000',
                 'subject_type_id' => SubjectType::where('code', 'NOTETAKING')->first()->id,
             ],
         ];

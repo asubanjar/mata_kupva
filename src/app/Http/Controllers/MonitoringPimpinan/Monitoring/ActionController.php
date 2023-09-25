@@ -45,7 +45,7 @@ class ActionController extends Controller
         $checks = Check::where('action_id', $action->id)
                     ->where('active', true);
 
-        $checks_over_target = $checks->whereDate('end', '>', now())
+        $checks_over_target = $checks->whereDate('end', '<', now())
                                 ->whereNull('finish')
                                 ->get();
 
