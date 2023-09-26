@@ -11,11 +11,10 @@ class SubjectDetail extends Model
     use HasFactory;
 
     protected $casts = [
-        'active'  => 'boolean',
-        'end'     => 'datetime',
-        'finish'  => 'datetime',
-        'is_done' => 'boolean',
-        'start'   => 'datetime',
+        'active' => 'boolean',
+        'end'    => 'datetime',
+        'finish' => 'datetime',
+        'start'  => 'datetime',
     ];
 
     protected $fillable = [
@@ -24,7 +23,6 @@ class SubjectDetail extends Model
         'comment',
         'end',
         'finish',
-        'is_done',
         'name',
         'start',
         'subject_id',

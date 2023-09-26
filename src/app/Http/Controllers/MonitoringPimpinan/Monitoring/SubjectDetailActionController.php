@@ -29,6 +29,6 @@ class SubjectDetailActionController extends Controller
             'is_done'        => $request->has('is_done'),
         ]);
 
-        return redirect('/monitoring-pimpinan/monitoring/subject-detail/' . $subject_detail->id)->with('success', 'Sukses mengubah subject detail');
+        return redirect('/monitoring-pimpinan/monitoring/subject-detail/' . $subject_detail->id)->with('success', 'Sukses mengubah detail subjek');
     }
 }

@@ -99,10 +99,9 @@
                                     <!--end::Details-->
                                     <!--begin::Actions-->
                                     <div class="d-flex mb-4">
-                                        <a href="#" class="btn btn-sm btn-bg-light btn-active-color-primary me-3"
-                                            data-bs-toggle="modal" data-bs-target="#kt_modal_users_search">Add User</a>
                                         <a href="#" class="btn btn-sm btn-primary me-3" data-bs-toggle="modal"
-                                            data-bs-target="#modal_edit_subject_detail">Ubah Subjek Detail</a>
+                                            data-bs-target="#modal_edit_subject_detail">Ubah Subjek
+                                            Detail</a>
                                         <!--begin::Menu-->
                                         <div class="me-0">
                                             <button class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary"
@@ -310,7 +309,7 @@
                     <div class="col-xl-12">
                         <!--begin::Engage widget 9-->
                         <div class="card h-lg-100"
-                            @if ($subject_detail->is_done) style="background: linear-gradient(112.14deg, #00cec9 0%, #00b894 100%)"
+                            @if ($subject_detail->finish) style="background: linear-gradient(112.14deg, #00cec9 0%, #00b894 100%)"
                             @else
                             style="background: linear-gradient(112.14deg, #F1416C 0%, #d63031 100%)" @endif>
                             <!--begin::Body-->
@@ -562,7 +561,7 @@
                 <!--begin::Modals-->
                 <!--begin::Modal - Subject Detail Action - Edit-->
                 <div class="modal fade" tabindex="-1" id="modal_edit_action">
-                    <div class="modal-dialog modal-xl">
+                    <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h3 class="modal-title">Ubah Aksi</h3>
@@ -587,10 +586,12 @@
                                         <textarea rows="10" class="form-control form-control-solid" name="action_comment">{{ $subject_detail->action_comment }}</textarea>
                                     </div>
                                     <div class="mb-10">
-                                        <input class="form-check-input" type="checkbox" value="" name="is_done"
-                                            {{ $subject_detail->is_done ? 'checked' : '' }} />
-                                        <label class="form-check-label" for="is_done">
-                                            Selesai
+                                        <label class="form-check form-switch form-check-custom form-check-solid">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                name="is_done" {{ $subject_detail->finish ? 'checked' : '' }} />
+                                            <span class="form-check-label fw-semibold text-muted">
+                                                Selesai
+                                            </span>
                                         </label>
                                     </div>
                                 </div>
@@ -606,7 +607,7 @@
                 <!--end::Modal - Subject Detail Action - Edit-->
                 <!--begin::Modal - Subject Detail - Edit-->
                 <div class="modal fade" tabindex="-1" id="modal_edit_subject_detail">
-                    <div class="modal-dialog modal-xl">
+                    <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h3 class="modal-title">Ubah Subject Detail</h3>
@@ -684,7 +685,7 @@
                 <!--end::Modal - Subject Detail - Edit-->
                 <!--begin::Modal - Action - Add-->
                 <div class="modal fade" tabindex="-1" id="modal_add">
-                    <div class="modal-dialog">
+                    <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h3 class="modal-title">Tambah Aksi</h3>
@@ -717,13 +718,14 @@
                                             name="jabatan_id">
                                             <option>Pilih..</option>
                                             @foreach ($jabatans as $jabatan)
-                                                <option value="{{ $jabatan->id }}">{{ $jabatan->name }}
+                                                <option value="{{ $jabatan->id }}">{{ $jabatan->name }} -
+                                                    {{ $jabatan->description }}
                                                 </option>
                                             @endforeach
                                         </select>
                                     </div>
                                     <div class="fv-row mb-10">
-                                        <label for="exampleFormControlInput1" class="form-label">Start</label>
+                                        <label for="exampleFormControlInput1" class="form-label required">Mulai</label>
                                         <div class="fv-row input-group mb-10" id="kt_td_picker_date_only_start_action"
                                             data-td-target-input="nearest" data-td-target-toggle="nearest">
                                             <input id="kt_td_picker_date_only_start_action" type="text"
@@ -738,7 +740,8 @@
                                         </div>
                                     </div>
                                     <div class="fv-row mb-10">
-                                        <label for="exampleFormControlInput1" class="form-label">End</label>
+                                        <label for="exampleFormControlInput1" class="form-label required">Target
+                                            Berakhir</label>
                                         <div class="fv-row input-group mb-10" id="kt_td_picker_date_only_end_action"
                                             data-td-target-input="nearest" data-td-target-toggle="nearest">
                                             <input id="kt_td_picker_date_only_end_action" type="text"
@@ -995,6 +998,13 @@
 
     <script>
         new tempusDominus.TempusDominus(document.getElementById("kt_td_picker_date_only_end_action"), {
+            localization: {
+                format: "yyyy/MM/dd"
+            }
+        });
+    </script>
+    <script>
+        new tempusDominus.TempusDominus(document.getElementById("kt_td_picker_date_only_finish"), {
             localization: {
                 format: "yyyy/MM/dd"
             }

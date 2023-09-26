@@ -19,13 +19,28 @@ Route::prefix('monitoring-pimpinan')->group(function (): void {
 
         Route::resource('monitoring/action', ActionController::class);
 
-        Route::put('monitoring/subject-detail/{subject_detail}/action', SubjectDetailActionController::class)->name('subject-detail.action');
+        Route::put(
+            'monitoring/subject-detail/{subject_detail}/action',
+            SubjectDetailActionController::class
+        )->name('subject-detail.action');
 
-        Route::post('monitoring/subject-detail/{subject_detail}/action', SubjectDetailActionStoreController::class)->name('subject-detail-store.action');
+        Route::post(
+            'monitoring/subject-detail/{subject_detail}/action',
+            SubjectDetailActionStoreController::class
+        )->name('subject-detail-store.action');
 
-        Route::get('monitoring/check/{check}/{status}', CheckFinishController::class)->name('monitoring.check.finish');
+        Route::get(
+            'monitoring/check/{check}/{status}',
+            CheckFinishController::class
+        )->name('monitoring.check.finish');
 
-        Route::post('monitoring/action/{action}/check', ActionCheckStoreController::class)->name('monitoring.action-store.check');
+        Route::post(
+            'monitoring/action/{action}/check',
+            ActionCheckStoreController::class
+        )->name('monitoring.action-store.check');
 
-        Route::post('monitoring/subject/{subject}/subject-detail', SubjectDetailStoreController::class)->name('monitoring.subject-detail-store.subject');
+        Route::post(
+            'monitoring/subject/{subject}/subject-detail',
+            SubjectDetailStoreController::class
+        )->name('monitoring.subject-detail-store.subject');
 });

@@ -263,7 +263,7 @@ License: For each use you must have a valid license purchased only from above li
                             <div class="toast-header">
                                 <i class="ki-duotone ki-abstract-23 fs-2 text-danger me-3"><span
                                         class="path1"></span><span class="path2"></span></i>
-                                <strong class="me-auto">Eror</strong>
+                                <strong class="me-auto">Gagal</strong>
                                 <small>baru saja</small>
                                 <button type="button" class="btn-close" data-bs-dismiss="toast"
                                     aria-label="Close"></button>

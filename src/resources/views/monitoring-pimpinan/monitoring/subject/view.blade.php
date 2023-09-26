@@ -538,7 +538,7 @@
                                 <!--end::Filter-->
                                 <!--begin::Add Kegiatan/Subjek-->
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#modal_add">Tambah Kegiatan/Subjek</button>
+                                    data-bs-target="#modal_add">Tambah Detail Subjek</button>
                                 <!--end::Add Kegiatan/Subjek-->
                             </div>
                             <!--end::Toolbar-->
@@ -654,7 +654,7 @@
 
                 <!--begin::Modal - Action - Add-->
                 <div class="modal fade" tabindex="-1" id="modal_add">
-                    <div class="modal-dialog">
+                    <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h3 class="modal-title">Tambah Detail Subjek</h3>
@@ -683,7 +683,7 @@
                                         <textarea rows="10" class="form-control form-control-solid" name="comment"></textarea>
                                     </div>
                                     <div class="fv-row mb-10">
-                                        <label for="exampleFormControlInput1" class="form-label">Start</label>
+                                        <label for="exampleFormControlInput1" class="required form-label">Mulai</label>
                                         <div class="fv-row input-group mb-10" id="kt_td_picker_date_only_start"
                                             data-td-target-input="nearest" data-td-target-toggle="nearest">
                                             <input id="kt_td_picker_date_only_start" type="text" class="form-control"
@@ -697,7 +697,8 @@
                                         </div>
                                     </div>
                                     <div class="fv-row mb-10">
-                                        <label for="exampleFormControlInput1" class="form-label">End</label>
+                                        <label for="exampleFormControlInput1" class="required form-label">Target
+                                            Selesai</label>
                                         <div class="fv-row input-group mb-10" id="kt_td_picker_date_only_end"
                                             data-td-target-input="nearest" data-td-target-toggle="nearest">
                                             <input id="kt_td_picker_date_only_end" type="text" class="form-control"

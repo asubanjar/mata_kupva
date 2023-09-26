@@ -20,7 +20,6 @@ return new class extends Migration
             $table->dateTime('start');
             $table->dateTime('end');
             $table->dateTime('finish')->nullable();
-            $table->boolean('is_done')->default(false);
             $table->boolean('active')->default(true);
             $table->softDeletes();
             $table->timestamps();
