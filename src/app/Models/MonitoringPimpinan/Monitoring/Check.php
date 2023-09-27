@@ -2,6 +2,7 @@
 
 namespace App\Models\MonitoringPimpinan\Monitoring;
 
+use App\Models\Traits;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations;
@@ -12,6 +13,7 @@ class Check extends Model
 {
     use HasFactory;
     use LogsActivity;
+    use Traits\Uuids;
 
     protected $casts = [
         'active' => 'boolean',

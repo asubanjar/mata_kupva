@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('subject_details', function (Blueprint $table): void {
-            $table->id();
-            $table->unsignedBigInteger('subject_id');
+            $table->string('id')->primary();
+            $table->string('subject_id');
             $table->string('name');
             $table->text('comment')->nullable();
             $table->text('action_comment')->nullable();

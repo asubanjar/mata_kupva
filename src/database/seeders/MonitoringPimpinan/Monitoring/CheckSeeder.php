@@ -15,16 +15,16 @@ class CheckSeeder extends Seeder
     {
         $checks = [
             [
-                'name'      => 'Standar Kebersihan Sarpras',
+                'name'      => 'Check 1',
                 'start'     => '2021-09-13 00:00:00.000',
                 'end'       => '2023-09-13 00:00:00.000',
-                'action_id' => Action::where('name', 'Sarpras')->first()->id,
+                'action_id' => Action::where('name', 'Melaksanakan probity audit berbasis risiko')->first()->id,
             ],
             [
-                'name'      => 'Building Management Personel',
+                'name'      => 'Check 2',
                 'start'     => '2021-09-13 00:00:00.000',
                 'end'       => '2024-09-13 00:00:00.000',
-                'action_id' => Action::where('name', 'Sarpras')->first()->id,
+                'action_id' => Action::where('name', 'Melaksanakan probity audit berbasis risiko')->first()->id,
             ],
         ];
 

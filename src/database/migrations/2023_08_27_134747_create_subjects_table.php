@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('subjects', function (Blueprint $table): void {
-            $table->id();
+            $table->string('id')->primary();
             $table->string('name');
             $table->text('comment')->nullable();
             $table->text('closed_comment')->nullable();

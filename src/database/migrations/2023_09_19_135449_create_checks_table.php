@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('checks', function (Blueprint $table): void {
-            $table->id();
-            $table->unsignedBigInteger('action_id');
+            $table->string('id')->primary();
+            $table->string('action_id');
             $table->string('name');
             $table->dateTime('start');
             $table->dateTime('end');

@@ -2,6 +2,7 @@
 
 namespace App\Models\MonitoringPimpinan\Monitoring;
 
+use App\Models\Traits;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations;
@@ -9,6 +10,7 @@ use Illuminate\Database\Eloquent\Relations;
 class SubjectDetail extends Model
 {
     use HasFactory;
+    use Traits\Uuids;
 
     protected $casts = [
         'active' => 'boolean',
