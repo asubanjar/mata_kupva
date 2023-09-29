@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Http\Controllers\Master\AkunLemburController;
 use App\Http\Controllers\Master\DipaController;
 use App\Http\Controllers\Master\SifatController;
 use App\Http\Controllers\Master\SubjectTypeController;
@@ -16,4 +17,6 @@ Route::prefix('master')->group(function (): void {
     Route::resource('urgensi', UrgensiController::class);
 
     Route::resource('dipa', DipaController::class);
+
+    Route::resource('akun-lembur', AkunLemburController::class);
 });

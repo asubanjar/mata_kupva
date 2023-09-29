@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Master DIPA')
+@section('title', 'Master Akun Lembur')
 @section('content')
     <!--begin::Content wrapper-->
     <div class="d-flex flex-column flex-column-fluid">
@@ -11,7 +11,7 @@
                 <div class="page-title d-flex flex-column justify-content-center me-3 flex-wrap">
                     <!--begin::Title-->
                     <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Master
-                        DIPA</h1>
+                        Akun Lembur</h1>
                     <!--end::Title-->
                     <!--begin::Breadcrumb-->
                     <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -26,7 +26,7 @@
                         </li>
                         <!--end::Item-->
                         <!--begin::Item-->
-                        <li class="breadcrumb-item text-muted">Master DIPA</li>
+                        <li class="breadcrumb-item text-muted">Master Akun Lembur</li>
                         <!--end::Item-->
                     </ul>
                     <!--end::Breadcrumb-->
@@ -53,7 +53,8 @@
                                     <span class="path2"></span>
                                 </i>
                                 <input type="text" data-table-filter="search"
-                                    class="form-control form-control-solid w-250px ps-13" placeholder="Search DIPA" />
+                                    class="form-control form-control-solid w-250px ps-13"
+                                    placeholder="Search Akun Lembur" />
                             </div>
                             <!--end::Search-->
                         </div>
@@ -62,10 +63,10 @@
                         <div class="card-toolbar">
                             <!--begin::Toolbar-->
                             <div class="d-flex justify-content-end" data-table-toolbar="base">
-                                <!--begin::Add DIPA-->
+                                <!--begin::Add Akun Lembur-->
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#modal_add">Tambah DIPA</button>
-                                <!--end::Add DIPA-->
+                                    data-bs-target="#modal_add">Tambah Akun Lembur</button>
+                                <!--end::Add Akun Lembur-->
                             </div>
                             <!--end::Toolbar-->
                             <!--begin::Group actions-->
@@ -94,24 +95,26 @@
                                         </div>
                                     </th>
                                     <th class="min-w-125px">Kode</th>
+                                    <th class="min-w-125px">Nama</th>
+                                    <th class="min-w-125px">Jenis</th>
                                     <th class="min-w-125px">Tahun</th>
-                                    <th class="min-w-125px">Pembiayaan</th>
                                     <th class="min-w-125px">Tanggal Dibuat</th>
                                     <th class="min-w-70px text-end">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody class="fw-semibold text-gray-600">
-                                @foreach ($dipas as $dipa)
+                                @foreach ($lemburs as $lembur)
                                     <tr>
                                         <td>
                                             <div class="form-check form-check-sm form-check-custom form-check-solid">
                                                 <input class="form-check-input" type="checkbox" value="1" />
                                             </div>
                                         </td>
-                                        <td>{{ $dipa->kode }}</td>
-                                        <td>{{ $dipa->tahun }}</td>
-                                        <td>{{ $dipa->pembiayaan }}</td>
-                                        <td>{{ $dipa->created_at }}</td>
+                                        <td>{{ $lembur->kode }}</td>
+                                        <td>{{ $lembur->nama }}</td>
+                                        <td>{{ $lembur->jenis }}</td>
+                                        <td>{{ $lembur->tahun }}</td>
+                                        <td>{{ $lembur->created_at }}</td>
                                         <td class="text-end">
                                             <a href="#"
                                                 class="btn btn-sm btn-light btn-flex btn-center btn-active-light-primary"
@@ -123,14 +126,15 @@
                                                 <!--begin::Menu item-->
                                                 <div class="menu-item px-3">
                                                     <a href="javascript:void(0)" data-toggle="tooltip"
-                                                        data-id="{{ $dipa->id }}" data-csrf="{{ csrf_token() }}"
-                                                        data-original-title="Edit" class="menu-link edit-dipa px-3">Ubah</a>
+                                                        data-id="{{ $lembur->id }}" data-csrf="{{ csrf_token() }}"
+                                                        data-original-title="Edit"
+                                                        class="menu-link edit-lembur px-3">Ubah</a>
                                                 </div>
                                                 <!--end::Menu item-->
                                                 <!--begin::Menu item-->
                                                 <div class="menu-item px-3">
-                                                    <a href="#" class="menu-link delete-dipa px-3"
-                                                        data-id="{{ $dipa->id }}" data-kode="{{ $dipa->kode }}"
+                                                    <a href="#" class="menu-link delete-lembur px-3"
+                                                        data-id="{{ $lembur->id }}" data-kode="{{ $lembur->kode }}"
                                                         data-csrf="{{ csrf_token() }}"
                                                         data-table-filter="delete_row">Hapus</a>
                                                 </div>
@@ -149,12 +153,12 @@
                 </div>
                 <!--end::Card-->
                 <!--begin::Modals-->
-                <!--begin::Modal - DIPA - Add-->
+                <!--begin::Modal - Akun Lembur - Add-->
                 <div class="modal fade" tabindex="-1" id="modal_add">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h3 class="modal-title">Tambah DIPA</h3>
+                                <h3 class="modal-title">Tambah Akun Lembur</h3>
 
                                 <!--begin::Close-->
                                 <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal"
@@ -164,7 +168,7 @@
                                 </div>
                                 <!--end::Close-->
                             </div>
-                            <form id="add_form" method="post" action="{{ url('/master/dipa') }}"
+                            <form id="add_form" method="post" action="{{ url('/master/akun-lembur') }}"
                                 class="needs-validation" novalidate="">
                                 @csrf
                                 <div class="modal-body">
@@ -174,18 +178,22 @@
                                             placeholder="Contoh: 080989999" />
                                     </div>
                                     <div class="fv-row mb-10">
+                                        <label for="exampleFormControlInput1" class="required form-label">Nama</label>
+                                        <input type="text" class="form-control form-control-solid" name="nama"
+                                            placeholder="Contoh: 080989999" />
+                                    </div>
+                                    <div class="fv-row mb-10">
+                                        <label for="exampleFormControlInput1" class="required form-label">Jenis</label>
+                                        <select class="form-select form-select-solid" name="jenis">
+                                            <option value="" selected disabled>Pilih Jenis Akun Lembur</option>
+                                            <option value="Non PNS">Non PNS</option>
+                                            <option value="PNS">PNS</option>
+                                        </select>
+                                    </div>
+                                    <div class="fv-row mb-10">
                                         <label for="exampleFormControlInput1" class="required form-label">Tahun</label>
                                         <input type="text" class="form-control form-control-solid" name="tahun"
                                             placeholder="Contoh: 2023" />
-                                    </div>
-                                    <div class="fv-row mb-10">
-                                        <label for="exampleFormControlInput1"
-                                            class="required form-label">Pembiayaan</label>
-                                        <select class="form-select form-select-solid" name="pembiayaan">
-                                            <option value="" selected disabled>Pilih Pembiayaan</option>
-                                            <option value="PPATK Pusat">PPATK Pusat</option>
-                                            <option value="Pusdiklat APUPPT">Pusdiklat APUPPT</option>
-                                        </select>
                                     </div>
                                 </div>
 
@@ -197,14 +205,14 @@
                         </div>
                     </div>
                 </div>
-                <!--end::Modal - DIPA - Add-->
+                <!--end::Modal - Akun Lembur - Add-->
 
-                <!--begin::Modal - DIPA - Edit-->
+                <!--begin::Modal - Akun Lembur - Edit-->
                 <div class="modal fade" tabindex="-1" id="modal_edit">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h3 class="modal-title">Ubah DIPA</h3>
+                                <h3 class="modal-title">Ubah Akun Lembur</h3>
 
                                 <!--begin::Close-->
                                 <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal"
@@ -223,23 +231,26 @@
                                         name="kode" placeholder="Contoh: 080989999" value="" required />
                                 </div>
                                 <div class="mb-10">
-                                    <label for="tahun" class="required form-label">Tahun</label>
-                                    <input type="text" class="form-control form-control-solid" id="tahun"
-                                        name="tahun" placeholder="Contoh: 2023" value="" required />
+                                    <label for="nama" class="required form-label">Nama</label>
+                                    <input type="text" class="form-control form-control-solid" id="nama"
+                                        name="nama" placeholder="Input Nama Akun Lembur" value="" required />
                                 </div>
                                 <div class="mb-10">
-                                    <label for="pembiayaan" class="required form-label">Pembiayaan</label>
-                                    {{-- <input type="text" class="form-control form-control-solid" id="pembiayaan"
-                                        name="pembiayaan" value="" required /> --}}
-                                    <select class="form-select form-select-solid" name="pembiayaan" id="pembiayaan">
-                                        <option value="" selected disabled>Pilih Pembiayaan</option>
-                                        @foreach (['PPATK Pusat', 'Pusdiklat APUPPT'] as $item)
+                                    <label for="jenis" class="required form-label">Jenis</label>
+                                    <select class="form-select form-select-solid" name="jenis" id="jenis">
+                                        <option value="" selected disabled>Pilih Jenis Akun Lembur</option>
+                                        @foreach (['Non PNS', 'PNS'] as $item)
                                             <option value="{{ $item }}"
-                                                @if ($item == old('pembiayaan')) selected="selected" @endif>
+                                                @if ($item == old('jenis')) selected="selected" @endif>
                                                 {{ $item }}
                                             </option>
                                         @endforeach
                                     </select>
+                                </div>
+                                <div class="mb-10">
+                                    <label for="tahun" class="required form-label">Tahun</label>
+                                    <input type="text" class="form-control form-control-solid" id="tahun"
+                                        name="tahun" placeholder="Contoh: 2023" value="" required />
                                 </div>
                             </div>
 
@@ -262,15 +273,16 @@
 
 @section('script')
     <script type="text/javascript">
-        $('body').on('click', '.edit-dipa', function() {
+        $('body').on('click', '.edit-lembur', function() {
             var id = $(this).data('id');
 
-            $.get("{{ url('master/dipa') }}" + '/' + id + '/edit', function(data) {
+            $.get("{{ url('master/akun-lembur') }}" + '/' + id + '/edit', function(data) {
                 $('#modal_edit').modal('show');
                 $('#id').val(data.id);
                 $('#kode').val(data.kode);
+                $('#nama').val(data.nama);
+                $('#jenis').val(data.jenis);
                 $('#tahun').val(data.tahun);
-                $('#pembiayaan').val(data.pembiayaan);
             })
 
         });
@@ -281,18 +293,20 @@
             //define variable
             let id = $('#id').val();
             let kode = $('#kode').val();
+            let nama = $('#nama').val();
+            let jenis = $('#jenis').val();
             let tahun = $('#tahun').val();
-            let pembiayaan = $('#pembiayaan').val();
             let token = $('#csrf').val();
 
             $.ajax({
-                url: `/master/dipa/${id}`,
+                url: `/master/akun-lembur/${id}`,
                 method: "PUT",
                 cache: false,
                 data: {
                     "kode": kode,
+                    "nama": nama,
+                    "jenis": jenis,
                     "tahun": tahun,
-                    "pembiayaan": pembiayaan,
                     "_token": token,
                     // "_method": "PUT",
                 },
@@ -305,7 +319,7 @@
             });
         });
 
-        $(document).on('click', '.delete-dipa', function(e) {
+        $(document).on('click', '.delete-lembur', function(e) {
             e.preventDefault();
 
             let id = $(this).data("id");
@@ -326,7 +340,7 @@
             }).then(function(e) {
                 if (e.value) {
                     $.ajax({
-                        url: `/master/dipa/${id}`,
+                        url: `/master/akun-lembur/${id}`,
                         cache: false,
                         method: "DELETE",
                         data: {

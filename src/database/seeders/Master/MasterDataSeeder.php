@@ -13,10 +13,11 @@ class MasterDataSeeder extends Seeder
      */
     public function run(): void
     {
+        $this->call(AkunLemburSeeder::class);
         $this->call(DipaSeeder::class);
-        $this->call(UrgensiSeeder::class);
         $this->call(SifatSeeder::class);
         $this->call(SubjectTypeSeeder::class);
         $this->call(JabatanSeeder::class);
+        $this->call(UrgensiSeeder::class);
     }
 }

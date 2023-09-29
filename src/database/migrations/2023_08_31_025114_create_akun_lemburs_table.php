@@ -17,9 +17,8 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->string('kode');
             $table->string('nama');
-            $table->string('tahun');
             $table->string('jenis');
-            $table->boolean('active')->default(true);
+            $table->string('tahun');
             $table->softDeletes();
             $table->timestamps();
         });

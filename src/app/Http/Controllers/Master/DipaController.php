@@ -29,7 +29,7 @@ class DipaController extends Controller
     {
         $request->validate([
             'kode'       => 'required',
-            'tahun'      => 'required',
+            'tahun'      => 'required|digits:4|integer|min:1900|max:' . (date('Y') + 1),
             'pembiayaan' => 'required',
         ]);
 
@@ -64,7 +64,7 @@ class DipaController extends Controller
 
         $dipa->update([
             'kode'       => $request->get('kode'),
-            'tahun'      => $request->get('tahun'),
+            'tahun'      => 'required|digits:4|integer|min:1900|max:' . (date('Y') + 1),
             'pembiayaan' => $request->get('pembiayaan'),
         ]);
 

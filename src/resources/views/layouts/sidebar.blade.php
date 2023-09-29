@@ -342,6 +342,13 @@
                                             </span>
                                             <span class="menu-title">DIPA</span>
                                         </a>
+                                        <a class="menu-link {{ (request()->is('master/akun-lembur') ? 'active' : request()->is('master/akun-lembur/*')) ? 'active' : '' }}"
+                                            href="{{ url('/master/akun-lembur') }}">
+                                            <span class="menu-bullet">
+                                                <span class="bullet bullet-dot"></span>
+                                            </span>
+                                            <span class="menu-title">Akun Lembur</span>
+                                        </a>
                                         <!--end:Menu link-->
                                     </div>
                                     <!--end:Menu item-->
