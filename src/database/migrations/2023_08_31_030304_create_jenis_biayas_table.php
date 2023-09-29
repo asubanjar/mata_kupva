@@ -16,9 +16,8 @@ return new class extends Migration
         Schema::create('jenis_biayas', function (Blueprint $table): void {
             $table->uuid('id')->primary();
             $table->string('nama');
-            $table->string('pembiayaananggaran');
+            $table->string('pembiayaan');
             $table->string('keterangan');
-            $table->boolean('active')->default(true);
             $table->softDeletes();
             $table->timestamps();
         });

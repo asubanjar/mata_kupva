@@ -349,6 +349,13 @@
                                             </span>
                                             <span class="menu-title">Akun Lembur</span>
                                         </a>
+                                        <a class="menu-link {{ (request()->is('master/jenis-biaya') ? 'active' : request()->is('master/jenis-biaya/*')) ? 'active' : '' }}"
+                                            href="{{ url('/master/jenis-biaya') }}">
+                                            <span class="menu-bullet">
+                                                <span class="bullet bullet-dot"></span>
+                                            </span>
+                                            <span class="menu-title">Jenis Biaya</span>
+                                        </a>
                                         <!--end:Menu link-->
                                     </div>
                                     <!--end:Menu item-->
