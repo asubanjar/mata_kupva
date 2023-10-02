@@ -115,7 +115,7 @@ class JabatanSeeder extends Seeder
             ],
             [
                 'code'        => 'uk.1.1.9',
-                'parent_code' => 'uk.1.1.1',
+                'parent_code' => 'uk.1.1',
                 'name'        => 'ASA',
                 'description' => 'Deputi Bidang Analisis dan Pemeriksaan',
             ],

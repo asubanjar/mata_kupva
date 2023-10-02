@@ -326,7 +326,7 @@
                                                 <!--begin::Title-->
                                                 <div class="mb-6">
                                                     <h3 class="fs-2x fw-semibold text-white">Keterangan Aksi</h3>
-                                                    <span
+                                                    <span style="white-space: pre-line"
                                                         class="fw-semibold text-white opacity-75">{{ $subject_detail->action_comment ? $subject_detail->action_comment : '-' }}</span>
                                                 </div>
                                                 <!--end::Title-->
