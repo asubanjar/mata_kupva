@@ -91,6 +91,7 @@ class ActionController extends Controller
             'end'        => $request->end,
             'active'     => $request->has('active'),
             'jabatan_id' => $request->jabatan_id,
+            'finish'     => $request->finish,
         ]);
 
         return redirect(

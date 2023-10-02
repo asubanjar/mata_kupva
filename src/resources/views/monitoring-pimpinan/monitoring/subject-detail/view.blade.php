@@ -496,7 +496,7 @@
                                         <td>
                                             @if ($action->finish)
                                                 <div class="badge badge-light-success">
-                                                    {{ $subject_detail->finish }}</div>
+                                                    {{ $action->finish->format('d/m/Y') }}</div>
                                             @else
                                                 <div class="badge badge-light-danger">Dalam Proses</div>
                                             @endif

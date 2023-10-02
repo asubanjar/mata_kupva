@@ -96,6 +96,11 @@
                                         <div class="d-flex align-items-center mb-1">
                                             <div class="text-hover-primary fs-2 fw-bold me-3 text-gray-800">
                                                 {{ $action->name }}</div>
+                                            @if ($action->finish)
+                                                <span class="badge badge-light-success me-auto">Selesai</span>
+                                            @else
+                                                <span class="badge badge-light-danger me-auto">Dalam proses</span>
+                                            @endif
                                         </div>
                                         <!--end::Status-->
                                         <!--begin::Description-->
@@ -558,6 +563,20 @@
                                             </span>
                                         </div>
                                     </div>
+                                    <div class="fv-row mb-10">
+                                        <label for="exampleFormControlInput1" class="form-label">Selesai</label>
+                                        <div class="fv-row input-group mb-10" id="kt_td_picker_date_only_finish"
+                                            data-td-target-input="nearest" data-td-target-toggle="nearest">
+                                            <input id="kt_td_picker_date_only_finish" type="text" class="form-control"
+                                                data-td-target="#kt_td_picker_date_only_finish" name="finish"
+                                                value="{{ $action->finish }}" />
+                                            <span class="input-group-text" data-td-target="#kt_td_picker_date_only_finish"
+                                                data-td-toggle="datetimepicker">
+                                                <i class="ki-duotone ki-calendar fs-2"><span class="path1"></span><span
+                                                        class="path2"></span></i>
+                                            </span>
+                                        </div>
+                                    </div>
                                     <div class="mb-10">
                                         <input class="form-check-input" type="checkbox" value="" name="active"
                                             {{ $action->active ? 'checked' : '' }} />
@@ -853,6 +872,14 @@
 
     <script>
         new tempusDominus.TempusDominus(document.getElementById("kt_td_picker_date_only_end_check"), {
+            localization: {
+                format: "yyyy/MM/dd"
+            }
+        });
+    </script>
+
+    <script>
+        new tempusDominus.TempusDominus(document.getElementById("kt_td_picker_date_only_finish"), {
             localization: {
                 format: "yyyy/MM/dd"
             }
