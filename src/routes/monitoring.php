@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use App\Http\Controllers\MonitoringPimpinan\Monitoring\ActionCheckStoreController;
 use App\Http\Controllers\MonitoringPimpinan\Monitoring\ActionController;
+use App\Http\Controllers\MonitoringPimpinan\Monitoring\CheckController;
 use App\Http\Controllers\MonitoringPimpinan\Monitoring\CheckFinishController;
 use App\Http\Controllers\MonitoringPimpinan\Monitoring\SubjectController;
 use App\Http\Controllers\MonitoringPimpinan\Monitoring\SubjectDetailActionController;
@@ -18,6 +19,8 @@ Route::prefix('monitoring-pimpinan')->group(function (): void {
         Route::resource('monitoring/subject-detail', SubjectDetailController::class);
 
         Route::resource('monitoring/action', ActionController::class);
+
+        Route::resource('monitoring/check', CheckController::class);
 
         Route::put(
             'monitoring/subject-detail/{subject_detail}/action',

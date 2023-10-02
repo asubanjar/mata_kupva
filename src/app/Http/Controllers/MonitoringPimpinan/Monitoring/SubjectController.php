@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\MonitoringPimpinan\Monitoring;
 
 use App\Http\Controllers\Controller;
+use App\Models\Master\Jabatan;
 use App\Models\Master\SubjectType;
 use App\Models\MonitoringPimpinan\Monitoring\Action;
 use App\Models\MonitoringPimpinan\Monitoring\Subject;
@@ -36,15 +37,34 @@ class SubjectController extends Controller
 
         $subject_closeds = $subject_actives->whereNotNull('closed');
 
+        $actions = Action::where('active', true)->get();
+
         $actions_active = Action::where('active', true)->whereNull('finish')->get();
 
         $subject_types = SubjectType::all();
 
         $progress_percentage = ($subject_closeds->count() / $subject_actives->count());
 
+        $setia_total = Action::whereNull('finish')->whereIn('jabatan_id', Jabatan::where('parent_code', 'uk.1.1.1')->pluck('id'));
+
+        $setia_finish = Action::whereNotNull('finish')->whereIn('jabatan_id', Jabatan::where('parent_code', 'uk.1.1.1')->pluck('id'));
+
+        $asa_total = Action::whereNull('finish')->whereIn('jabatan_id', Jabatan::where('parent_code', 'uk.1.1.9')->pluck('id'));
+
+        $asa_finish = Action::whereNotNull('finish')->whereIn('jabatan_id', Jabatan::where('parent_code', 'uk.1.1.9')->pluck('id'));
+
+        $tegas_total = Action::whereNull('finish')->whereIn('jabatan_id', Jabatan::where('parent_code', 'uk.1.1.2')->pluck('id'));
+
+        $tegas_finish = Action::whereNotNull('finish')->whereIn('jabatan_id', Jabatan::where('parent_code', 'uk.1.1.2')->pluck('id'));
+
+        $pengasuh_total = Action::whereNull('finish')->whereIn('jabatan_id', Jabatan::where('parent_code', 'uk.1.1.12')->pluck('id'));
+
+        $pengasuh_finish = Action::whereNotNull('finish')->whereIn('jabatan_id', Jabatan::where('parent_code', 'uk.1.1.12')->pluck('id'));
+
         return view(
             'monitoring-pimpinan/monitoring/subject/index',
             compact(
+                'actions',
                 'actions_active',
                 'progress_percentage',
                 'subjects',
@@ -54,7 +74,15 @@ class SubjectController extends Controller
                 'subject_detail_closeds',
                 'subject_detail_openeds',
                 'subject_openeds',
-                'subject_types'
+                'subject_types',
+                'setia_total',
+                'setia_finish',
+                'asa_total',
+                'asa_finish',
+                'tegas_total',
+                'tegas_finish',
+                'pengasuh_total',
+                'pengasuh_finish',
             )
         );
     }

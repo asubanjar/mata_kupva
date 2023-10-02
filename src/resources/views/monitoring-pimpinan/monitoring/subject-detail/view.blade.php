@@ -502,9 +502,14 @@
                                             @endif
                                         </td>
                                         <td>{{ $action->jabatan->name }}</td>
-                                        <td>{{ $action->checks->whereNotNull('finish')->count()
-                                            ? ($action->checks->whereNotNull('finish')->count() / $action->checks->count()) * 100
-                                            : 0 }}
+                                        <td>{{ number_format(
+                                            $action->checks->whereNotNull('finish')->count()
+                                                ? ($action->checks->whereNotNull('finish')->count() / $action->checks->count()) * 100
+                                                : 0,
+                                            2,
+                                            '.',
+                                            '',
+                                        ) }}
                                             %
                                         </td>
                                         <td>{{ $action->checks->count() }}</td>

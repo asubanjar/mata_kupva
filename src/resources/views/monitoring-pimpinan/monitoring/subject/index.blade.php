@@ -41,6 +41,38 @@
             <!--begin::Content container-->
             <div id="kt_app_content_container" class="app-container container-xxl">
                 <!--begin::Row-->
+                <div class="row g-5 g-xl-10 mb-xl-10 mb-5">
+                    <!--begin::Col-->
+                    <div class="col-xl-12">
+                        <!--begin::Chart widget 36-->
+                        <div class="card card-flush h-lg-100 overflow-hidden">
+                            <!--begin::Header-->
+                            <div class="card-header pt-5">
+                                <!--begin::Title-->
+                                <h3 class="card-title align-items-start flex-column">
+                                    <span class="card-label fw-bold text-dark">Performa Eselon 1</span>
+                                    <span class="fw-semibold fs-6 mt-1 text-gray-400">{{ $actions->count() }} total
+                                        aksi</span>
+                                </h3>
+                                <!--end::Title-->
+                            </div>
+                            <!--end::Header-->
+                            <!--begin::Card body-->
+                            <div class="card-body d-flex align-items-end p-0">
+                                <!--begin::Chart-->
+                                {{-- <div id="kt_charts_widget_36" class="min-h-auto w-100 pe-6 ps-4" style="height: 300px">
+                                </div> --}}
+                                <canvas id="kt_chartjs_1" class="mh-400px"></canvas>
+                                <!--end::Chart-->
+                            </div>
+                            <!--end::Card body-->
+                        </div>
+                        <!--end::Chart widget 36-->
+                    </div>
+                    <!--end::Col-->
+                </div>
+                <!--end::Row-->
+                <!--begin::Row-->
                 <div class="row g-5 g-xl-10 mb-xl-10">
                     <!--begin::Col-->
                     <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-3 mb-md-5 mb-xl-10">
@@ -3429,5 +3461,77 @@
         KTUtil.onDOMContentLoaded(function() {
             List.init();
         });
+    </script>
+
+    <script>
+        var ctx = document.getElementById('kt_chartjs_1');
+
+        // Define colors
+        var primaryColor = KTUtil.getCssVariableValue('--kt-primary');
+        var dangerColor = KTUtil.getCssVariableValue('--kt-danger');
+        var successColor = KTUtil.getCssVariableValue('--kt-success');
+
+        // Define fonts
+        var fontFamily = KTUtil.getCssVariableValue('--bs-font-sans-serif');
+
+        // Chart labels
+        const labels = ['SETIA', 'ASA', 'TEGAS', 'PENGASUH'];
+
+        // Chart data
+        const data = {
+            labels: labels,
+            datasets: [{
+                label: 'Total Aksi',
+                data: [
+                    {{ $setia_total->count() }},
+                    {{ $asa_total->count() }},
+                    {{ $tegas_total->count() }},
+                    {{ $pengasuh_total->count() }}
+                ],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                ],
+                borderColor: [
+                    'rgb(255, 99, 132)',
+                ],
+                borderWidth: 1
+            }, {
+                label: 'Selesai',
+                data: [
+                    {{ $setia_finish->count() }},
+                    {{ $asa_finish->count() }},
+                    {{ $tegas_finish->count() }},
+                    {{ $pengasuh_finish->count() }}
+                ],
+                backgroundColor: [
+                    'rgba(75, 192, 192, 0.2)',
+                ],
+                borderColor: [
+                    'rgb(75, 192, 192)',
+                ],
+                borderWidth: 1
+            }]
+        };
+
+        // Chart config
+        const config = {
+            type: 'bar',
+            data: data,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Grafik Progres Penyelesaian'
+                    }
+                }
+            },
+        };
+
+        // Init ChartJS -- for more info, please visit: https://www.chartjs.org/docs/latest/
+        var myChart = new Chart(ctx, config);
     </script>
 @endsection
