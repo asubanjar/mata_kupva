@@ -49,11 +49,19 @@ class ActionController extends Controller
                                 ->whereNull('finish')
                                 ->get();
 
+        $finish = Check::where('action_id', $action->id)
+                    ->where('active', true)->whereNotNull('finish')->get();
+
+        $finish_percentage = $finish->count() !== 0
+            ? ($finish->count() / $action->checks->count()) * 100
+            : 0;
+
         return view('monitoring-pimpinan/monitoring/action/view', compact(
             'action',
             'checks_over_target',
+            'diff_days',
+            'finish_percentage',
             'jabatans',
-            'diff_days'
         ));
     }
 

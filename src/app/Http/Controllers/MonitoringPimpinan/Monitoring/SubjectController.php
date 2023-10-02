@@ -94,9 +94,9 @@ class SubjectController extends Controller
     {
         $subject_details = $subject->subjectDetails;
 
-        $subject_detail_pending = $subject->subjectDetails->where('is_done', false);
+        $subject_detail_pending = $subject->subjectDetails->whereNull('finish');
 
-        $subject_detail_done = $subject->subjectDetails->where('is_done', true);
+        $subject_detail_done = $subject->subjectDetails->whereNotNull('finish');
 
         return view('monitoring-pimpinan/monitoring/subject/view', compact(
             'subject',

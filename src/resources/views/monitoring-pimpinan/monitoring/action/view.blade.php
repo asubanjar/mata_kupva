@@ -108,6 +108,13 @@
                                                 {{ $action->jabatan->description }}</div>
                                         </div>
                                         <!--end::Jabatan-->
+                                        <!--begin::Penanggung Jawab-->
+                                        <div class="d-flex align-items-center mb-1">
+                                            <div class="badge badge-light-success me-auto">
+                                                {{ $action->jabatan->parent ? $action->jabatan->parent->description : '-' }}
+                                            </div>
+                                        </div>
+                                        <!--end::Penanggung Jawab-->
                                         <!--begin::Parent-->
                                         <a href="{{ url('/monitoring-pimpinan/monitoring/subject-detail/' . $action->subject_detail_id) }}"
                                             class="badge badge-light-success me-auto">{{ $action->subjectDetail->name }}</a>
@@ -306,6 +313,20 @@
                                             <!--end::Label-->
                                         </div>
                                         <!--end::Stat-->
+                                        <!--begin::Stat-->
+                                        <div
+                                            class="min-w-125px mb-3 me-6 rounded border border-dashed border-gray-300 px-4 py-3">
+                                            <!--begin::Number-->
+                                            <div class="d-flex align-items-center">
+                                                <div class="fs-4 fw-bold" data-kt-countup="true"
+                                                    data-kt-countup-value="{{ $finish_percentage }}">0</div>%
+                                            </div>
+                                            <!--end::Number-->
+                                            <!--begin::Label-->
+                                            <div class="fw-semibold fs-6 text-gray-400">Selesai</div>
+                                            <!--end::Label-->
+                                        </div>
+                                        <!--end::Stat-->
                                     </div>
                                     <!--end::Stats-->
                                 </div>
@@ -378,6 +399,7 @@
                         <table class="table-row-dashed fs-6 gy-5 table align-middle" id="kt_table">
                             <thead>
                                 <tr class="fw-bold fs-7 text-uppercase gs-0 text-start text-gray-400">
+                                    <th></th>
                                     <th class="w-10px pe-2">
                                         <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
                                             <input class="form-check-input" type="checkbox" data-kt-check="true"
@@ -386,7 +408,6 @@
                                     </th>
                                     <th class="min-w-125px">Nama</th>
                                     <th class="min-w-125px">Target</th>
-                                    <th class="min-w-125px">Selesai</th>
                                     <th class="min-w-125px">Status</th>
                                     <th class="min-w-70px text-end">Aksi</th>
                                 </tr>
@@ -394,6 +415,7 @@
                             <tbody class="fw-semibold text-gray-600">
                                 @foreach ($action->checks as $check)
                                     <tr>
+                                        <td></td>
                                         <td>
                                             <div class="form-check form-check-sm form-check-custom form-check-solid">
                                                 <input class="form-check-input" type="checkbox" value="1" />
@@ -420,13 +442,6 @@
                                                     {{ $check->finish->format('d/m/Y') }}</div>
                                             @else
                                                 <div class="badge badge-light-danger">Dalam Proses</div>
-                                            @endif
-                                        </td>
-                                        <td>
-                                            @if ($check->active === true)
-                                                <div class="badge badge-light-success">Aktif</div>
-                                            @else
-                                                <div class="badge badge-light-danger">Tidak Aktif</div>
                                             @endif
                                         </td>
                                         <td class="text-end">
@@ -502,7 +517,7 @@
                                     <div class="fv-row mb-10">
                                         <label for="exampleFormControlInput1"
                                             class="required form-label">Keterangan</label>
-                                        <textarea rows="10" class="form-control form-control-solid" name="comment">{{ $action->comment }}</textarea>
+                                        <textarea rows="10" class="form-control form-control-solid" name="comment">{{ $action->comment ? $action->comment : '-' }}</textarea>
                                     </div>
                                     <div class="fv-row mb-10">
                                         <label for="exampleFormControlInput1" class="required form-label">Jabatan</label>
@@ -642,7 +657,7 @@
 @section('script')
     <script>
         "use strict";
-        var List = (function() {
+        const List = (function() {
             var t,
                 e,
                 o = () => {

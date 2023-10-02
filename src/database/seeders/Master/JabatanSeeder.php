@@ -45,7 +45,7 @@ class JabatanSeeder extends Seeder
             ],
             [
                 'code'        => 'uk.1.1.10',
-                'parent_code' => 'uk.1.1',
+                'parent_code' => 'uk.1.1.1',
                 'name'        => 'BERMITRA',
                 'description' => 'Pusat Pemberdayaan Kemitraan APU PPT',
             ], [
@@ -103,19 +103,19 @@ class JabatanSeeder extends Seeder
             ],
             [
                 'code'        => 'uk.1.1.5',
-                'parent_code' => 'uk.1.1',
+                'parent_code' => 'uk.1.1.1',
                 'name'        => 'LOGIS',
                 'description' => 'Pusat Teknologi Informasi',
             ],
             [
                 'code'        => 'uk.1.1.6',
-                'parent_code' => 'uk.1.1',
+                'parent_code' => 'uk.1.1.1',
                 'name'        => 'PATIH',
                 'description' => 'Pusdiklat APU PPT',
             ],
             [
                 'code'        => 'uk.1.1.9',
-                'parent_code' => 'uk.1.1',
+                'parent_code' => 'uk.1.1.1',
                 'name'        => 'ASA',
                 'description' => 'Deputi Bidang Analisis dan Pemeriksaan',
             ],

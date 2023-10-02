@@ -376,7 +376,7 @@
                                 <!--begin::Title-->
                                 <h3 class="card-title align-items-start flex-column">
                                     <span class="card-label fw-bold text-dark">Performa</span>
-                                    <span class="fw-semibold fs-6 pt-2 text-gray-400">Terdapat 12 unit kerja
+                                    <span class="fw-semibold fs-6 pt-2 text-gray-400">Terdapat 16 unit kerja
                                         terlibat</span>
                                 </h3>
                                 <!--end::Title-->
@@ -530,8 +530,8 @@
                                         data-hide-search="true" data-placeholder="Status" data-kt-status-filter="status">
                                         <option></option>
                                         <option value="all">All</option>
-                                        <option value="aktif">Aktif</option>
-                                        <option value="tidak aktif">Tidak Aktif</option>
+                                        <option value="selesai pada">Selesai</option>
+                                        <option value="dalam proses">Dalam proses</option>
                                     </select>
                                     <!--end::Select2-->
                                 </div>
@@ -571,7 +571,6 @@
                                     <th class="min-w-125px">Nama</th>
                                     <th class="min-w-125px">Deskripsi</th>
                                     <th class="min-w-125px">Target</th>
-                                    <th class="min-w-125px">Selesai</th>
                                     <th class="min-w-125px">Status</th>
                                     <th class="min-w-70px text-end">Aksi</th>
                                 </tr>
@@ -600,18 +599,11 @@
                                             @endif
                                         </td>
                                         <td>
-                                            @if ($subject_detail->is_done === true)
+                                            @if ($subject_detail->finish)
                                                 <div class="badge badge-light-success">
-                                                    {{ $subject_detail->finish->format('d/m/Y') }}</div>
+                                                    Selesai pada {{ $subject_detail->finish->format('d/m/Y') }}</div>
                                             @else
                                                 <div class="badge badge-light-danger">Dalam Proses</div>
-                                            @endif
-                                        </td>
-                                        <td>
-                                            @if ($subject_detail->active === true)
-                                                <div class="badge badge-light-success">Aktif</div>
-                                            @else
-                                                <div class="badge badge-light-danger">Tidak Aktif</div>
                                             @endif
                                         </td>
                                         <td class="text-end">
@@ -911,7 +903,7 @@
                             );
                             $(e).on("change", (e) => {
                                 let o = e.target.value;
-                                "all" === o && (o = ""), t.column(6).search(o).draw();
+                                "all" === o && (o = ""), t.column(4).search(o).draw();
                             });
                         })());
                 },

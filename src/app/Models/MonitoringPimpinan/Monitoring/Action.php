@@ -7,6 +7,8 @@ use App\Models\Traits;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations;
+use Illuminate\Database\Eloquent\Builder;
+use Spatie\Activitylog\LogOptions;
 
 class Action extends Model
 {
@@ -33,6 +35,12 @@ class Action extends Model
         'subject_detail_id',
     ];
 
+    public function getActivitylogOptions(): LogOptions
+    {
+        return LogOptions::defaults()
+        ->logFillable();
+    }
+
     public function subjectDetail(): Relations\BelongsTo
     {
         return $this->belongsTo(SubjectDetail::class);
@@ -46,5 +54,13 @@ class Action extends Model
     public function checks(): Relations\HasMany
     {
         return $this->hasMany(Check::class);
+    }
+
+    public function scopeFinish(Builder $builder): Builder
+    {
+        return $builder->whereHas('checks', function (Builder $query): void {
+            $query
+                ->whereNotNull('finish');
+        });
     }
 }

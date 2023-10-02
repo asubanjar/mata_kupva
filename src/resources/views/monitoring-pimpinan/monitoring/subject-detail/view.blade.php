@@ -426,19 +426,6 @@
                                     <!--end::Select2-->
                                 </div>
                                 <!--end::Filter-->
-                                <!--begin::Filter-->
-                                <div class="w-150px me-3">
-                                    <!--begin::Select2-->
-                                    <select class="form-select form-select-solid" data-control="select2"
-                                        data-hide-search="true" data-placeholder="Status" data-kt-status-filter="status">
-                                        <option></option>
-                                        <option value="all">All</option>
-                                        <option value="aktif">Aktif</option>
-                                        <option value="tidak aktif">Tidak Aktif</option>
-                                    </select>
-                                    <!--end::Select2-->
-                                </div>
-                                <!--end::Filter-->
                                 <!--begin::Add Kegiatan/Subjek-->
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                     data-bs-target="#modal_add">Tambah Aksi</button>
@@ -475,9 +462,9 @@
                                     <th class="min-w-125px">Deskripsi</th>
                                     <th class="min-w-125px">Indikator Keberhasilan</th>
                                     <th class="min-w-125px">Target</th>
-                                    <th class="min-w-125px">Selesai</th>
                                     <th class="min-w-125px">Status</th>
                                     <th class="min-w-125px">Unit Kerja</th>
+                                    <th class="min-w-125px">Progres</th>
                                     <th class="min-w-40px">Jumlah Ceklist</th>
                                     <th class="min-w-70px text-end">Aksi</th>
                                 </tr>
@@ -514,14 +501,12 @@
                                                 <div class="badge badge-light-danger">Dalam Proses</div>
                                             @endif
                                         </td>
-                                        <td>
-                                            @if ($action->active === true)
-                                                <div class="badge badge-light-success">Aktif</div>
-                                            @else
-                                                <div class="badge badge-light-danger">Tidak Aktif</div>
-                                            @endif
-                                        </td>
                                         <td>{{ $action->jabatan->name }}</td>
+                                        <td>{{ $action->checks->whereNotNull('finish')->count()
+                                            ? ($action->checks->whereNotNull('finish')->count() / $action->checks->count()) * 100
+                                            : 0 }}
+                                            %
+                                        </td>
                                         <td>{{ $action->checks->count() }}</td>
                                         <td class="text-end">
                                             <a href="#"
@@ -950,20 +935,11 @@
                         o(),
                         (() => {
                             const e = document.querySelector(
-                                '[data-kt-status-filter="status"]',
-                            );
-                            $(e).on("change", (e) => {
-                                let o = e.target.value;
-                                "all" === o && (o = ""), t.column(6).search(o).draw();
-                            });
-                        }),
-                        (() => {
-                            const e = document.querySelector(
                                 '[data-kt-unit-filter="unit"]',
                             );
                             $(e).on("change", (e) => {
                                 let o = e.target.value;
-                                "all" === o && (o = ""), t.column(7).search(o).draw();
+                                "all" === o && (o = ""), t.column(6).search(o).draw();
                             });
                         })());
                 },
