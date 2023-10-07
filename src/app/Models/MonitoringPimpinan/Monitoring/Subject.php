@@ -30,6 +30,11 @@ class Subject extends Model
         'subject_type_id',
     ];
 
+    protected static function booted(): void
+    {
+        static::addGlobalScope('active', fn (Builder $builder) => $builder->where('active', 1));
+    }
+
     public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults()

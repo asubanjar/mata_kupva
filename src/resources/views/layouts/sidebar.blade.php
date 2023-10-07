@@ -162,9 +162,8 @@
                         <!--begin:Menu item-->
                         <div class="menu-item">
                             <!--begin:Menu item-->
-                            <a class="menu-link"
-                                href="https://preview.keenthemes.com/html/metronic/docs/base/utilities"
-                                target="_blank">
+                            <a class="menu-link {{ request()->is('monitoring-pimpinan/dashboard*') ? 'active' : '' }}"
+                                href="{{ url('/monitoring-pimpinan/dashboard') }}">
                                 <span class="menu-icon">
                                     <i class="ki-duotone ki-rocket fs-2">
                                         <span class="path1"></span>

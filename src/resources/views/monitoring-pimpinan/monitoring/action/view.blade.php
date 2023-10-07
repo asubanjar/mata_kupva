@@ -6,7 +6,7 @@
         <!--begin::Toolbar-->
         <div id="kt_app_toolbar" class="app-toolbar py-lg-6 py-3">
             <!--begin::Toolbar container-->
-            <div id="kt_app_toolbar_container" class="app-container container-xxl d-flex flex-stack">
+            <div id="kt_app_toolbar_container" class="app-container container-fluid d-flex flex-stack">
                 <!--begin::Page title-->
                 <div class="page-title d-flex flex-column justify-content-center me-3 flex-wrap">
                     <!--begin::Title-->
@@ -80,7 +80,7 @@
         <!--begin::Content-->
         <div id="kt_app_content" class="app-content flex-column-fluid">
             <!--begin::Content container-->
-            <div id="kt_app_content_container" class="app-container container-xxl">
+            <div id="kt_app_content_container" class="app-container container-fluid">
                 <!--begin::Navbar-->
                 <div class="card mb-xl-9 mb-6">
                     <div class="card-body pb-0 pt-9">

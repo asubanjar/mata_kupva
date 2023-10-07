@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Http\Controllers\MonitoringPimpinan\DashboardController;
 use App\Http\Controllers\MonitoringPimpinan\Monitoring\ActionCheckStoreController;
 use App\Http\Controllers\MonitoringPimpinan\Monitoring\ActionController;
 use App\Http\Controllers\MonitoringPimpinan\Monitoring\CheckController;
@@ -14,6 +15,8 @@ use App\Http\Controllers\MonitoringPimpinan\Monitoring\SubjectDetailStoreControl
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('monitoring-pimpinan')->group(function (): void {
+        Route::resource('dashboard', DashboardController::class)->only('index');
+
         Route::resource('monitoring/subject', SubjectController::class);
 
         Route::resource('monitoring/subject-detail', SubjectDetailController::class);
