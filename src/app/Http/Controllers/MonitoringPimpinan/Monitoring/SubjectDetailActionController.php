@@ -26,7 +26,6 @@ class SubjectDetailActionController extends Controller
         $subject_detail->update([
             'action_comment' => $request->action_comment,
             'finish'         => $finish,
-            'is_done'        => $request->has('is_done'),
         ]);
 
         return redirect('/monitoring-pimpinan/monitoring/subject-detail/' . $subject_detail->id)->with('success', 'Sukses mengubah detail subjek');

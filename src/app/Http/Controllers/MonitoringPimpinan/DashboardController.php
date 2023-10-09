@@ -4,8 +4,9 @@ namespace App\Http\Controllers\MonitoringPimpinan;
 
 use App\Http\Controllers\Controller;
 use App\Models\Master\Jabatan;
-use App\Models\MonitoringPimpinan\Monitoring\Action;
 use App\Models\MonitoringPimpinan\Monitoring\Subject;
+use App\Models\MonitoringPimpinan\Monitoring\SubjectDetail;
+use Illuminate\Support\Facades\DB;
 use Symfony\Component\HttpFoundation\Request;
 
 class DashboardController extends Controller
@@ -17,34 +18,54 @@ class DashboardController extends Controller
     {
         $subjects = Subject::all();
 
-        $setia_total = Action::whereNull('finish')->whereIn('jabatan_id', Jabatan::where('parent_code', 'uk.1.1.1')->pluck('id'));
+        $subject_pendings = Subject::whereNull('closed')->get();
 
-        $setia_finish = Action::whereNotNull('finish')->whereIn('jabatan_id', Jabatan::where('parent_code', 'uk.1.1.1')->pluck('id'));
+        $subject_finishes = Subject::whereNotNull('closed')->get();
 
-        $asa_total = Action::whereNull('finish')->whereIn('jabatan_id', Jabatan::where('parent_code', 'uk.1.1.9')->pluck('id'));
+        $subject_finish_percentage = $subject_finishes->count()
+            ? ($subject_finishes->count() / $subjects->count()) * 100
+            : 0;
 
-        $asa_finish = Action::whereNotNull('finish')->whereIn('jabatan_id', Jabatan::where('parent_code', 'uk.1.1.9')->pluck('id'));
+        $subject_details = SubjectDetail::all();
 
-        $tegas_total = Action::whereNull('finish')->whereIn('jabatan_id', Jabatan::where('parent_code', 'uk.1.1.2')->pluck('id'));
+        $subject_detail_inactives = SubjectDetail::withoutGlobalScope('active')->where('active', false)->get();
 
-        $tegas_finish = Action::whereNotNull('finish')->whereIn('jabatan_id', Jabatan::where('parent_code', 'uk.1.1.2')->pluck('id'));
+        $subject_detail_pendings = SubjectDetail::whereNull('finish')->get();
 
-        $pengasuh_total = Action::whereNull('finish')->whereIn('jabatan_id', Jabatan::where('parent_code', 'uk.1.1.12')->pluck('id'));
+        $subject_detail_finishes = SubjectDetail::whereNotNull('finish')->get();
 
-        $pengasuh_finish = Action::whereNotNull('finish')->whereIn('jabatan_id', Jabatan::where('parent_code', 'uk.1.1.12')->pluck('id'));
+        $subject_detail_finish_percentage = $subject_detail_finishes->count()
+            ? ($subject_detail_finishes->count() / $subject_details->count()) * 100
+            : 0;
+
+        $statistik_jabatan_finishes = Jabatan::select(
+            '*',
+            DB::raw('(select count(*) from actions where jabatan_id = jabatans.id) as total_action'),
+            DB::raw('(select count(*) from actions where jabatan_id = jabatans.id and finish is null) as total_action_pending'),
+            DB::raw('(select count(*) from actions where jabatan_id = jabatans.id and finish is not null) as total_action_finish')
+        )->orderBy('total_action_finish', 'desc')->orderBy('total_action', 'desc')->limit(3)->get();
+
+        $statistik_jabatan_pendings = Jabatan::select(
+            '*',
+            DB::raw('(select count(*) from actions where jabatan_id = jabatans.id) as total_action'),
+            DB::raw('(select count(*) from actions where jabatan_id = jabatans.id and finish is null) as total_action_pending'),
+            DB::raw('(select count(*) from actions where jabatan_id = jabatans.id and finish is not null) as total_action_finish')
+        )->orderBy('total_action_pending', 'desc')->orderBy('total_action', 'desc')->limit(3)->get();
 
         return view(
             'monitoring-pimpinan/index',
             compact(
                 'subjects',
-                'setia_total',
-                'setia_finish',
-                'asa_total',
-                'asa_finish',
-                'tegas_total',
-                'tegas_finish',
-                'pengasuh_total',
-                'pengasuh_finish',
+                'subject_details',
+                'subject_detail_finishes',
+                'subject_detail_inactives',
+                'subject_detail_pendings',
+                'subject_detail_finish_percentage',
+                'subject_finishes',
+                'statistik_jabatan_finishes',
+                'statistik_jabatan_pendings',
+                'subject_pendings',
+                'subject_finish_percentage',
             )
         );
     }

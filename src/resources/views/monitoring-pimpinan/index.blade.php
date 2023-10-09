@@ -11,22 +11,12 @@
                 <div class="page-title d-flex flex-column justify-content-center me-3 flex-wrap">
                     <!--begin::Title-->
                     <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">
-                        Multipurpose</h1>
+                        Monitoring Pimpinan</h1>
                     <!--end::Title-->
                     <!--begin::Breadcrumb-->
                     <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
                         <!--begin::Item-->
-                        <li class="breadcrumb-item text-muted">
-                            <a href="../../demo1/dist/index.html" class="text-muted text-hover-primary">Home</a>
-                        </li>
-                        <!--end::Item-->
-                        <!--begin::Item-->
-                        <li class="breadcrumb-item">
-                            <span class="bullet w-5px h-2px bg-gray-400"></span>
-                        </li>
-                        <!--end::Item-->
-                        <!--begin::Item-->
-                        <li class="breadcrumb-item text-muted">Dashboards</li>
+                        <li class="breadcrumb-item text-muted">Beranda</li>
                         <!--end::Item-->
                     </ul>
                     <!--end::Breadcrumb-->
@@ -64,10 +54,10 @@
                                 <!--begin::Title-->
                                 <div class="card-title d-flex flex-column">
                                     <!--begin::Amount-->
-                                    <span class="fs-2hx fw-bold lh-1 ls-n2 me-2 text-white">69</span>
+                                    <span class="fs-2hx fw-bold lh-1 ls-n2 me-2 text-white">{{ $subjects->count() }}</span>
                                     <!--end::Amount-->
                                     <!--begin::Subtitle-->
-                                    <span class="fw-semibold fs-6 pt-1 text-white opacity-75">Active Projects</span>
+                                    <span class="fw-semibold fs-6 pt-1 text-white opacity-75">Subjek / Kegiatan Aktif</span>
                                     <!--end::Subtitle-->
                                 </div>
                                 <!--end::Title-->
@@ -79,12 +69,13 @@
                                 <div class="d-flex align-items-center flex-column w-100 mt-3">
                                     <div
                                         class="d-flex justify-content-between fw-bold fs-6 w-100 mb-2 mt-auto text-white opacity-75">
-                                        <span>43 Pending</span>
-                                        <span>72%</span>
+                                        <span>{{ $subject_pendings->count() }} Dalam proses</span>
+                                        <span>{{ $subject_finish_percentage }}%</span>
                                     </div>
                                     <div class="h-8px w-100 mx-3 rounded bg-white bg-opacity-50">
-                                        <div class="h-8px rounded bg-white" role="progressbar" style="width: 72%;"
-                                            aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="h-8px rounded bg-white" role="progressbar"
+                                            style="width: {{ $subject_finish_percentage }}%;" aria-valuenow="50"
+                                            aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </div>
                                 <!--end::Progress-->
@@ -92,63 +83,41 @@
                             <!--end::Card body-->
                         </div>
                         <!--end::Card widget 20-->
-                        <!--begin::Card widget 7-->
-                        <div class="card card-flush h-md-50 mb-xl-10 mb-5">
+                        <!--begin::List widget 26-->
+                        <div class="card card-flush h-lg-50">
                             <!--begin::Header-->
                             <div class="card-header pt-5">
                                 <!--begin::Title-->
-                                <div class="card-title d-flex flex-column">
-                                    <!--begin::Amount-->
-                                    <span class="fs-2hx fw-bold text-dark lh-1 ls-n2 me-2">357</span>
-                                    <!--end::Amount-->
-                                    <!--begin::Subtitle-->
-                                    <span class="fw-semibold fs-6 pt-1 text-gray-400">Professionals</span>
-                                    <!--end::Subtitle-->
-                                </div>
+                                <h3 class="card-title fw-bold text-gray-800">Unit aksi selesai</h3>
                                 <!--end::Title-->
                             </div>
                             <!--end::Header-->
-                            <!--begin::Card body-->
-                            <div class="card-body d-flex flex-column justify-content-end pe-0">
-                                <!--begin::Title-->
-                                <span class="fs-6 fw-bolder d-block mb-2 text-gray-800">Today’s Heroes</span>
-                                <!--end::Title-->
-                                <!--begin::Users group-->
-                                <div class="symbol-group symbol-hover flex-nowrap">
-                                    <div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip"
-                                        title="Alan Warden">
-                                        <span class="symbol-label bg-warning text-inverse-warning fw-bold">A</span>
+                            <!--begin::Body-->
+                            <div class="card-body pt-5">
+                                @foreach ($statistik_jabatan_finishes as $statistik_jabatan_finish)
+                                    <!--begin::Item-->
+                                    <div class="d-flex flex-stack">
+                                        <!--begin::Section-->
+                                        <a href="#"
+                                            class="text-primary fw-semibold fs-6 me-2">{{ $statistik_jabatan_finish->name }}</a>
+                                        <!--end::Section-->
+                                        <!--begin::Action-->
+                                        <button type="button"
+                                            class="btn btn-icon btn-sm btn-color-gray-400 btn-active-color-primary justify-content-end h-auto w-auto">
+                                            {{ $statistik_jabatan_finish->total_action_finish }} /
+                                            {{ $statistik_jabatan_finish->total_action }}
+                                        </button>
+                                        <!--end::Action-->
                                     </div>
-                                    <div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip"
-                                        title="Michael Eberon">
-                                        <img alt="Pic" src="assets/media/avatars/300-11.jpg" />
-                                    </div>
-                                    <div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip"
-                                        title="Susan Redwood">
-                                        <span class="symbol-label bg-primary text-inverse-primary fw-bold">S</span>
-                                    </div>
-                                    <div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip"
-                                        title="Melody Macy">
-                                        <img alt="Pic" src="assets/media/avatars/300-2.jpg" />
-                                    </div>
-                                    <div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip"
-                                        title="Perry Matthew">
-                                        <span class="symbol-label bg-danger text-inverse-danger fw-bold">P</span>
-                                    </div>
-                                    <div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip"
-                                        title="Barry Walter">
-                                        <img alt="Pic" src="assets/media/avatars/300-12.jpg" />
-                                    </div>
-                                    <a href="#" class="symbol symbol-35px symbol-circle" data-bs-toggle="modal"
-                                        data-bs-target="#kt_modal_view_users">
-                                        <span class="symbol-label bg-dark fs-8 fw-bold text-gray-300">+42</span>
-                                    </a>
-                                </div>
-                                <!--end::Users group-->
+                                    <!--end::Item-->
+                                    <!--begin::Separator-->
+                                    <div class="separator separator-dashed my-3"></div>
+                                    <!--end::Separator-->
+                                @endforeach
                             </div>
-                            <!--end::Card body-->
+                            <!--end::Body-->
                         </div>
-                        <!--end::Card widget 7-->
+                        <!--end::LIst widget 26-->
                     </div>
                     <!--end::Col-->
                     <!--begin::Col-->
@@ -161,23 +130,21 @@
                                 <div class="card-title d-flex flex-column">
                                     <!--begin::Info-->
                                     <div class="d-flex align-items-center">
-                                        <!--begin::Currency-->
-                                        <span class="fs-4 fw-semibold align-self-start me-1 text-gray-400">$</span>
-                                        <!--end::Currency-->
-                                        <!--begin::Amount-->
-                                        <span class="fs-2hx fw-bold text-dark lh-1 ls-n2 me-2">69,700</span>
-                                        <!--end::Amount-->
+                                        <!--begin::Subject Detail-->
+                                        <span
+                                            class="fs-2hx fw-bold text-dark lh-1 ls-n2 me-2">{{ $subject_details->count() }}</span>
+                                        <!--end::Subject Detail-->
                                         <!--begin::Badge-->
                                         <span class="badge badge-light-success fs-base">
                                             <i class="ki-duotone ki-arrow-up fs-5 text-success ms-n1">
                                                 <span class="path1"></span>
                                                 <span class="path2"></span>
-                                            </i>2.2%</span>
+                                            </i>{{ $subject_detail_finish_percentage }}% Selesai</span>
                                         <!--end::Badge-->
                                     </div>
                                     <!--end::Info-->
                                     <!--begin::Subtitle-->
-                                    <span class="fw-semibold fs-6 pt-1 text-gray-400">Projects Earnings in April</span>
+                                    <span class="fw-semibold fs-6 pt-1 text-gray-400">Detail Subjek Aktif</span>
                                     <!--end::Subtitle-->
                                 </div>
                                 <!--end::Title-->
@@ -199,10 +166,11 @@
                                         <div class="bullet w-8px h-3px rounded-2 bg-success me-3"></div>
                                         <!--end::Bullet-->
                                         <!--begin::Label-->
-                                        <div class="flex-grow-1 me-4 text-gray-500">Leaf CRM</div>
+                                        <div class="flex-grow-1 me-4 text-gray-500">Selesai</div>
                                         <!--end::Label-->
                                         <!--begin::Stats-->
-                                        <div class="fw-bolder text-xxl-end text-gray-700">$7,660</div>
+                                        <div class="fw-bolder text-xxl-end text-gray-700">
+                                            {{ $subject_detail_finishes->count() }}</div>
                                         <!--end::Stats-->
                                     </div>
                                     <!--end::Label-->
@@ -212,24 +180,11 @@
                                         <div class="bullet w-8px h-3px rounded-2 bg-primary me-3"></div>
                                         <!--end::Bullet-->
                                         <!--begin::Label-->
-                                        <div class="flex-grow-1 me-4 text-gray-500">Mivy App</div>
+                                        <div class="flex-grow-1 me-4 text-gray-500">Dalam proses</div>
                                         <!--end::Label-->
                                         <!--begin::Stats-->
-                                        <div class="fw-bolder text-xxl-end text-gray-700">$2,820</div>
-                                        <!--end::Stats-->
-                                    </div>
-                                    <!--end::Label-->
-                                    <!--begin::Label-->
-                                    <div class="d-flex fw-semibold align-items-center">
-                                        <!--begin::Bullet-->
-                                        <div class="bullet w-8px h-3px rounded-2 me-3" style="background-color: #E4E6EF">
-                                        </div>
-                                        <!--end::Bullet-->
-                                        <!--begin::Label-->
-                                        <div class="flex-grow-1 me-4 text-gray-500">Others</div>
-                                        <!--end::Label-->
-                                        <!--begin::Stats-->
-                                        <div class="fw-bolder text-xxl-end text-gray-700">$45,257</div>
+                                        <div class="fw-bolder text-xxl-end text-gray-700">
+                                            {{ $subject_detail_pendings->count() }}</div>
                                         <!--end::Stats-->
                                     </div>
                                     <!--end::Label-->
@@ -244,151 +199,32 @@
                             <!--begin::Header-->
                             <div class="card-header pt-5">
                                 <!--begin::Title-->
-                                <h3 class="card-title fw-bold text-gray-800">External Links</h3>
+                                <h3 class="card-title fw-bold text-gray-800">Unit aksi dalam proses</h3>
                                 <!--end::Title-->
-                                <!--begin::Toolbar-->
-                                <div class="card-toolbar">
-                                    <!--begin::Menu-->
-                                    <button
-                                        class="btn btn-icon btn-color-gray-400 btn-active-color-primary justify-content-end"
-                                        data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end"
-                                        data-kt-menu-overflow="true">
-                                        <i class="ki-duotone ki-dots-square fs-1 me-n1 text-gray-400">
-                                            <span class="path1"></span>
-                                            <span class="path2"></span>
-                                            <span class="path3"></span>
-                                            <span class="path4"></span>
-                                        </i>
-                                    </button>
-                                    <!--begin::Menu 2-->
-                                    <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-200px"
-                                        data-kt-menu="true">
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3">
-                                            <div class="menu-content fs-6 text-dark fw-bold px-3 py-4">Quick Actions</div>
-                                        </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu separator-->
-                                        <div class="separator mb-3 opacity-75"></div>
-                                        <!--end::Menu separator-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3">New Ticket</a>
-                                        </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3">New Customer</a>
-                                        </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3" data-kt-menu-trigger="hover"
-                                            data-kt-menu-placement="right-start">
-                                            <!--begin::Menu item-->
-                                            <a href="#" class="menu-link px-3">
-                                                <span class="menu-title">New Group</span>
-                                                <span class="menu-arrow"></span>
-                                            </a>
-                                            <!--end::Menu item-->
-                                            <!--begin::Menu sub-->
-                                            <div class="menu-sub menu-sub-dropdown w-175px py-4">
-                                                <!--begin::Menu item-->
-                                                <div class="menu-item px-3">
-                                                    <a href="#" class="menu-link px-3">Admin Group</a>
-                                                </div>
-                                                <!--end::Menu item-->
-                                                <!--begin::Menu item-->
-                                                <div class="menu-item px-3">
-                                                    <a href="#" class="menu-link px-3">Staff Group</a>
-                                                </div>
-                                                <!--end::Menu item-->
-                                                <!--begin::Menu item-->
-                                                <div class="menu-item px-3">
-                                                    <a href="#" class="menu-link px-3">Member Group</a>
-                                                </div>
-                                                <!--end::Menu item-->
-                                            </div>
-                                            <!--end::Menu sub-->
-                                        </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3">New Contact</a>
-                                        </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu separator-->
-                                        <div class="separator mt-3 opacity-75"></div>
-                                        <!--end::Menu separator-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3">
-                                            <div class="menu-content px-3 py-3">
-                                                <a class="btn btn-primary btn-sm px-4" href="#">Generate Reports</a>
-                                            </div>
-                                        </div>
-                                        <!--end::Menu item-->
-                                    </div>
-                                    <!--end::Menu 2-->
-                                    <!--end::Menu-->
-                                </div>
-                                <!--end::Toolbar-->
                             </div>
                             <!--end::Header-->
                             <!--begin::Body-->
                             <div class="card-body pt-5">
-                                <!--begin::Item-->
-                                <div class="d-flex flex-stack">
-                                    <!--begin::Section-->
-                                    <a href="#" class="text-primary fw-semibold fs-6 me-2">Avg. Client Rating</a>
-                                    <!--end::Section-->
-                                    <!--begin::Action-->
-                                    <button type="button"
-                                        class="btn btn-icon btn-sm btn-color-gray-400 btn-active-color-primary justify-content-end h-auto">
-                                        <i class="ki-duotone ki-exit-right-corner fs-2">
-                                            <span class="path1"></span>
-                                            <span class="path2"></span>
-                                        </i>
-                                    </button>
-                                    <!--end::Action-->
-                                </div>
-                                <!--end::Item-->
-                                <!--begin::Separator-->
-                                <div class="separator separator-dashed my-3"></div>
-                                <!--end::Separator-->
-                                <!--begin::Item-->
-                                <div class="d-flex flex-stack">
-                                    <!--begin::Section-->
-                                    <a href="#" class="text-primary fw-semibold fs-6 me-2">Instagram Followers</a>
-                                    <!--end::Section-->
-                                    <!--begin::Action-->
-                                    <button type="button"
-                                        class="btn btn-icon btn-sm btn-color-gray-400 btn-active-color-primary justify-content-end h-auto">
-                                        <i class="ki-duotone ki-exit-right-corner fs-2">
-                                            <span class="path1"></span>
-                                            <span class="path2"></span>
-                                        </i>
-                                    </button>
-                                    <!--end::Action-->
-                                </div>
-                                <!--end::Item-->
-                                <!--begin::Separator-->
-                                <div class="separator separator-dashed my-3"></div>
-                                <!--end::Separator-->
-                                <!--begin::Item-->
-                                <div class="d-flex flex-stack">
-                                    <!--begin::Section-->
-                                    <a href="#" class="text-primary fw-semibold fs-6 me-2">Google Ads CPC</a>
-                                    <!--end::Section-->
-                                    <!--begin::Action-->
-                                    <button type="button"
-                                        class="btn btn-icon btn-sm btn-color-gray-400 btn-active-color-primary justify-content-end h-auto">
-                                        <i class="ki-duotone ki-exit-right-corner fs-2">
-                                            <span class="path1"></span>
-                                            <span class="path2"></span>
-                                        </i>
-                                    </button>
-                                    <!--end::Action-->
-                                </div>
-                                <!--end::Item-->
+                                @foreach ($statistik_jabatan_pendings as $statistik_jabatan_pending)
+                                    <!--begin::Item-->
+                                    <div class="d-flex flex-stack">
+                                        <!--begin::Section-->
+                                        <a href="#"
+                                            class="text-primary fw-semibold fs-6 me-2">{{ $statistik_jabatan_pending->name }}</a>
+                                        <!--end::Section-->
+                                        <!--begin::Action-->
+                                        <button type="button"
+                                            class="btn btn-icon btn-sm btn-color-gray-400 btn-active-color-primary justify-content-end h-auto w-auto">
+                                            {{ $statistik_jabatan_pending->total_action_pending }} /
+                                            {{ $statistik_jabatan_pending->total_action }}
+                                        </button>
+                                        <!--end::Action-->
+                                    </div>
+                                    <!--end::Item-->
+                                    <!--begin::Separator-->
+                                    <div class="separator separator-dashed my-3"></div>
+                                    <!--end::Separator-->
+                                @endforeach
                             </div>
                             <!--end::Body-->
                         </div>
@@ -2030,7 +1866,8 @@
                                         <!--begin::Menu item-->
                                         <div class="menu-item px-3">
                                             <div class="menu-content px-3 py-3">
-                                                <a class="btn btn-primary btn-sm px-4" href="#">Generate Reports</a>
+                                                <a class="btn btn-primary btn-sm px-4" href="#">Generate
+                                                    Reports</a>
                                             </div>
                                         </div>
                                         <!--end::Menu item-->
@@ -2848,4 +2685,77 @@
 @endsection
 
 @section('script')
+    <script>
+        var KTCardsWidget17 = function() {
+            // Private methods
+            var initChart = function() {
+                var el = document.getElementById('kt_card_widget_17_chart');
+
+                if (!el) {
+                    return;
+                }
+
+                var options = {
+                    size: el.getAttribute('data-kt-size') ? parseInt(el.getAttribute('data-kt-size')) : 70,
+                    lineWidth: el.getAttribute('data-kt-line') ? parseInt(el.getAttribute('data-kt-line')) : 11,
+                    rotate: el.getAttribute('data-kt-rotate') ? parseInt(el.getAttribute('data-kt-rotate')) :
+                        145,
+                    //percent:  el.getAttribute('data-kt-percent') ,
+                }
+
+                var canvas = document.createElement('canvas');
+                var span = document.createElement('span');
+
+                if (typeof(G_vmlCanvasManager) !== 'undefined') {
+                    G_vmlCanvasManager.initElement(canvas);
+                }
+
+                var ctx = canvas.getContext('2d');
+                canvas.width = canvas.height = options.size;
+
+                el.appendChild(span);
+                el.appendChild(canvas);
+
+                ctx.translate(options.size / 2, options.size / 2); // change center
+                ctx.rotate((-1 / 2 + options.rotate / 180) * Math.PI); // rotate -90 deg
+
+                //imd = ctx.getImageData(0, 0, 240, 240);
+                var radius = (options.size - options.lineWidth) / 2;
+
+                var drawCircle = function(color, lineWidth, percent) {
+                    percent = Math.min(Math.max(0, percent || 1), 1);
+                    ctx.beginPath();
+                    ctx.arc(0, 0, radius, 0, Math.PI * 2 * percent, false);
+                    ctx.strokeStyle = color;
+                    ctx.lineCap = 'round'; // butt, round or square
+                    ctx.lineWidth = lineWidth
+                    ctx.stroke();
+                };
+
+                // Init 
+
+                drawCircle(KTUtil.getCssVariableValue('--bs-primary'), options.lineWidth,
+                    {{ $subject_detail_pendings->count() + $subject_detail_finishes->count() }} /
+                    {{ $subject_details->count() }});
+
+                @if ($subject_detail_finishes->count())
+                    drawCircle(KTUtil.getCssVariableValue('--bs-success'), options.lineWidth,
+                        {{ $subject_detail_finishes->count() }} /
+                        {{ $subject_details->count() }});
+                @endif
+            }
+
+            // Public methods
+            return {
+                init: function() {
+                    initChart();
+                }
+            }
+        }();
+
+        // Webpack support
+        if (typeof module !== 'undefined') {
+            module.exports = KTCardsWidget17;
+        }
+    </script>
 @endsection
