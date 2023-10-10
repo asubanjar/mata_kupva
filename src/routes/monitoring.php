@@ -12,10 +12,13 @@ use App\Http\Controllers\MonitoringPimpinan\Monitoring\SubjectDetailActionContro
 use App\Http\Controllers\MonitoringPimpinan\Monitoring\SubjectDetailActionStoreController;
 use App\Http\Controllers\MonitoringPimpinan\Monitoring\SubjectDetailController;
 use App\Http\Controllers\MonitoringPimpinan\Monitoring\SubjectDetailStoreController;
+use App\Http\Controllers\MonitoringPimpinan\Statistic\ActionController as StatisticActionController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('monitoring-pimpinan')->group(function (): void {
         Route::resource('dashboard', DashboardController::class)->only('index');
+
+        Route::resource('statistic/action', StatisticActionController::class)->only('index');
 
         Route::resource('monitoring/subject', SubjectController::class);
 

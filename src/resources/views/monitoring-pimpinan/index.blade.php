@@ -90,22 +90,76 @@
                                 <!--begin::Title-->
                                 <h3 class="card-title fw-bold text-gray-800">Unit aksi selesai</h3>
                                 <!--end::Title-->
+                                <!--begin::Toolbar-->
+                                <div class="card-toolbar">
+                                    <!--begin::Menu-->
+                                    <a class="btn btn-icon btn-color-gray-400 btn-active-color-primary justify-content-end"
+                                        data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end"
+                                        data-kt-menu-overflow="true">
+                                        <i class="ki-duotone ki-dots-square fs-1 me-n1 text-gray-400">
+                                            <span class="path1"></span>
+                                            <span class="path2"></span>
+                                            <span class="path3"></span>
+                                            <span class="path4"></span>
+                                        </i>
+                                    </a>
+                                    <!--begin::Menu 2-->
+                                    <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-200px"
+                                        data-kt-menu="true">
+                                        <!--begin::Menu item-->
+                                        <div class="menu-item px-3">
+                                            <div class="menu-content fs-6 text-dark fw-bold px-3 py-4">Aksi</div>
+                                        </div>
+                                        <!--end::Menu item-->
+                                        <!--begin::Menu separator-->
+                                        <div class="separator mb-3 opacity-75"></div>
+                                        <!--end::Menu separator-->
+                                        <!--begin::Menu item-->
+                                        <div class="menu-item px-3">
+                                            <a href="{{ url('/monitoring-pimpinan/statistic/action') }}"
+                                                class="menu-link px-3">Lihat statistik</a>
+                                        </div>
+                                        <!--end::Menu item-->
+                                        <!--begin::Menu separator-->
+                                        <div class="separator mt-3 opacity-75"></div>
+                                        <!--end::Menu separator-->
+                                        <!--begin::Menu item-->
+                                        <div class="menu-item px-3">
+                                            <a href="{{ url('/monitoring-pimpinan/statistic/action') }}"
+                                                class="menu-link px-3">Lihat rencana aksi</a>
+                                        </div>
+                                        <!--end::Menu item-->
+                                        <!--begin::Menu separator-->
+                                        <div class="separator mt-3 opacity-75"></div>
+                                        <!--end::Menu separator-->
+                                        <!--begin::Menu item-->
+                                        <div class="menu-item px-3">
+                                            <div class="menu-content px-3 py-3">
+                                                <a class="btn btn-primary btn-sm px-4" href="#">Generate Reports</a>
+                                            </div>
+                                        </div>
+                                        <!--end::Menu item-->
+                                    </div>
+                                    <!--end::Menu 2-->
+                                    <!--end::Menu-->
+                                </div>
+                                <!--end::Toolbar-->
                             </div>
                             <!--end::Header-->
                             <!--begin::Body-->
                             <div class="card-body pt-5">
-                                @foreach ($statistik_jabatan_finishes as $statistik_jabatan_finish)
+                                @foreach ($statistic_jabatan_finishes as $statistic_jabatan_finish)
                                     <!--begin::Item-->
                                     <div class="d-flex flex-stack">
                                         <!--begin::Section-->
                                         <a href="#"
-                                            class="text-primary fw-semibold fs-6 me-2">{{ $statistik_jabatan_finish->name }}</a>
+                                            class="text-primary fw-semibold fs-6 me-2">{{ $statistic_jabatan_finish->name }}</a>
                                         <!--end::Section-->
                                         <!--begin::Action-->
                                         <button type="button"
                                             class="btn btn-icon btn-sm btn-color-gray-400 btn-active-color-primary justify-content-end h-auto w-auto">
-                                            {{ $statistik_jabatan_finish->total_action_finish }} /
-                                            {{ $statistik_jabatan_finish->total_action }}
+                                            {{ $statistic_jabatan_finish->total_action_finish }} /
+                                            {{ $statistic_jabatan_finish->total_action }}
                                         </button>
                                         <!--end::Action-->
                                     </div>
@@ -201,22 +255,76 @@
                                 <!--begin::Title-->
                                 <h3 class="card-title fw-bold text-gray-800">Unit aksi dalam proses</h3>
                                 <!--end::Title-->
+                                <!--begin::Toolbar-->
+                                <div class="card-toolbar">
+                                    <!--begin::Menu-->
+                                    <a class="btn btn-icon btn-color-gray-400 btn-active-color-primary justify-content-end"
+                                        data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end"
+                                        data-kt-menu-overflow="true">
+                                        <i class="ki-duotone ki-dots-square fs-1 me-n1 text-gray-400">
+                                            <span class="path1"></span>
+                                            <span class="path2"></span>
+                                            <span class="path3"></span>
+                                            <span class="path4"></span>
+                                        </i>
+                                    </a>
+                                    <!--begin::Menu 2-->
+                                    <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-200px"
+                                        data-kt-menu="true">
+                                        <!--begin::Menu item-->
+                                        <div class="menu-item px-3">
+                                            <div class="menu-content fs-6 text-dark fw-bold px-3 py-4">Aksi</div>
+                                        </div>
+                                        <!--end::Menu item-->
+                                        <!--begin::Menu separator-->
+                                        <div class="separator mb-3 opacity-75"></div>
+                                        <!--end::Menu separator-->
+                                        <!--begin::Menu item-->
+                                        <div class="menu-item px-3">
+                                            <a href="{{ url('/monitoring-pimpinan/statistic/action') }}"
+                                                class="menu-link px-3">Lihat statistik</a>
+                                        </div>
+                                        <!--end::Menu item-->
+                                        <!--begin::Menu separator-->
+                                        <div class="separator mt-3 opacity-75"></div>
+                                        <!--end::Menu separator-->
+                                        <!--begin::Menu item-->
+                                        <div class="menu-item px-3">
+                                            <a href="{{ url('/monitoring-pimpinan/statistic/action') }}"
+                                                class="menu-link px-3">Lihat rencana aksi</a>
+                                        </div>
+                                        <!--end::Menu item-->
+                                        <!--begin::Menu separator-->
+                                        <div class="separator mt-3 opacity-75"></div>
+                                        <!--end::Menu separator-->
+                                        <!--begin::Menu item-->
+                                        <div class="menu-item px-3">
+                                            <div class="menu-content px-3 py-3">
+                                                <a class="btn btn-primary btn-sm px-4" href="#">Generate Reports</a>
+                                            </div>
+                                        </div>
+                                        <!--end::Menu item-->
+                                    </div>
+                                    <!--end::Menu 2-->
+                                    <!--end::Menu-->
+                                </div>
+                                <!--end::Toolbar-->
                             </div>
                             <!--end::Header-->
                             <!--begin::Body-->
                             <div class="card-body pt-5">
-                                @foreach ($statistik_jabatan_pendings as $statistik_jabatan_pending)
+                                @foreach ($statistic_jabatan_pendings as $statistic_jabatan_pending)
                                     <!--begin::Item-->
                                     <div class="d-flex flex-stack">
                                         <!--begin::Section-->
                                         <a href="#"
-                                            class="text-primary fw-semibold fs-6 me-2">{{ $statistik_jabatan_pending->name }}</a>
+                                            class="text-danger fw-semibold fs-6 me-2">{{ $statistic_jabatan_pending->name }}</a>
                                         <!--end::Section-->
                                         <!--begin::Action-->
                                         <button type="button"
                                             class="btn btn-icon btn-sm btn-color-gray-400 btn-active-color-primary justify-content-end h-auto w-auto">
-                                            {{ $statistik_jabatan_pending->total_action_pending }} /
-                                            {{ $statistik_jabatan_pending->total_action }}
+                                            {{ $statistic_jabatan_pending->total_action_pending }} /
+                                            {{ $statistic_jabatan_pending->total_action }}
                                         </button>
                                         <!--end::Action-->
                                     </div>
