@@ -13,8 +13,22 @@ class ActionController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(): void
+    public function index()
     {
+        $actions = Action::all();
+
+        $action_pendings = Action::whereNull('finish')->get();
+
+        $jabatans = Jabatan::all();
+
+        return view(
+            'monitoring-pimpinan/monitoring/action/index',
+            compact(
+                'actions',
+                'action_pendings',
+                'jabatans'
+            )
+        );
     }
 
     /**

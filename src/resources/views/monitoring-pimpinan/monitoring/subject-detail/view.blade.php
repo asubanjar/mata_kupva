@@ -483,13 +483,13 @@
                                         <td>
                                             @if ($action->finish === null && $action->end < now())
                                                 <div class="badge badge-light-danger">
-                                                    {{ $subject_detail->start->format('d/m/Y') }} s/d
-                                                    {{ $subject_detail->end->format('d/m/Y') }}
+                                                    {{ $action->start->format('d/m/Y') }} s/d
+                                                    {{ $action->end->format('d/m/Y') }}
                                                 </div>
                                             @elseif ($action->finish != null || $action->end >= now())
                                                 <div class="badge badge-light-success">
-                                                    {{ $subject_detail->start->format('d/m/Y') }} s/d
-                                                    {{ $subject_detail->end->format('d/m/Y') }}
+                                                    {{ $action->start->format('d/m/Y') }} s/d
+                                                    {{ $action->end->format('d/m/Y') }}
                                                 </div>
                                             @endif
                                         </td>

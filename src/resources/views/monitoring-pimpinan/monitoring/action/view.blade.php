@@ -68,8 +68,7 @@
                 <!--begin::Actions-->
                 <div class="d-flex align-items-center gap-lg-3 gap-2">
                     <!--begin::Primary button-->
-                    <a href="{{ url('/monitoring-pimpinan/monitoring/subject-detail/' . $action->subject_detail_id) }}"
-                        class="btn btn-sm fw-bold btn-primary">Kembali</a>
+                    <a href="{{ url()->previous() }}" class="btn btn-sm fw-bold btn-primary">Kembali</a>
                     <!--end::Primary button-->
                 </div>
                 <!--end::Actions-->

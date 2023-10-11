@@ -259,7 +259,7 @@
                                         <span class="path5"></span>
                                     </i>
                                 </span>
-                                <span class="menu-title">Kegiatan/Subjek</span>
+                                <span class="menu-title">Kegiatan</span>
                                 <span class="menu-arrow"></span>
                             </span>
                             <!--end:Menu link-->
@@ -268,12 +268,25 @@
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link {{ (request()->is('monitoring-pimpinan/monitoring/subject') ? 'active' : request()->is('monitoring-pimpinan/monitoring/subject/*')) ? 'active' : '' }}"
+                                    <a class="menu-link {{ (request()->is('monitoring-pimpinan/monitoring/subject') ? 'active' : request()->is('monitoring-pimpinan/monitoring/subject*')) ? 'active' : '' }}"
                                         href="{{ url('/monitoring-pimpinan/monitoring/subject') }}">
                                         <span class="menu-bullet">
                                             <span class="bullet bullet-dot"></span>
                                         </span>
-                                        <span class="menu-title">Daftar</span>
+                                        <span class="menu-title">Subjek</span>
+                                    </a>
+                                    <!--end:Menu link-->
+                                </div>
+                                <!--end:Menu item-->
+                                <!--begin:Menu item-->
+                                <div class="menu-item">
+                                    <!--begin:Menu link-->
+                                    <a class="menu-link {{ request()->is('monitoring-pimpinan/monitoring/action') ? 'active' : '' }}"
+                                        href="{{ url('/monitoring-pimpinan/monitoring/action') }}">
+                                        <span class="menu-bullet">
+                                            <span class="bullet bullet-dot"></span>
+                                        </span>
+                                        <span class="menu-title">Rencana Aksi</span>
                                     </a>
                                     <!--end:Menu link-->
                                 </div>
