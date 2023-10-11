@@ -11,7 +11,7 @@
                 <div class="page-title d-flex flex-column justify-content-center me-3 flex-wrap">
                     <!--begin::Title-->
                     <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Detail
-                        Aksi</h1>
+                        Subjek - Rencana Aksi</h1>
                     <!--end::Title-->
                     <!--begin::Breadcrumb-->
                     <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -523,7 +523,7 @@
                                                 data-kt-menu="true">
                                                 <!--begin::Menu item-->
                                                 <div class="menu-item px-3">
-                                                    <a href="{{ url('/monitoring-pimpinan/monitoring/action/' . $action->id) }}"
+                                                    <a href="{{ url('/monitoring-pimpinan/monitoring/subject/action/' . $action->id . '/check') }}"
                                                         data-toggle="tooltip" data-original-title="Lihat"
                                                         class="menu-link px-3">Lihat</a>
                                                 </div>

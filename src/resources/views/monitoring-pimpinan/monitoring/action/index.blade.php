@@ -97,6 +97,25 @@
                                             <!--end::Label-->
                                         </div>
                                         <!--end::Stat-->
+                                        <!--begin::Stat-->
+                                        <div
+                                            class="min-w-125px mb-3 me-6 rounded border border-dashed border-gray-300 px-4 py-3">
+                                            <!--begin::Number-->
+                                            <div class="d-flex align-items-center">
+                                                <i class="ki-duotone ki-arrow-down fs-3 text-danger me-2">
+                                                    <span class="path1"></span>
+                                                    <span class="path2"></span>
+                                                </i>
+                                                <div class="fs-4 fw-bold" data-kt-countup="true"
+                                                    data-kt-countup-value="{{ $actions_over_target->count() }}">0</div>
+                                            </div>
+                                            <!--end::Number-->
+                                            <!--begin::Label-->
+                                            <div class="fw-semibold fs-6 text-gray-400">Melewati Target
+                                            </div>
+                                            <!--end::Label-->
+                                        </div>
+                                        <!--end::Stat-->
                                     </div>
                                     <!--end::Stats-->
                                 </div>
@@ -240,7 +259,7 @@
                                                 data-kt-menu="true">
                                                 <!--begin::Menu item-->
                                                 <div class="menu-item px-3">
-                                                    <a href="{{ url('/monitoring-pimpinan/monitoring/action/' . $action->id) }}"
+                                                    <a href="{{ url('/monitoring-pimpinan/monitoring/subject/action/' . $action->id . '/check') }}"
                                                         data-toggle="tooltip" data-original-title="Lihat"
                                                         class="menu-link px-3">Lihat</a>
                                                 </div>

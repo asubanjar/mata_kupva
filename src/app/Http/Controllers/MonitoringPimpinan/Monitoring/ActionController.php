@@ -5,7 +5,6 @@ namespace App\Http\Controllers\MonitoringPimpinan\Monitoring;
 use App\Http\Controllers\Controller;
 use App\Models\Master\Jabatan;
 use App\Models\MonitoringPimpinan\Monitoring\Action;
-use App\Models\MonitoringPimpinan\Monitoring\Check;
 use Illuminate\Http\Request;
 
 class ActionController extends Controller
@@ -21,69 +20,19 @@ class ActionController extends Controller
 
         $jabatans = Jabatan::all();
 
+        $actions_over_target = Action::whereDate('end', '<', now())
+        ->whereNull('finish')
+        ->get();
+
         return view(
             'monitoring-pimpinan/monitoring/action/index',
             compact(
                 'actions',
+                'actions_over_target',
                 'action_pendings',
                 'jabatans'
             )
         );
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create(): void
-    {
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request): void
-    {
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Action $action)
-    {
-        $jabatans = Jabatan::all();
-
-        $interval = $action->start->diff($action->end);
-
-        $diff_days = $interval->format('%a');
-
-        $checks = Check::where('action_id', $action->id)
-                    ->where('active', true);
-
-        $checks_over_target = $checks->whereDate('end', '<', now())
-                                ->whereNull('finish')
-                                ->get();
-
-        $finish = Check::where('action_id', $action->id)
-                    ->where('active', true)->whereNotNull('finish')->get();
-
-        $finish_percentage = $finish->count() !== 0
-            ? ($finish->count() / $action->checks->count()) * 100
-            : 0;
-
-        return view('monitoring-pimpinan/monitoring/action/view', compact(
-            'action',
-            'checks_over_target',
-            'diff_days',
-            'finish_percentage',
-            'jabatans',
-        ));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id): void
-    {
     }
 
     /**

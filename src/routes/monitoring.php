@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use App\Http\Controllers\MonitoringPimpinan\DashboardController;
+use App\Http\Controllers\MonitoringPimpinan\Monitoring\ActionCheckController;
 use App\Http\Controllers\MonitoringPimpinan\Monitoring\ActionCheckStoreController;
 use App\Http\Controllers\MonitoringPimpinan\Monitoring\ActionController;
 use App\Http\Controllers\MonitoringPimpinan\Monitoring\CheckController;
@@ -24,7 +25,7 @@ Route::prefix('monitoring-pimpinan')->group(function (): void {
 
         Route::resource('monitoring/subject-detail', SubjectDetailController::class);
 
-        Route::resource('monitoring/action', ActionController::class);
+        Route::resource('monitoring/action', ActionController::class)->only('index', 'update', 'destroy');
 
         Route::resource('monitoring/check', CheckController::class);
 
@@ -52,4 +53,9 @@ Route::prefix('monitoring-pimpinan')->group(function (): void {
             'monitoring/subject/{subject}/subject-detail',
             SubjectDetailStoreController::class
         )->name('monitoring.subject-detail-store.subject');
+
+        Route::get(
+            'monitoring/subject/action/{action}/check',
+            ActionCheckController::class
+        )->name('monitoring.subject-action.check');
 });
