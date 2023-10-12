@@ -135,7 +135,7 @@
                                         <!--begin::Menu item-->
                                         <div class="menu-item px-3">
                                             <div class="menu-content px-3 py-3">
-                                                <a class="btn btn-primary btn-sm px-4" href="#">Generate Reports</a>
+                                                <a class="btn btn-primary btn-sm px-4" href="#">Generate Laporan</a>
                                             </div>
                                         </div>
                                         <!--end::Menu item-->
@@ -300,7 +300,7 @@
                                         <!--begin::Menu item-->
                                         <div class="menu-item px-3">
                                             <div class="menu-content px-3 py-3">
-                                                <a class="btn btn-primary btn-sm px-4" href="#">Generate Reports</a>
+                                                <a class="btn btn-primary btn-sm px-4" href="#">Generate Laporan</a>
                                             </div>
                                         </div>
                                         <!--end::Menu item-->
@@ -341,45 +341,34 @@
                     <!--end::Col-->
                     <!--begin::Col-->
                     <div class="col-xxl-6">
-                        <!--begin::Engage widget 10-->
-                        <div class="card card-flush h-md-100">
-                            <!--begin::Body-->
-                            <div class="card-body d-flex flex-column justify-content-between bgi-no-repeat bgi-size-cover bgi-position-x-center mt-9 pb-0"
-                                style="background-position: 100% 50%; background-image:url('assets/media/stock/900x600/42.png')">
-                                <!--begin::Wrapper-->
-                                <div class="mb-10">
-                                    <!--begin::Title-->
-                                    <div class="fs-2hx fw-bold mb-13 text-center text-gray-800">
-                                        <span class="me-2">Try our all new Enviroment with
-                                            <br />
-                                            <span class="position-relative d-inline-block text-danger">
-                                                <a href="../../demo1/dist/pages/user-profile/overview.html"
-                                                    class="text-danger opacity-75-hover">Pro Plan</a>
-                                                <!--begin::Separator-->
-                                                <span
-                                                    class="position-absolute opacity-15 border-danger border-bottom w-100 bottom-0 start-0 border-4"></span>
-                                                <!--end::Separator-->
-                                            </span></span>for Free
-                                    </div>
-                                    <!--end::Title-->
-                                    <!--begin::Action-->
-                                    <div class="text-center">
-                                        <a href='#' class="btn btn-sm btn-dark fw-bold" data-bs-toggle="modal"
-                                            data-bs-target="#kt_modal_upgrade_plan">Upgrade Now</a>
-                                    </div>
-                                    <!--begin::Action-->
+                        <!--begin::Chart widget 31-->
+                        <div class="card card-flush h-xl-100">
+                            <!--begin::Header-->
+                            <div class="card-header mb-7 pt-7">
+                                <!--begin::Title-->
+                                <h3 class="card-title align-items-start flex-column">
+                                    <span class="card-label fw-bold text-gray-800">Statistik Rencana Aksi</span>
+                                    <span class="fw-semibold fs-6 mt-1 text-gray-400">Total
+                                        {{ $statistic_jabatans->count() }} Jabatan</span>
+                                </h3>
+                                <!--end::Title-->
+                                <!--begin::Toolbar-->
+                                <div class="card-toolbar">
+                                    <a href="../../demo1/dist/apps/ecommerce/catalog/add-product.html"
+                                        class="btn btn-sm btn-light">PDF Laporan</a>
                                 </div>
-                                <!--begin::Wrapper-->
-                                <!--begin::Illustration-->
-                                <img class="h-150px h-lg-200px theme-light-show mx-auto"
-                                    src="assets/media/illustrations/misc/upgrade.svg" alt="" />
-                                <img class="h-150px h-lg-200px theme-dark-show mx-auto"
-                                    src="assets/media/illustrations/misc/upgrade-dark.svg" alt="" />
-                                <!--end::Illustration-->
+                                <!--end::Toolbar-->
+                            </div>
+                            <!--end::Header-->
+                            <!--begin::Body-->
+                            <div class="card-body d-flex align-items-end pt-0">
+                                <!--begin::Chart-->
+                                <div id="kt_charts_widget_31_chart" class="w-100 h-400px"></div>
+                                <!--end::Chart-->
                             </div>
                             <!--end::Body-->
                         </div>
-                        <!--end::Engage widget 10-->
+                        <!--end::Chart widget 31-->
                     </div>
                     <!--end::Col-->
                 </div>
@@ -723,7 +712,7 @@
                                         <!--begin::Menu item-->
                                         <div class="menu-item px-3">
                                             <div class="menu-content px-3 py-3">
-                                                <a class="btn btn-primary btn-sm px-4" href="#">Generate Reports</a>
+                                                <a class="btn btn-primary btn-sm px-4" href="#">Generate Laporan</a>
                                             </div>
                                         </div>
                                         <!--end::Menu item-->
@@ -1975,7 +1964,7 @@
                                         <div class="menu-item px-3">
                                             <div class="menu-content px-3 py-3">
                                                 <a class="btn btn-primary btn-sm px-4" href="#">Generate
-                                                    Reports</a>
+                                                    Laporan</a>
                                             </div>
                                         </div>
                                         <!--end::Menu item-->
@@ -2760,7 +2749,7 @@
                                         <div class="menu-item px-3">
                                             <div class="menu-content px-3 py-3">
                                                 <a class="btn btn-primary btn-sm px-4" href="#">Generate
-                                                    Reports</a>
+                                                    Laporan</a>
                                             </div>
                                         </div>
                                         <!--end::Menu item-->
@@ -2793,6 +2782,17 @@
 @endsection
 
 @section('script')
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/radar.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/geodata/continentsLow.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/geodata/usaLow.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/geodata/worldTimeZonesLow.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/geodata/worldTimeZoneAreasLow.js"></script>
     <script>
         var KTCardsWidget17 = function() {
             // Private methods
@@ -2865,5 +2865,227 @@
         if (typeof module !== 'undefined') {
             module.exports = KTCardsWidget17;
         }
+    </script>
+    <script>
+        // Class definition
+        var KTChartsWidget31 = (function() {
+            // Private methods
+            var initChart1 = function() {
+                // Check if amchart library is included
+                if (typeof am5 === "undefined") {
+                    return;
+                }
+
+                var element = document.getElementById("kt_charts_widget_31_chart");
+
+                if (!element) {
+                    return;
+                }
+
+                var chart;
+                var root;
+
+                var init = function() {
+                    // Create root element
+                    // https://www.amcharts.com/docs/v5/getting-started/#Root_element
+                    root = am5.Root.new(element);
+
+                    // Set themes
+                    // https://www.amcharts.com/docs/v5/concepts/themes/
+                    root.setThemes([am5themes_Animated.new(root)]);
+
+                    // Create chart
+                    // https://www.amcharts.com/docs/v5/charts/radar-chart/
+                    chart = root.container.children.push(
+                        am5radar.RadarChart.new(root, {
+                            panX: false,
+                            panY: false,
+                            wheelX: "panX",
+                            wheelY: "zoomX",
+                            innerRadius: am5.percent(40),
+                            radius: am5.percent(70),
+                            arrangeTooltips: false,
+                        })
+                    );
+
+                    var cursor = chart.set(
+                        "cursor",
+                        am5radar.RadarCursor.new(root, {
+                            behavior: "zoomX",
+                        })
+                    );
+
+                    cursor.lineY.set("visible", false);
+
+                    // Create axes and their renderers
+                    // https://www.amcharts.com/docs/v5/charts/radar-chart/#Adding_axes
+                    var xRenderer = am5radar.AxisRendererCircular.new(root, {
+                        minGridDistance: 30,
+                    });
+
+                    xRenderer.labels.template.setAll({
+                        textType: "radial",
+                        radius: 10,
+                        paddingTop: 0,
+                        paddingBottom: 0,
+                        centerY: am5.p50,
+                        fontWeight: "400",
+                        fontSize: 11,
+                        fill: am5.color(KTUtil.getCssVariableValue("--bs-gray-800")),
+                    });
+
+                    xRenderer.grid.template.setAll({
+                        location: 0.5,
+                        strokeDasharray: [2, 2],
+                        stroke: KTUtil.getCssVariableValue('--bs-gray-400')
+                    });
+
+                    var xAxis = chart.xAxes.push(
+                        am5xy.CategoryAxis.new(root, {
+                            maxDeviation: 0,
+                            categoryField: "name",
+                            renderer: xRenderer,
+                        })
+                    );
+
+                    var yRenderer = am5radar.AxisRendererRadial.new(root, {
+                        minGridDistance: 30,
+                    });
+
+                    yRenderer.labels.template.setAll({
+                        fontWeight: "500",
+                        fontSize: 12,
+                        fill: am5.color(KTUtil.getCssVariableValue("--bs-gray-700")),
+                    });
+
+                    var yAxis = chart.yAxes.push(
+                        am5xy.ValueAxis.new(root, {
+                            renderer: yRenderer,
+                        })
+                    );
+
+                    yRenderer.grid.template.setAll({
+                        strokeDasharray: [2, 2],
+                        stroke: KTUtil.getCssVariableValue('--bs-gray-400')
+                    });
+
+                    // Create series
+                    // https://www.amcharts.com/docs/v5/charts/radar-chart/#Adding_series
+                    var series1 = chart.series.push(
+                        am5radar.RadarLineSeries.new(root, {
+                            name: "Selesai",
+                            xAxis: xAxis,
+                            yAxis: yAxis,
+                            valueYField: "value1",
+                            categoryXField: "name",
+                            fill: am5.color(KTUtil.getCssVariableValue("--bs-primary")),
+                        })
+                    );
+
+                    series1.strokes.template.setAll({
+                        strokeOpacity: 0,
+                    });
+
+                    series1.fills.template.setAll({
+                        visible: true,
+                        fill: am5.color(KTUtil.getCssVariableValue("--bs-primary")),
+                        fillOpacity: 0.5,
+                    });
+
+                    var series2 = chart.series.push(
+                        am5radar.RadarLineSeries.new(root, {
+                            name: "Total",
+                            xAxis: xAxis,
+                            yAxis: yAxis,
+                            valueYField: "value2",
+                            categoryXField: "name",
+                            stacked: true,
+                            tooltip: am5.Tooltip.new(root, {
+                                labelText: "Selesai: {value1}\Total:{value2}",
+                            }),
+                            fill: am5.color(KTUtil.getCssVariableValue("--bs-success")),
+                        })
+                    );
+
+                    series2.strokes.template.setAll({
+                        strokeOpacity: 0,
+                    });
+
+                    series2.fills.template.setAll({
+                        visible: true,
+                        fill: am5.color(KTUtil.getCssVariableValue("--bs-primary")),
+                        fillOpacity: 0.5,
+                    });
+
+                    var legend = chart.radarContainer.children.push(
+                        am5.Legend.new(root, {
+                            width: 150,
+                            centerX: am5.p50,
+                            centerY: am5.p50
+                        })
+                    );
+                    legend.data.setAll([series1, series2]);
+
+                    legend.labels.template.setAll({
+                        fontWeight: "600",
+                        fontSize: 13,
+                        fill: am5.color(KTUtil.getCssVariableValue("--bs-gray-700")),
+                    });
+
+                    // Set data
+                    // https://www.amcharts.com/docs/v5/charts/radar-chart/#Setting_data
+                    var data = [
+                        @foreach ($statistic_jabatans as $statistic_jabatan)
+                            {
+                                name: "{{ $statistic_jabatan->name }}",
+                                value1: {{ $statistic_jabatan->total_action_finish }},
+                                value2: {{ $statistic_jabatan->total_action }},
+                            },
+                        @endforeach
+                    ];
+
+                    series1.data.setAll(data);
+                    series2.data.setAll(data);
+                    xAxis.data.setAll(data);
+
+                    // Animate chart and series in
+                    // https://www.amcharts.com/docs/v5/concepts/animations/#Initial_animation
+                    series1.appear(1000);
+                    series2.appear(1000);
+                    chart.appear(1000, 100);
+                }
+
+                // On amchart ready
+                am5.ready(function() {
+                    init();
+                }); // end am5.ready()
+
+                // Update chart on theme mode change
+                KTThemeMode.on("kt.thememode.change", function() {
+                    // Destroy chart
+                    root.dispose();
+
+                    // Reinit chart
+                    init();
+                });
+            };
+
+            // Public methods
+            return {
+                init: function() {
+                    initChart1();
+                }
+            };
+        })();
+
+        // Webpack support
+        // if (typeof module !== "undefined") {
+        //     module.exports = KTChartsWidget31;
+        // }
+
+        // On document ready
+        KTUtil.onDOMContentLoaded(function() {
+            KTChartsWidget31.init();
+        });
     </script>
 @endsection

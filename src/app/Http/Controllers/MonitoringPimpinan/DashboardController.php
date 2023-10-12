@@ -52,6 +52,13 @@ class DashboardController extends Controller
             DB::raw('(select count(*) from actions where jabatan_id = jabatans.id and finish is not null) as total_action_finish')
         )->orderBy('total_action_pending', 'desc')->orderBy('total_action', 'desc')->limit(3)->get();
 
+        $statistic_jabatans = Jabatan::select(
+            '*',
+            DB::raw('(select count(*) from actions where jabatan_id = jabatans.id) as total_action'),
+            DB::raw('(select count(*) from actions where jabatan_id = jabatans.id and finish is not null) as total_action_finish'),
+            DB::raw('(select count(*) from actions where jabatan_id = jabatans.id) as total_action')
+        )->get();
+
         return view(
             'monitoring-pimpinan/index',
             compact(
@@ -62,6 +69,7 @@ class DashboardController extends Controller
                 'subject_detail_pendings',
                 'subject_detail_finish_percentage',
                 'subject_finishes',
+                'statistic_jabatans',
                 'statistic_jabatan_finishes',
                 'statistic_jabatan_pendings',
                 'subject_pendings',
