@@ -322,8 +322,12 @@
                                             class="min-w-125px mb-3 me-6 rounded border border-dashed border-gray-300 px-4 py-3">
                                             <!--begin::Number-->
                                             <div class="d-flex align-items-center">
+                                                <i class="ki-duotone ki-percentage fs-3 text-success me-2">
+                                                    <span class="path1"></span>
+                                                    <span class="path2"></span>
+                                                </i>
                                                 <div class="fs-4 fw-bold" data-kt-countup="true"
-                                                    data-kt-countup-value="{{ $finish_percentage }}">0</div>%
+                                                    data-kt-countup-value="{{ number_format($finish_percentage, 2, '.', ',') }}">0</div>
                                             </div>
                                             <!--end::Number-->
                                             <!--begin::Label-->

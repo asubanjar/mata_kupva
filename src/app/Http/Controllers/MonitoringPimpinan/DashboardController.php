@@ -4,6 +4,7 @@ namespace App\Http\Controllers\MonitoringPimpinan;
 
 use App\Http\Controllers\Controller;
 use App\Models\Master\Jabatan;
+use App\Models\MonitoringPimpinan\Monitoring\Action;
 use App\Models\MonitoringPimpinan\Monitoring\Subject;
 use App\Models\MonitoringPimpinan\Monitoring\SubjectDetail;
 use Illuminate\Support\Facades\DB;
@@ -18,11 +19,19 @@ class DashboardController extends Controller
     {
         $subjects = Subject::all();
 
+        $actions = Action::all();
+
+        $actions_pending = Action::whereNotNull('finish')->get();
+
+        $action_percentage = $actions_pending
+            ? ($actions_pending->count() / $actions->count()) * 100
+            : 0;
+
         $subject_pendings = Subject::whereNull('closed')->get();
 
         $subject_finishes = Subject::whereNotNull('closed')->get();
 
-        $subject_finish_percentage = $subject_finishes->count()
+        $subject_finish_percentage = $subject_finishes
             ? ($subject_finishes->count() / $subjects->count()) * 100
             : 0;
 
@@ -62,6 +71,8 @@ class DashboardController extends Controller
         return view(
             'monitoring-pimpinan/index',
             compact(
+                'actions',
+                'action_percentage',
                 'subjects',
                 'subject_details',
                 'subject_detail_finishes',

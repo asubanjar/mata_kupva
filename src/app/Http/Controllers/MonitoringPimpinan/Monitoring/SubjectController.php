@@ -3,11 +3,8 @@
 namespace App\Http\Controllers\MonitoringPimpinan\Monitoring;
 
 use App\Http\Controllers\Controller;
-use App\Models\Master\Jabatan;
 use App\Models\Master\SubjectType;
-use App\Models\MonitoringPimpinan\Monitoring\Action;
 use App\Models\MonitoringPimpinan\Monitoring\Subject;
-use App\Models\MonitoringPimpinan\Monitoring\SubjectDetail;
 use Illuminate\Http\Request;
 
 class SubjectController extends Controller
@@ -24,65 +21,24 @@ class SubjectController extends Controller
     {
         $subjects = Subject::all();
 
-        $subject_actives = Subject::where('active', true)->get();
-
-        //TODO HARUSNYA SUBJECT NYA JUGA YANG AKTIF
-        $subject_detail_actives = SubjectDetail::where('active', true)->get();
-
-        $subject_detail_openeds = $subject_detail_actives->whereNull('finish');
-
-        $subject_detail_closeds = $subject_detail_actives->whereNotNull('finish');
-
-        $subject_openeds = $subject_actives->whereNull('closed');
-
-        $subject_closeds = $subject_actives->whereNotNull('closed');
-
-        $actions = Action::where('active', true)->get();
-
-        $actions_active = Action::where('active', true)->whereNull('finish')->get();
-
         $subject_types = SubjectType::all();
 
-        $progress_percentage = ($subject_closeds->count() / $subject_actives->count());
+        $subject_openeds = $subjects->whereNull('closed');
 
-        $setia_total = Action::whereNull('finish')->whereIn('jabatan_id', Jabatan::where('parent_code', 'uk.1.1.1')->pluck('id'));
+        $subject_closeds = Subject::whereNotNull('closed');
 
-        $setia_finish = Action::whereNotNull('finish')->whereIn('jabatan_id', Jabatan::where('parent_code', 'uk.1.1.1')->pluck('id'));
-
-        $asa_total = Action::whereNull('finish')->whereIn('jabatan_id', Jabatan::where('parent_code', 'uk.1.1.9')->pluck('id'));
-
-        $asa_finish = Action::whereNotNull('finish')->whereIn('jabatan_id', Jabatan::where('parent_code', 'uk.1.1.9')->pluck('id'));
-
-        $tegas_total = Action::whereNull('finish')->whereIn('jabatan_id', Jabatan::where('parent_code', 'uk.1.1.2')->pluck('id'));
-
-        $tegas_finish = Action::whereNotNull('finish')->whereIn('jabatan_id', Jabatan::where('parent_code', 'uk.1.1.2')->pluck('id'));
-
-        $pengasuh_total = Action::whereNull('finish')->whereIn('jabatan_id', Jabatan::where('parent_code', 'uk.1.1.12')->pluck('id'));
-
-        $pengasuh_finish = Action::whereNotNull('finish')->whereIn('jabatan_id', Jabatan::where('parent_code', 'uk.1.1.12')->pluck('id'));
+        $progress_percentage = $subject_closeds->count()
+            ? ($subject_closeds->count() / $subjects->count()) * 100
+            : 0;
 
         return view(
             'monitoring-pimpinan/monitoring/subject/index',
             compact(
-                'actions',
-                'actions_active',
                 'progress_percentage',
                 'subjects',
-                'subject_actives',
                 'subject_closeds',
-                'subject_detail_actives',
-                'subject_detail_closeds',
-                'subject_detail_openeds',
                 'subject_openeds',
                 'subject_types',
-                'setia_total',
-                'setia_finish',
-                'asa_total',
-                'asa_finish',
-                'tegas_total',
-                'tegas_finish',
-                'pengasuh_total',
-                'pengasuh_finish',
             )
         );
     }
