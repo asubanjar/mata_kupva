@@ -14,6 +14,12 @@ class JabatanSeeder extends Seeder
     {
         $jabatans = [
             [
+                'code'        => 'uk',
+                'parent_code' => '-',
+                'name'        => 'ADMINISTRATOR',
+                'description' => 'ADMINISTRATOR',
+            ],
+            [
                 'code'        => 'uk.1',
                 'parent_code' => 'uk',
                 'name'        => 'KEPALA PPATK',

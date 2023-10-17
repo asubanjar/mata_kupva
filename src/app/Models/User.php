@@ -6,7 +6,9 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
+use App\Models\Master\Jabatan;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -22,12 +24,23 @@ class User extends Authenticatable
     /**
      * The attributes that are mass assignable.
      */
-    // @phpstan-ignore-next-line
     protected $fillable = [
-        'name',
+        'active',
+        'approval_name',
         'email',
+        'golongan',
+        'group_id',
+        'id',
+        'jabatan_code',
+        'name',
+        'nik',
+        'nip',
         'password',
+        'phone',
+        'position',
+        'atasan_code',
         'username',
+        'user_id',
     ];
 
     /**
@@ -35,14 +48,23 @@ class User extends Authenticatable
      */
     protected $hidden = [
         'password',
-        'remember_token',
     ];
 
     /**
      * The attributes that should be cast.
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
-        'password'          => 'hashed',
+        'active'   => 'boolean',
+        'password' => 'hashed',
     ];
+
+    public function jabatan(): Relations\BelongsTo
+    {
+        return $this->belongsTo(Jabatan::class, 'jabatan_code', 'code');
+    }
+
+    public function atasan(): Relations\BelongsTo
+    {
+        return $this->belongsTo(Jabatan::class, 'atasan_code', 'code');
+    }
 }

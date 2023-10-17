@@ -17,12 +17,26 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('username');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('phone');
+            $table->string('position');
+            $table->string('jabatan_code');
+            $table->string('group_id')->nullable();
+            $table->string('atasan_code')->nullable();
+            $table->string('nip')->nullable();
+            $table->string('approval_name')->nullable();
+            $table->string('email')->nullable();
+            $table->string('nik')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('golongan')->nullable();
+            $table->string('user_id')->nullable();
+            $table->string('active')->default(true);
             $table->rememberToken();
             $table->timestamps();
+
+            $table->foreign('jabatan_code')
+            ->references('code')
+            ->on('jabatans')
+            ->onUpdate('cascade');
         });
     }
 

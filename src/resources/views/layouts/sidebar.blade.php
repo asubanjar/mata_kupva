@@ -326,11 +326,12 @@
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link" href="../../demo1/dist/pages/user-profile/overview.html">
+                                    <a class="menu-link {{ (request()->is('user') ? 'active' : request()->is('user*')) ? 'active' : '' }}"
+                                        href="{{ url('/user') }}">
                                         <span class="menu-bullet">
                                             <span class="bullet bullet-dot"></span>
                                         </span>
-                                        <span class="menu-title">Overview</span>
+                                        <span class="menu-title">Daftar</span>
                                     </a>
                                     <!--end:Menu link-->
                                 </div>

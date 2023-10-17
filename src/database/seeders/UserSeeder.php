@@ -17,19 +17,23 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         $user = User::factory()->create([
-            'username' => 'adminsikd',
-            'name'     => 'Administrator',
-            'email'    => 'admin@ppatk.go.id',
-            'password' => bcrypt('secret'),
-            'phone'    => '6287812625858',
+            'name'         => 'Administrator',
+            'username'     => 'adminsikd',
+            'position'     => 'Administrator',
+            'jabatan_code' => 'uk',
+            'email'        => 'admin@ppatk.go.id',
+            'password'     => bcrypt('secret'),
+            'phone'        => '6287812625858',
         ]);
 
         $user = User::factory()->create([
-            'username' => 'nxs005',
-            'name'     => 'Nurman Setyawan',
-            'email'    => 'nurman.setyawan@ppatk.go.id',
-            'password' => bcrypt('secret'),
-            'phone'    => '6287812625858',
+            'name'         => 'Ivan Yustiavandana',
+            'username'     => 'ixy571',
+            'position'     => 'Kepala PPATK',
+            'jabatan_code' => 'uk.1',
+            'email'        => 'ivan.yustiavandana@ppatk.go.id',
+            'password'     => bcrypt('secret'),
+            'phone'        => '6287812625858',
         ]);
 
         $user->assignRole('Super Admin');

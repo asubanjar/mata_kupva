@@ -29,5 +29,7 @@ Route::group(['middleware' => ['auth']], function (): void {
 
     Route::group([], base_path('routes/monitoring.php'));
 
+    Route::group([], base_path('routes/user.php'));
+
     Route::group([], base_path('routes/master.php'));
 });
