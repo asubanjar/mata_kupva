@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Seeders;
 
 use Database\Seeders\Master\MasterDataSeeder;
@@ -13,9 +15,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $this->call(RolePermissionSeeder::class);
+        $this->call(JabatanSeeder::class);
         $this->call(MasterDataSeeder::class);
-        $this->call(UserSeeder::class);
         $this->call(MonitoringPimpinanDataSeeder::class);
+        $this->call(RolePermissionSeeder::class);
+        $this->call(UserSeeder::class);
     }
 }

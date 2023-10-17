@@ -1,0 +1,704 @@
+name;code;parent_code;description;active
+Administrator;root;;Administrator;1
+Widyaiswara;uk.1.1.1.4.4.1;uk.1.1.1.4.4;Widyaiswara 1;1
+Widyaiswara;uk.1.1.1.4.4.2;uk.1.1.1.4.4;Widyaiswara 2;1
+BIRU - Kepala Subbagian Administrasi Pimpinan;uk.1.1.1.1.2.2;uk.1.1.1.1.2;Subbagian Administrasi Pimpinan;1
+staf;uk.1.1.5.2.7;uk.1.1.5.2;Staf Bidang Operasi Sistem Teknologi Informasi 7;1
+BERMITRA - Koordinator Kelompok Substansi Pemantauan Efektivitas Kinerja Anti Pencucian Uang dan Pencegahan Pendanaan Terorisme;uk.1.1.10.5;uk.1.1.10;Kelompok Substansi Pemantauan Efektivitas Kinerja Anti Pencucian Uang dan Pencegahan Pendanaan Terorisme;1
+Staf Bagian Tata Usaha Pusdamit 1;uk.1.1.10.1.1;uk.1.1.10.1;Staf Bagian Tata Usaha Pusdamit 1;1
+staf;uk.1.1.5.1.5;uk.1.1.5.1;Staf Bidang Pengembangan Aplikasi Sistem 5;1
+PEKA - Inspektur;uk.1.1.4;uk.1.1;Inspektorat;1
+Kepala Bagian Tata Usaha Inspektorat;uk.1.1.4.1;uk.1.1.4;Bagian Tata Usaha Inspektorat;1
+SERASI - Direktur Strategi dan Kerja Sama Internasional;uk.1.1.2.5;uk.1.1.2;Direktorat Strategi dan Kerja Sama Internasional;1
+KREASI - Direktur Hukum dan Regulasi;uk.1.1.2.6;uk.1.1.2;Direktorat Hukum dan Regulasi;1
+PATUH - Direktur Pengawasan Kepatuhan Penyedia Barang dan/ atau jasa lain dan profesi;uk.1.1.12.3;uk.1.1.12;Direktorat Pengawasan Kepatuhan Penyedia Barang dan/ atau Jasa Lain dan Profesi;1
+Deputi TEGAS;uk.1.1.2;uk.1.1;Deputi Bidang Strategi dan Kerja Sama;1
+REKAN - Direktur Pelaporan;uk.1.1.12.1;uk.1.1.12;Direktorat Pelaporan;1
+PENJAGA - Direktur Pengawasan Kepatuhan Penyedia Jasa Keuangan;uk.1.1.12.2;uk.1.1.12;Direktorat Pengawasan Kepatuhan Penyedia Jasa Keuangan;1
+SALAM - Direktur Strategi dan Kerja Sama Dalam Negeri;uk.1.1.2.4;uk.1.1.2;Direktorat Strategi dan Kerja Sama Dalam Negeri;1
+PATIH - Koordinator Kelompok Substansi Perencanaan dan Pengembangan Program dan Pelatihan APUPPT;uk.1.1.6.1;uk.1.1.6;"Kelompok Substansi Perencanaan dan Pengembangan Program dan PelatihanAPUPPT
+";1
+Staff;uk.1.1.2.4.3;uk.1.1.2.4;Staff Koordinator pada Kelompok Dalam Negeri 2;1
+TEGAS - Koordinator pada Kelompok Dalam Negeri;uk.1.1.2.4.1;uk.1.1.2.4;"Koordinator pada Kelompok Dalam Negeri
+";1
+Staff;uk.1.1.2.4.2;uk.1.1.2.4;Staff Koordinator pada Kelompok Dalam Negeri 1;1
+SETIA - Kepala Bagian Organisasi, dan Tata Laksana, Manajemen Risiko;uk.1.1.1.3.3;uk.1.1.1.3;Bagian Organisasi, dan Tata Laksana, Manajemen Risiko;1
+BERMAKNA - Kepala Bagian Pengembangan Sumber Daya Manusia;uk.1.1.1.3.2;uk.1.1.1.3;Bagian Pengembangan Sumber Daya Manusia;1
+Staf;uk.1.1.1.3.3.3;uk.1.1.1.3.3;Staf Bagian Organisasi. Tata Laksana, dan Manajemen Risiko 3;1
+Staf;uk.1.1.1.3.3.4;uk.1.1.1.3.3;Staf Bagian Organisasi. Tata Laksana, dan Manajemen Risiko 4;1
+Staf;uk.1.1.1.3.3.1;uk.1.1.1.3.3;Staf Bagian Organisasi. Tata Laksana, dan Manajemen Risiko 1;1
+BERMAKNA - Kepala Biro Sumber Daya Manusia, Organisasi dan Tata Laksana;uk.1.1.1.3;uk.1.1.1;Biro Sumber Daya Manusia, Organisasi dan Tata Laksana;1
+BINCANG - Kepala Bagian Verifikasi Akuntansi dan Akuntabilitas Kinerja;uk.1.1.1.2.1;uk.1.1.1.2;Bagian Verifikasi Akuntansi dan Akuntabilitas Kinerja;1
+BINCANG - Kepala Biro Perencanaan dan Keuangan;uk.1.1.1.2;uk.1.1.1;Biro Perencanaan dan Keuangan;1
+BIRU - Kepala Bagian Tata Usaha Pimpinan;uk.1.1.1.1.2;uk.1.1.1.1;Bagian Tata Usaha Pimpinan;1
+SETIA - Kepala Bagian Rumah Tangga dan Perlengkapan - ANDY RIO HANDOKO;uk.1.1.1.1.1;uk.1.1.1.1;Bagian Rumah Tangga dan Perlengkapan;1
+BIRU - Kepala Biro Umum;uk.1.1.1.1;uk.1.1.1;Biro Umum;1
+SETIA;uk.1.1.1;uk.1.1;Sekretariat Utama;1
+Wakil Kepala PPATK;uk.1.1;uk.1;Wakil Kepala PPATK;1
+Kepala PPATK;uk.1;uk;Kepala PPATK;1
+Unit Kearsipan;uk;root;Unit Kearsipan;1
+PATIH - Kepala PATIH;uk.1.1.6;uk.1.1;Pusdiklat APU PPT;1
+Eksternal;uk.1.1.13;uk.1.1;Eksternal;1
+SETIA - Kepala Subbagian Layanan pengadaan - ISFARAH NURUL IZZY;uk.1.1.1.1.1.1;uk.1.1.1.1.1;Subbagian Layanan pengadaan;1
+BIRU - Kepala Subbagian Protokol dan Keamanan Pimpinan;uk.1.1.1.1.2.1;uk.1.1.1.1.2;Subbagian Protokol dan Keamanan Pimpinan;1
+Sekretaris Kepala PPATK 1;uk.1.2;uk.1;Sekretaris Kepala PPATK 1;1
+Sekretaris Kepala PPATK 2;uk.1.3;uk.1;Sekretaris Kepala PPATK 2;1
+Sekretaris Sestama (RYAN);uk.1.1.1.5;uk.1.1.1;Sekretaris Sestama;1
+Sekretaris Sestama (Pramesti);uk.1.1.1.6;uk.1.1.1;Sekretaris Sestama;1
+TU Biro Sumber Daya Manusia, Organisasi dan Tata Laksana;uk.1.1.1.3.4;uk.1.1.1.3;TU Biro Sumber Daya Manusia, Organisasi dan Tata Laksana;1
+TEGAS - Koordinator pada Kelompok Substansi Strategi dan Kerja Sama Multilateral;uk.1.1.2.5.1;uk.1.1.2.5;Kelompok Substansi Strategi dan Kerja Sama Multilateral;1
+TEGAS - Koordinator Kelompok Substansi Strategi dan Kerja Sama Regional;uk.1.1.2.5.2;uk.1.1.2.5;Kelompok Substansi Strategi dan Kerja Sama Regional;1
+TEGAS - Koordinator Kelompok Substansi Strategi dan Kerja Sama Bilateral;uk.1.1.2.5.3;uk.1.1.2.5;Kelompok Substansi Strategi dan Kerja Sama Bilateral;1
+TEGAS - Koordinator Kelompok Substansi Advokasi;uk.1.1.2.6.1;uk.1.1.2.6;Koordinator Kelompok Substansi Advokasi;1
+TEGAS - Koordinator Kelompok Substansi Analisis Hukum;uk.1.1.2.6.2;uk.1.1.2.6;Kelompok Substansi Analisis Hukum;1
+Staff;uk.1.1.2.6.3;uk.1.1.2.6;Staff Koordinator Kelompok Hukum dan Regulasi 1;1
+PENGASUH - Kepala Bagian Tata Usaha Deputi Pelaporan dan Pengawasan Kepatuhan;uk.1.1.12.4;uk.1.1.12;Bagian Tata Usaha Deputi Pelaporan dan Pengawasan Kepatuhan;1
+TEGAS - Kepala Bagian Tata Usaha Deputi Strategi dan Kerja Sama;uk.1.1.2.7;uk.1.1.2;Bagian Tata Usaha Deputi Strategi dan Kerja Sama;1
+ASA - Kepala Bagian Tata Usaha Deputi Analisis dan Pemeriksaan;uk.1.1.9.4;uk.1.1.9;Bagian Tata Usaha Deputi Analisis dan Pemeriksaan;1
+PENGASUH - Koordinator Kelompok Subtansi Pengawasan Penyedia Jasa Keuangan Bank - Nisfu Songko S;uk.1.1.12.2.1;uk.1.1.12.2;"Koordinator Kelompok Subtansi Pengawasan Penyedia Jasa
+Keuangan Bank";1
+ASA - Koordinator Kelompok Substansi Analisis dan Pemeriksaan Proaktif 1.1;uk.1.1.9.1.1;uk.1.1.9.1;Kelompok Substansi Analisis dan Pemeriksaan Proaktif 1.1;1
+ASA - Koordinator Kelompok Substansi Kebijakan dan Evaluasi Analisis dan Pemeriksaan I;uk.1.1.9.1.2;uk.1.1.9.1;Kelompok Substansi Kebijakan dan Evaluasi Analisis dan Pemeriksaan I;1
+BERMITRA - Koordinator Kelompok Substansi Kebijakan dan Layanan Publik;uk.1.1.10.4;uk.1.1.10;"Kelompok Substansi Kebijakan dan Layanan Publik
+";1
+SETIA - Koordinator Kelompok Substansi Hubungan Masyarakat - M. NATSIR KONGAH;uk.1.1.1.1.3;uk.1.1.1.1;Kelompok Substansi Hubungan Masyarakat.;1
+SETIA - Koordinator Kelompok Substansi Kearsipan - RACHMAT HARINANTO SADIKIN;uk.1.1.1.1.4;uk.1.1.1.1;SETIA - Kordinator Kelompok Substansi Kearsipan;1
+ULP Kepala PPATK;uk.1.4;uk.1;ULP Kepala PPATK;1
+ULP Kepala PPATK 2;uk.1.5;uk.1;ULP Kepala PPATK 2;1
+Staf Protokoler Sekretaris Utama;uk.1.1.1.7;uk.1.1.1;Staf Protokoler Sekretaris Utama;1
+Staf Protokoler Biro SDM OT;uk.1.1.1.3.5;uk.1.1.1.3;Staf Protokoler Biro SDM OT;1
+Staf Protokoler Inspektorat;uk.1.1.4.13;uk.1.1.4;Staf Protokoler Inspektorat;1
+ULP Kepala PPATK 3;uk.1.6;uk.1;ULP Kepala PPATK 3;1
+Kuasa Pengguna Anggaran;uk.1.1.8;uk.1.1;Kuasa Pengguna Anggaran;1
+Pejabat Pembuat Komitmen - Biro Umum;uk.1.1.8.1;uk.1.1.8;Pejabat Pembuat Komitmen - Biro Umum;1
+Pejabat Pembuat Komitmen - INSPEKTORAT, BERMITRA, BERMAKNA, BINCANG;uk.1.1.8.2;uk.1.1.8;Pejabat Pembuat Komitmen - INSPEKTORAT, BERMITRA, BERMAKNA, BINCANG;1
+Pejabat Pembuat Komitmen - Deputi Bidang Strategi dan Kerja Sama;uk.1.1.8.3;uk.1.1.8;Pejabat Pembuat Komitmen - Deputi Bidang Strategi dan Kerja Sama;1
+Pejabat Pembuat Komitmen - Deputi Bidang Pelaporan dan Pengawasan Kepatuhan;uk.1.1.8.4;uk.1.1.8;Pejabat Pembuat Komitmen - Deputi Bidang Pelaporan dan Pengawasan Kepatuhan;1
+Pejabat Pembuat Komitmen - Pusat Teknologi Informasi;uk.1.1.8.5;uk.1.1.8;Pejabat Pembuat Komitmen - Pusat Teknologi Informasi;1
+Pejabat Penandatangan Surat Perintah Membayar - PPSPM;uk.1.1.8.6;uk.1.1.8;Pejabat Penandatangan Surat Perintah Membayar - PPSPM;1
+Bendahara Pengeluaran;uk.1.1.8.7;uk.1.1.8;Bendahara Pengeluaran;1
+Petugas Pengelolaan Administrasi Belanja Pegawai - PPABP;uk.1.1.8.2.4;uk.1.1.8.2;Petugas Pengelolaan Administrasi Belanja Pegawai - PPABP;1
+Staf PPK Biro Umum 1;uk.1.1.8.1.1;uk.1.1.8.1;Staf PPK Biro Umum 1;1
+Staf PPK Biro Umum 2;uk.1.1.8.1.2;uk.1.1.8.1;Staf PPK Biro Umum 2;1
+Staf PPK Biro Umum 3;uk.1.1.8.1.3;uk.1.1.8.1;Staf PPK Biro Umum 3;1
+Staf PPK Biro Umum 4;uk.1.1.8.1.4;uk.1.1.8.1;Staf PPK Biro Umum 4;1
+Staf PPK Biro Umum 5;uk.1.1.8.1.5;uk.1.1.8.1;Staf PPK Biro Umum 5;1
+Staf PPK Biro Umum 6;uk.1.1.8.1.6;uk.1.1.8.1;Staf PPK Biro Umum 6;1
+Staf PPK Sestama 1;uk.1.1.8.2.1;uk.1.1.8.2;Staf PPK Sestama 1;1
+Staf PPK Sestama 2;uk.1.1.8.2.2;uk.1.1.8.2;Staf PPK Sestama 2;1
+Staf PPK Sestama 3;uk.1.1.8.2.3;uk.1.1.8.2;Staf PPK Sestama 3;1
+Staf PPK Deputi Bidang Strategi dan Kerja Sama 1;uk.1.1.8.3.1;uk.1.1.8.3;Staf PPK Deputi Bidang Strategi dan Kerja Sama 1;1
+Staf PPK Deputi Bidang Strategi dan Kerja Sama 2;uk.1.1.8.3.2;uk.1.1.8.3;Staf PPK Deputi Bidang Strategi dan Kerja Sama 2;1
+Staf PPK Deputi Bidang Strategi dan Kerja Sama 3;uk.1.1.8.3.3;uk.1.1.8.3;Staf PPK Deputi Bidang Strategi dan Kerja Sama 3;1
+Staf PPK Deputi Bidang Pelaporan dan Pengawasan Kepatuhan 1;uk.1.1.8.4.1;uk.1.1.8.4;Staf PPK Deputi Bidang Pelaporan dan Pengawasan Kepatuhan 1;1
+Staf PPK Deputi Bidang Pelaporan dan Pengawasan Kepatuhan 2;uk.1.1.8.4.2;uk.1.1.8.4;Staf PPK Deputi Bidang Pelaporan dan Pengawasan Kepatuhan 2;1
+Staf PPK Deputi Bidang Pelaporan dan Pengawasan Kepatuhan 3;uk.1.1.8.4.3;uk.1.1.8.4;Staf PPK Deputi Bidang Pelaporan dan Pengawasan Kepatuhan 3;1
+Staf PPK PTI 1;uk.1.1.8.5.1;uk.1.1.8.5;Staf PPK PTI 1;1
+Staf PPK PTI 2;uk.1.1.8.5.2;uk.1.1.8.5;Staf PPK PTI 2;1
+Staf PPK PTI 3;uk.1.1.8.5.3;uk.1.1.8.5;Staf PPK PTI 3;1
+Staf PPSPM 1;uk.1.1.8.6.1;uk.1.1.8.6;Staf PPSPM 1;1
+Staf PPSPM 2;uk.1.1.8.6.2;uk.1.1.8.6;Staf PPSPM 2;1
+Staf PPSPM 3;uk.1.1.8.6.3;uk.1.1.8.6;Staf PPSPM 3;1
+Staf Bendahara Pengeluaran 1;uk.1.1.8.7.1;uk.1.1.8.7;Staf Bendahara Pengeluaran 1;1
+Staf Bendahara Pengeluaran 2;uk.1.1.8.7.2;uk.1.1.8.7;Staf Bendahara Pengeluaran 2;1
+Staf Bendahara Pengeluaran 3;uk.1.1.8.7.3;uk.1.1.8.7;Staf Bendahara Pengeluaran 3;1
+Staf PPK PTI 4;uk.1.1.8.5.4;uk.1.1.8.5;Staf PPK PTI 4;1
+Plt. Deputi ASA;uk.1.1.9;uk.1.1;Plt.Deputi Bidang Analisis dan Pemeriksaan;1
+SIASAT - Direktur Analisis dan Pemeriksaan I;uk.1.1.9.1;uk.1.1.9;Direktorat Analisis dan Pemeriksaan I;1
+SIDIK - Direktur Analisis dan Pemeriksaan II;uk.1.1.9.2;uk.1.1.9;Direktorat Analisis dan Pemeriksaan II;1
+SIAGA - Direktur Analisis dan Pemeriksaan III;uk.1.1.9.3;uk.1.1.9;Direktorat Analisis dan Pemeriksaan III;1
+BERMITRA - Kepala Pusat BERMITRA;uk.1.1.10;uk.1.1;Pusat Pemberdayaan Kemitraan APU PPT;1
+Plt. Deputi PENGASUH;uk.1.1.12;uk.1.1;Deputi Bidang Pelaporan dan Pengawasan Kepatuhan;1
+BERMITRA - Kepala Sub Bagian Tata Usaha Pemberdayaan Kemitraan APU PPT;uk.1.1.10.1;uk.1.1.10;Sub Bagian Tata Usaha Pemberdayaan Kemitraan APU PPT;1
+Pengelola Pengadaan Barang / Jasa - Riski Syandri Pratama;uk.1.1.1.1.1.1.1;uk.1.1.1.1.1.1;Staf Sub Bagian Layanan Pengadaan 1;1
+Staf;uk.1.1.1.1.1.1.2;uk.1.1.1.1.1.1;Staf Sub Bagian layanan Pengadaan 2;1
+Pengelola Pengadaan Barang / Jasa - Diyos Nugraha Eka Putra;uk.1.1.1.1.1.1.3;uk.1.1.1.1.1.1;Staf Sub Bagian layanan Pengadaan 3;1
+Staf;uk.1.1.1.1.1.1.4;uk.1.1.1.1.1.1;Staf Sub Bagian layanan Pengadaan 4;1
+Pengelola Pengadaan Barang / Jasa - Lyta Karina;uk.1.1.1.1.1.1.5;uk.1.1.1.1.1.1;Staf Sub Bagian layanan Pengadaan 5;1
+Pengelola Pengadaan Barang / Jasa - Muhammad Nurul Hamsyah;uk.1.1.1.1.1.1.6;uk.1.1.1.1.1.1;Staf Sub Bagian layanan Pengadaan 6;1
+Staf;uk.1.1.1.1.1.1.7;uk.1.1.1.1.1.1;Staf Sub Bagian layanan Pengadaan 7;1
+Staf;uk.1.1.1.1.2.1.1;uk.1.1.1.1.2.1;Sub Bagian Protokol dan Keamanan Pimpinan 1;1
+Staf;uk.1.1.1.1.2.1.2;uk.1.1.1.1.2.1;Sub Bagian Protokol dan Keamanan Pimpinan 2;1
+Staf;uk.1.1.1.1.2.1.3;uk.1.1.1.1.2.1;Sub Bagian Protokol dan Keamanan Pimpinan 3;1
+Staf;uk.1.1.1.1.2.1.4;uk.1.1.1.1.2.1;Sub Bagian Protokol dan Keamanan Pimpinan 4;1
+Staf;uk.1.1.1.1.2.1.5;uk.1.1.1.1.2.1;Sub Bagian Protokol dan Keamanan Pimpinan 5;1
+Koordinator Kelompok Substansi Strategi dan Kerja Sama Dalam Negeri I;uk.1.1.2.4.4;uk.1.1.2.4;Kelompok Substansi Strategi dan Kerja Sama Dalam Negeri I;1
+staf;uk.1.1.1.1.2.1.6;uk.1.1.1.1.2.1;Sub Bagian Protokol dan Keamanan Pimpinan 6;1
+Staf;uk.1.1.1.1.2.1.7;uk.1.1.1.1.2.1;Sub Bagian Protokol dan Keamanan Pimpinan 7;1
+Staff;uk.1.1.2.4.5;uk.1.1.2.4;Staff koordinator pada Kelompok Dalam Negeri 4;1
+Staf;uk.1.1.1.1.2.2.1;uk.1.1.1.1.2.2;Staf Sub Bagian Administrasi Pimpinan 1;1
+staff;uk.1.1.2.4.6;uk.1.1.2.4;Staff koordinator pada Kelompok Dalam Negeri 5;1
+Staf;uk.1.1.1.1.2.2.2;uk.1.1.1.1.2.2;Staf Sub Bagian Administrasi Pimpinan 2;1
+Koordinator Kelompok Substansi Strategi dan Kerja Sama Dalam Negeri II;uk.1.1.2.4.7;uk.1.1.2.4;Kelompok Substansi Strategi dan Kerja Sama Dalam Negeri II;1
+ASA - Koordinator Kelompok Substansi Analisis dan Pemeriksaan Reaktif 1;uk.1.1.9.3.1;uk.1.1.9.3;Kelompok Substansi Analisis dan Pemeriksaan Reaktif 1;1
+Staf;uk.1.1.1.1.2.2.3;uk.1.1.1.1.2.2;Staf Sub Bagian Administrasi Pimpinan 3;1
+Staf;uk.1.1.1.1.2.2.4;uk.1.1.1.1.2.2;Staf Sub Bagian Administrasi Pimpinan 4;1
+Staf;uk.1.1.1.1.2.2.5;uk.1.1.1.1.2.2;Staf Sub Bagian Administrasi Pimpinan 5;1
+Staf;uk.1.1.1.1.2.2.6;uk.1.1.1.1.2.2;Staf Sub Bagian Administrasi Pimpinan 6;1
+ASA - Koordinator Kelompok Substansi Pemberian Informasi Kelayakan dan Kepatutan Pengisian Jabatan Pejabat Negara dan Jabatan Strategis;uk.1.1.9.1.3;uk.1.1.9.1;Kelompok Substansi Pemberian Informasi Kelayakan dan Kepatutan Pengisian Jabatan Pejabat Negara dan Jabatan Strategis;1
+ASA - Koordinator Kelompok Substansi Analisis dan Pemeriksaan Proaktif 1.2;uk.1.1.9.1.4;uk.1.1.9.1;Kelompok Substansi Analisis dan Pemeriksaan Proaktif 1.2;1
+Staf Direktorat Analisis dan Pemeriksaan I-4;uk.1.1.9.1.5;uk.1.1.9.1;Staf Direktorat Analisis dan Pemeriksaan I-4;1
+Staf Direktorat Analisis dan Pemeriksaan I-5;uk.1.1.9.1.6;uk.1.1.9.1;Staf Direktorat Analisis dan Pemeriksaan I-5;1
+Staf;uk.1.1.1.1.5;uk.1.1.1.1;Staf Biro Umum 1;1
+Staf Direktorat Analisis dan Pemeriksaan I-6;uk.1.1.9.1.7;uk.1.1.9.1;Staf Direktorat Analisis dan Pemeriksaan I-6;1
+Staf;uk.1.1.1.1.6;uk.1.1.1.1;Staf Biro Umum 2;1
+Staf;uk.1.1.1.1.7;uk.1.1.1.1;Staf Biro Umum 3;1
+Staf Direktorat Analisis dan Pemeriksaan I-7;uk.1.1.9.1.8;uk.1.1.9.1;Staf Direktorat Analisis dan Pemeriksaan I-7;1
+Staf;uk.1.1.1.1.8;uk.1.1.1.1;Staf Biro Umum 4;1
+Staf Direktorat Analisis dan Pemeriksaan I-8;uk.1.1.9.1.9;uk.1.1.9.1;Staf Direktorat Analisis dan Pemeriksaan I-8;1
+Staf Bagian Rumah Tangga dan perlengkapan 1;uk.1.1.1.1.1.2;uk.1.1.1.1.1;Staf Bagian Rumah Tangga dan perlengkapan 1;1
+Staf Bagian Rumah Tangga dan perlengkapan 2;uk.1.1.1.1.1.3;uk.1.1.1.1.1;Staf Bagian Rumah Tangga dan perlengkapan 2;1
+Staf Bagian Rumah Tangga dan perlengkapan 3;uk.1.1.1.1.1.4;uk.1.1.1.1.1;Staf Bagian Rumah Tangga dan perlengkapan 3;1
+Staf Direktorat Analisis dan Pemeriksaan I-9;uk.1.1.9.1.10;uk.1.1.9.1;Staf Direktorat Analisis dan Pemeriksaan I-9;1
+Staf Bagian Rumah Tangga dan perlengkapan 4;uk.1.1.1.1.1.5;uk.1.1.1.1.1;Staf Bagian Rumah Tangga dan perlengkapan 4;1
+Staf Bagian Rumah Tangga dan perlengkapan 5;uk.1.1.1.1.1.6;uk.1.1.1.1.1;Staf Bagian Rumah Tangga dan perlengkapan 5;1
+Staf Bagian Rumah Tangga dan perlengkapan 6;uk.1.1.1.1.1.7;uk.1.1.1.1.1;Staf Bagian Rumah Tangga dan perlengkapan 6;1
+Staf Direktorat Analisis dan Pemeriksaan I-10;uk.1.1.9.1.11;uk.1.1.9.1;Staf Direktorat Analisis dan Pemeriksaan I-10;1
+Staf Direktorat Analisis dan Pemeriksaan I-11;uk.1.1.9.1.12;uk.1.1.9.1;Staf Direktorat Analisis dan Pemeriksaan I-11;1
+Staf Direktorat Analisis dan Pemeriksaan I-12;uk.1.1.9.1.13;uk.1.1.9.1;Staf Direktorat Analisis dan Pemeriksaan I-12;1
+Staf Direktorat Analisis dan Pemeriksaan I-13;uk.1.1.9.1.14;uk.1.1.9.1;Staf Direktorat Analisis dan Pemeriksaan I-13;1
+Staf Direktorat Analisis dan Pemeriksaan I-14;uk.1.1.9.1.15;uk.1.1.9.1;Staf Direktorat Analisis dan Pemeriksaan I-14;1
+Staff;uk.1.1.2.5.4;uk.1.1.2.5;Staff Koordinator pada Kelompok Strategi dan Kerja Sama Internasional 3;1
+Staf Direktorat Analisis dan Pemeriksaan I-15;uk.1.1.9.1.16;uk.1.1.9.1;Staf Direktorat Analisis dan Pemeriksaan I-15;1
+Staff;uk.1.1.2.5.5;uk.1.1.2.5;Staff Koordinator pada Kelompok Strategi dan Kerja Sama Internasional 4;1
+Staf Direktorat Analisis dan Pemeriksaan I-16;uk.1.1.9.1.17;uk.1.1.9.1;Staf Direktorat Analisis dan Pemeriksaan I-16;1
+Staff;uk.1.1.2.5.6;uk.1.1.2.5;Staff Koordinator pada Kelompok Strategi dan Kerja Sama Internasional 5;1
+Staf Direktorat Analisis dan Pemeriksaan I-17;uk.1.1.9.1.18;uk.1.1.9.1;Staf Direktorat Analisis dan Pemeriksaan I-17;1
+Staff;uk.1.1.2.5.7;uk.1.1.2.5;Staff Koordinator pada Kelompok Strategi dan Kerja Sama Internasional 6;1
+Staff;uk.1.1.2.5.8;uk.1.1.2.5;Staff Koordinator pada Kelompok Strategi dan Kerja Sama Internasional 7;1
+Staf Direktorat Analisis dan Pemeriksaan I-18;uk.1.1.9.1.19;uk.1.1.9.1;Staf Direktorat Analisis dan Pemeriksaan I-18;1
+Staf Direktorat Analisis dan Pemeriksaan I-19;uk.1.1.9.1.20;uk.1.1.9.1;Staf Direktorat Analisis dan Pemeriksaan I-19;1
+Staff;uk.1.1.2.5.9;uk.1.1.2.5;Staff Koordinator pada Kelompok Strategi dan Kerja Sama Internasional 8;1
+Staf Direktorat Analisis dan Pemeriksaan I-20;uk.1.1.9.1.21;uk.1.1.9.1;Staf Direktorat Analisis dan Pemeriksaan I-20;1
+Staff;uk.1.1.2.5.10;uk.1.1.2.5;Staff Koordinator pada Kelompok Strategi dan Kerja Sama Internasional 9;1
+Staf Direktorat Analisis dan Pemeriksaan I-21;uk.1.1.9.1.22;uk.1.1.9.1;Staf Direktorat Analisis dan Pemeriksaan I-21;1
+ASA - Koordinator Kelompok Substansi Analisis dan Pemeriksaan Proaktif 2.1;uk.1.1.9.2.1;uk.1.1.9.2;Kelompok Substansi Analisis dan Pemeriksaan Proaktif 2.1;1
+Koordinator Kelompok Substansi Kebijakan dan Evaluasi Analisis dan Pemeriksaan II;uk.1.1.9.2.2;uk.1.1.9.2;Kelompok Substansi Kebijakan dan Evaluasi Analisis dan Pemeriksaan II;1
+Staf;uk.1.1.1.2.1.1;uk.1.1.1.2.1;Staf Bagian Verifikasi Akuntansi dan Akuntabilitas Kinerja 1;1
+ASA - Koordinator Kelompok Substansi Analisis dan Pemeriksaan Proaktif 2.4;uk.1.1.9.2.3;uk.1.1.9.2;Kelompok Substansi Analisis dan Pemeriksaan Proaktif 2.4;1
+Staf;uk.1.1.1.2.1.2;uk.1.1.1.2.1;Staf Bagian Verifikasi Akuntansi dan Akuntabilitas Kinerja 2;1
+ASA - Koordinator Kelompok Substansi Analisis dan Pemeriksaan Proaktif 2.3;uk.1.1.9.2.4;uk.1.1.9.2;Kelompok Substansi Analisis dan Pemeriksaan Proaktif 2.3;1
+BINCANG - Koordinator Kelompok Substansi Perencanaan dan Anggaran (Kamanto Pujiono);uk.1.1.1.2.2;uk.1.1.1.2;Kelompok Substansi Perencanaan dan Anggaran;1
+ASA - Koordinator Kelompok Substansi Analisis dan Pemeriksaan Proaktif 2.2;uk.1.1.9.2.5;uk.1.1.9.2;Kelompok Substansi Analisis dan Pemeriksaan Proaktif 2.2;1
+Staf;uk.1.1.1.2.3;uk.1.1.1.2;Staf Biro Perencanaan dan Keuangan 2;1
+Staf Direktorat Analisis dan Pemeriksaan II-6;uk.1.1.9.2.6;uk.1.1.9.2;Staf Direktorat Analisis dan Pemeriksaan II-6;1
+Staf Direktorat Analisis dan Pemeriksaan II-7;uk.1.1.9.2.7;uk.1.1.9.2;Staf Direktorat Analisis dan Pemeriksaan II-7;1
+Staff;uk.1.1.2.4.8;uk.1.1.2.4;Staff Koordinator Pada Kelompok Dalam Negeri 7;1
+Staf Direktorat Analisis dan Pemeriksaan II-8;uk.1.1.9.2.8;uk.1.1.9.2;Staf Direktorat Analisis dan Pemeriksaan II-8;1
+Staf;uk.1.1.1.1.2.1.8;uk.1.1.1.1.2.1;Sub Bagian Protokol dan Keamanan Pimpinan 8;1
+Staff;uk.1.1.2.4.9;uk.1.1.2.4;Staff Koordinator Pada kelompok Dalam Negeri 8;1
+Staf Direktorat Analisis dan Pemeriksaan II-9;uk.1.1.9.2.9;uk.1.1.9.2;Staf Direktorat Analisis dan Pemeriksaan II-9;1
+Staff;uk.1.1.2.4.10;uk.1.1.2.4;Staff Koordinator Pada kelompok Dalam Negeri 9;1
+Staff;uk.1.1.2.4.11;uk.1.1.2.4;Staff Koordinator Pada kelompok Dalam Negeri 10;1
+Staf Direktorat Analisis dan Pemeriksaan II-10;uk.1.1.9.2.10;uk.1.1.9.2;Staf Direktorat Analisis dan Pemeriksaan II-10;1
+Staff;uk.1.1.2.4.12;uk.1.1.2.4;Staff Koordinator Pada kelompok Dalam Negeri 11;1
+Staff;uk.1.1.2.4.13;uk.1.1.2.4;Staff Koordinator Pada kelompok Dalam Negeri 12;1
+Staf Direktorat Analisis dan Pemeriksaan II-11;uk.1.1.9.2.11;uk.1.1.9.2;Staf Direktorat Analisis dan Pemeriksaan II-11;1
+Staff;uk.1.1.2.4.14;uk.1.1.2.4;Staff Koordinator Pada kelompok Dalam Negeri 13;1
+Staf Direktorat Analisis dan Pemeriksaan II-12;uk.1.1.9.2.12;uk.1.1.9.2;Staf Direktorat Analisis dan Pemeriksaan II-12;1
+Staf Direktorat Analisis dan Pemeriksaan II-13;uk.1.1.9.2.13;uk.1.1.9.2;Staf Direktorat Analisis dan Pemeriksaan II-13;1
+Staff ;uk.1.1.2.4.15;uk.1.1.2.4;Staff Koordinator Pada kelompok Dalam Negeri 14;1
+Staf Direktorat Analisis dan Pemeriksaan II-14;uk.1.1.9.2.14;uk.1.1.9.2;Staf Direktorat Analisis dan Pemeriksaan II-14;1
+Staf Direktorat Analisis dan Pemeriksaan II-15;uk.1.1.9.2.15;uk.1.1.9.2;Staf Direktorat Analisis dan Pemeriksaan II-15;1
+Staf;uk.1.1.1.1.9;uk.1.1.1.1;Staf Biro Umum 5;1
+Staf Direktorat Analisis dan Pemeriksaan II-16;uk.1.1.9.2.16;uk.1.1.9.2;Staf Direktorat Analisis dan Pemeriksaan II-16;1
+Staf;uk.1.1.1.1.10;uk.1.1.1.1;Staf Biro Umum 6;1
+Staf Direktorat Analisis dan Pemeriksaan II-17;uk.1.1.9.2.17;uk.1.1.9.2;Staf Direktorat Analisis dan Pemeriksaan II-17;1
+Staf;uk.1.1.1.1.11;uk.1.1.1.1;Staf Biro Umum 7;1
+Staf Direktorat Analisis dan Pemeriksaan II-18;uk.1.1.9.2.18;uk.1.1.9.2;Staf Direktorat Analisis dan Pemeriksaan II-18;1
+Staf;uk.1.1.1.1.12;uk.1.1.1.1;Staf Biro Umum 8;1
+Staf Direktorat Analisis dan Pemeriksaan II-19;uk.1.1.9.2.19;uk.1.1.9.2;Staf Direktorat Analisis dan Pemeriksaan II-19;1
+Staf;uk.1.1.1.1.13;uk.1.1.1.1;Staf Biro Umum 9;1
+Staf Direktorat Analisis dan Pemeriksaan II-20;uk.1.1.9.2.20;uk.1.1.9.2;Staf Direktorat Analisis dan Pemeriksaan II-20;1
+staf;uk.1.1.1.1.14;uk.1.1.1.1;Staf Biro Umum 10;1
+Staf Direktorat Analisis dan Pemeriksaan II-21;uk.1.1.9.2.21;uk.1.1.9.2;Staf Direktorat Analisis dan Pemeriksaan II-21;1
+Staf;uk.1.1.1.1.15;uk.1.1.1.1;Staf Biro Umum 11;1
+Staf Direktorat Analisis dan Pemeriksaan II-22;uk.1.1.9.2.22;uk.1.1.9.2;Staf Direktorat Analisis dan Pemeriksaan II-22;1
+Staf;uk.1.1.1.1.16;uk.1.1.1.1;Staf Biro Umum 12;1
+Staf Direktorat Analisis dan Pemeriksaan II-23;uk.1.1.9.2.23;uk.1.1.9.2;Staf Direktorat Analisis dan Pemeriksaan II-23;1
+Staf;uk.1.1.1.1.17;uk.1.1.1.1;Staf Biro Umum 13;1
+Staf Direktorat Analisis dan Pemeriksaan II-24;uk.1.1.9.2.24;uk.1.1.9.2;Staf Direktorat Analisis dan Pemeriksaan II-24;1
+Staff;uk.1.1.2.4.16;uk.1.1.2.4;Staff Koordinator Pada kelompok Dalam Negeri 15;1
+Staf Direktorat Analisis dan Pemeriksaan II-25;uk.1.1.9.2.25;uk.1.1.9.2;Staf Direktorat Analisis dan Pemeriksaan II-25;1
+Staff;uk.1.1.2.4.17;uk.1.1.2.4;Staff Koordinator Pada kelompok Dalam Negeri 16;1
+Staf Direktorat Analisis dan Pemeriksaan III-1;uk.1.1.9.3.2;uk.1.1.9.3;Staf Direktorat Analisis dan Pemeriksaan III-1;1
+Staf;uk.1.1.1.2.4;uk.1.1.1.2;Staf Biro Perencanaan dan keuangan 3;1
+ASA - Koordinator Kelompok Substansi Analisis dan Pemeriksaan Reaktif 4;uk.1.1.9.3.3;uk.1.1.9.3;Kelompok Substansi Analisis dan Pemeriksaan Reaktif 4;1
+Staf Direktorat Analisis dan Pemeriksaan III-3;uk.1.1.9.3.4;uk.1.1.9.3;Staf Direktorat Analisis dan Pemeriksaan III-3;1
+Staf Direktorat Analisis dan Pemeriksaan III-4;uk.1.1.9.3.5;uk.1.1.9.3;Staf Direktorat Analisis dan Pemeriksaan III-4;1
+Staf;uk.1.1.1.2.5;uk.1.1.1.2;Staf Biro Perencanaan dan keuangan 4;1
+ASA - Koordinator Kelompok Substansi Kebijakan dan Evaluasi Analisis dan Pemeriksaan III;uk.1.1.9.3.6;uk.1.1.9.3;Kelompok Substansi Kebijakan dan Evaluasi Analisis dan Pemeriksaan III;1
+Staf;uk.1.1.1.2.6;uk.1.1.1.2;Staf Biro Perencanaan dan Keuangan 5;1
+ASA - Koordinator Kelompok Substansi Analisis dan Pemeriksaan Reaktif 3;uk.1.1.9.3.7;uk.1.1.9.3;Kelompok Substansi Analisis dan Pemeriksaan Reaktif 3;1
+Staf;uk.1.1.1.2.7;uk.1.1.1.2;Staf Biro Perencanaan dan Keuangan 6;1
+Staf;uk.1.1.1.2.8;uk.1.1.1.2;Staf Biro Perencanaan dan Keuangan 7;1
+Staf;uk.1.1.1.2.9;uk.1.1.1.2;Staf Biro Perencanaan dan Keuangan 8;1
+Staf Direktorat Analisis dan Pemeriksaan III-7;uk.1.1.9.3.8;uk.1.1.9.3;Staf Direktorat Analisis dan Pemeriksaan III-7;1
+Staf;uk.1.1.1.2.10;uk.1.1.1.2;Staf Biro Perencanaan dan Keuangan 9;1
+Staf;uk.1.1.1.2.11;uk.1.1.1.2;Staf Biro Perencanaan dan Keuangan 10;1
+Staf;uk.1.1.1.2.12;uk.1.1.1.2;Staf Biro Perencanaan dan Keuangan 11;1
+Staf;uk.1.1.1.2.13;uk.1.1.1.2;Staf Biro Perencanaan dan Keuangan 12;1
+Staf Direktorat Analisis dan Pemeriksaan III-8;uk.1.1.9.3.9;uk.1.1.9.3;Staf Direktorat Analisis dan Pemeriksaan III-8;1
+Staf;uk.1.1.1.2.14;uk.1.1.1.2;Staf Biro Perencanaan dan Keuangan 13;1
+Staf Direktorat Analisis dan Pemeriksaan III-9;uk.1.1.9.3.10;uk.1.1.9.3;Staf Direktorat Analisis dan Pemeriksaan III-9;1
+Staf;uk.1.1.1.2.15;uk.1.1.1.2;Staf Biro Perencanaan dan Keuangan 14;1
+Staf;uk.1.1.1.2.16;uk.1.1.1.2;Staf Biro Perencanaan dan Keuangan 15;1
+Staf;uk.1.1.1.2.17;uk.1.1.1.2;Staf Biro Perencanaan dan Keuangan 16;1
+Staf Direktorat Analisis dan Pemeriksaan III-10;uk.1.1.9.3.11;uk.1.1.9.3;Staf Direktorat Analisis dan Pemeriksaan III-10;1
+Staf;uk.1.1.1.2.18;uk.1.1.1.2;Staf Biro Perencanaan dan Keuangan 17;1
+Staf Direktorat Analisis dan Pemeriksaan III-11;uk.1.1.9.3.12;uk.1.1.9.3;Staf Direktorat Analisis dan Pemeriksaan III-11;1
+Staf;uk.1.1.1.2.19;uk.1.1.1.2;Staf Biro Perencanaan dan Keuangan 18;1
+Staf Direktorat Analisis dan Pemeriksaan III-12;uk.1.1.9.3.13;uk.1.1.9.3;Staf Direktorat Analisis dan Pemeriksaan III-12;1
+Staf;uk.1.1.1.2.20;uk.1.1.1.2;Staf Biro Perencanaan dan Keuangan 19;1
+Staf Direktorat Analisis dan Pemeriksaan III-13;uk.1.1.9.3.14;uk.1.1.9.3;Staf Direktorat Analisis dan Pemeriksaan III-13;1
+Staf Direktorat Analisis dan Pemeriksaan III-14;uk.1.1.9.3.15;uk.1.1.9.3;Staf Direktorat Analisis dan Pemeriksaan III-14;1
+Staf Direktorat Analisis dan Pemeriksaan III-15;uk.1.1.9.3.16;uk.1.1.9.3;Staf Direktorat Analisis dan Pemeriksaan III-15;1
+Staf Direktorat Analisis dan Pemeriksaan III-16;uk.1.1.9.3.17;uk.1.1.9.3;Staf Direktorat Analisis dan Pemeriksaan III-16;1
+Staf Direktorat Analisis dan Pemeriksaan III-17;uk.1.1.9.3.18;uk.1.1.9.3;Staf Direktorat Analisis dan Pemeriksaan III-17;1
+Staf Direktorat Analisis dan Pemeriksaan III-18;uk.1.1.9.3.19;uk.1.1.9.3;Staf Direktorat Analisis dan Pemeriksaan III-18;1
+Staf Direktorat Analisis dan Pemeriksaan III-19;uk.1.1.9.3.20;uk.1.1.9.3;Staf Direktorat Analisis dan Pemeriksaan III-19;1
+Staf Direktorat Analisis dan Pemeriksaan III-20;uk.1.1.9.3.21;uk.1.1.9.3;Staf Direktorat Analisis dan Pemeriksaan III-20;1
+Staf Direktorat Analisis dan Pemeriksaan III-21;uk.1.1.9.3.22;uk.1.1.9.3;Staf Direktorat Analisis dan Pemeriksaan III-21;1
+TEGAS - Kelompok Substansi Strategi dan Kerja Sama Dalam Negeri III;uk.1.1.2.4.18;uk.1.1.2.4;Kelompok Substansi Strategi dan Kerja Sama Dalam Negeri III;1
+Staf Bagian Tata Usaha Deputi Bidang Analisis dan Pemeriksaan;uk.1.1.9.4.1;uk.1.1.9.4;Staf Bagian Tata Usaha Deputi Bidang Analisis dan Pemeriksaan;1
+Staff;uk.1.1.2.5.11;uk.1.1.2.5;Staff Koordinator pada Kelompok Strategi dan Kerja Sama Internasional 10;1
+Staff;uk.1.1.2.5.12;uk.1.1.2.5;Staff Koordinator pada Kelompok Strategi dan Kerja Sama Internasional 11;1
+Staff;uk.1.1.2.6.4;uk.1.1.2.6;Staff Koordinator Kelompok Hukum dan Regulasi 2;1
+Staff;uk.1.1.2.6.5;uk.1.1.2.6;Staff Koordinasi Kelompok Hukum dan Regulasi 3;1
+Staff;uk.1.1.2.6.6;uk.1.1.2.6;Staff Koordinasi Kelompok Hukum dan Regulasi 4;1
+Staff;uk.1.1.2.6.7;uk.1.1.2.6;Staff Koordinasi Kelompok Hukum dan Regulasi 5;1
+TEGAS - Koordinator Kelompok Substansi Legislasi;uk.1.1.2.6.8;uk.1.1.2.6;Koordinator Kelompok Substansi Legislasi;1
+Staff;uk.1.1.2.6.9;uk.1.1.2.6;Staff Koordinasi Kelompok Hukum dan Regulasi 7;1
+Staff;uk.1.1.2.6.10;uk.1.1.2.6;Staff Koordinasi Kelompok Hukum dan Regulasi 8;1
+Staff;uk.1.1.2.6.11;uk.1.1.2.6;Staff Koordinasi Kelompok Hukum dan Regulasi 9;1
+Staff;uk.1.1.2.6.12;uk.1.1.2.6;Staff Koordinator Kelompok Hukum dan Regulasi 10;1
+Staff;uk.1.1.2.6.13;uk.1.1.2.6;Staff Koordinasi Kelompok Hukum dan Regulasi 11;1
+Staff;uk.1.1.2.6.14;uk.1.1.2.6;Staff Koordinasi Kelompok Hukum dan Regulasi 12;1
+Staff;uk.1.1.2.6.15;uk.1.1.2.6;Staff Koordinasi Kelompok Hukum dan Regulasi 13;1
+Staff;uk.1.1.2.6.16;uk.1.1.2.6;Staff Koordinasi Kelompok Hukum dan Regulasi 14;1
+Staff;uk.1.1.2.6.17;uk.1.1.2.6;Staff Koordinasi Kelompok Hukum dan Regulasi 15;1
+Staff;uk.1.1.2.6.18;uk.1.1.2.6;Staff Koordinasi Kelompok Hukum dan Regulasi 16;1
+Staff;uk.1.1.2.6.19;uk.1.1.2.6;Staff Koordinasi Kelompok Hukum dan Regulasi 17;1
+Staff;uk.1.1.2.6.20;uk.1.1.2.6;Staff Koordinasi Kelompok Hukum dan Regulasi 18;1
+SETIA - Koordinator Kelompok Substansi Manajemen Administrasi Sumber Daya Manusia;uk.1.1.1.3.6;uk.1.1.1.3;Kelompok Substansi Manajemen Administrasi Sumber Daya Manusia;1
+Staff;uk.1.1.2.7.2;uk.1.1.2.7;Staf Bagian TU Deputi Strategi dan Kerja Sama 2;1
+PENGASUH - Kelompok Substansi Kebijakan Pelaporan;uk.1.1.12.1.1;uk.1.1.12.1;Koordinator Kelompok Substansi Kebijakan Pelaporan;1
+Staf;uk.1.1.2.7.1;uk.1.1.2.7;Staf Bagian TU Deputi Strategi dan Kerja Sama 1;1
+Staf;uk.1.1.1.3.7;uk.1.1.1.3;Staf Biro Sumber Daya Manusia, Organisasi dan Tata Laksana 2;1
+Staf;uk.1.1.1.3.8;uk.1.1.1.3;Staf Biro Sumber Daya Manusia, Organisasi dan Tata Laksana 3;1
+PENGASUH - Koordinator Kelompok pada Direktorat Pelaporan 2;uk.1.1.12.1.2;uk.1.1.12.1;Koordinator Kelompok pada Direktorat Pelaporan 2;1
+Staf;uk.1.1.1.3.3.2;uk.1.1.1.3.3;Staf Bagian Organisasi. Tata Laksana, dan Manajemen Risiko 2;1
+Staf Direktorat Pelaporan 1;uk.1.1.12.1.3;uk.1.1.12.1;Staf Direktorat Pelaporan 1;1
+Staf;uk.1.1.1.3.2.7;uk.1.1.1.3.2;Staf Bagian Pengembangan Sumber Daya Manusia 7;1
+Staf;uk.1.1.1.3.3.5;uk.1.1.1.3.3;Staf Bagian Organisasi. Tata Laksana, dan Manajemen Risiko 5;1
+Staf;uk.1.1.1.3.2.1;uk.1.1.1.3.2;Staf Bagian Pengembangan Sumber Daya Manusia 1;1
+Koordinator Kelompok Registrasi dan Pengelolaan Direktori Pihak Pelapor;uk.1.1.12.1.4;uk.1.1.12.1;Koordinator Kelompok Registrasi dan Pengelolaan Direktori Pihak Pelapor;1
+Staf;uk.1.1.1.3.2.2;uk.1.1.1.3.2;Staf Bagian Pengembangan Sumber Daya Manusia 2;1
+Staf;uk.1.1.1.3.2.3;uk.1.1.1.3.2;Staf Bagian Pengembangan Sumber Daya Manusia 3;1
+Staf;uk.1.1.1.3.2.4;uk.1.1.1.3.2;Staf Bagian Pengembangan Sumber Daya Manusia 4;1
+Staf;uk.1.1.1.3.2.5;uk.1.1.1.3.2;Staf Bagian Pengembangan Sumber Daya Manusia 5;1
+Staf;uk.1.1.1.3.2.6;uk.1.1.1.3.2;Staf Bagian Pengembangan Sumber Daya Manusia 6;1
+Koordinator Kelompok Penilaian Integritas Pihak Pelapor dan Pengelolaan Data, Informasi dan Statistik;uk.1.1.12.1.5;uk.1.1.12.1;Koordinator Kelompok Penilaian Integritas Pihak Pelapor dan Pengelolaan Data, Informasi dan Statistik;1
+Koordinator Kelompok pada Kelompok Substansi Pengelolaan Pelaporan;uk.1.1.12.1.6;uk.1.1.12.1;Kelompok pada Kelompok Substansi Pengelolaan Pelaporan;1
+Staf Direktorat Pelaporan 5;uk.1.1.12.1.7;uk.1.1.12.1;Staf Direktorat Pelaporan 5;1
+Staf Direktorat Pelaporan 6;uk.1.1.12.1.8;uk.1.1.12.1;Staf Direktorat Pelaporan 6;1
+Staf Direktorat Pelaporan 7;uk.1.1.12.1.9;uk.1.1.12.1;Staf Direktorat Pelaporan 7;1
+Staf Direktorat Pelaporan 8;uk.1.1.12.1.10;uk.1.1.12.1;Staf Direktorat Pelaporan 8;1
+Staf Direktorat Pelaporan 9;uk.1.1.12.1.11;uk.1.1.12.1;Staf Direktorat Pelaporan 9;1
+Staf Direktorat Pelaporan 10;uk.1.1.12.1.12;uk.1.1.12.1;Staf Direktorat Pelaporan 10;1
+Staf Direktorat Pelaporan 11;uk.1.1.12.1.13;uk.1.1.12.1;Staf Direktorat Pelaporan 11;1
+Staf Direktorat Pelaporan 12;uk.1.1.12.1.14;uk.1.1.12.1;Staf Direktorat Pelaporan 12;1
+Staf Direktorat Pelaporan 13;uk.1.1.12.1.15;uk.1.1.12.1;Staf Direktorat Pelaporan 13;1
+Staf Direktorat Pelaporan 14;uk.1.1.12.1.16;uk.1.1.12.1;Staf Direktorat Pelaporan 14;1
+Staf Direktorat Pelaporan 15;uk.1.1.12.1.17;uk.1.1.12.1;Staf Direktorat Pelaporan 15;1
+Staf Direktorat Pelaporan 16;uk.1.1.12.1.18;uk.1.1.12.1;Staf Direktorat Pelaporan 16;1
+Staf Direktorat Pelaporan 17;uk.1.1.12.1.19;uk.1.1.12.1;Staf Direktorat Pelaporan 17;1
+Staf;uk.1.1.1.3.2.8;uk.1.1.1.3.2;Staf Bagian Pengembangan Sumber Daya Manusia 8;1
+Staf Direktorat Pelaporan 18;uk.1.1.12.1.20;uk.1.1.12.1;Staf Direktorat Pelaporan 18;1
+Staf Direktorat Pelaporan 19;uk.1.1.12.1.21;uk.1.1.12.1;Staf Direktorat Pelaporan 19;1
+Staf Direktorat Pelaporan 20;uk.1.1.12.1.22;uk.1.1.12.1;Staf Direktorat Pelaporan 20;1
+Staf Direktorat Pelaporan 21;uk.1.1.12.1.23;uk.1.1.12.1;Staf Direktorat Pelaporan 21;1
+Staf Direktorat Pelaporan 22;uk.1.1.12.1.24;uk.1.1.12.1;Staf Direktorat Pelaporan 22;1
+Staf Direktorat Pelaporan 23;uk.1.1.12.1.25;uk.1.1.12.1;Staf Direktorat Pelaporan 23;1
+staf;uk.1.1.5.2.8;uk.1.1.5.2;Staf Bidang Operasi Sistem Teknologi Informasi 8;1
+staf;uk.1.1.5.2.9;uk.1.1.5.2;Staf Bidang Operasi Sistem Teknologi Informasi 9;1
+staf;uk.1.1.5.2.10;uk.1.1.5.2;Staf Bidang Operasi Sistem Teknologi Informasi 10;1
+staf;uk.1.1.5.2.11;uk.1.1.5.2;Staf Bidang Operasi Sistem Teknologi Informasi 11;1
+TU Pusat Teknologi Informasi 1;uk.1.1.5.4;uk.1.1.5;TU Pusat Teknologi Informasi 1;1
+staf;uk.1.1.5.3.4;uk.1.1.5.3;Staf Bagian Tata Usaha TI 4;1
+staf;uk.1.1.5.3.3;uk.1.1.5.3;Staf Bagian Tata Usaha TI 3;1
+Staf;uk.1.1.5.3.2;uk.1.1.5.3;Staf Bagian Tata Usaha TI 2;1
+staf;uk.1.1.5.3.1;uk.1.1.5.3;Staf Bagian Tata Usaha TI 1;1
+LOGIS - Kepala LOGIS;uk.1.1.5;uk.1.1;Pusat Teknologi Informasi;1
+LOGIS - Kepala Sub Bagian Tata Usaha TI;uk.1.1.5.3;uk.1.1.5;Sub Bagian Tata Usaha TI;1
+LOGIS - Koordinator Kelompok Substansi Infrastruktur dan Operasional Teknologi Informasi dan Komunikasi;uk.1.1.5.2;uk.1.1.5;Kelompok Substansi Infrastruktur dan Operasional Teknologi Informasi dan Komunikasi;1
+LOGIS - Koordinator Kelompok Substansi Pengembangan dan Pemeliharaan Sistem Aplikasi dan Informasi;uk.1.1.5.1;uk.1.1.5;Kelompok Substansi Pengembangan dan Pemeliharaan Sistem Aplikasi dan Informasi;1
+staf;uk.1.1.5.1.6;uk.1.1.5.1;Staf Bidang Pengembangan Aplikasi Sistem 6;1
+staf;uk.1.1.5.1.7;uk.1.1.5.1;Staf Bidang Pengembangan Aplikasi Sistem 7;1
+staf;uk.1.1.5.1.8;uk.1.1.5.1;Staf Bidang Pengembangan Aplikasi Sistem 8;1
+staf;uk.1.1.5.1.9;uk.1.1.5.1;Staf Bidang Pengembangan Aplikasi Sistem 9;1
+staf;uk.1.1.5.1.10;uk.1.1.5.1;Staf Bidang Pengembangan Aplikasi Sistem 10;1
+staf;uk.1.1.5.1.11;uk.1.1.5.1;Staf Bidang Pengembangan Aplikasi Sistem 11;1
+staf;uk.1.1.5.1.12;uk.1.1.5.1;Staf Bidang Pengembangan Aplikasi Sistem 12;1
+staf;uk.1.1.5.1.13;uk.1.1.5.1;Staf Bidang Pengembangan Aplikasi Sistem 13;1
+staf;uk.1.1.5.1.14;uk.1.1.5.1;Staf Bidang Pengembangan Aplikasi Sistem 14;1
+staf;uk.1.1.5.1.15;uk.1.1.5.1;Staf Bidang Pengembangan Aplikasi Sistem 15;1
+LOGIS - Koordinator Kelompok Substansi Keamanan Teknologi Informasi dan Komunikasi;uk.1.1.5.2.1;uk.1.1.5.2;Kelompok Substansi Keamanan Teknologi Informasi dan Komunikasi;1
+Koordinator pada Kelompok Substansi Strategi dan Tata Kelola Teknologi Informasi;uk.1.1.5.2.2;uk.1.1.5.2;Kelompok Substansi Strategi dan Tata Kelola Teknologi Informasi;1
+staf;uk.1.1.5.2.3;uk.1.1.5.2;Staf Bidang Operasi Sistem Teknologi Informasi 3;1
+staf;uk.1.1.5.2.4;uk.1.1.5.2;Staf Bidang Operasi Sistem Teknologi Informasi 4;1
+staf;uk.1.1.5.2.5;uk.1.1.5.2;Staf Bidang Operasi Sistem Teknologi Informasi 5;1
+staf;uk.1.1.5.2.6;uk.1.1.5.2;Staf Bidang Operasi Sistem Teknologi Informasi 6;1
+staf;uk.1.1.5.2.12;uk.1.1.5.2;Staf Bidang Operasi Sistem Teknologi Informasi 12;1
+staf;uk.1.1.5.2.13;uk.1.1.5.2;Staf Bidang Operasi Sistem Teknologi Informasi 13;1
+staf;uk.1.1.5.2.14;uk.1.1.5.2;Staf Bidang Operasi Sistem Teknologi Informasi 14;1
+staf;uk.1.1.5.2.15;uk.1.1.5.2;Staf Bidang Operasi Sistem Teknologi Informasi 15;1
+staf;uk.1.1.5.2.16;uk.1.1.5.2;Staf Bidang Operasi Sistem Teknologi Informasi 16;1
+staf;uk.1.1.5.2.17;uk.1.1.5.2;Staf Bidang Operasi Sistem Teknologi Informasi 17;1
+staf;uk.1.1.5.2.18;uk.1.1.5.2;Staf Bidang Operasi Sistem Teknologi Informasi 18;1
+staf;uk.1.1.5.2.19;uk.1.1.5.2;Staf Bidang Operasi Sistem Teknologi Informasi 19;1
+TU Pusat Teknologi Informasi 2;uk.1.1.5.5;uk.1.1.5;TU Pusat Teknologi Informasi 2;1
+staf;uk.1.1.5.3.5;uk.1.1.5.3;Staf Bagian Tata Usaha TI 5;1
+Staf Bagian Tata Usaha Deputi Pelaporan dan Pengawasan Kepatuhan 1;uk.1.1.12.4.1;uk.1.1.12.4;Staf Bagian Tata Usaha Deputi Pelaporan dan Pengawasan Kepatuhan 1;1
+Staf  Bagian Tata Usaha Deputi Pelaporan dan Pengawasan Kepatuhan 2;uk.1.1.12.4.2;uk.1.1.12.4;Staf  Bagian Tata Usaha Deputi Pelaporan dan Pengawasan Kepatuhan 2;1
+Staf Direktorat Analisis dan Pemeriksaan III-22;uk.1.1.9.3.23;uk.1.1.9.3;Staf Direktorat Analisis dan Pemeriksaan III-22;1
+Staf Bagian Tata Usaha Deputi Pelaporan dan Pengawasan Kepatuhan 3;uk.1.1.12.4.3;uk.1.1.12.4;Staf Bagian Tata Usaha Deputi Pelaporan dan Pengawasan Kepatuhan 3;1
+Staf Bagian Tata Usaha Deputi Pelaporan dan Pengawasan Kepatuhan 4;uk.1.1.12.4.4;uk.1.1.12.4;Staf Bagian Tata Usaha Deputi Pelaporan dan Pengawasan Kepatuhan 4;1
+staf;uk.1.1.5.1.4;uk.1.1.5.1;Staf Bidang Pengembangan Aplikasi Sistem 4;1
+staf;uk.1.1.5.1.3;uk.1.1.5.1;Staf Bidang Pengembangan Aplikasi Sistem 3;1
+Staf Pusat Pemberdayaan Kemitraan APU PPT 3;uk.1.1.10.6;uk.1.1.10;Staf Pusat Pemberdayaan Kemitraan APU PPT 3;1
+Staf Bagian Tata Usaha Pusdamit 2;uk.1.1.10.1.2;uk.1.1.10.1;Staf Bagian Tata Usaha Pusdamit 2;1
+Staf Bagian Tata Usaha Pusdamit 3;uk.1.1.10.1.3;uk.1.1.10.1;Staf Bagian Tata Usaha Pusdamit 3;1
+Staf Bagian Tata Usaha Pusdamit 4;uk.1.1.10.1.4;uk.1.1.10.1;Staf Bagian Tata Usaha Pusdamit 4;1
+Staf Bagian Tata Usaha Pusdamit 5;uk.1.1.10.1.5;uk.1.1.10.1;Staf Bagian Tata Usaha Pusdamit 5;1
+Staf Bagian Tata Usaha Pusdamit 6;uk.1.1.10.1.6;uk.1.1.10.1;Staf Bagian Tata Usaha Pusdamit 6;1
+Staf Bagian Tata Usaha Pusdamit 7;uk.1.1.10.1.7;uk.1.1.10.1;Staf Bagian Tata Usaha Pusdamit 7;1
+Staf Bagian Tata Usaha Pusdamit 8;uk.1.1.10.1.8;uk.1.1.10.1;Staf Bagian Tata Usaha Pusdamit 8;1
+Staf Bagian Tata Usaha Pusdamit 9;uk.1.1.10.1.9;uk.1.1.10.1;Staf Bagian Tata Usaha Pusdamit 9;1
+Staf Bagian Tata Usaha Pusdamit 10;uk.1.1.10.1.10;uk.1.1.10.1;Staf Bagian Tata Usaha Pusdamit 10;1
+Staf Pusat Pemberdayaan Kemitraan APU PPT 4;uk.1.1.10.7;uk.1.1.10;Staf Pusat Pemberdayaan Kemitraan APU PPT 4;1
+Staf Pusat Pemberdayaan Kemitraan APU PPT 5;uk.1.1.10.8;uk.1.1.10;Staf Pusat Pemberdayaan Kemitraan APU PPT 5;1
+Staf Pusat Pemberdayaan Kemitraan APU PPT 6;uk.1.1.10.9;uk.1.1.10;Staf Pusat Pemberdayaan Kemitraan APU PPT 6;1
+Staf Pusat Pemberdayaan Kemitraan APU PPT 7;uk.1.1.10.10;uk.1.1.10;Staf Pusat Pemberdayaan Kemitraan APU PPT 7;1
+Staf Pusat Pemberdayaan Kemitraan APU PPT 8;uk.1.1.10.11;uk.1.1.10;Staf Pusat Pemberdayaan Kemitraan APU PPT 8;1
+Staf Pusat Pemberdayaan Kemitraan APU PPT 9;uk.1.1.10.12;uk.1.1.10;Staf Pusat Pemberdayaan Kemitraan APU PPT 9;1
+Staf Pusat Pemberdayaan Kemitraan APU PPT 10;uk.1.1.10.13;uk.1.1.10;Staf Pusat Pemberdayaan Kemitraan APU PPT 10;1
+Staf Pusat Pemberdayaan Kemitraan APU PPT 11;uk.1.1.10.14;uk.1.1.10;Staf Pusat Pemberdayaan Kemitraan APU PPT 11;1
+Staf Pusat Pemberdayaan Kemitraan APU PPT 12;uk.1.1.10.15;uk.1.1.10;Staf Pusat Pemberdayaan Kemitraan APU PPT 12;1
+Koordinator Kelompok Substansi Pengawasan Intern;uk.1.1.4.1.1;uk.1.1.4.1;Koordinator Kelompok Substansi Pengawasan Intern;1
+Staf Inspektorat 2;uk.1.1.4.1.2;uk.1.1.4.1;Staf Inspektorat 2;1
+Staf Inspektorat 3;uk.1.1.4.1.3;uk.1.1.4.1;Staf Inspektorat 3;1
+Staf Inspektorat 4;uk.1.1.4.1.4;uk.1.1.4.1;Staf Inspektorat 4;1
+Staf Inspektorat 5;uk.1.1.4.1.5;uk.1.1.4.1;Staf Inspektorat 5;1
+Staf Inspektorat 6;uk.1.1.4.1.6;uk.1.1.4.1;Staf Inspektorat 6;1
+Staf Inspektorat 7;uk.1.1.4.1.7;uk.1.1.4.1;Staf Inspektorat 7;1
+Staf Inspektorat 8;uk.1.1.4.1.8;uk.1.1.4.1;Staf Inspektorat 8;1
+Staf Inspektorat 9;uk.1.1.4.1.9;uk.1.1.4.1;Staf Inspektorat 9;1
+Staf Inspektorat 10;uk.1.1.4.1.10;uk.1.1.4.1;Staf Inspektorat 10;1
+Staf Inspektorat 11;uk.1.1.4.1.11;uk.1.1.4.1;Staf Inspektorat 11;1
+Staf Inspektorat 12;uk.1.1.4.1.12;uk.1.1.4.1;Staf Inspektorat 12;1
+Staf Inspektorat 13;uk.1.1.4.1.13;uk.1.1.4.1;Staf Inspektorat 13;1
+Staf Inspektorat 14;uk.1.1.4.1.14;uk.1.1.4.1;Staf Inspektorat 14;1
+Staf Inspektorat 15;uk.1.1.4.1.15;uk.1.1.4.1;Staf Inspektorat 15;1
+Staf Humas 1;uk.1.1.1.1.3.1;uk.1.1.1.1.3;Staf Humas 1;1
+Staf Humas 2;uk.1.1.1.1.3.2;uk.1.1.1.1.3;Staf Humas 2;1
+Staf Humas 3;uk.1.1.1.1.3.3;uk.1.1.1.1.3;Staf Humas 3;1
+Staf Humas 4;uk.1.1.1.1.3.4;uk.1.1.1.1.3;Staf Humas 4;1
+Staf Humas 5;uk.1.1.1.1.3.5;uk.1.1.1.1.3;Staf Humas 5;1
+Staf Humas 6;uk.1.1.1.1.3.6;uk.1.1.1.1.3;Staf Humas 6;1
+Staf Bagian Rumah Tangga dan perlengkapan 7;uk.1.1.1.1.1.8;uk.1.1.1.1.1;Staf Bagian Rumah Tangga dan perlengkapan 7;1
+Staf Bagian Rumah Tangga dan perlengkapan 8;uk.1.1.1.1.1.9;uk.1.1.1.1.1;Staf Bagian Rumah Tangga dan perlengkapan 8;1
+Staf Bagian Rumah Tangga dan perlengkapan 9;uk.1.1.1.1.1.10;uk.1.1.1.1.1;Staf Bagian Rumah Tangga dan perlengkapan 9;1
+Staf Bagian Rumah Tangga dan perlengkapan 10;uk.1.1.1.1.1.11;uk.1.1.1.1.1;Staf Bagian Rumah Tangga dan perlengkapan 10;1
+Staf Bagian Rumah Tangga dan perlengkapan 11;uk.1.1.1.1.1.12;uk.1.1.1.1.1;Staf Bagian Rumah Tangga dan perlengkapan 11;1
+Staf Bagian Rumah Tangga dan perlengkapan 12;uk.1.1.1.1.1.13;uk.1.1.1.1.1;Staf Bagian Rumah Tangga dan perlengkapan 12;1
+Staf Bagian Rumah Tangga dan perlengkapan 13;uk.1.1.1.1.1.14;uk.1.1.1.1.1;Staf Bagian Rumah Tangga dan perlengkapan 13;1
+Staf Bagian Rumah Tangga dan perlengkapan 14;uk.1.1.1.1.1.15;uk.1.1.1.1.1;Staf Bagian Rumah Tangga dan perlengkapan 14;1
+Staf Bagian Rumah Tangga dan perlengkapan 15;uk.1.1.1.1.1.16;uk.1.1.1.1.1;Staf Bagian Rumah Tangga dan perlengkapan 15;1
+Staf Bagian Rumah Tangga dan perlengkapan 16;uk.1.1.1.1.1.17;uk.1.1.1.1.1;Staf Bagian Rumah Tangga dan perlengkapan 16;1
+Staff;uk.1.1.2.7.3;uk.1.1.2.7;Staf Bagian TU Deputi Strategi dan Kerja Sama 3;1
+staf;uk.1.1.5.1.2;uk.1.1.5.1;Staf Bidang Pengembangan Aplikasi Sistem 2;1
+staf;uk.1.1.5.1.1;uk.1.1.5.1;Staf Bidang Pengembangan Aplikasi Sistem 1;1
+Staf;uk.1.1.5.1.16;uk.1.1.5.1;Staf Bidang Pengembangan Aplikasi Sistem 16;1
+Staf;uk.1.1.5.1.17;uk.1.1.5.1;Staf Bidang Pengembangan Aplikasi Sistem 17;1
+Staf;uk.1.1.5.1.18;uk.1.1.5.1;Staf Bidang Pengembangan Aplikasi Sistem 18;1
+Staf;uk.1.1.1.3.11;uk.1.1.1.3;Staf Biro Sumber Daya Manusia, Organisasi dan Tata Laksana 6;1
+Staf;uk.1.1.1.3.2.18;uk.1.1.1.3.2;Staf Bagian Pengembangan Sumber Daya Manusia 18;1
+PATIH - Koordinator Kelompok Substansi Penyelenggaraan dan Kerjasama Pelatihan APUPPT;uk.1.1.6.2;uk.1.1.6;Kelompok Substansi Penyelenggaraan dan Kerjasama Pelatihan APUPPT;1
+PATIH - Kepala Bagian Umum Pusdiklat APU PPT;uk.1.1.6.3;uk.1.1.6;Bagian Umum Pusdiklat APU PPT;1
+staf;uk.1.1.6.4;uk.1.1.6;Jabatan Fungsional Tertentu;1
+TU Pusat Pendidikan dan Pelatihan Anti Pencucian Uang dan Pencegahan Pendanaan Terorisme;uk.1.1.6.5;uk.1.1.6;TU Pusat Pendidikan dan Pelatihan Anti Pencucian Uang dan Pencegahan Pendanaan Terorisme;1
+Staf Protokoler Pusdiklat;uk.1.1.6.6;uk.1.1.6;Staf Protokoler Pusdiklat;1
+Staf Kelompok Substansi Perencanaan dan Pengembangan Program dan Pelatihan APUPPT 1;uk.1.1.6.1.1;uk.1.1.6.1;Staf Kelompok Substansi Perencanaan dan Pengembangan Program dan Pelatihan APUPPT 1;1
+Staf Kelompok Substansi Perencanaan dan Pengembangan Program dan Pelatihan APUPPT 2;uk.1.1.6.1.2;uk.1.1.6.1;Staf Kelompok Substansi Perencanaan dan Pengembangan Program dan Pelatihan APUPPT 2;1
+Staf Kelompok Substansi Perencanaan dan Pengembangan Program dan Pelatihan APUPPT 3;uk.1.1.6.1.3;uk.1.1.6.1;Staf Kelompok Substansi Perencanaan dan Pengembangan Program dan Pelatihan APUPPT 3;1
+Staf Kelompok Substansi Perencanaan dan Pengembangan Program dan Pelatihan APUPPT 4;uk.1.1.6.1.4;uk.1.1.6.1;Staf Kelompok Substansi Perencanaan dan Pengembangan Program dan Pelatihan APUPPT 4;1
+Staf Kelompok Substansi Perencanaan dan Pengembangan Program dan Pelatihan APUPPT 5;uk.1.1.6.1.5;uk.1.1.6.1;Staf Kelompok Substansi Perencanaan dan Pengembangan Program dan Pelatihan APUPPT 5;1
+Staf Kelompok Substansi Perencanaan dan Pengembangan Program dan Pelatihan APUPPT 6;uk.1.1.6.1.6;uk.1.1.6.1;Staf Kelompok Substansi Perencanaan dan Pengembangan Program dan Pelatihan APUPPT 6;1
+Staf Kelompok Substansi Perencanaan dan Pengembangan Program dan Pelatihan APUPPT 7;uk.1.1.6.1.7;uk.1.1.6.1;Staf Kelompok Substansi Perencanaan dan Pengembangan Program dan Pelatihan APUPPT 7;1
+Staf Kelompok Substansi Penyelenggaraan dan Kerjasama Pelatihan APUPPT 1;uk.1.1.6.2.1;uk.1.1.6.2;Staf Kelompok Substansi Penyelenggaraan dan Kerjasama Pelatihan APUPPT 1;1
+Staf Kelompok Substansi Penyelenggaraan dan Kerjasama Pelatihan APUPPT 2;uk.1.1.6.2.2;uk.1.1.6.2;Staf Kelompok Substansi Penyelenggaraan dan Kerjasama Pelatihan APUPPT 2;1
+Staf Kelompok Substansi Penyelenggaraan dan Kerjasama Pelatihan APUPPT 3;uk.1.1.6.2.3;uk.1.1.6.2;Staf Kelompok Substansi Penyelenggaraan dan Kerjasama Pelatihan APUPPT 3;1
+Staf Kelompok Substansi Penyelenggaraan dan Kerjasama Pelatihan APUPPT 4;uk.1.1.6.2.4;uk.1.1.6.2;Staf Kelompok Substansi Penyelenggaraan dan Kerjasama Pelatihan APUPPT 4;1
+Staf Kelompok Substansi Penyelenggaraan dan Kerjasama Pelatihan APUPPT 5;uk.1.1.6.2.5;uk.1.1.6.2;Staf Kelompok Substansi Penyelenggaraan dan Kerjasama Pelatihan APUPPT 5;1
+Staf Kelompok Substansi Penyelenggaraan dan Kerjasama Pelatihan APUPPT 6;uk.1.1.6.2.6;uk.1.1.6.2;Staf Kelompok Substansi Penyelenggaraan dan Kerjasama Pelatihan APUPPT 6;1
+Staf Kelompok Substansi Penyelenggaraan dan Kerjasama Pelatihan APUPPT 7;uk.1.1.6.2.7;uk.1.1.6.2;Staf Kelompok Substansi Penyelenggaraan dan Kerjasama Pelatihan APUPPT 7;1
+Staf Kelompok Substansi Penyelenggaraan dan Kerjasama Pelatihan APUPPT 8;uk.1.1.6.2.8;uk.1.1.6.2;Staf Kelompok Substansi Penyelenggaraan dan Kerjasama Pelatihan APUPPT 8;1
+PATIH - Subkoordinator pada Subkelompok Substansi Kepegawaian dan Keuangan;uk.1.1.6.3.2;uk.1.1.6.3;Subkelompok Substansi Kepegawaian dan Keuangan;1
+PATIH - SubKoordinator pada Sub Kelompok Substansi Rumah Tangga;uk.1.1.6.3.1;uk.1.1.6.3;Subkelompok Substansi Rumah Tangga;1
+staf;uk.1.1.6.3.1.1;uk.1.1.6.3.1;Staf Sub Bagian Rumah Tangga 1;1
+Staf Sub Bagian Rumah Tangga 2;uk.1.1.6.3.1.2;uk.1.1.6.3.1;Staf Sub Bagian Rumah Tangga 2;1
+Staf;uk.1.1.6.3.1.3;uk.1.1.6.3.1;Staf Sub Bagian Rumah Tangga 3;1
+staf;uk.1.1.6.3.1.4;uk.1.1.6.3.1;Staf Sub Bagian Rumah Tangga 4;1
+Staf;uk.1.1.6.3.1.5;uk.1.1.6.3.1;Staf Sub Bagian Rumah Tangga 5;1
+staf;uk.1.1.6.3.1.6;uk.1.1.6.3.1;Staf Sub Bagian Rumah Tangga 6;1
+staf;uk.1.1.6.3.1.7;uk.1.1.6.3.1;Staf Sub Bagian Rumah Tangga 7;1
+staf;uk.1.1.6.3.1.8;uk.1.1.6.3.1;Staf Sub Bagian Rumah Tangga 8;1
+staf;uk.1.1.6.3.1.9;uk.1.1.6.3.1;Staf Sub Bagian Rumah Tangga 9;1
+staf;uk.1.1.6.3.1.10;uk.1.1.6.3.1;Staf Sub Bagian Rumah Tangga 10;1
+Staf;uk.1.1.6.3.1.11;uk.1.1.6.3.1;Staf Sub Bagian Rumah Tangga 11;1
+Staf;uk.1.1.6.3.1.12;uk.1.1.6.3.1;Staf Sub Bagian Rumah Tangga 12;1
+Staf;uk.1.1.6.3.1.13;uk.1.1.6.3.1;Staf Sub Bagian Rumah Tangga 13;1
+Staf;uk.1.1.6.3.1.14;uk.1.1.6.3.1;Staf Sub Bagian Rumah Tangga 14;1
+Staf;uk.1.1.6.3.1.15;uk.1.1.6.3.1;Staf Sub Bagian Rumah Tangga 15;1
+Staf;uk.1.1.6.3.1.16;uk.1.1.6.3.1;Staf Sub Bagian Rumah Tangga 16;1
+staf;uk.1.1.6.3.2.1;uk.1.1.6.3.2;Staf Sub Bagian Kepegawaian dan Keuangan 1;1
+staf;uk.1.1.6.3.2.2;uk.1.1.6.3.2;Staf Sub Bagian Kepegawaian dan Keuangan 2;1
+staf;uk.1.1.6.3.2.3;uk.1.1.6.3.2;Staf Sub Bagian Kepegawaian dan Keuangan 3;1
+staf;uk.1.1.6.3.2.4;uk.1.1.6.3.2;Staf Sub Bagian Kepegawaian dan Keuangan 4;1
+staf;uk.1.1.6.3.2.5;uk.1.1.6.3.2;Staf Sub Bagian Kepegawaian dan Keuangan 5;1
+staf;uk.1.1.6.3.2.6;uk.1.1.6.3.2;Staf Sub Bagian Kepegawaian dan Keuangan 6;1
+staf;uk.1.1.6.3.2.7;uk.1.1.6.3.2;Staf Sub Bagian Kepegawaian dan Keuangan 7;1
+Staf;uk.1.1.6.3.2.8;uk.1.1.6.3.2;Staf Sub Bagian Kepegawaian dan Keuangan 8;1
+Staf;uk.1.1.6.3.2.9;uk.1.1.6.3.2;Staf Sub Bagian Kepegawaian dan Keuangan 9;1
+Staf;uk.1.1.6.3.2.11;uk.1.1.6.3.2;Staf Sub Bagian Kepegawaian dan Keuangan 11;1
+Staf;uk.1.1.6.3.2.10;uk.1.1.6.3.2;Staf Sub Bagian Kepegawaian dan Keuangan 10;1
+Staf;uk.1.1.6.3.2.12;uk.1.1.6.3.2;Staf Sub Bagian Kepegawaian dan Keuangan 12;1
+Widyaiswara;uk.1.1.6.4.1;uk.1.1.6.4;Widyaiswara 1;1
+Widyaiswara;uk.1.1.6.4.2;uk.1.1.6.4;Widyaiswara 2;1
+PENGASUH - Koordinator Kelompok Substansi Pengawasan Kepatuhan Penyedia Jasa Keuangan Non- Bank;uk.1.1.12.2.2;uk.1.1.12.2;Kelompok Substansi Pengawasan Kepatuhan Penyedia Jasa Keuangan Non- Bank;1
+Staf Direktorat Pengawasan Kepatuhan Penyedia Jasa Keuangan 2;uk.1.1.12.2.3;uk.1.1.12.2;Staf Direktorat Pengawasan Kepatuhan Penyedia Jasa Keuangan 2;1
+PENGASUH - Koordinator Kelompok Substansi Kebijakan dan Pembinaan Penyedia Jasa Keuangan;uk.1.1.12.2.4;uk.1.1.12.2;Kelompok Substansi Kebijakan dan Pembinaan Penyedia Jasa Keuangan;1
+Staf Direktorat Pengawasan Kepatuhan Penyedia Jasa Keuangan 4;uk.1.1.12.2.5;uk.1.1.12.2;Staf Direktorat Pengawasan Kepatuhan Penyedia Jasa Keuangan 4;1
+Staf Direktorat Pengawasan Kepatuhan Penyedia Jasa Keuangan 5;uk.1.1.12.2.6;uk.1.1.12.2;Staf Direktorat Pengawasan Kepatuhan Penyedia Jasa Keuangan 5;1
+Staf Direktorat Pengawasan Kepatuhan Penyedia Jasa Keuangan 6;uk.1.1.12.2.7;uk.1.1.12.2;Staf Direktorat Pengawasan Kepatuhan Penyedia Jasa Keuangan 6;1
+Staf Direktorat Pengawasan Kepatuhan Penyedia Jasa Keuangan 7;uk.1.1.12.2.8;uk.1.1.12.2;Staf Direktorat Pengawasan Kepatuhan Penyedia Jasa Keuangan 7;1
+Staf Direktorat Pengawasan Kepatuhan Penyedia Jasa Keuangan 8;uk.1.1.12.2.9;uk.1.1.12.2;Staf Direktorat Pengawasan Kepatuhan Penyedia Jasa Keuangan 8;1
+Staf Direktorat Pengawasan Kepatuhan Penyedia Jasa Keuangan 9;uk.1.1.12.2.10;uk.1.1.12.2;Staf Direktorat Pengawasan Kepatuhan Penyedia Jasa Keuangan 9;1
+Staf Direktorat Pengawasan Kepatuhan Penyedia Jasa Keuangan 10;uk.1.1.12.2.11;uk.1.1.12.2;Staf Direktorat Pengawasan Kepatuhan Penyedia Jasa Keuangan 10;1
+Staf Direktorat Pengawasan Kepatuhan Penyedia Jasa Keuangan 11;uk.1.1.12.2.12;uk.1.1.12.2;Staf Direktorat Pengawasan Kepatuhan Penyedia Jasa Keuangan 11;1
+Staf Direktorat Pengawasan Kepatuhan Penyedia Jasa Keuangan 12;uk.1.1.12.2.13;uk.1.1.12.2;Staf Direktorat Pengawasan Kepatuhan Penyedia Jasa Keuangan 12;1
+Staf Direktorat Pengawasan Kepatuhan Penyedia Jasa Keuangan 13;uk.1.1.12.2.14;uk.1.1.12.2;Staf Direktorat Pengawasan Kepatuhan Penyedia Jasa Keuangan 13;1
+Staf Direktorat Pengawasan Kepatuhan Penyedia Jasa Keuangan 14;uk.1.1.12.2.15;uk.1.1.12.2;Staf Direktorat Pengawasan Kepatuhan Penyedia Jasa Keuangan 14;1
+Staf Direktorat Pengawasan Kepatuhan Penyedia Jasa Keuangan 15;uk.1.1.12.2.16;uk.1.1.12.2;Staf Direktorat Pengawasan Kepatuhan Penyedia Jasa Keuangan 15;1
+Staf Direktorat Pengawasan Kepatuhan Penyedia Jasa Keuangan 16;uk.1.1.12.2.17;uk.1.1.12.2;Staf Direktorat Pengawasan Kepatuhan Penyedia Jasa Keuangan 16;1
+PENGASUH - Direktur Pengawasan Kepatuhan Penyedia Barang dan/ atau jasa lain dan profesi;uk.1.1.12.3.1;uk.1.1.12.3;Koordinator Kelompok Direktorat Pengawasan Kepatuhan Penyedia Barang dan/ atau Jasa Lain dan Profesi 1;0
+PENGASUH - Koordinator Kelompok Substansi Pengawasan Kepatuhan Pedagang Kendaraan Bermotor, dan Pedagang Barang Seni dan Antik;uk.1.1.12.3.2;uk.1.1.12.3;Kelompok Substansi Pengawasan Kepatuhan Pedagang Kendaraan Bermotor, dan Pedagang Barang Seni dan Antik;1
+PENGASUH - Koordinator Kelompok Substansi Pengawasan Kepatuhan Profesi;uk.1.1.12.3.3;uk.1.1.12.3;Kelompok Substansi Pengawasan Kepatuhan Profesi;1
+Staf Direktorat Pengawasan Kepatuhan Penyedia Barang dan/ atau Jasa Lain dan Profesi 2;uk.1.1.12.3.4;uk.1.1.12.3;Staf Direktorat Pengawasan Kepatuhan Penyedia Barang dan/ atau Jasa Lain dan Profesi 2;1
+PENGASUH - Koordinator Kelompok Substansi Pengawasan Kepatuhan Perusahaan Properti/Agen Properti, dan Pedagang Permata dan Perhiasan/Logam Mulia;uk.1.1.12.3.5;uk.1.1.12.3;Kelompok Substansi Pengawasan Kepatuhan Perusahaan Properti/Agen Properti, dan Pedagang Permata dan Perhiasan/Logam Mulia;1
+Staf Direktorat Pengawasan Kepatuhan Penyedia Barang dan/ atau Jasa Lain dan Profesi 4;uk.1.1.12.3.6;uk.1.1.12.3;Staf Direktorat Pengawasan Kepatuhan Penyedia Barang dan/ atau Jasa Lain dan Profesi 4;1
+Staf Direktorat Pengawasan Kepatuhan Penyedia Barang dan/ atau Jasa Lain dan Profesi 5;uk.1.1.12.3.7;uk.1.1.12.3;Staf Direktorat Pengawasan Kepatuhan Penyedia Barang dan/ atau Jasa Lain dan Profesi 5;1
+Staf Direktorat Pengawasan Kepatuhan Penyedia Barang dan/ atau Jasa Lain dan Profesi 6;uk.1.1.12.3.8;uk.1.1.12.3;Staf Direktorat Pengawasan Kepatuhan Penyedia Barang dan/ atau Jasa Lain dan Profesi 6;1
+Staf Direktorat Pengawasan Kepatuhan Penyedia Barang dan/ atau Jasa Lain dan Profesi 7;uk.1.1.12.3.9;uk.1.1.12.3;Staf Direktorat Pengawasan Kepatuhan Penyedia Barang dan/ atau Jasa Lain dan Profesi 7;1
+Staf Direktorat Pengawasan Kepatuhan Penyedia Barang dan/ atau Jasa Lain dan Profesi 8;uk.1.1.12.3.10;uk.1.1.12.3;Staf Direktorat Pengawasan Kepatuhan Penyedia Barang dan/ atau Jasa Lain dan Profesi 8;1
+Staf Direktorat Pengawasan Kepatuhan Penyedia Barang dan/ atau Jasa Lain dan Profesi 9;uk.1.1.12.3.11;uk.1.1.12.3;Staf Direktorat Pengawasan Kepatuhan Penyedia Barang dan/ atau Jasa Lain dan Profesi 9;1
+Staf Direktorat Pengawasan Kepatuhan Penyedia Barang dan/ atau Jasa Lain dan Profesi 10;uk.1.1.12.3.12;uk.1.1.12.3;Staf Direktorat Pengawasan Kepatuhan Penyedia Barang dan/ atau Jasa Lain dan Profesi 10;1
+Staf Direktorat Pengawasan Kepatuhan Penyedia Barang dan/ atau Jasa Lain dan Profesi 11;uk.1.1.12.3.13;uk.1.1.12.3;Staf Direktorat Pengawasan Kepatuhan Penyedia Barang dan/ atau Jasa Lain dan Profesi 11;1
+Staf Direktorat Pengawasan Kepatuhan Penyedia Barang dan/ atau Jasa Lain dan Profesi 12;uk.1.1.12.3.14;uk.1.1.12.3;Staf Direktorat Pengawasan Kepatuhan Penyedia Barang dan/ atau Jasa Lain dan Profesi 12;1
+Staf Direktorat Pengawasan Kepatuhan Penyedia Barang dan/ atau Jasa Lain dan Profesi 13;uk.1.1.12.3.15;uk.1.1.12.3;Staf Direktorat Pengawasan Kepatuhan Penyedia Barang dan/ atau Jasa Lain dan Profesi 13;1
+Staf Direktorat Pengawasan Kepatuhan Penyedia Barang dan/ atau Jasa Lain dan Profesi 14;uk.1.1.12.3.16;uk.1.1.12.3;Staf Direktorat Pengawasan Kepatuhan Penyedia Barang dan/ atau Jasa Lain dan Profesi 14;1
+Staf Direktorat Pengawasan Kepatuhan Penyedia Barang dan/ atau Jasa Lain dan Profesi 15;uk.1.1.12.3.17;uk.1.1.12.3;Staf Direktorat Pengawasan Kepatuhan Penyedia Barang dan/ atau Jasa Lain dan Profesi 15;1
+Staf Direktorat Pengawasan Kepatuhan Penyedia Barang dan/ atau Jasa Lain dan Profesi 16;uk.1.1.12.3.18;uk.1.1.12.3;Staf Direktorat Pengawasan Kepatuhan Penyedia Barang dan/ atau Jasa Lain dan Profesi 16;1
+Staf Bagian Rumah Tangga dan perlengkapan 17;uk.1.1.1.1.1.18;uk.1.1.1.1.1;Staf Bagian Rumah Tangga dan perlengkapan 17;1
+Staf;uk.1.1.1.3.2.9;uk.1.1.1.3.2;Staf Bagian Pengembangan Sumber Daya Manusia 9;1
+Staf;uk.1.1.1.3.2.10;uk.1.1.1.3.2;Staf Bagian Pengembangan Sumber Daya Manusia 10;1
+Staf;uk.1.1.1.3.2.11;uk.1.1.1.3.2;Staf Bagian Pengembangan Sumber Daya Manusia 11;1
+Staf;uk.1.1.1.3.2.13;uk.1.1.1.3.2;Staf Bagian Pengembangan Sumber Daya Manusia 13;1
+Staf;uk.1.1.1.3.2.14;uk.1.1.1.3.2;Staf Bagian Pengembangan Sumber Daya Manusia 14;1
+Staf;uk.1.1.1.3.2.15;uk.1.1.1.3.2;Staf Bagian Pengembangan Sumber Daya Manusia 15;1
+Staf;uk.1.1.1.3.2.16;uk.1.1.1.3.2;Staf Bagian Pengembangan Sumber Daya Manusia 16;1
+Staf;uk.1.1.1.3.9;uk.1.1.1.3;Staf Biro Sumber Daya Manusia, Organisasi dan Tata Laksana 4;1
+Staf;uk.1.1.1.3.10;uk.1.1.1.3;Staf Biro Sumber Daya Manusia, Organisasi dan Tata Laksana 5;1
+Staf;uk.1.1.1.3.2.12;uk.1.1.1.3.2;Staf Bagian Pengembangan Sumber Daya Manusia 12;1
+Staf;uk.1.1.1.3.2.17;uk.1.1.1.3.2;Staf Bagian Pengembangan Sumber Daya Manusia 17;1
+Staf;uk.1.1.1.2.21;uk.1.1.1.2;Staf Biro Perencanaan dan Keuangan 20;1
+Staf Direktorat Analisis dan Pemeriksaan III-23;uk.1.1.9.3.24;uk.1.1.9.3;Staf Direktorat Analisis dan Pemeriksaan III-23;1
+Staf;uk.1.1.1.3.2.19;uk.1.1.1.3.2;Staf Bagian Pengembangan Sumber Daya Manusia 19;1
+Staf;uk.1.1.1.2.22;uk.1.1.1.2;Staf Biro Perencanaan dan Keuangan 21;1
+Staf;uk.1.1.1.2.23;uk.1.1.1.2;Staf Biro Perencanaan dan Keuangan 22;1
+Staf;uk.1.1.1.2.24;uk.1.1.1.2;Staf Biro Perencanaan dan Keuangan 23;1
+Staf;uk.1.1.1.2.25;uk.1.1.1.2;Staf Biro Perencanaan dan Keuangan 24;1
+Staf;uk.1.1.1.2.26;uk.1.1.1.2;Staf Biro Perencanaan dan Keuangan 25;1
+Staf;uk.1.1.1.2.27;uk.1.1.1.2;Staf Biro Perencanaan dan Keuangan 26;1
+Staf;uk.1.1.1.2.28;uk.1.1.1.2;Staf Biro Perencanaan dan Keuangan 27;1
+Staf;uk.1.1.1.2.29;uk.1.1.1.2;Staf Biro Perencanaan dan Keuangan 28;1
+Staf;uk.1.1.1.2.30;uk.1.1.1.2;Staf Biro Perencanaan dan Keuangan 29;1
+Staf;uk.1.1.1.2.31;uk.1.1.1.2;Staf Biro Perencanaan dan Keuangan 30;1
+Staf;uk.1.1.1.2.1.3;uk.1.1.1.2.1;Staf Bagian Verifikasi Akuntansi dan Akuntabilitas Kinerja 3;1
+Staf;uk.1.1.1.2.1.4;uk.1.1.1.2.1;Staf Bagian Verifikasi Akuntansi dan Akuntabilitas Kinerja 4;1
+Staf;uk.1.1.1.2.1.5;uk.1.1.1.2.1;Staf Bagian Verifikasi Akuntansi dan Akuntabilitas Kinerja 5;1
+Staf Direktorat Analisis dan Pemeriksaan I-22;uk.1.1.9.1.23;uk.1.1.9.1;Staf Direktorat Analisis dan Pemeriksaan I-22;1
+Staf Direktorat Analisis dan Pemeriksaan I-23;uk.1.1.9.1.24;uk.1.1.9.1;Staf Direktorat Analisis dan Pemeriksaan I-23;1
+Staf Direktorat Analisis dan Pemeriksaan II-26;uk.1.1.9.2.26;uk.1.1.9.2;Staf Direktorat Analisis dan Pemeriksaan II-26;1
+Staf Direktorat Analisis dan Pemeriksaan II-27;uk.1.1.9.2.27;uk.1.1.9.2;Staf Direktorat Analisis dan Pemeriksaan II-27;1
+Staff;uk.1.1.2.6.21;uk.1.1.2.6;Staff Koordinasi Kelompok Hukum dan Regulasi 19;1
+Staf Direktorat Analisis dan Pemeriksaan III-24;uk.1.1.9.3.25;uk.1.1.9.3;Staf Direktorat Analisis dan Pemeriksaan III-24;1
+Staf Sub Bagian Layanan Pengadaan 8;uk.1.1.1.1.1.1.8;uk.1.1.1.1.1.1;Staf Sub Bagian Layanan Pengadaan 8;1
+Staf Direktorat Analisis dan Pemeriksaan I-24;uk.1.1.9.1.25;uk.1.1.9.1;Staf Direktorat Analisis dan Pemeriksaan I-24;1
+Staf Biro Perencanaan dan Keuangan 31;uk.1.1.1.2.32;uk.1.1.1.2;Staf Biro Perencanaan dan Keuangan 31;1
+Pejabat Pembuat Komitmen - Windy Septianti;uk.1.1.1.2.1.6;uk.1.1.1.2.1;Staf Bagian Verifikasi Akuntansi dan Akuntabilitas Kinerja 6;1
+Staf Direktorat Analisis dan Pemeriksaan II-28;uk.1.1.9.2.28;uk.1.1.9.2;Staf Direktorat Analisis dan Pemeriksaan II-28;1
+Staf;uk.1.1.1.2.2.1;uk.1.1.1.2.2;Staf Koordinator Kelompok Substansi Penganggaran 1;1
+Staf;uk.1.1.1.2.2.2;uk.1.1.1.2.2;Staf Koordinator Kelompok Substansi Penganggaran 2;1
+Staf;uk.1.1.1.2.2.3;uk.1.1.1.2.2;Staf Koordinator Kelompok Substansi Penganggaran 3;1
+Staf;uk.1.1.1.2.2.4;uk.1.1.1.2.2;Staf Koordinator Kelompok Substansi Penganggaran 4;1
+Staf;uk.1.1.1.2.2.5;uk.1.1.1.2.2;Staf Koordinator Kelompok Substansi Penganggaran 5`;1
+Staf;uk.1.1.1.2.2.6;uk.1.1.1.2.2;Staf Koordinator Kelompok Substansi Penganggaran 6;1
+Staf;uk.1.1.1.2.2.7;uk.1.1.1.2.2;Staf Koordinator Kelompok Substansi Penganggaran 7;1
+Staf;uk.1.1.1.2.2.8;uk.1.1.1.2.2;Staf Koordinator Kelompok Substansi Penganggaran 8;1
+Staf Humas 7;uk.1.1.1.1.3.7;uk.1.1.1.1.3;Staf Humas 7;1
+Staf Bagian Rumah Tangga dan perlengkapan 18;uk.1.1.1.1.1.19;uk.1.1.1.1.1;Staf Bagian Rumah Tangga dan perlengkapan 18;1
+Staf Bagian Rumah Tangga dan perlengkapan 19;uk.1.1.1.1.1.20;uk.1.1.1.1.1;Staf Bagian Rumah Tangga dan perlengkapan 19;1
+Staf Bagian Rumah Tangga dan perlengkapan 20;uk.1.1.1.1.1.21;uk.1.1.1.1.1;Staf Bagian Rumah Tangga dan perlengkapan 20;1
+Staf;uk.1.1.1.1.4.1;uk.1.1.1.1.4;Staf pada Koordinator pada Substansi Kearsipan 1;1
+Staf;uk.1.1.1.1.4.2;uk.1.1.1.1.4;Staf pada Koordinator pada Substansi Kearsipan 2;1
+Staf;uk.1.1.1.1.4.3;uk.1.1.1.1.4;Staf pada Koordinator pada Substansi Kearsipan 3;1
+Staf;uk.1.1.1.1.4.4;uk.1.1.1.1.4;Staf pada Koordinator pada Substansi Kearsipan 4;1
+Staf Bagian Rumah Tangga dan perlengkapan 21;uk.1.1.1.1.1.22;uk.1.1.1.1.1;Staf Bagian Rumah Tangga dan perlengkapan 21;1
+Staf Direktorat Pelaporan 24;uk.1.1.12.1.26;uk.1.1.12.1;Staf Direktorat Pelaporan 24;1
+Staf Bagian Rumah Tangga dan perlengkapan 22;uk.1.1.1.1.1.23;uk.1.1.1.1.1;Staf Bagian Rumah Tangga dan perlengkapan 22;1
+Staf Direktorat Pengawasan Kepatuhan Penyedia Barang dan/ atau Jasa Lain dan Profesi 17;uk.1.1.12.3.19;uk.1.1.12.3;Staf Direktorat Pengawasan Kepatuhan Penyedia Barang dan/ atau Jasa Lain dan Profesi 17;1
+TALI ASUH;uk.1.8;uk.1;Tenaga Ahli Bidang Pelaporan dan Pengawasan Kepatuhan;1
+ASA - Koordinator Kelompok Substansi Analisis dan Pemeriksaan Reaktif 2;uk.1.1.9.3.26;uk.1.1.9.3;Kelompok Substansi Analisis dan Pemeriksaan Reaktif 2;1
+Staf;uk.1.1.2.6.1.1;uk.1.1.2.6.1;Staf Koordinator Kelompok Hukum dan Regulasi 1;1
+SETIA - TU Biro Sumber Daya Manusia, Organisasi dan Tata Laksana - Rahmat Jumari;uk.1.1.1.3.12;uk.1.1.1.3;SETIA - TU Biro Sumber Daya Manusia, Organisasi dan Tata Laksana;1
+Pejabat Pembuat Komitmen - Deputi Bidang Analisis dan Pemeriksaan;uk.1.1.8.9;uk.1.1.8;Pejabat Pembuat Komitmen - Deputi Bidang Analisis dan Pemeriksaan;1
+Staf Pejabat Pembuat Komitmen - Deputi Bidang Analisis dan Pemeriksaan 1;uk.1.1.8.9.1;uk.1.1.8.9;Staf Pejabat Pembuat Komitmen - Deputi Bidang Analisis dan Pemeriksaan 1;1
+Staf Pejabat Pembuat Komitmen - Deputi Bidang Analisis dan Pemeriksaan 2;uk.1.1.8.9.2;uk.1.1.8.9;Staf Pejabat Pembuat Komitmen - Deputi Bidang Analisis dan Pemeriksaan 2;1
+Staf Pejabat Pembuat Komitmen - Deputi Bidang Analisis dan Pemeriksaan 3;uk.1.1.8.9.3;uk.1.1.8.9;Staf Pejabat Pembuat Komitmen - Deputi Bidang Analisis dan Pemeriksaan 3;1
+Staff Koordinasi Kelompok Hukum dan Regulasi 20;uk.1.1.2.6.22;uk.1.1.2.6;Staff Koordinasi Kelompok Hukum dan Regulasi 20;1
+Staf Direktorat Analisis dan Pemeriksaan I-25;uk.1.1.9.1.26;uk.1.1.9.1;Staf Direktorat Analisis dan Pemeriksaan I-25;1
+TU Direktorat Analisis dan Pemeriksaan II-1;uk.1.1.9.2.29;uk.1.1.9.2;TU Direktorat Analisis dan Pemeriksaan II-1;1
+TU Direktorat Analisis dan Pemeriksaan II-2;uk.1.1.9.2.30;uk.1.1.9.2;TU Direktorat Analisis dan Pemeriksaan II-2;1
+TU Direktorat Analisis dan Pemeriksaan III-1;uk.1.1.9.3.27;uk.1.1.9.3;TU Direktorat Analisis dan Pemeriksaan III-1;1
+TU Direktorat Analisis dan Pemeriksaan III-2;uk.1.1.9.3.28;uk.1.1.9.3;TU Direktorat Analisis dan Pemeriksaan III-2;1
+Staf Direktorat Analisis dan Pemeriksaan II-29;uk.1.1.9.2.31;uk.1.1.9.2;Staf Direktorat Analisis dan Pemeriksaan II-29;1
+Staf;uk.1.1.2.7.4;uk.1.1.2.7;Staf Bagian TU Deputi Strategi dan Kerja Sama 4;1
+Staf Direktorat Analisis dan Pemeriksaan II-30;uk.1.1.9.2.32;uk.1.1.9.2;Staf Direktorat Analisis dan Pemeriksaan II-30;1
+Staf Bagian Tata Usaha Deputi Pelaporan dan Pengawasan Kepatuhan;uk.1.1.12.4.5;uk.1.1.12.4;Staf Bagian Tata Usaha Deputi Pelaporan dan Pengawasan Kepatuhan 5;1
+Staff;uk.1.1.2.4.19;uk.1.1.2.4;Staff Koordinator Pada kelompok Dalam Negeri 18;1
+Staf;uk.1.1.1.1.2.2.7;uk.1.1.1.1.2.2;Staf Sub Bagian Administrasi Pimpinan 7;1
+Staf;uk.1.1.1.1.4.5;uk.1.1.1.1.4;Staf pada Koordinator pada Substansi Kearsipan 5;0
+Staf Kelompok Substansi Perencanaan dan Pengembangan Program dan Pelatihan APUPPT 8;uk.1.1.6.1.8;uk.1.1.6.1;Staf Kelompok Substansi Perencanaan dan Pengembangan Program dan Pelatihan APUPPT 8;1
+Staf;uk.1.1.6.3.1.17;uk.1.1.6.3.1;Staf Sub Bagian Rumah Tangga 17;1
+Staf Kelompok Substansi Penyelenggaraan dan Kerjasama Pelatihan APUPPT 9;uk.1.1.6.2.9;uk.1.1.6.2;Staf Kelompok Substansi Penyelenggaraan dan Kerjasama Pelatihan APUPPT 9;1
+Staf Kelompok Substansi Penyelenggaraan dan Kerjasama Pelatihan APUPPT 10;uk.1.1.6.2.10;uk.1.1.6.2;Staf Kelompok Substansi Penyelenggaraan dan Kerjasama Pelatihan APUPPT 10;1
+Staf Kelompok Substansi Penyelenggaraan dan Kerjasama Pelatihan APUPPT 11;uk.1.1.6.2.11;uk.1.1.6.2;Staf Kelompok Substansi Penyelenggaraan dan Kerjasama Pelatihan APUPPT 11;1
+Staf Bagian Rumah Tangga dan perlengkapan 23;uk.1.1.1.1.1.24;uk.1.1.1.1.1;Staf Bagian Rumah Tangga dan perlengkapan 23;1
+PENGASUH - Koordinator Kelompok Subtansi Pengawasan Penyedia Jasa Keuangan Pasar Modal, Industri Keuangan Non Bank dan Penyedia Jasa Keuangan Lainnya;uk.1.1.12.2.18;uk.1.1.12.2;Koordinator Kelompok Subtansi Pengawasan Penyedia Jasa Keuangan Pasar Modal, Industri Keuangan Non Bank dan Penyedia Jasa Keuangan Lainnya;1
+NONAKTIF PENGASUH - Koordinator Kelompok Subtansi Kebijakan dan Pembinaan Penyedia Jasa Keuangan;uk.1.1.12.2.19;uk.1.1.12.2;"Koordinator Kelompok Subtansi Kebijakan dan Pembinaan
+Penyedia Jasa Keuangan";0
+Kuasa Pengguna Anggaran PATIH;uk.1.1.14;uk.1.1;Kuasa Pengguna Anggaran PATIH;1
+Pejabat Pembuat Komitmen - Pusat Pendidikan dan Pelatihan APU PPT;uk.1.1.14.1;uk.1.1.14;Pejabat Pembuat Komitmen - Pusat Pendidikan dan Pelatihan APU PPT;1
+Staf Direktorat Analisis dan Pemeriksaan III-25;uk.1.1.9.3.29;uk.1.1.9.3;Staf Direktorat Analisis dan Pemeriksaan III-25;1
+Staf Kelompok Substansi Perencanaan dan Pengembangan Program dan Pelatihan APUPPT 9;uk.1.1.6.1.9;uk.1.1.6.1;Staf Kelompok Substansi Perencanaan dan Pengembangan Program dan Pelatihan APUPPT 9;1
+Staf Direktorat Pengawasan Kepatuhan Penyedia Jasa Keuangan 17;uk.1.1.12.2.20;uk.1.1.12.2;Staf Direktorat Pengawasan Kepatuhan Penyedia Jasa Keuangan 17;1
+Staf Direktorat Analisis dan Pemeriksaan II-31;uk.1.1.9.2.33;uk.1.1.9.2;Staf Direktorat Analisis dan Pemeriksaan II-31;1
+Staf;uk.1.1.6.3.1.18;uk.1.1.6.3.1;Staf Sub Bagian Rumah Tangga 18;1
+Pejabat Pembuat Komitmen - Pusat Pendidikan dan Pelatihan APU PPT 2;uk.1.1.14.2;uk.1.1.14;Pejabat Pembuat Komitmen - Pusat Pendidikan dan Pelatihan APU PPT 2;1
+SETIA - Penata Usaha Biro Perencanaan dan Keuangan;uk.1.1.1.2.33;uk.1.1.1.2;SETIA - Penata Usaha Biro Perencanaan dan Keuangan;1
+Staf Direktorat Analisis dan Pemeriksaan I-26;uk.1.1.9.1.27;uk.1.1.9.1;Staf Direktorat Analisis dan Pemeriksaan I-26;1
+Pejabat Pembuat Komitmen - Pusat Pendidikan dan Pelatihan APU PPT 3;uk.1.1.14.3;uk.1.1.14;Pejabat Pembuat Komitmen - Pusat Pendidikan dan Pelatihan APU PPT 3;1
+PPSPM - Pusat Pendidikan dan Pelatihan APU PPT;uk.1.1.14.4;uk.1.1.14;PPSPM - Pusat Pendidikan dan Pelatihan APU PPT;1
+Staff;uk.1.1.2.6.23;uk.1.1.2.6;Staff Koordinasi Kelompok Hukum dan Regulasi 21;1
+Bendahara Pengeluaran Pusdiklat APU PPT;uk.1.1.14.5;uk.1.1.14;Bendahara Pengeluaran Pusdiklat APU PPT;1
+TALI ASA;uk.1.7;uk.1;Tenaga Ahli Bidang Analisis dan Pemeriksaan Transaksi Keuangan;1
+Staf Direktorat Analisis dan Pemeriksaan III-26;uk.1.1.9.3.30;uk.1.1.9.3;Staf Direktorat Analisis dan Pemeriksaan III-26;1
+TEGAS - Staff Koordinator pada Kelompok Strategi dan Kerja Sama Internasional 12;uk.1.1.2.5.13;uk.1.1.2.5;Staff Koordinator pada Kelompok Strategi dan Kerja Sama Internasional 12;1
+PATIH - Koordinator Kelompok Substansi Penjaminan Mutu dan Publikasi Pelatihan APU PPT;uk.1.1.6.7;uk.1.1.6;Kelompok Substansi Penjaminan Mutu dan Publikasi Pelatihan APU PPT;1
+Staf;uk.1.1.6.7.1;uk.1.1.6.7;Staf Kelompok Substansi Penjaminan Mutu dan Publikasi Pelatihan APU PPT 1;1
+Staf;uk.1.1.6.7.2;uk.1.1.6.7;Staf Kelompok Substansi Penjaminan Mutu dan Publikasi Pelatihan APU PPT 2;1
+Staf;uk.1.1.6.7.3;uk.1.1.6.7;Staf Kelompok Substansi Penjaminan Mutu dan Publikasi Pelatihan APU PPT 3;1
+Staf;uk.1.1.6.7.4;uk.1.1.6.7;Staf Kelompok Substansi Penjaminan Mutu dan Publikasi Pelatihan APU PPT 4;1
+Staf;uk.1.1.6.3.2.13;uk.1.1.6.3.2;Staf Sub Bagian Kepegawaian dan Keuangan 13;1
+Staf Direktorat Pelaporan 25;uk.1.1.12.1.27;uk.1.1.12.1;Staf Direktorat Pelaporan 25;1
+BINCANG - Koordinator Kelompok Substansi Perbendaharaan;uk.1.1.1.2.34;uk.1.1.1.2;Koordinator Kelompok Substansi Perbendaharaan;1
+BERMITRA - Koordinator Kelompok Substansi Pemberdayaan Kemitraan dan Perpustakaan Anti Pencucian Uang dan Pencegahan Pendanaan Terorisme;uk.1.1.10.16;uk.1.1.10;Kelompok Substansi Pemberdayaan Kemitraan dan Perpustakaan Anti Pencucian Uang dan Pencegahan Pendanaan Terorisme;1
+Staf Bagian Tata Usaha Deputi Bidang Analisis dan Pemeriksaan 2;uk.1.1.9.4.2;uk.1.1.9.4;Staf Bagian Tata Usaha Deputi Bidang Analisis dan Pemeriksaan 2;1
+Staf;uk.1.1.1.1.2.2.8;uk.1.1.1.1.2.2;Staf Sub Bagian Administrasi Pimpinan 8;1
+Staf;uk.1.1.1.1.2.2.9;uk.1.1.1.1.2.2;Staf Sub Bagian Administrasi Pimpinan 9;1
+Staf;uk.1.1.1.1.2.2.10;uk.1.1.1.1.2.2;Staf Sub Bagian Administrasi Pimpinan 10;1
+Staf;uk.1.1.1.1.2.2.11;uk.1.1.1.1.2.2;Staf Sub Bagian Administrasi Pimpinan 11;1
+Staf;uk.1.1.1.1.2.2.12;uk.1.1.1.1.2.2;Staf Sub Bagian Administrasi Pimpinan 12;1
+Staf;uk.1.1.10.1.11;uk.1.1.10.1;Staf Sub Bagian Tata Usaha Bermitra 11;1
+Staf;uk.1.1.5.3.6;uk.1.1.5.3;Staf Bagian Tata Usaha TI 6;1
+Staf Bagian Tata Usaha Deputi Bidang Analisis dan Pemeriksaan 3;uk.1.1.9.4.3;uk.1.1.9.4;Staf Bagian Tata Usaha Deputi Bidang Analisis dan Pemeriksaan 3;1
+Staf Bagian Tata Usaha Deputi Bidang Analisis dan Pemeriksaan 4;uk.1.1.9.4.4;uk.1.1.9.4;Staf Bagian Tata Usaha Deputi Bidang Analisis dan Pemeriksaan 4;1
+Staf Bagian Tata Usaha Deputi Bidang Analisis dan Pemeriksaan 5;uk.1.1.9.4.5;uk.1.1.9.4;Staf Bagian Tata Usaha Deputi Bidang Analisis dan Pemeriksaan 5;1
+Staf Bagian Tata Usaha Deputi Bidang Analisis dan Pemeriksaan 6;uk.1.1.9.4.6;uk.1.1.9.4;Staf Bagian Tata Usaha Deputi Bidang Analisis dan Pemeriksaan 6;1
+Staf Bagian Tata Usaha Deputi Bidang Analisis dan Pemeriksaan 7;uk.1.1.9.4.7;uk.1.1.9.4;Staf Bagian Tata Usaha Deputi Bidang Analisis dan Pemeriksaan 7;1
+Staf Bagian Tata Usaha Deputi Pelaporan dan Pengawasan Kepatuhan 6;uk.1.1.12.4.6;uk.1.1.12.4;Staf Bagian Tata Usaha Deputi Pelaporan dan Pengawasan Kepatuhan 6;1
+Staf Bagian Tata Usaha Deputi Pelaporan dan Pengawasan Kepatuhan 7;uk.1.1.12.4.7;uk.1.1.12.4;Staf Bagian Tata Usaha Deputi Pelaporan dan Pengawasan Kepatuhan 7;1
+Staf Bagian Tata Usaha Deputi Pelaporan dan Pengawasan Kepatuhan 8;uk.1.1.12.4.8;uk.1.1.12.4;Staf Bagian Tata Usaha Deputi Pelaporan dan Pengawasan Kepatuhan 8;1
+Staf;uk.1.1.2.7.5;uk.1.1.2.7;Staf Bagian TU Deputi Strategi dan Kerja Sama 5;1
+Staf;uk.1.1.2.7.6;uk.1.1.2.7;Staf Bagian TU Deputi Strategi dan Kerja Sama 6;1
+Staf;uk.1.1.2.7.7;uk.1.1.2.7;Staf Bagian TU Deputi Strategi dan Kerja Sama 7;1
+Staf;uk.1.1.2.7.8;uk.1.1.2.7;Staf Bagian TU Deputi Strategi dan Kerja Sama 8;1
+Staf;uk.1.1.2.7.9;uk.1.1.2.7;Staf Bagian TU Deputi Strategi dan Kerja Sama 9;1
+Staf;uk.1.1.2.7.10;uk.1.1.2.7;Staf Bagian TU Deputi Strategi dan Kerja Sama 10;1
+SETIA - Tenaga Kesehatan - 1;uk.1.1.1.3.13;uk.1.1.1.3;SETIA - Tenaga Kesehatan - 1;1
+SETIA - Tenaga Kesehatan - 2;uk.1.1.1.3.14;uk.1.1.1.3;SETIA - Tenaga Kesehatan - 2;1
+SETIA - Tenaga Kesehatan - 3;uk.1.1.1.3.15;uk.1.1.1.3;SETIA - Tenaga Kesehatan - 3;1
+SETIA - Tenaga Kesehatan - 4;uk.1.1.1.3.16;uk.1.1.1.3;SETIA - Tenaga Kesehatan - 4;1
+SETIA - Tenaga Kesehatan - 5;uk.1.1.1.3.17;uk.1.1.1.3;SETIA - Tenaga Kesehatan - 5;1
+PATIH - Tenaga Kesehatan - 1;uk.1.1.6.3.3;uk.1.1.6.3;PATIH - Tenaga Kesehatan - 1;1
+PATIH - Tenaga Kesehatan - 2;uk.1.1.6.3.4;uk.1.1.6.3;PATIH - Tenaga Kesehatan - 2;1
+Staf Administrasi Tenaga Ahli;uk.1.8.1;uk.1.8;Staf Administrasi Tenaga Ahli;1
+Staf;uk.1.1.1.2.2.9;uk.1.1.1.2.2;Staf Koordinator Kelompok Substansi Penganggaran 9;1
+Staf Direktorat Pelaporan 26;uk.1.1.12.1.28;uk.1.1.12.1;Staf Direktorat Pelaporan 26;1
+Staf Direktorat Pelaporan 27;uk.1.1.12.1.29;uk.1.1.12.1;Staf Direktorat Pelaporan 27;1
+Staf Direktorat Analisis dan Pemeriksaan II-32;uk.1.1.9.2.34;uk.1.1.9.2;Staf Direktorat Analisis dan Pemeriksaan II-32;1
+Staf Kelompok Substansi Perencanaan dan Pengembangan Program dan Pelatihan APUPPT 10;uk.1.1.6.1.10;uk.1.1.6.1;Staf Kelompok Substansi Perencanaan dan Pengembangan Program dan Pelatihan APUPPT 10;1
+Staf Bagian Tata Usaha Deputi Bidang Analisis dan Pemeriksaan 8;uk.1.1.9.4.8;uk.1.1.9.4;Staf Bagian Tata Usaha Deputi Bidang Analisis dan Pemeriksaan 8;1
+Staf Bagian Tata Usaha Deputi Pelaporan dan Pengawasan Kepatuhan 9;uk.1.1.12.4.9;uk.1.1.12.4;Staf Bagian Tata Usaha Deputi Pelaporan dan Pengawasan Kepatuhan 9;1
+Staf Direktorat Pelaporan 28;uk.1.1.12.1.30;uk.1.1.12.1;Staf Direktorat Pelaporan 28;1
+Staf Direktorat Pelaporan 29;uk.1.1.12.1.31;uk.1.1.12.1;Staf Direktorat Pelaporan 29;1
+Staf Direktorat Pengawasan Kepatuhan Penyedia Jasa Keuangan 18;uk.1.1.12.2.21;uk.1.1.12.2;Staf Direktorat Pengawasan Kepatuhan Penyedia Jasa Keuangan 18;1
+Staf Direktorat Pengawasan Kepatuhan Penyedia Jasa Keuangan 19;uk.1.1.12.2.22;uk.1.1.12.2;Staf Direktorat Pengawasan Kepatuhan Penyedia Jasa Keuangan 19;1
+Staf Direktorat Pengawasan Kepatuhan Penyedia Barang dan/ atau Jasa Lain dan Profesi 19;uk.1.1.12.3.20;uk.1.1.12.3;Staf Direktorat Pengawasan Kepatuhan Penyedia Barang dan/ atau Jasa Lain dan Profesi 18;1
+Staf Direktorat Pengawasan Kepatuhan Penyedia Barang dan/ atau Jasa Lain dan Profesi 19;uk.1.1.12.3.21;uk.1.1.12.3;Staf Direktorat Pengawasan Kepatuhan Penyedia Barang dan/ atau Jasa Lain dan Profesi 19;1
+Staf Direktorat Pengawasan Kepatuhan Penyedia Barang dan/ atau Jasa Lain dan Profesi 20;uk.1.1.12.3.22;uk.1.1.12.3;Staf Direktorat Pengawasan Kepatuhan Penyedia Barang dan/ atau Jasa Lain dan Profesi 20;1
+Staf Direktorat Analisis dan Pemeriksaan I-27;uk.1.1.9.1.28;uk.1.1.9.1;Staf Direktorat Analisis dan Pemeriksaan I-27;1
+Staf Direktorat Analisis dan Pemeriksaan I-28;uk.1.1.9.1.29;uk.1.1.9.1;Staf Direktorat Analisis dan Pemeriksaan I-28;1
+Staf Direktorat Analisis dan Pemeriksaan II-33;uk.1.1.9.2.35;uk.1.1.9.2;Staf Direktorat Analisis dan Pemeriksaan II-33;1
+Staf Direktorat Analisis dan Pemeriksaan II-34;uk.1.1.9.2.36;uk.1.1.9.2;Staf Direktorat Analisis dan Pemeriksaan II-34;1
+Staf PPK Deputi Bidang Pelaporan dan Pengawasan Kepatuhan 4;uk.1.1.8.4.4;uk.1.1.8.4;Staf PPK Deputi Bidang Pelaporan dan Pengawasan Kepatuhan 4;1
+Staf;uk.1.1.1.2.1.7;uk.1.1.1.2.1;Staf Bagian Verifikasi Akuntansi dan Akuntabilitas Kinerja 7;1
+Staf;uk.1.1.1.2.1.8;uk.1.1.1.2.1;Staf Bagian Verifikasi Akuntansi dan Akuntabilitas Kinerja 8;1
+Staf;uk.1.1.1.2.1.9;uk.1.1.1.2.1;Staf Bagian Verifikasi Akuntansi dan Akuntabilitas Kinerja 9;1
+Staf Direktorat Analisis dan Pemeriksaan III-27;uk.1.1.9.3.31;uk.1.1.9.3;Staf Direktorat Analisis dan Pemeriksaan III-27;1
+Staf;uk.1.1.1.2.1.11;uk.1.1.1.2.1;Staf Bagian Verifikasi Akuntansi dan Akuntabilitas Kinerja 10;1
+Staf;uk.1.1.1.2.1.12;uk.1.1.1.2.1;Staf Bagian Verifikasi Akuntansi dan Akuntabilitas Kinerja 11;1
+Staf;uk.1.1.1.2.1.13;uk.1.1.1.2.1;Staf Bagian Verifikasi Akuntansi dan Akuntabilitas Kinerja 12;1
+Staf;uk.1.1.1.2.1.14;uk.1.1.1.2.1;Staf Bagian Verifikasi Akuntansi dan Akuntabilitas Kinerja 13;1
+Staf Direktorat Analisis dan Pemeriksaan III-28;uk.1.1.9.3.32;uk.1.1.9.3;Staf Direktorat Analisis dan Pemeriksaan III-28;1
+Staf Bagian Rumah Tangga dan perlengkapan 24;uk.1.1.1.1.1.25;uk.1.1.1.1.1;Staf Bagian Rumah Tangga dan perlengkapan 24;1
+Staf Sub Bagian Layanan Pengadaan 9;uk.1.1.1.1.1.1.9;uk.1.1.1.1.1.1;Staf Sub Bagian Layanan Pengadaan 9;1
+Staf Biro Perencanaan dan Keuangan 32;uk.1.1.1.2.35;uk.1.1.1.2;Staf Biro Perencanaan dan Keuangan 32;1
+Staf Biro Perencanaan dan Keuangan 33;uk.1.1.1.2.36;uk.1.1.1.2;Staf Biro Perencanaan dan Keuangan 33;1
+Staf Biro Perencanaan dan Keuangan 34;uk.1.1.1.2.37;uk.1.1.1.2;Staf Biro Perencanaan dan Keuangan 34;1
+Staf Biro Perencanaan dan Keuangan 35;uk.1.1.1.2.38;uk.1.1.1.2;Staf Biro Perencanaan dan Keuangan 35;1
+Staf Biro Perencanaan dan Keuangan 36;uk.1.1.1.2.39;uk.1.1.1.2;Staf Biro Perencanaan dan Keuangan 36;1
+Staf Direktorat Analisis dan Pemeriksaan I-29;uk.1.1.9.1.30;uk.1.1.9.1;Staf Direktorat Analisis dan Pemeriksaan I-29;1
+Staf Direktorat Analisis dan Pemeriksaan I-30;uk.1.1.9.1.31;uk.1.1.9.1;Staf Direktorat Analisis dan Pemeriksaan I-30;1
+Staf Bagian Tata Usaha TI 7;uk.1.1.5.3.7;uk.1.1.5.3;Staf Bagian Tata Usaha TI 7;1
+Staf Bagian Tata Usaha TI 8;uk.1.1.5.3.8;uk.1.1.5.3;Staf Bagian Tata Usaha TI 8;1
+Staf;uk.1.1.1.1.4.6;uk.1.1.1.1.4;Staf pada Koordinator pada Substansi Kearsipan 6;1
+Staf;uk.1.1.1.1.4.7;uk.1.1.1.1.4;Staf pada Koordinator pada Substansi Kearsipan 7;1
+staf;uk.1.1.5.3.9;uk.1.1.5.3;Staf Bagian Tata Usaha TI 9;1
+staf;uk.1.1.5.3.10;uk.1.1.5.3;Staf Bagian Tata Usaha TI 10;1
+PATIH - Staf Bagian Umum 1;uk.1.1.6.3.5;uk.1.1.6.3;PATIH - Staf Bagian Umum 1;1
+Staf Kelompok Substansi Perencanaan dan Pengembangan Program dan Pelatihan APUPPT 11;uk.1.1.6.1.11;uk.1.1.6.1;Staf Kelompok Substansi Perencanaan dan Pengembangan Program dan Pelatihan APUPPT 11;1
+Staf Kelompok Substansi Perencanaan dan Pengembangan Program dan Pelatihan APUPPT 12;uk.1.1.6.1.12;uk.1.1.6.1;Staf Kelompok Substansi Perencanaan dan Pengembangan Program dan Pelatihan APUPPT 12;1
+Staf Direktorat Analisis dan Pemeriksaan II-35;uk.1.1.9.2.37;uk.1.1.9.2;Staf Direktorat Analisis dan Pemeriksaan II-35;1
