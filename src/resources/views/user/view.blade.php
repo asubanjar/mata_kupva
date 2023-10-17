@@ -34,107 +34,8 @@
                 <!--end::Page title-->
                 <!--begin::Actions-->
                 <div class="d-flex align-items-center gap-lg-3 gap-2">
-                    <!--begin::Filter menu-->
-                    <div class="m-0">
-                        <!--begin::Menu toggle-->
-                        <a href="#" class="btn btn-sm btn-flex btn-secondary fw-bold" data-kt-menu-trigger="click"
-                            data-kt-menu-placement="bottom-end">
-                            <i class="ki-duotone ki-filter fs-6 text-muted me-1">
-                                <span class="path1"></span>
-                                <span class="path2"></span>
-                            </i>Filter</a>
-                        <!--end::Menu toggle-->
-                        <!--begin::Menu 1-->
-                        <div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true"
-                            id="kt_menu_64b7760e24519">
-                            <!--begin::Header-->
-                            <div class="px-7 py-5">
-                                <div class="fs-5 text-dark fw-bold">Filter Options</div>
-                            </div>
-                            <!--end::Header-->
-                            <!--begin::Menu separator-->
-                            <div class="separator border-gray-200"></div>
-                            <!--end::Menu separator-->
-                            <!--begin::Form-->
-                            <div class="px-7 py-5">
-                                <!--begin::Input group-->
-                                <div class="mb-10">
-                                    <!--begin::Label-->
-                                    <label class="form-label fw-semibold">Status:</label>
-                                    <!--end::Label-->
-                                    <!--begin::Input-->
-                                    <div>
-                                        <select class="form-select form-select-solid" multiple="multiple"
-                                            data-kt-select2="true" data-close-on-select="false"
-                                            data-placeholder="Select option" data-dropdown-parent="#kt_menu_64b7760e24519"
-                                            data-allow-clear="true">
-                                            <option></option>
-                                            <option value="1">Approved</option>
-                                            <option value="2">Pending</option>
-                                            <option value="2">In Process</option>
-                                            <option value="2">Rejected</option>
-                                        </select>
-                                    </div>
-                                    <!--end::Input-->
-                                </div>
-                                <!--end::Input group-->
-                                <!--begin::Input group-->
-                                <div class="mb-10">
-                                    <!--begin::Label-->
-                                    <label class="form-label fw-semibold">Member Type:</label>
-                                    <!--end::Label-->
-                                    <!--begin::Options-->
-                                    <div class="d-flex">
-                                        <!--begin::Options-->
-                                        <label class="form-check form-check-sm form-check-custom form-check-solid me-5">
-                                            <input class="form-check-input" type="checkbox" value="1" />
-                                            <span class="form-check-label">Author</span>
-                                        </label>
-                                        <!--end::Options-->
-                                        <!--begin::Options-->
-                                        <label class="form-check form-check-sm form-check-custom form-check-solid">
-                                            <input class="form-check-input" type="checkbox" value="2"
-                                                checked="checked" />
-                                            <span class="form-check-label">Customer</span>
-                                        </label>
-                                        <!--end::Options-->
-                                    </div>
-                                    <!--end::Options-->
-                                </div>
-                                <!--end::Input group-->
-                                <!--begin::Input group-->
-                                <div class="mb-10">
-                                    <!--begin::Label-->
-                                    <label class="form-label fw-semibold">Notifications:</label>
-                                    <!--end::Label-->
-                                    <!--begin::Switch-->
-                                    <div class="form-check form-switch form-switch-sm form-check-custom form-check-solid">
-                                        <input class="form-check-input" type="checkbox" value="" name="notifications"
-                                            checked="checked" />
-                                        <label class="form-check-label">Enabled</label>
-                                    </div>
-                                    <!--end::Switch-->
-                                </div>
-                                <!--end::Input group-->
-                                <!--begin::Actions-->
-                                <div class="d-flex justify-content-end">
-                                    <button type="reset" class="btn btn-sm btn-light btn-active-light-primary me-2"
-                                        data-kt-menu-dismiss="true">Reset</button>
-                                    <button type="submit" class="btn btn-sm btn-primary"
-                                        data-kt-menu-dismiss="true">Apply</button>
-                                </div>
-                                <!--end::Actions-->
-                            </div>
-                            <!--end::Form-->
-                        </div>
-                        <!--end::Menu 1-->
-                    </div>
-                    <!--end::Filter menu-->
-                    <!--begin::Secondary button-->
-                    <!--end::Secondary button-->
                     <!--begin::Primary button-->
-                    <a href="#" class="btn btn-sm fw-bold btn-primary" data-bs-toggle="modal"
-                        data-bs-target="#kt_modal_create_app">Create</a>
+                    <a href="{{ url('/user') }}" class="btn btn-sm fw-bold btn-primary">Kembali</a>
                     <!--end::Primary button-->
                 </div>
                 <!--end::Actions-->
@@ -154,7 +55,7 @@
                             <!--begin: Pic-->
                             <div class="mb-4 me-7">
                                 <div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative">
-                                    <img src="assets/media/avatars/300-1.jpg" alt="image" />
+                                    <img src="{{ asset('assets/media/avatars/300-1.jpg') }}" alt="image" />
                                     <div
                                         class="position-absolute translate-middle start-100 bg-success rounded-circle border-body h-20px w-20px bottom-0 mb-6 border border-4">
                                     </div>
@@ -172,53 +73,76 @@
                                             <a href="#"
                                                 class="text-hover-primary fs-2 fw-bold me-1 text-gray-900">{{ $user->name }}</a>
                                             <a href="#">
-                                                <i class="ki-duotone ki-verify fs-1 text-primary">
-                                                    <span class="path1"></span>
-                                                    <span class="path2"></span>
-                                                </i>
+                                                @if ($user->active)
+                                                    <i class="ki-duotone ki-verify fs-1 text-success">
+                                                        <span class="path1"></span>
+                                                        <span class="path2"></span>
+                                                    </i>
+                                                @else
+                                                    <i class="ki-duotone ki-lock-3 fs-1 text-danger">
+                                                        <span class="path1"></span>
+                                                        <span class="path2"></span>
+                                                    </i>
+                                                @endif
                                             </a>
                                         </div>
                                         <!--end::Name-->
                                         <!--begin::Info-->
                                         <div class="d-flex fw-semibold fs-6 mb-4 flex-wrap pe-2">
-                                            <a href="#"
+                                            <div
                                                 class="d-flex align-items-center text-hover-primary mb-2 me-5 text-gray-400">
                                                 <i class="ki-duotone ki-profile-circle fs-4 me-1">
                                                     <span class="path1"></span>
                                                     <span class="path2"></span>
                                                     <span class="path3"></span>
-                                                </i>Developer</a>
-                                            <a href="#"
+                                                </i>{{ $user->position }}
+                                            </div>
+                                            <div href="#"
                                                 class="d-flex align-items-center text-hover-primary mb-2 me-5 text-gray-400">
-                                                <i class="ki-duotone ki-geolocation fs-4 me-1">
+                                                <i class="ki-duotone ki-whatsapp fs-4 me-1">
                                                     <span class="path1"></span>
                                                     <span class="path2"></span>
-                                                </i>SF, Bay Area</a>
-                                            <a href="#"
+                                                </i>+{{ $user->phone }}
+                                            </div>
+                                            <div href="#"
                                                 class="d-flex align-items-center text-hover-primary mb-2 text-gray-400">
                                                 <i class="ki-duotone ki-sms fs-4 me-1">
                                                     <span class="path1"></span>
                                                     <span class="path2"></span>
-                                                </i>max@kt.com</a>
+                                                </i>{{ $user->email }}
+                                            </div>
                                         </div>
                                         <!--end::Info-->
                                     </div>
                                     <!--end::User-->
                                     <!--begin::Actions-->
                                     <div class="d-flex my-4">
-                                        <a href="#" class="btn btn-sm btn-light me-2" id="kt_user_follow_button">
-                                            <i class="ki-duotone ki-check fs-3 d-none"></i>
-                                            <!--begin::Indicator label-->
-                                            <span class="indicator-label">Follow</span>
-                                            <!--end::Indicator label-->
-                                            <!--begin::Indicator progress-->
-                                            <span class="indicator-progress">Please wait...
-                                                <span
-                                                    class="spinner-border spinner-border-sm ms-2 align-middle"></span></span>
-                                            <!--end::Indicator progress-->
-                                        </a>
-                                        <a href="#" class="btn btn-sm btn-primary me-3" data-bs-toggle="modal"
-                                            data-bs-target="#kt_modal_offer_a_deal">Hire Me</a>
+                                        @if ($user->active)
+                                            <a href="#" class="btn btn-sm btn-danger me-2" id="kt_user_follow_button">
+                                                <i class="ki-duotone ki-check fs-3 d-none"></i>
+                                                <!--begin::Indicator label-->
+                                                <span class="indicator-label">Deaktivasi</span>
+                                                <!--end::Indicator label-->
+                                                <!--begin::Indicator progress-->
+                                                <span class="indicator-progress">Please wait...
+                                                    <span
+                                                        class="spinner-border spinner-border-sm ms-2 align-middle"></span></span>
+                                                <!--end::Indicator progress-->
+                                            </a>
+                                        @else
+                                            <a href="#" class="btn btn-sm btn-success me-2"
+                                                id="kt_user_follow_button">
+                                                <i class="ki-duotone ki-check fs-3 d-none"></i>
+                                                <!--begin::Indicator label-->
+                                                <span class="indicator-label">Aktivasi</span>
+                                                <!--end::Indicator label-->
+                                                <!--begin::Indicator progress-->
+                                                <span class="indicator-progress">Please wait...
+                                                    <span
+                                                        class="spinner-border spinner-border-sm ms-2 align-middle"></span></span>
+                                                <!--end::Indicator progress-->
+                                            </a>
+                                        @endif
                                         <!--begin::Menu-->
                                         <div class="me-0">
                                             <button class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary"
@@ -337,11 +261,11 @@
                                                         <span class="path2"></span>
                                                     </i>
                                                     <div class="fs-2 fw-bold" data-kt-countup="true"
-                                                        data-kt-countup-value="4500" data-kt-countup-prefix="$">0</div>
+                                                        data-kt-countup-value="4500">0</div>
                                                 </div>
                                                 <!--end::Number-->
                                                 <!--begin::Label-->
-                                                <div class="fw-semibold fs-6 text-gray-400">Earnings</div>
+                                                <div class="fw-semibold fs-6 text-gray-400">Naskah Dinas</div>
                                                 <!--end::Label-->
                                             </div>
                                             <!--end::Stat-->
@@ -407,38 +331,7 @@
                         <ul class="nav nav-stretch nav-line-tabs nav-line-tabs-2x fs-5 fw-bold border-transparent">
                             <!--begin::Nav item-->
                             <li class="nav-item mt-2">
-                                <a class="nav-link text-active-primary active me-10 ms-0 py-5"
-                                    href="../../demo1/dist/pages/user-profile/overview.html">Overview</a>
-                            </li>
-                            <!--end::Nav item-->
-                            <!--begin::Nav item-->
-                            <li class="nav-item mt-2">
-                                <a class="nav-link text-active-primary me-10 ms-0 py-5"
-                                    href="../../demo1/dist/pages/user-profile/projects.html">Projects</a>
-                            </li>
-                            <!--end::Nav item-->
-                            <!--begin::Nav item-->
-                            <li class="nav-item mt-2">
-                                <a class="nav-link text-active-primary me-10 ms-0 py-5"
-                                    href="../../demo1/dist/pages/user-profile/campaigns.html">Campaigns</a>
-                            </li>
-                            <!--end::Nav item-->
-                            <!--begin::Nav item-->
-                            <li class="nav-item mt-2">
-                                <a class="nav-link text-active-primary me-10 ms-0 py-5"
-                                    href="../../demo1/dist/pages/user-profile/documents.html">Documents</a>
-                            </li>
-                            <!--end::Nav item-->
-                            <!--begin::Nav item-->
-                            <li class="nav-item mt-2">
-                                <a class="nav-link text-active-primary me-10 ms-0 py-5"
-                                    href="../../demo1/dist/pages/user-profile/followers.html">Followers</a>
-                            </li>
-                            <!--end::Nav item-->
-                            <!--begin::Nav item-->
-                            <li class="nav-item mt-2">
-                                <a class="nav-link text-active-primary me-10 ms-0 py-5"
-                                    href="../../demo1/dist/pages/user-profile/activity.html">Activity</a>
+                                <a class="nav-link text-active-primary active me-10 ms-0 py-5" href="#">Overview</a>
                             </li>
                             <!--end::Nav item-->
                         </ul>
@@ -446,6 +339,135 @@
                     </div>
                 </div>
                 <!--end::Navbar-->
+                <!--begin::details View-->
+                <div class="card mb-xl-10 mb-5" id="kt_profile_details_view">
+                    <!--begin::Card header-->
+                    <div class="card-header cursor-pointer">
+                        <!--begin::Card title-->
+                        <div class="card-title m-0">
+                            <h3 class="fw-bold m-0">Detail Pengguna</h3>
+                        </div>
+                        <!--end::Card title-->
+                        <!--begin::Action-->
+                        <a href="../../demo1/dist/account/settings.html"
+                            class="btn btn-sm btn-primary align-self-center">Ubah</a>
+                        <!--end::Action-->
+                    </div>
+                    <!--begin::Card header-->
+                    <!--begin::Card body-->
+                    <div class="card-body p-9">
+                        <!--begin::Row-->
+                        <div class="row mb-7">
+                            <!--begin::Label-->
+                            <label class="col-lg-4 fw-semibold text-muted">Jabatan</label>
+                            <!--end::Label-->
+                            <!--begin::Col-->
+                            <div class="col-lg-8">
+                                <span
+                                    class="fw-bold fs-6 text-gray-800">{{ $user->jabatan ? $user->jabatan->description : '-' }}</span>
+                            </div>
+                            <!--end::Col-->
+                        </div>
+                        <!--end::Row-->
+                        <!--begin::Input group-->
+                        <div class="row mb-7">
+                            <!--begin::Label-->
+                            <label class="col-lg-4 fw-semibold text-muted">Atasan</label>
+                            <!--end::Label-->
+                            <!--begin::Col-->
+                            <div class="col-lg-8 fv-row">
+                                <span
+                                    class="fw-semibold fs-6 text-gray-800">{{ $user->atasan ? $user->atasan->description : '-' }}</span>
+                            </div>
+                            <!--end::Col-->
+                        </div>
+                        <!--end::Input group-->
+                        <!--begin::Input group-->
+                        <div class="row mb-7">
+                            <!--begin::Label-->
+                            <label class="col-lg-4 fw-semibold text-muted">Group Jabatan</label>
+                            <!--end::Label-->
+                            <!--begin::Col-->
+                            <div class="col-lg-8 d-flex align-items-center">
+                                <span class="fw-bold fs-6 me-2 text-gray-800">-</span>
+                            </div>
+                            <!--end::Col-->
+                        </div>
+                        <!--end::Input group-->
+                        <!--begin::Input group-->
+                        <div class="row mb-7">
+                            <!--begin::Label-->
+                            <label class="col-lg-4 fw-semibold text-muted">NIP</label>
+                            <!--end::Label-->
+                            <!--begin::Col-->
+                            <div class="col-lg-8">
+                                <div class="col-lg-8 d-flex align-items-center">
+                                    <span class="fw-bold fs-6 text-gray-800">{{ $user->nip ? $user->nip : '-' }}</span>
+                                </div>
+                            </div>
+                            <!--end::Col-->
+                        </div>
+                        <!--end::Input group-->
+                        <!--begin::Input group-->
+                        <div class="row mb-7">
+                            <!--begin::Label-->
+                            <label class="col-lg-4 fw-semibold text-muted">Nama Tanda Tangan</label>
+                            <!--end::Label-->
+                            <!--begin::Col-->
+                            <div class="col-lg-8">
+                                <span class="fw-bold fs-6 text-gray-800">
+                                    {{ $user->approval_name ? $user->approval_name : '-' }}
+                                </span>
+                            </div>
+                            <!--end::Col-->
+                        </div>
+                        <!--end::Input group-->
+                        <!--begin::Input group-->
+                        <div class="row mb-7">
+                            <!--begin::Label-->
+                            <label class="col-lg-4 fw-semibold text-muted">NIK</label>
+                            <!--end::Label-->
+                            <!--begin::Col-->
+                            <div class="col-lg-8">
+                                <span class="fw-bold fs-6 text-gray-800">
+                                    {{ $user->nik ? $user->nik : '-' }}
+                                </span>
+                            </div>
+                            <!--end::Col-->
+                        </div>
+                        <!--end::Input group-->
+                        <!--begin::Input group-->
+                        <div class="row mb-10">
+                            <!--begin::Label-->
+                            <label class="col-lg-4 fw-semibold text-muted">Golongan</label>
+                            <!--begin::Label-->
+                            <!--begin::Label-->
+                            <div class="col-lg-8">
+                                <span class="fw-bold fs-6 text-gray-800">
+                                    {{ $user->golongan ? $user->golongan : '-' }}
+                                </span>
+                            </div>
+                            <!--begin::Label-->
+                        </div>
+                        <!--end::Input group-->
+                        <!--begin::Input group-->
+                        <div class="row mb-10">
+                            <!--begin::Label-->
+                            <label class="col-lg-4 fw-semibold text-muted">Akun ke dua</label>
+                            <!--begin::Label-->
+                            <!--begin::Label-->
+                            <div class="col-lg-8">
+                                <span class="fw-bold fs-6 text-gray-800">
+                                    -
+                                </span>
+                            </div>
+                            <!--begin::Label-->
+                        </div>
+                        <!--end::Input group-->
+                    </div>
+                    <!--end::Card body-->
+                </div>
+                <!--end::details View-->
                 <!--begin::Row-->
                 <div class="row g-5 g-xxl-8">
                     <!--begin::Col-->
