@@ -7,7 +7,7 @@
         <div class="app-sidebar-logo px-6" id="kt_app_sidebar_logo">
             <!--begin::Logo image-->
             <a href="{{ url('/home') }}">
-                <img alt="Logo" src="{{ asset('assets/media/logos/dinamis.svg') }}"
+                <img alt="Logo" src="{{ asset('assets/media/logos/dinamis-line-white.svg') }}"
                     class="h-60px app-sidebar-logo-default" />
                 <img alt="Logo" src="{{ asset('assets/media/logos/default-small.svg') }}"
                     class="h-20px app-sidebar-logo-minimize" />

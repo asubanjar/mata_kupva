@@ -34,6 +34,7 @@
     <!--begin::Body-->
 
     <body id="kt_body" class="app-blank bgi-size-cover bgi-attachment-fixed bgi-position-center">
+
         <!--begin::Theme mode setup on page load-->
         <script>
             var defaultThemeMode = "light";
@@ -57,174 +58,169 @@
         <!--end::Theme mode setup on page load-->
         <!--begin::Root-->
         <div class="d-flex flex-column flex-root" id="kt_app_root">
-            <!--begin::Page bg image-->
-            <style>
-                body {
-                    background-image: url('assets/media/auth/bg10.jpeg');
-                }
-
-                [data-bs-theme="dark"] body {
-                    background-image: url('assets/media/auth/bg10-dark.jpeg');
-                }
-            </style>
-            <!--end::Page bg image-->
             <!--begin::Authentication - Sign-in -->
             <div class="d-flex flex-column flex-lg-row flex-column-fluid">
+                <!--begin::Body-->
+                <div class="d-flex flex-column flex-lg-row-fluid w-lg-50 order-lg-1 order-2 p-10">
+                    <!--begin::Form-->
+                    <div class="d-flex flex-center flex-column flex-lg-row-fluid">
+                        <!--begin::Wrapper-->
+                        <div class="w-lg-500px p-10">
+                            <!--begin::Form-->
+                            <form class="form w-100" novalidate="novalidate" method="POST"
+                                action="{{ route('login.custom') }}">
+                                @csrf
+                                <!--begin::Heading-->
+                                <div class="mb-11 text-center">
+                                    <!--begin::Title-->
+                                    <h1 class="text-dark fw-bolder mb-3">Masuk</h1>
+                                    <!--end::Title-->
+                                    <!--begin::Subtitle-->
+                                    <div class="fw-semibold fs-6 text-gray-500">Arsip Digital dan Monitoring Tindak
+                                        Lanjut</div>
+                                    <!--end::Subtitle=-->
+                                </div>
+                                <!--begin::Heading-->
+                                <!--begin::Input group=-->
+                                <div class="fv-row mb-8">
+                                    <!--begin::Username-->
+                                    <input id="username" type="text" placeholder="Username" name="username"
+                                        autocomplete="off"
+                                        class="form-control @error('username') is-invalid @enderror bg-transparent" />
+                                    <!--end::Username-->
+                                    @error('username')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                <!--end::Input group=-->
+                                <div class="fv-row mb-3">
+                                    <!--begin::Password-->
+                                    <input id="password" type="password" placeholder="Password" name="password"
+                                        autocomplete="off"
+                                        class="form-control @error('password') is-invalid @enderror bg-transparent" />
+                                    <!--end::Password-->
+                                    @error('password')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                <!--end::Input group=-->
+                                <!--begin::Wrapper-->
+                                <div class="d-flex flex-stack fs-base fw-semibold mb-8 flex-wrap gap-3">
+                                    @if (session('status'))
+                                        <!--begin::Alert-->
+                                        <div
+                                            class="alert alert-dismissible bg-light-danger d-flex flex-center flex-column px-lg-20 mb-10 px-10 py-10">
+                                            <!--begin::Close-->
+                                            <button type="button"
+                                                class="position-absolute btn btn-icon btn-icon-danger end-0 top-0 m-2"
+                                                data-bs-dismiss="alert">
+                                                <i class="ki-duotone ki-cross fs-1"><span class="path1"></span><span
+                                                        class="path2"></span></i>
+                                            </button>
+                                            <!--end::Close-->
+
+                                            <!--begin::Icon-->
+                                            <i class="ki-duotone ki-information-5 fs-5tx text-danger mb-5"><span
+                                                    class="path1"></span><span class="path2"></span><span
+                                                    class="path3"></span></i>
+                                            <!--end::Icon-->
+
+                                            <!--begin::Wrapper-->
+                                            <div class="text-center">
+                                                <!--begin::Title-->
+                                                <h1 class="fw-bold mb-5">Gagal Masuk</h1>
+                                                <!--end::Title-->
+
+                                                <!--begin::Separator-->
+                                                <div class="separator separator-dashed border-danger mb-5 opacity-25">
+                                                </div>
+                                                <!--end::Separator-->
+
+                                                <!--begin::Content-->
+                                                <div class="text-dark mb-9">
+                                                    Username Atau Password Anda Salah. Apabila username dan password
+                                                    sudah sesuai, mohon dipastikan user domain tidak dalam status
+                                                    "expired".
+                                                </div>
+                                                <!--end::Content-->
+                                            </div>
+                                            <!--end::Wrapper-->
+                                        </div>
+                                        <!--end::Alert-->
+                                    @endif
+                                </div>
+                                <!--end::Wrapper-->
+                                <!--begin::Submit button-->
+                                <div class="d-grid mb-10">
+                                    <button type="submit" class="btn btn-primary">
+                                        <!--begin::Indicator label-->
+                                        <span class="indicator-label">Sign In</span>
+                                        <!--end::Indicator label-->
+                                        <!--begin::Indicator progress-->
+                                        <span class="indicator-progress">Please wait...
+                                            <span
+                                                class="spinner-border spinner-border-sm ms-2 align-middle"></span></span>
+                                        <!--end::Indicator progress-->
+                                    </button>
+                                </div>
+                                <!--end::Submit button-->
+                            </form>
+                            <!--end::Form-->
+                        </div>
+                        <!--end::Wrapper-->
+                    </div>
+                    <!--end::Form-->
+                    <!--begin::Footer-->
+                    <div class="d-flex flex-stack mx-auto px-10">
+                        <!--begin::Languages-->
+                        <div>
+                            <!--begin::Toggle-->
+                            <!--begin::Sign up-->
+                            <div class="fw-semibold fs-6 text-center text-gray-500">Copyright &copy; 2024. Pusat
+                                Teknologi Informasi - PPATK</p>
+                            </div>
+                            <!--end::Sign up-->
+                        </div>
+                        <!--end::Languages-->
+
+                    </div>
+                    <!--end::Footer-->
+                </div>
+                <!--end::Body-->
                 <!--begin::Aside-->
-                <div class="d-flex flex-lg-row-fluid">
+                <div class="d-flex flex-lg-row-fluid w-lg-50 bgi-size-cover bgi-position-center order-lg-2 order-1"
+                    style="background-image: url(assets/media/misc/auth-bg.png)">
                     <!--begin::Content-->
-                    <div class="d-flex flex-column flex-center pb-lg-10 w-100 p-10 pb-0">
+                    <div class="d-flex flex-column flex-center py-lg-15 px-md-15 w-100 px-5 py-7">
+
                         <!--begin::Image-->
-                        <img class="theme-light-show mw-100 w-200px w-lg-400px mb-lg-20 mx-auto mb-10"
-                            src="assets/media/logos/dinamis-red.png" alt="" />
-                        <img class="theme-dark-show mw-100 w-150px w-lg-300px mb-lg-20 mx-auto mb-10"
-                            src="assets/media/auth/agency-dark.png" alt="" />
+                        <img class="d-none d-lg-block w-275px w-md-50 w-xl-500px mb-lg-20 mx-auto mb-10"
+                            src="assets/media/logos/dinamis-top-white.png" alt="" />
                         <!--end::Image-->
                         <!--begin::Title-->
-                        <h1 class="fs-2qx fw-bold mb-7 text-center text-gray-800">Digital Monitoring dan Kearsipan</h1>
+                        <h1 class="d-none d-lg-block fs-2qx fw-bolder mb-7 text-center text-white">Fast, Efficient and
+                            Productive</h1>
                         <!--end::Title-->
                         <!--begin::Text-->
-                        <div class="fs-base fw-semibold text-center text-gray-600">In this kind of post,
-                            <a href="#" class="opacity-75-hover text-primary me-1">the blogger</a>introduces a
-                            person
-                            they’ve interviewed
+                        <div class="d-none d-lg-block fs-base text-center text-white">In this kind of post,
+                            <a href="#" class="opacity-75-hover text-warning fw-bold me-1">the
+                                blogger</a>introduces a person they’ve interviewed
                             <br />and provides some background information about
-                            <a href="#" class="opacity-75-hover text-primary me-1">the interviewee</a>and their
+                            <a href="#" class="opacity-75-hover text-warning fw-bold me-1">the
+                                interviewee</a>and their
                             <br />work following this is a transcript of the interview.
                         </div>
                         <!--end::Text-->
                     </div>
                     <!--end::Content-->
                 </div>
-                <!--begin::Aside-->
-                <!--begin::Body-->
-                <div
-                    class="d-flex flex-column-fluid flex-lg-row-auto justify-content-center justify-content-lg-end p-12">
-                    <!--begin::Wrapper-->
-                    <div class="bg-body d-flex flex-column flex-center rounded-4 w-md-600px p-10">
-                        <!--begin::Content-->
-                        <div class="d-flex flex-center flex-column align-items-stretch h-lg-100 w-md-400px">
-                            <!--begin::Wrapper-->
-                            <div class="d-flex flex-center flex-column flex-column-fluid pb-15 pb-lg-20">
-                                <!--begin::Form-->
-                                <form class="form w-100" novalidate="novalidate" method="POST"
-                                    action="{{ route('login.custom') }}">
-                                    @csrf
-                                    <!--begin::Heading-->
-                                    <div class="mb-11 text-center">
-                                        <!--begin::Title-->
-                                        <h1 class="text-dark fw-bolder mb-3">Masuk</h1>
-                                        <!--end::Title-->
-                                        <!--begin::Subtitle-->
-                                        <div class="fw-semibold fs-6 text-gray-500">Arsip Digital dan Monitoring Tindak
-                                            Lanjut</div>
-                                        <!--end::Subtitle=-->
-                                    </div>
-                                    <!--begin::Heading-->
-                                    <!--begin::Input group=-->
-                                    <div class="fv-row mb-8">
-                                        <!--begin::Username-->
-                                        <input id="username" type="text" placeholder="Username" name="username"
-                                            autocomplete="off"
-                                            class="form-control @error('username') is-invalid @enderror bg-transparent" />
-                                        <!--end::Username-->
-                                        @error('username')
-                                            <div class="invalid-feedback">{{ $message }}</div>
-                                        @enderror
-                                    </div>
-                                    <!--end::Input group=-->
-                                    <div class="fv-row mb-3">
-                                        <!--begin::Password-->
-                                        <input id="password" type="password" placeholder="Password" name="password"
-                                            autocomplete="off"
-                                            class="form-control @error('password') is-invalid @enderror bg-transparent" />
-                                        <!--end::Password-->
-                                        @error('password')
-                                            <div class="invalid-feedback">{{ $message }}</div>
-                                        @enderror
-                                    </div>
-                                    <!--end::Input group=-->
-                                    <!--begin::Wrapper-->
-                                    <div class="d-flex flex-stack fs-base fw-semibold mb-8 flex-wrap gap-3">
-                                        @if (session('status'))
-                                            <!--begin::Alert-->
-                                            <div
-                                                class="alert alert-dismissible bg-light-danger d-flex flex-center flex-column px-lg-20 mb-10 px-10 py-10">
-                                                <!--begin::Close-->
-                                                <button type="button"
-                                                    class="position-absolute btn btn-icon btn-icon-danger end-0 top-0 m-2"
-                                                    data-bs-dismiss="alert">
-                                                    <i class="ki-duotone ki-cross fs-1"><span
-                                                            class="path1"></span><span class="path2"></span></i>
-                                                </button>
-                                                <!--end::Close-->
-
-                                                <!--begin::Icon-->
-                                                <i class="ki-duotone ki-information-5 fs-5tx text-danger mb-5"><span
-                                                        class="path1"></span><span class="path2"></span><span
-                                                        class="path3"></span></i>
-                                                <!--end::Icon-->
-
-                                                <!--begin::Wrapper-->
-                                                <div class="text-center">
-                                                    <!--begin::Title-->
-                                                    <h1 class="fw-bold mb-5">Gagal Masuk</h1>
-                                                    <!--end::Title-->
-
-                                                    <!--begin::Separator-->
-                                                    <div
-                                                        class="separator separator-dashed border-danger mb-5 opacity-25">
-                                                    </div>
-                                                    <!--end::Separator-->
-
-                                                    <!--begin::Content-->
-                                                    <div class="text-dark mb-9">
-                                                        Username Atau Password Anda Salah. Apabila username dan password
-                                                        sudah sesuai, mohon dipastikan user domain tidak dalam status
-                                                        "expired".
-                                                    </div>
-                                                    <!--end::Content-->
-                                                </div>
-                                                <!--end::Wrapper-->
-                                            </div>
-                                            <!--end::Alert-->
-                                        @endif
-                                    </div>
-                                    <!--end::Wrapper-->
-                                    <!--begin::Submit button-->
-                                    <div class="d-grid mb-10">
-                                        <button type="submit" class="btn btn-primary">
-                                            <!--begin::Indicator label-->
-                                            <span class="indicator-label">Sign In</span>
-                                            <!--end::Indicator label-->
-                                            <!--begin::Indicator progress-->
-                                            <span class="indicator-progress">Please wait...
-                                                <span
-                                                    class="spinner-border spinner-border-sm ms-2 align-middle"></span></span>
-                                            <!--end::Indicator progress-->
-                                        </button>
-                                    </div>
-                                    <!--end::Submit button-->
-                                </form>
-                                <!--end::Form-->
-                            </div>
-                            <!--begin::Sign up-->
-                            <div class="fw-semibold fs-6 text-center text-gray-500">Copyright &copy; 2024. Pusat
-                                Teknologi Informasi - PPATK</p>
-                            </div>
-                            <!--end::Sign up-->
-                            <!--end::Wrapper-->
-                        </div>
-                        <!--end::Content-->
-                    </div>
-                    <!--end::Wrapper-->
-                </div>
-                <!--end::Body-->
+                <!--end::Aside-->
             </div>
             <!--end::Authentication - Sign-in-->
         </div>
         <!--end::Root-->
         <!--begin::Javascript-->
+
         <script>
             var hostUrl = "assets/";
         </script>
