@@ -15,7 +15,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $this->call(JabatanSeeder::class);
         $this->call(MasterDataSeeder::class);
         $this->call(MonitoringPimpinanDataSeeder::class);
         $this->call(RolePermissionSeeder::class);

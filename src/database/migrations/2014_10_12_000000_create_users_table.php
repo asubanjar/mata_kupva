@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('position');
             $table->string('jabatan_code');
-            $table->string('group_id')->nullable();
+            $table->unsignedBigInteger('group_id')->nullable();
             $table->string('atasan_code')->nullable();
             $table->string('nip')->nullable();
             $table->string('approval_name')->nullable();
@@ -36,6 +36,11 @@ return new class extends Migration
             $table->foreign('jabatan_code')
             ->references('code')
             ->on('jabatans')
+            ->onUpdate('cascade');
+
+            $table->foreign('group_id')
+            ->references('id')
+            ->on('groups')
             ->onUpdate('cascade');
         });
     }
