@@ -18,8 +18,9 @@ return new class extends Migration
             $table->string('name');
             $table->string('username');
             $table->string('password');
+            $table->string('unit_organisasi')->nullable();
             $table->string('position');
-            $table->string('jabatan_code');
+            $table->string('jabatan_code')->nullable();
             $table->unsignedBigInteger('group_id')->nullable();
             $table->string('atasan_code')->nullable();
             $table->string('nip')->nullable();
@@ -30,6 +31,7 @@ return new class extends Migration
             $table->string('golongan')->nullable();
             $table->string('user_id')->nullable();
             $table->string('active')->default(true);
+            $table->string('simpeg_id')->nullable();
             $table->rememberToken();
             $table->timestamps();
 

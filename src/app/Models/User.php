@@ -27,6 +27,7 @@ class User extends Authenticatable
     protected $fillable = [
         'active',
         'approval_name',
+        'atasan_code',
         'email',
         'golongan',
         'group_id',
@@ -38,7 +39,8 @@ class User extends Authenticatable
         'password',
         'phone',
         'position',
-        'atasan_code',
+        'simpeg_id',
+        'unit_organisasi',
         'username',
         'user_id',
     ];

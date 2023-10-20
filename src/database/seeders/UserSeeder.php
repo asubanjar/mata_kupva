@@ -36,25 +36,33 @@ class UserSeeder extends Seeder
 
             return $combined;
         })->each(function ($row) use ($progress): void {
+            $data_pegawai = DB::connection('pegawai')->table('v_tblpegawai')
+            ->where('username', $row['username'])->first();
+
             $people_array = [
-                'id'            => $row['id'],
-                'name'          => $row['name'],
-                'username'      => $row['username'],
-                'password'      => $row['password'],
-                'position'      => $row['position'],
-                'jabatan_code'  => $row['jabatan_code'],
-                'group_id'      => $row['group_id'],
-                'atasan_code'   => $row['atasan_code'],
-                'nip'           => $row['nip'],
-                'approval_name' => $row['approval_name'],
-                'email'         => $row['email'],
-                'nik'           => $row['nik'],
-                'phone'         => $row['phone'],
-                'golongan'      => $row['golongan'],
-                'user_id'       => $row['user_id'],
+                'id'              => $row['id'],
+                'name'            => $data_pegawai ? $data_pegawai->nama : $row['name'],
+                'username'        => $row['username'],
+                'password'        => $row['password'],
+                'unit_organisasi' => $data_pegawai ? $data_pegawai->unit_organisasi : null,
+                'position'        => $data_pegawai ? $data_pegawai->jabatan : $row['position'],
+                'jabatan_code'    => $row['jabatan_code'],
+                'group_id'        => $row['group_id'],
+                'atasan_code'     => $row['atasan_code'],
+                'nip'             => $data_pegawai ? $data_pegawai->nip : $row['nip'],
+                'approval_name'   => $data_pegawai ? $data_pegawai->nama : $row['approval_name'],
+                'email'           => $row['email'],
+                'nik'             => $data_pegawai ? $data_pegawai->nik : $row['nik'],
+                'phone'           => $row['phone'],
+                'golongan'        => $data_pegawai ? $data_pegawai->golongan : $row['golongan'],
+                'user_id'         => $row['user_id'],
+                'active'          => $data_pegawai ? ($data_pegawai->status_pegawai === '1') : false,
+                'simpeg_id'       => $data_pegawai ? $data_pegawai->id : null,
             ];
 
-            User::Create($people_array);
+            $user = User::Create($people_array);
+
+            $user->assignRole('Super Admin');
 
             $progress->advance(1);
         });

@@ -44,9 +44,9 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-        /**
-         * Handle a LDAP request to the application.
-         */
+    /**
+     * Handle a LDAP request to the application.
+     */
 
     private static function ldapAuthentication(Request $request): bool
     {

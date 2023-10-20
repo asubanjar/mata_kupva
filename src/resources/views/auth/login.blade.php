@@ -198,8 +198,8 @@
                             src="assets/media/logos/dinamis-top-white.png" alt="" />
                         <!--end::Image-->
                         <!--begin::Title-->
-                        <h1 class="d-none d-lg-block fs-2qx fw-bolder mb-7 text-center text-white">Fast, Efficient and
-                            Productive</h1>
+                        <h1 class="d-none d-lg-block fs-2qx fw-bolder mb-7 text-center text-white">Archive, Document,
+                            Monitoring and Sign</h1>
                         <!--end::Title-->
                         <!--begin::Text-->
                         <div class="d-none d-lg-block fs-base text-center text-white">In this kind of post,
