@@ -6,23 +6,22 @@
         <!--begin::Toolbar-->
         <!--end::Toolbar-->
         <!--begin::Content-->
-        <div id="kt_app_body" data-kt-app-header-fixed-mobile="true" data-kt-app-toolbar-enabled="true" class="app-default">
+        <div id="kt_app_content" class="app-content flex-column-fluid">
             <!--begin::Theme mode setup on page load-->
             <!--end::Theme mode setup on page load-->
             <!--begin::App-->
             <div class="d-flex flex-column flex-root app-root" id="kt_app_root">
                 <!--begin::Page-->
                 <div class="app-page flex-column flex-column-fluid" id="kt_app_page">
-
                     <!--begin::Navbar-->
-                    <div class="card mb-xl-10 mb-5">
+                    <div class="card mb-xxl-8 mb-5">
                         <div class="card-body pb-0 pt-9">
                             <!--begin::Details-->
                             <div class="d-flex flex-sm-nowrap flex-wrap">
                                 <!--begin: Pic-->
                                 <div class="mb-4 me-7">
                                     <div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative">
-                                        <img src="assets/media/avatars/300-1.jpg" alt="image" />
+                                        <img src="{{ asset('assets/media/avatars/300-1.jpg') }}" alt="image" />
                                         <div
                                             class="position-absolute translate-middle start-100 bg-success rounded-circle border-body h-20px w-20px bottom-0 mb-6 border border-4">
                                         </div>
@@ -39,45 +38,43 @@
                                             <div class="d-flex align-items-center mb-2">
                                                 <a href="#"
                                                     class="text-hover-primary fs-2 fw-bold me-1 text-gray-900">{{ Auth::user()->name }}</a>
-                                                <a href="#">
-                                                    <i class="ki-duotone ki-verify fs-1 text-primary">
-                                                        <span class="path1"></span>
-                                                        <span class="path2"></span>
-                                                    </i>
-                                                </a>
                                             </div>
                                             <!--end::Name-->
                                             <!--begin::Info-->
                                             <div class="d-flex fw-semibold fs-6 mb-4 flex-wrap pe-2">
-                                                <a href="#"
+                                                <div
                                                     class="d-flex align-items-center text-hover-primary mb-2 me-5 text-gray-400">
                                                     <i class="ki-duotone ki-profile-circle fs-4 me-1">
                                                         <span class="path1"></span>
                                                         <span class="path2"></span>
                                                         <span class="path3"></span>
-                                                    </i>Developer</a>
-                                                <a href="#"
+                                                    </i>{{ Auth::user()->position }}
+                                                </div>
+                                                <div href="#"
                                                     class="d-flex align-items-center text-hover-primary mb-2 me-5 text-gray-400">
-                                                    <i class="ki-duotone ki-geolocation fs-4 me-1">
+                                                    <i class="ki-duotone ki-whatsapp fs-4 me-1">
                                                         <span class="path1"></span>
                                                         <span class="path2"></span>
-                                                    </i>SF, Bay Area</a>
-                                                <a href="#"
+                                                    </i>+{{ Auth::user()->phone }}
+                                                </div>
+                                                <div href="#"
                                                     class="d-flex align-items-center text-hover-primary mb-2 text-gray-400">
-                                                    <i class="ki-duotone ki-sms fs-4">
+                                                    <i class="ki-duotone ki-sms fs-4 me-1">
                                                         <span class="path1"></span>
                                                         <span class="path2"></span>
-                                                    </i>max@kt.com</a>
+                                                    </i>{{ Auth::user()->email }}
+                                                </div>
                                             </div>
                                             <!--end::Info-->
                                         </div>
                                         <!--end::User-->
                                         <!--begin::Actions-->
                                         <div class="d-flex my-4">
-                                            <a href="#" class="btn btn-sm btn-light me-2" id="kt_user_follow_button">
+                                            <a href="#" class="btn btn-sm btn-primary me-2"
+                                                id="kt_user_follow_button">
                                                 <i class="ki-duotone ki-check fs-3 d-none"></i>
                                                 <!--begin::Indicator label-->
-                                                <span class="indicator-label">Follow</span>
+                                                <span class="indicator-label">Ubah Profil</span>
                                                 <!--end::Indicator label-->
                                                 <!--begin::Indicator progress-->
                                                 <span class="indicator-progress">Please wait...
@@ -85,8 +82,6 @@
                                                         class="spinner-border spinner-border-sm ms-2 align-middle"></span></span>
                                                 <!--end::Indicator progress-->
                                             </a>
-                                            <a href="#" class="btn btn-sm btn-primary me-3" data-bs-toggle="modal"
-                                                data-bs-target="#kt_modal_offer_a_deal">Hire Me</a>
                                             <!--begin::Menu-->
                                             <div class="me-0">
                                                 <button class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary"
@@ -160,8 +155,8 @@
                                                                         class="form-check form-switch form-check-custom form-check-solid">
                                                                         <!--begin::Input-->
                                                                         <input class="form-check-input w-30px h-20px"
-                                                                            type="checkbox" value="1"
-                                                                            checked="checked" name="notifications" />
+                                                                            type="checkbox" value="1" checked="checked"
+                                                                            name="notifications" />
                                                                         <!--end::Input-->
                                                                         <!--end::Label-->
                                                                         <span
@@ -205,12 +200,11 @@
                                                             <span class="path2"></span>
                                                         </i>
                                                         <div class="fs-2 fw-bold" data-kt-countup="true"
-                                                            data-kt-countup-value="4500" data-kt-countup-prefix="$">0
-                                                        </div>
+                                                            data-kt-countup-value="4500">0</div>
                                                     </div>
                                                     <!--end::Number-->
                                                     <!--begin::Label-->
-                                                    <div class="fw-semibold fs-6 text-gray-400">Earnings</div>
+                                                    <div class="fw-semibold fs-6 text-gray-400">Naskah Dinas</div>
                                                     <!--end::Label-->
                                                 </div>
                                                 <!--end::Stat-->
@@ -278,55 +272,7 @@
                                 <!--begin::Nav item-->
                                 <li class="nav-item mt-2">
                                     <a class="nav-link text-active-primary active me-10 ms-0 py-5"
-                                        href="../../demo1/dist/account/overview.html">Overview</a>
-                                </li>
-                                <!--end::Nav item-->
-                                <!--begin::Nav item-->
-                                <li class="nav-item mt-2">
-                                    <a class="nav-link text-active-primary me-10 ms-0 py-5"
-                                        href="../../demo1/dist/account/settings.html">Settings</a>
-                                </li>
-                                <!--end::Nav item-->
-                                <!--begin::Nav item-->
-                                <li class="nav-item mt-2">
-                                    <a class="nav-link text-active-primary me-10 ms-0 py-5"
-                                        href="../../demo1/dist/account/security.html">Security</a>
-                                </li>
-                                <!--end::Nav item-->
-                                <!--begin::Nav item-->
-                                <li class="nav-item mt-2">
-                                    <a class="nav-link text-active-primary me-10 ms-0 py-5"
-                                        href="../../demo1/dist/account/activity.html">Activity</a>
-                                </li>
-                                <!--end::Nav item-->
-                                <!--begin::Nav item-->
-                                <li class="nav-item mt-2">
-                                    <a class="nav-link text-active-primary me-10 ms-0 py-5"
-                                        href="../../demo1/dist/account/billing.html">Billing</a>
-                                </li>
-                                <!--end::Nav item-->
-                                <!--begin::Nav item-->
-                                <li class="nav-item mt-2">
-                                    <a class="nav-link text-active-primary me-10 ms-0 py-5"
-                                        href="../../demo1/dist/account/statements.html">Statements</a>
-                                </li>
-                                <!--end::Nav item-->
-                                <!--begin::Nav item-->
-                                <li class="nav-item mt-2">
-                                    <a class="nav-link text-active-primary me-10 ms-0 py-5"
-                                        href="../../demo1/dist/account/referrals.html">Referrals</a>
-                                </li>
-                                <!--end::Nav item-->
-                                <!--begin::Nav item-->
-                                <li class="nav-item mt-2">
-                                    <a class="nav-link text-active-primary me-10 ms-0 py-5"
-                                        href="../../demo1/dist/account/api-keys.html">API Keys</a>
-                                </li>
-                                <!--end::Nav item-->
-                                <!--begin::Nav item-->
-                                <li class="nav-item mt-2">
-                                    <a class="nav-link text-active-primary me-10 ms-0 py-5"
-                                        href="../../demo1/dist/account/logs.html">Logs</a>
+                                        href="#">Overview</a>
                                 </li>
                                 <!--end::Nav item-->
                             </ul>
@@ -334,7 +280,8 @@
                         </div>
                     </div>
                     <!--end::Navbar-->
-                    <div class="app-container container-xxl d-flex">
+                    <!--begin::Wrapper-->
+                    <div class="app-container container-fluid d-flex">
 
                         <!--begin::Main-->
                         <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
@@ -366,7 +313,7 @@
                                                                             class="ki-outline ki-plus-square fs-2x fs-lg-2hx ms-n1 text-gray-500"></i>
                                                                         <!--end::Icon-->
                                                                         <!--begin::Desc-->
-                                                                        <div class="fw-bold fs-5 pt-4">Add New</div>
+                                                                        <div class="fw-bold fs-5 pt-4">Kearsipan</div>
                                                                         <!--end::Desc-->
                                                                     </a>
                                                                     <!--end::Items-->
@@ -390,7 +337,7 @@
                                                                             class="ki-outline ki-element-11 fs-2x fs-lg-2hx ms-n1 text-gray-500"></i>
                                                                         <!--end::Icon-->
                                                                         <!--begin::Desc-->
-                                                                        <div class="fw-bold fs-5 pt-4">eCommerce</div>
+                                                                        <div class="fw-bold fs-5 pt-4">Monitoring</div>
                                                                         <!--end::Desc-->
                                                                     </a>
                                                                     <!--end::Items-->
@@ -558,69 +505,24 @@
                                                         <!--begin::Col-->
                                                         <div class="col-7 ps-xl-10 pe-5">
                                                             <!--begin::Title-->
-                                                            <div class="fs-2qx fw-bold mb-6 text-white">Upgrade Your
-                                                                Plan</div>
+                                                            <div class="fs-2qx fw-bold mb-6 text-white">Pengumuman</div>
                                                             <!--end::Title-->
                                                             <!--begin::Text-->
                                                             <span
-                                                                class="fw-semibold fs-6 d-block mb-10 text-white opacity-75">Flat
-                                                                cartoony and illustrations with vivid unblended purple
-                                                                hair lady</span>
+                                                                class="fw-semibold fs-6 d-block mb-10 text-white opacity-75">Terdapat
+                                                                penambahan fitur multiple sign yang dapat digunakan untuk
+                                                                lebih dari satu penandatangan dalam satu naskah</span>
                                                             <!--end::Text-->
-                                                            <!--begin::Items-->
-                                                            <div
-                                                                class="d-flex align-items-center d-grid mb-9 flex-wrap gap-2">
-                                                                <!--begin::Item-->
-                                                                <div class="d-flex align-items-center me-xl-13 me-5">
-                                                                    <!--begin::Symbol-->
-                                                                    <div class="symbol symbol-30px symbol-circle me-3">
-                                                                        <span class="symbol-label"
-                                                                            style="background: rgba(255, 255, 255, 0.1)">
-                                                                            <i
-                                                                                class="ki-outline ki-abstract-41 fs-5 text-white"></i>
-                                                                        </span>
-                                                                    </div>
-                                                                    <!--end::Symbol-->
-                                                                    <!--begin::Info-->
-                                                                    <div class="text-white">
-                                                                        <span
-                                                                            class="fw-semibold d-block fs-8 mb-2 opacity-75">Projects</span>
-                                                                        <span class="fw-bold fs-7">Up to 500</span>
-                                                                    </div>
-                                                                    <!--end::Info-->
-                                                                </div>
-                                                                <!--end::Item-->
-                                                                <!--begin::Item-->
-                                                                <div class="d-flex align-items-center">
-                                                                    <!--begin::Symbol-->
-                                                                    <div class="symbol symbol-30px symbol-circle me-3">
-                                                                        <span class="symbol-label"
-                                                                            style="background: rgba(255, 255, 255, 0.1)">
-                                                                            <i
-                                                                                class="ki-outline ki-abstract-26 fs-5 text-white"></i>
-                                                                        </span>
-                                                                    </div>
-                                                                    <!--end::Symbol-->
-                                                                    <!--begin::Info-->
-                                                                    <div class="text-white">
-                                                                        <span
-                                                                            class="fw-semibold d-block fs-8 mb-2 opacity-75">Tasks</span>
-                                                                        <span class="fw-bold fs-7">Unlimited</span>
-                                                                    </div>
-                                                                    <!--end::Info-->
-                                                                </div>
-                                                                <!--end::Item-->
-                                                            </div>
-                                                            <!--end::Items-->
                                                             <!--begin::Action-->
                                                             <div class="d-flex d-grid gap-2">
                                                                 <a href="#" class="btn btn-success me-lg-2"
                                                                     data-bs-toggle="modal"
-                                                                    data-bs-target="#kt_modal_upgrade_plan">Upgrade</a>
+                                                                    data-bs-target="#kt_modal_upgrade_plan">Unduh
+                                                                    Pengumuman</a>
                                                                 <a href="#" class="btn text-white"
                                                                     style="background: rgba(255, 255, 255, 0.2)"
                                                                     data-bs-toggle="modal"
-                                                                    data-bs-target="#kt_modal_create_app">Help</a>
+                                                                    data-bs-target="#kt_modal_create_app">Konsultasi</a>
                                                             </div>
                                                             <!--end::Action-->
                                                         </div>
@@ -647,9 +549,8 @@
                                                     <!--begin::Title-->
                                                     <h3 class="card-title align-items-start flex-column">
                                                         <span
-                                                            class="card-label fs-3 fw-bold text-gray-800">Campaigns</span>
-                                                        <span class="fw-semibold fs-6 mt-1 text-gray-400">Select a
-                                                            campaign & date range to view data</span>
+                                                            class="card-label fs-3 fw-bold text-gray-800">Berita & Informasi</span>
+                                                        <span class="fw-semibold fs-6 mt-1 text-gray-400">Selalu dapatkan informasi terbaru terkait aplikasi DINAMIS</span>
                                                     </h3>
                                                     <!--end::Title-->
                                                     <!--begin::Toolbar-->
