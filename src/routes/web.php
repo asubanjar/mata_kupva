@@ -27,6 +27,8 @@ Route::group(['middleware' => ['auth']], function (): void {
     Route::get('/logout', [LoginController::class, 'logout']);
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 
+    Route::group([], base_path('routes/kearsipan.php'));
+
     Route::group([], base_path('routes/monitoring.php'));
 
     Route::group([], base_path('routes/user.php'));
