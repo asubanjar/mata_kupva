@@ -81,7 +81,8 @@
                         </div>
                         <!--end:Menu item-->
                         <!--begin:Menu item-->
-                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                        <div data-kt-menu-trigger="click"
+                            class="menu-item {{ request()->is('*kearsipan/registrasi*') ? 'here show' : '' }} menu-accordion">
                             <!--begin:Menu link-->
                             <span class="menu-link">
                                 <span class="menu-icon">
@@ -124,8 +125,7 @@
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link"
-                                        href="{{ url('/kearsipan/registrasi/npermohonan-st/create') }}">
+                                    <a class="menu-link" href="{{ url('/kearsipan/registrasi/permohonan-st/create') }}">
                                         <span class="menu-bullet">
                                             <span class="bullet bullet-dot"></span>
                                         </span>
