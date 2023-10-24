@@ -419,7 +419,8 @@
                                         <!--end::Value-->
                                         <!--begin::Label-->
                                         <span
-                                            class="badge badge-success fs-base">{{ number_format($action_percentage, 2, '.', ',') }}%</span>
+                                            class="badge badge-success fs-base">{{ number_format($action_percentage, 2, '.', ',') }}%
+                                            Selesai</span>
                                         <!--end::Label-->
                                     </div>
                                     <!--end::Statistics-->
@@ -674,14 +675,14 @@
 
                     var series2 = chart.series.push(
                         am5radar.RadarLineSeries.new(root, {
-                            name: "Total",
+                            name: "Proses",
                             xAxis: xAxis,
                             yAxis: yAxis,
                             valueYField: "value2",
                             categoryXField: "name",
                             stacked: true,
                             tooltip: am5.Tooltip.new(root, {
-                                labelText: "Selesai: {value1} \ Total:{value2}",
+                                labelText: "Selesai: {value1} \ Proses:{value2}",
                             }),
                             fill: am5.color(KTUtil.getCssVariableValue("--bs-success")),
                         })
@@ -719,7 +720,7 @@
                             {
                                 name: "{{ $statistic_jabatan->name }}",
                                 value1: {{ $statistic_jabatan->total_action_finish }},
-                                value2: {{ $statistic_jabatan->total_action }},
+                                value2: {{ $statistic_jabatan->total_action - $statistic_jabatan->total_action_finish }},
                             },
                         @endforeach
                     ];

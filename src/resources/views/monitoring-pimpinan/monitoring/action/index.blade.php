@@ -193,14 +193,14 @@
                                         </div>
                                     </th>
                                     <th class="min-w-125px">Nama</th>
-                                    <th class="min-w-125px">Deskripsi</th>
                                     <th class="min-w-125px">Indikator Keberhasilan</th>
                                     <th class="min-w-125px">Target</th>
                                     <th class="min-w-125px">Status</th>
                                     <th class="min-w-125px">Unit Kerja</th>
                                     <th class="min-w-125px">Progres</th>
                                     <th class="min-w-125px">Jumlah Ceklist</th>
-                                    <th class="min-w-125px">Subjek</th>
+                                    <th class="min-w-125px">Subjek Detail</th>
+                                    <th class="min-w-125px">Subject</th>
                                     <th class="min-w-70px text-end">Aksi</th>
                                 </tr>
                             </thead>
@@ -213,7 +213,6 @@
                                             </div>
                                         </td>
                                         <td>{{ $action->name }}</td>
-                                        <td>{{ $action->comment }}</td>
                                         <td>{{ $action->success_indicator }}</td>
                                         <td>
                                             @if ($action->finish === null && $action->end < now())
@@ -249,6 +248,7 @@
                                         </td>
                                         <td>{{ $action->checks->count() }}</td>
                                         <td>{{ $action->subjectDetail->name }}</td>
+                                        <td>{{ $action->subjectDetail->subject->name }}</td>
                                         <td class="text-end">
                                             <a href="#"
                                                 class="btn btn-sm btn-light btn-flex btn-center btn-active-light-primary"

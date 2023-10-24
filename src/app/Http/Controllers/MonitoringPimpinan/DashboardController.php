@@ -61,7 +61,7 @@ class DashboardController extends Controller
             DB::raw('(select count(*) from actions where jabatan_id = jabatans.id and finish is not null) as total_action_finish')
         )->orderBy('total_action_pending', 'desc')->orderBy('total_action', 'desc')->limit(3)->get();
 
-        $statistic_jabatans = Jabatan::select(
+        $statistic_jabatans = Jabatan::hasActions()->select(
             '*',
             DB::raw('(select count(*) from actions where jabatan_id = jabatans.id) as total_action'),
             DB::raw('(select count(*) from actions where jabatan_id = jabatans.id and finish is not null) as total_action_finish'),

@@ -217,9 +217,14 @@
                                         </td>
                                         <td>
                                             <div class="badge badge-light-warning">
-                                                {{ $statistic_action->total_action_finish
-                                                    ? ($statistic_action->total_action_finish / $statistic_action->total_action) * 100
-                                                    : 0 }}%
+                                                {{ number_format(
+                                                    $statistic_action->total_action_finish
+                                                        ? ($statistic_action->total_action_finish / $statistic_action->total_action) * 100
+                                                        : 0,
+                                                    2,
+                                                    '.',
+                                                    '',
+                                                ) }}%
                                             </div>
                                         </td>
                                         <td class="text-end">
@@ -417,7 +422,7 @@
                                 },
                                 {
                                     orderable: !1,
-                                    targets: 4
+                                    targets: 7
                                 },
                             ],
                         })).on("draw", function() {

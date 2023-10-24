@@ -2,6 +2,7 @@
 
 namespace App\Models\Master;
 
+use App\Models\MonitoringPimpinan\Monitoring\Action;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -31,5 +32,15 @@ class Jabatan extends Model
     public function parent(): Relations\BelongsTo
     {
         return $this->belongsTo(self::class, 'parent_code', 'code');
+    }
+
+    public function actions(): Relations\HasMany
+    {
+        return $this->hasMany(Action::class, 'jabatan_id');
+    }
+
+    public function scopeHasActions(Builder $query): Builder
+    {
+        return $query->has('actions');
     }
 }

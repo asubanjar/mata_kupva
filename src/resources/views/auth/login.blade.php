@@ -198,17 +198,21 @@
                             src="assets/media/logos/dinamis-top-white.png" alt="" />
                         <!--end::Image-->
                         <!--begin::Title-->
-                        <h1 class="d-none d-lg-block fs-2qx fw-bolder mb-7 text-center text-white">Archive, Document,
+                        <h1 class="d-none d-lg-block fs-2qx fw-bolder mb-7 text-center text-white">Digital Document,
+                            Archive,
                             Monitoring and Sign</h1>
                         <!--end::Title-->
                         <!--begin::Text-->
-                        <div class="d-none d-lg-block fs-base text-center text-white">In this kind of post,
-                            <a href="#" class="opacity-75-hover text-warning fw-bold me-1">the
-                                blogger</a>introduces a person they’ve interviewed
-                            <br />and provides some background information about
-                            <a href="#" class="opacity-75-hover text-warning fw-bold me-1">the
-                                interviewee</a>and their
-                            <br />work following this is a transcript of the interview.
+                        <div class="d-none d-lg-block fs-base text-center text-white">Versatile software solution
+                            designed to streamline <br />
+                            <a href="#" class="opacity-75-hover text-warning fw-bold me-1">document management,
+                            </a> ensure data integrity and security, <a href="#"
+                                class="opacity-75-hover text-warning fw-bold me-1">business trip,
+                            </a>
+                            <br />monitor processes, and facilitate the use of
+                            <a href="#" class="opacity-75-hover text-warning fw-bold me-1">digital
+                                signatures</a>and their
+                            <br />enhancing overall efficiency and compliance within an organization.
                         </div>
                         <!--end::Text-->
                     </div>

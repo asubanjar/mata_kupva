@@ -7,15 +7,15 @@ staf;uk.1.1.5.2.7;uk.1.1.5.2;Staf Bidang Operasi Sistem Teknologi Informasi 7;1
 BERMITRA - Koordinator Kelompok Substansi Pemantauan Efektivitas Kinerja Anti Pencucian Uang dan Pencegahan Pendanaan Terorisme;uk.1.1.10.5;uk.1.1.10;Kelompok Substansi Pemantauan Efektivitas Kinerja Anti Pencucian Uang dan Pencegahan Pendanaan Terorisme;1
 Staf Bagian Tata Usaha Pusdamit 1;uk.1.1.10.1.1;uk.1.1.10.1;Staf Bagian Tata Usaha Pusdamit 1;1
 staf;uk.1.1.5.1.5;uk.1.1.5.1;Staf Bidang Pengembangan Aplikasi Sistem 5;1
-PEKA - Inspektur;uk.1.1.4;uk.1.1;Inspektorat;1
+PEKA;uk.1.1.4;uk.1.1;Inspektorat;1
 Kepala Bagian Tata Usaha Inspektorat;uk.1.1.4.1;uk.1.1.4;Bagian Tata Usaha Inspektorat;1
-SERASI - Direktur Strategi dan Kerja Sama Internasional;uk.1.1.2.5;uk.1.1.2;Direktorat Strategi dan Kerja Sama Internasional;1
-KREASI - Direktur Hukum dan Regulasi;uk.1.1.2.6;uk.1.1.2;Direktorat Hukum dan Regulasi;1
-PATUH - Direktur Pengawasan Kepatuhan Penyedia Barang dan/ atau jasa lain dan profesi;uk.1.1.12.3;uk.1.1.12;Direktorat Pengawasan Kepatuhan Penyedia Barang dan/ atau Jasa Lain dan Profesi;1
-Deputi TEGAS;uk.1.1.2;uk.1.1;Deputi Bidang Strategi dan Kerja Sama;1
-REKAN - Direktur Pelaporan;uk.1.1.12.1;uk.1.1.12;Direktorat Pelaporan;1
-PENJAGA - Direktur Pengawasan Kepatuhan Penyedia Jasa Keuangan;uk.1.1.12.2;uk.1.1.12;Direktorat Pengawasan Kepatuhan Penyedia Jasa Keuangan;1
-SALAM - Direktur Strategi dan Kerja Sama Dalam Negeri;uk.1.1.2.4;uk.1.1.2;Direktorat Strategi dan Kerja Sama Dalam Negeri;1
+SERASI;uk.1.1.2.5;uk.1.1.2;Direktorat Strategi dan Kerja Sama Internasional;1
+KREASI;uk.1.1.2.6;uk.1.1.2;Direktorat Hukum dan Regulasi;1
+PATUH;uk.1.1.12.3;uk.1.1.12;Direktorat Pengawasan Kepatuhan Penyedia Barang dan/ atau Jasa Lain dan Profesi;1
+TEGAS;uk.1.1.2;uk.1.1;Deputi Bidang Strategi dan Kerja Sama;1
+REKAN;uk.1.1.12.1;uk.1.1.12;Direktorat Pelaporan;1
+PENJAGA;uk.1.1.12.2;uk.1.1.12;Direktorat Pengawasan Kepatuhan Penyedia Jasa Keuangan;1
+SALAM;uk.1.1.2.4;uk.1.1.2;Direktorat Strategi dan Kerja Sama Dalam Negeri;1
 PATIH - Koordinator Kelompok Substansi Perencanaan dan Pengembangan Program dan Pelatihan APUPPT;uk.1.1.6.1;uk.1.1.6;"Kelompok Substansi Perencanaan dan Pengembangan Program dan PelatihanAPUPPT
 ";1
 Staff;uk.1.1.2.4.3;uk.1.1.2.4;Staff Koordinator pada Kelompok Dalam Negeri 2;1
@@ -27,17 +27,17 @@ BERMAKNA - Kepala Bagian Pengembangan Sumber Daya Manusia;uk.1.1.1.3.2;uk.1.1.1.
 Staf;uk.1.1.1.3.3.3;uk.1.1.1.3.3;Staf Bagian Organisasi. Tata Laksana, dan Manajemen Risiko 3;1
 Staf;uk.1.1.1.3.3.4;uk.1.1.1.3.3;Staf Bagian Organisasi. Tata Laksana, dan Manajemen Risiko 4;1
 Staf;uk.1.1.1.3.3.1;uk.1.1.1.3.3;Staf Bagian Organisasi. Tata Laksana, dan Manajemen Risiko 1;1
-BERMAKNA - Kepala Biro Sumber Daya Manusia, Organisasi dan Tata Laksana;uk.1.1.1.3;uk.1.1.1;Biro Sumber Daya Manusia, Organisasi dan Tata Laksana;1
+BERMAKNA;uk.1.1.1.3;uk.1.1.1;Biro Sumber Daya Manusia, Organisasi dan Tata Laksana;1
 BINCANG - Kepala Bagian Verifikasi Akuntansi dan Akuntabilitas Kinerja;uk.1.1.1.2.1;uk.1.1.1.2;Bagian Verifikasi Akuntansi dan Akuntabilitas Kinerja;1
-BINCANG - Kepala Biro Perencanaan dan Keuangan;uk.1.1.1.2;uk.1.1.1;Biro Perencanaan dan Keuangan;1
+BINCANG;uk.1.1.1.2;uk.1.1.1;Biro Perencanaan dan Keuangan;1
 BIRU - Kepala Bagian Tata Usaha Pimpinan;uk.1.1.1.1.2;uk.1.1.1.1;Bagian Tata Usaha Pimpinan;1
 SETIA - Kepala Bagian Rumah Tangga dan Perlengkapan - ANDY RIO HANDOKO;uk.1.1.1.1.1;uk.1.1.1.1;Bagian Rumah Tangga dan Perlengkapan;1
-BIRU - Kepala Biro Umum;uk.1.1.1.1;uk.1.1.1;Biro Umum;1
+BIRU;uk.1.1.1.1;uk.1.1.1;Biro Umum;1
 SETIA;uk.1.1.1;uk.1.1;Sekretariat Utama;1
 Wakil Kepala PPATK;uk.1.1;uk.1;Wakil Kepala PPATK;1
 Kepala PPATK;uk.1;uk;Kepala PPATK;1
 Unit Kearsipan;uk;root;Unit Kearsipan;1
-PATIH - Kepala PATIH;uk.1.1.6;uk.1.1;Pusdiklat APU PPT;1
+PATIH;uk.1.1.6;uk.1.1;Pusdiklat APU PPT;1
 Eksternal;uk.1.1.13;uk.1.1;Eksternal;1
 SETIA - Kepala Subbagian Layanan pengadaan - ISFARAH NURUL IZZY;uk.1.1.1.1.1.1;uk.1.1.1.1.1;Subbagian Layanan pengadaan;1
 BIRU - Kepala Subbagian Protokol dan Keamanan Pimpinan;uk.1.1.1.1.2.1;uk.1.1.1.1.2;Subbagian Protokol dan Keamanan Pimpinan;1
@@ -104,11 +104,11 @@ Staf Bendahara Pengeluaran 2;uk.1.1.8.7.2;uk.1.1.8.7;Staf Bendahara Pengeluaran 
 Staf Bendahara Pengeluaran 3;uk.1.1.8.7.3;uk.1.1.8.7;Staf Bendahara Pengeluaran 3;1
 Staf PPK PTI 4;uk.1.1.8.5.4;uk.1.1.8.5;Staf PPK PTI 4;1
 Plt. Deputi ASA;uk.1.1.9;uk.1.1;Plt.Deputi Bidang Analisis dan Pemeriksaan;1
-SIASAT - Direktur Analisis dan Pemeriksaan I;uk.1.1.9.1;uk.1.1.9;Direktorat Analisis dan Pemeriksaan I;1
-SIDIK - Direktur Analisis dan Pemeriksaan II;uk.1.1.9.2;uk.1.1.9;Direktorat Analisis dan Pemeriksaan II;1
-SIAGA - Direktur Analisis dan Pemeriksaan III;uk.1.1.9.3;uk.1.1.9;Direktorat Analisis dan Pemeriksaan III;1
-BERMITRA - Kepala Pusat BERMITRA;uk.1.1.10;uk.1.1;Pusat Pemberdayaan Kemitraan APU PPT;1
-Plt. Deputi PENGASUH;uk.1.1.12;uk.1.1;Deputi Bidang Pelaporan dan Pengawasan Kepatuhan;1
+SIASAT;uk.1.1.9.1;uk.1.1.9;Direktorat Analisis dan Pemeriksaan I;1
+SIDIK;uk.1.1.9.2;uk.1.1.9;Direktorat Analisis dan Pemeriksaan II;1
+SIAGA;uk.1.1.9.3;uk.1.1.9;Direktorat Analisis dan Pemeriksaan III;1
+BERMITRA;uk.1.1.10;uk.1.1;Pusat Pemberdayaan Kemitraan APU PPT;1
+PENGASUH;uk.1.1.12;uk.1.1;Deputi Bidang Pelaporan dan Pengawasan Kepatuhan;1
 BERMITRA - Kepala Sub Bagian Tata Usaha Pemberdayaan Kemitraan APU PPT;uk.1.1.10.1;uk.1.1.10;Sub Bagian Tata Usaha Pemberdayaan Kemitraan APU PPT;1
 Pengelola Pengadaan Barang / Jasa - Riski Syandri Pratama;uk.1.1.1.1.1.1.1;uk.1.1.1.1.1.1;Staf Sub Bagian Layanan Pengadaan 1;1
 Staf;uk.1.1.1.1.1.1.2;uk.1.1.1.1.1.1;Staf Sub Bagian layanan Pengadaan 2;1
@@ -329,7 +329,7 @@ staf;uk.1.1.5.3.4;uk.1.1.5.3;Staf Bagian Tata Usaha TI 4;1
 staf;uk.1.1.5.3.3;uk.1.1.5.3;Staf Bagian Tata Usaha TI 3;1
 Staf;uk.1.1.5.3.2;uk.1.1.5.3;Staf Bagian Tata Usaha TI 2;1
 staf;uk.1.1.5.3.1;uk.1.1.5.3;Staf Bagian Tata Usaha TI 1;1
-LOGIS - Kepala LOGIS;uk.1.1.5;uk.1.1;Pusat Teknologi Informasi;1
+LOGIS;uk.1.1.5;uk.1.1;Pusat Teknologi Informasi;1
 LOGIS - Kepala Sub Bagian Tata Usaha TI;uk.1.1.5.3;uk.1.1.5;Sub Bagian Tata Usaha TI;1
 LOGIS - Koordinator Kelompok Substansi Infrastruktur dan Operasional Teknologi Informasi dan Komunikasi;uk.1.1.5.2;uk.1.1.5;Kelompok Substansi Infrastruktur dan Operasional Teknologi Informasi dan Komunikasi;1
 LOGIS - Koordinator Kelompok Substansi Pengembangan dan Pemeliharaan Sistem Aplikasi dan Informasi;uk.1.1.5.1;uk.1.1.5;Kelompok Substansi Pengembangan dan Pemeliharaan Sistem Aplikasi dan Informasi;1

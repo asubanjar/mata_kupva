@@ -58,7 +58,7 @@ class ActionController extends Controller
         ]);
 
         return redirect(
-            '/monitoring-pimpinan/monitoring/action/' . $action->id
+            '/monitoring-pimpinan/monitoring/subject/action/' . $action->id . '/check'
         )->with('success', 'Sukses mengubah detail aksi');
     }
 

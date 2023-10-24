@@ -36,8 +36,7 @@ class UserSeeder extends Seeder
 
             return $combined;
         })->each(function ($row) use ($progress): void {
-            $data_pegawai = DB::connection('pegawai')->table('v_tblpegawai')
-            ->where('username', $row['username'])->first();
+            $data_pegawai = null;
 
             $people_array = [
                 'id'              => $row['id'],

@@ -58,7 +58,7 @@ class CheckController extends Controller
         $check->delete();
 
         return redirect(
-            '/monitoring-pimpinan/monitoring/action/' . $check->action_id
+            '/monitoring-pimpinan/monitoring/subject/action/' . $check->action_id . '/check'
         )->with('success', 'Sukses menghapus check');
     }
 }

@@ -28,7 +28,7 @@ class ActionCheckStoreController extends Controller
         ]);
 
         return redirect(
-            '/monitoring-pimpinan/monitoring/action/' . $action->id
+            '/monitoring-pimpinan/monitoring/subject/action/' . $action->id . '/check'
         )->with('success', 'Sukses menambahkan ceklist pada aksi');
     }
 }

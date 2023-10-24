@@ -4,10 +4,10 @@ namespace App\Models\MonitoringPimpinan\Monitoring;
 
 use App\Models\Master\Jabatan;
 use App\Models\Traits;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations;
-use Illuminate\Database\Eloquent\Builder;
 use Spatie\Activitylog\LogOptions;
 
 class Action extends Model
