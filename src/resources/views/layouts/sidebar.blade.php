@@ -676,8 +676,7 @@
                     <!--end::Menu item-->
                     <!--begin::Menu item-->
                     <div class="menu-item px-5">
-                        <a href="../../demo42/dist/authentication/layouts/corporate/sign-in.html"
-                            class="menu-link px-5">Sign Out</a>
+                        <a href="{{ url('/logout') }}" class="menu-link px-5">Sign Out</a>
                     </div>
                     <!--end::Menu item-->
                 </div>
