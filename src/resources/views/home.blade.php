@@ -306,14 +306,15 @@
                                                                 <!--begin::Body-->
                                                                 <div class="card-body p-0">
                                                                     <!--begin::Items-->
-                                                                    <a href='../../demo43/dist/apps/subscriptions/list.html'
+                                                                    <a href="{{ url('/kearsipan/registrasi/nota-dinas/create') }}"
                                                                         class="btn btn-active-color-primary w-100 px-7 py-6 text-start">
                                                                         <!--begin::Icon-->
                                                                         <i
-                                                                            class="ki-outline ki-plus-square fs-2x fs-lg-2hx ms-n1 text-gray-500"></i>
+                                                                            class="fa fa-pen-clip fs-2x fs-lg-2hx ms-n1 text-gray-500"></i>
                                                                         <!--end::Icon-->
                                                                         <!--begin::Desc-->
-                                                                        <div class="fw-bold fs-5 pt-4">Kearsipan</div>
+                                                                        <div class="fw-bold fs-5 pt-4">Nota Dinas
+                                                                        </div>
                                                                         <!--end::Desc-->
                                                                     </a>
                                                                     <!--end::Items-->
@@ -354,14 +355,14 @@
                                                                 <!--begin::Body-->
                                                                 <div class="card-body p-0">
                                                                     <!--begin::Items-->
-                                                                    <a href='../../demo43/dist/pages/contact.html'
+                                                                    <a href="{{ url('/kearsipan/kotak-masuk/disposisi') }}"
                                                                         class="btn btn-active-color-primary w-100 px-7 py-6 text-start">
                                                                         <!--begin::Icon-->
                                                                         <i
-                                                                            class="ki-outline ki-message-edit fs-2x fs-lg-2hx ms-n1 text-gray-500"></i>
+                                                                            class="fa fa-arrow-down-wide-short fs-2x fs-lg-2hx ms-n1 text-gray-500"></i>
                                                                         <!--end::Icon-->
                                                                         <!--begin::Desc-->
-                                                                        <div class="fw-bold fs-5 pt-4">Contacts</div>
+                                                                        <div class="fw-bold fs-5 pt-4">Disposisi</div>
                                                                         <!--end::Desc-->
                                                                     </a>
                                                                     <!--end::Items-->
@@ -403,14 +404,14 @@
                                                                 <!--begin::Body-->
                                                                 <div class="card-body p-0">
                                                                     <!--begin::Items-->
-                                                                    <a href='../../demo43/dist/apps/subscriptions/list.html'
+                                                                    <a href="{{ url('/kearsipan/kotak-keluar/naskah-dinas') }}"
                                                                         class="btn btn-active-color-primary w-100 px-7 py-6 text-start">
                                                                         <!--begin::Icon-->
                                                                         <i
-                                                                            class="ki-outline ki-chart-pie-3 fs-2x fs-lg-2hx ms-n1 text-gray-500"></i>
+                                                                            class="fa fa-paper-plane fs-2x fs-lg-2hx ms-n1 text-gray-500"></i>
                                                                         <!--end::Icon-->
                                                                         <!--begin::Desc-->
-                                                                        <div class="fw-bold fs-5 pt-4">Subscriptions
+                                                                        <div class="fw-bold fs-5 pt-4">Naskah Dinas Keluar
                                                                         </div>
                                                                         <!--end::Desc-->
                                                                     </a>
