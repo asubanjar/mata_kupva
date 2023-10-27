@@ -5,6 +5,8 @@ declare(strict_types=1);
 use App\Http\Controllers\Master\AkunLemburController;
 use App\Http\Controllers\Master\DipaController;
 use App\Http\Controllers\Master\JenisBiayaController;
+use App\Http\Controllers\Master\JenisKegiatanController;
+use App\Http\Controllers\Master\JenisPerjadinController;
 use App\Http\Controllers\Master\SifatController;
 use App\Http\Controllers\Master\SubjectTypeController;
 use App\Http\Controllers\Master\UrgensiController;
@@ -16,6 +18,10 @@ Route::prefix('master')->group(function (): void {
     Route::resource('dipa', DipaController::class);
 
     Route::resource('jenis-biaya', JenisBiayaController::class);
+
+    Route::resource('jenis-kegiatan', JenisKegiatanController::class);
+
+    Route::resource('jenis-perjadin', JenisPerjadinController::class);
 
     Route::resource('sifat', SifatController::class);
 

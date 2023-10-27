@@ -34,12 +34,11 @@
                 </div>
                 <!--end::Page title-->
                 <!--begin::Actions-->
-                <div class="d-flex align-items-center gap-lg-3 gap-2">
+                {{-- <div class="d-flex align-items-center gap-lg-3 gap-2">
                     <!--begin::Primary button-->
-                    <a href="#" class="btn btn-sm fw-bold btn-primary" data-bs-toggle="modal"
-                        data-bs-target="#kt_modal_create_app">Simpan</a>
+                    <button type="submit" class="btn btn-primary">Simpan Coba</button>
                     <!--end::Primary button-->
-                </div>
+                </div> --}}
                 <!--end::Actions-->
             </div>
             <!--end::Toolbar container-->
@@ -58,7 +57,10 @@
                             <!--begin::Card body-->
                             <div class="card-body p-8">
                                 <!--begin::Form-->
-                                <form action="" id="kt_invoice_form">
+                                <form id="add_form" method="post"
+                                    action="{{ url('/kearsipan/registrasi/permohonan-st') }}" class="needs-validation"
+                                    novalidate="">
+                                    @csrf
                                     <!--begin::Wrapper-->
                                     <div class="d-flex flex-column align-items-start flex-xxl-row">
                                         <h4>Nota Dinas</h4>
@@ -72,31 +74,38 @@
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Nomor
                                                     Nota Dinas</label>
                                                 <input type="text" class="form-control form-control-solid"
-                                                    placeholder="Nomor Nota Dinas">
+                                                    name="no_nodis" placeholder="Nomor Nota Dinas">
                                             </div>
                                             <div class="col-lg-4 mb-5">
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Tanggal
                                                     Nota Dinas</label>
                                                 <input type="date" class="form-control form-control-solid"
-                                                    placeholder="Tanggal Nota Dinas">
+                                                    name="tgl_nodis" placeholder="Tanggal Nota Dinas">
                                             </div>
                                             <div class="col-lg-4 mb-5">
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Dasar
                                                     Penugasan</label>
-                                                <input type="text" class="form-control form-control-solid"
-                                                    placeholder="Dasar Penugasan">
+                                                <select class="form-select form-select-solid" name="dasar_penugasan">
+                                                    <option value="" selected disabled>Pilih Dasar Penugasan
+                                                    </option>
+                                                    <option value="Arahan">Arahan</option>
+                                                    <option value="Disposisi">Disposisi</option>
+                                                    <option value="Lainnya">Lainnya</option>
+                                                    <option value="Nota Dinas">Nota Dinas</option>
+                                                    <option value="Surat Tugas">Surat Tugas</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="row gx-10">
                                             <div class="col-lg-6 mb-5">
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Perihal
                                                     Nota Dinas</label>
-                                                <textarea class="form-control form-control-solid" placeholder="Perihal Nota Dinas"></textarea>
+                                                <textarea class="form-control form-control-solid" name="perihal_nodis" placeholder="Perihal Nota Dinas"></textarea>
                                             </div>
                                             <div class="col-lg-6 mb-5">
-                                                <label
-                                                    class="form-label fs-6 fw-bold required mb-3 text-gray-700">Uraian</label>
-                                                <textarea class="form-control form-control-solid" placeholder="Uraian"></textarea>
+                                                <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Detail
+                                                    Penugasan</label>
+                                                <textarea class="form-control form-control-solid" name="detail_penugasan" placeholder="Detail Penugasan"></textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -111,28 +120,32 @@
                                             <div class="col-lg-4 mb-5">
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Nama Unit
                                                     Kerja</label>
-                                                <input type="text" disabled class="form-control form-control-solid"
-                                                    placeholder="Nama Unit Kerja">
+                                                <input type="text" class="form-control form-control-solid"
+                                                    name="unit_kerja" placeholder="Nama Unit Kerja">
                                             </div>
                                             <div class="col-lg-4 mb-5">
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Nama
                                                     Kegiatan</label>
-                                                <select name="currency" aria-label="Hak Akses Naskah" data-control="select2"
-                                                    data-placeholder="Nama Kegiatan" class="form-select form-select-solid">
-                                                    <option></option>
-                                                    <option>Internal</option>
-                                                    <option>Eksternal</option>
+                                                <select name="nama_kegiatan_id" aria-label="Hak Akses Naskah"
+                                                    data-control="select2" class="form-select form-select-solid">
+                                                    <option value="" selected disabled>Pilih Kegiatan</option>
+                                                    <?php foreach ($kegiatans as $kegiatan): ?>
+                                                    <option value="{{ $kegiatan->id }}">
+                                                        {{ $kegiatan->nama }}</option>
+                                                    <?php endforeach; ?>
                                                 </select>
                                             </div>
                                             <div class="col-lg-4 mb-5">
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Jenis
                                                     Perjalanan Dinas</label>
-                                                <select name="currency" aria-label="Hak Akses Naskah" data-control="select2"
-                                                    data-placeholder="Jenis Perjalanan Dinas"
-                                                    class="form-select form-select-solid">
-                                                    <option></option>
-                                                    <option>Internal</option>
-                                                    <option>Eksternal</option>
+                                                <select name="jenis_perjadin_id" aria-label="Hak Akses Naskah"
+                                                    data-control="select2" class="form-select form-select-solid">
+                                                    <option value="" selected disabled>Pilih Jenis Perjalanan Dinas
+                                                    </option>
+                                                    <?php foreach ($perjadins as $perjadin): ?>
+                                                    <option value="{{ $perjadin->id }}">
+                                                        {{ $perjadin->nama }}</option>
+                                                    <?php endforeach; ?>
                                                 </select>
                                             </div>
                                         </div>
@@ -140,8 +153,8 @@
                                             <div class="col-lg-4 mb-5">
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Nama
                                                     Kota / Kabupaten</label>
-                                                <select name="currency" aria-label="Hak Akses Naskah" data-control="select2"
-                                                    data-placeholder="Nama Kota / Kabupaten"
+                                                <select name="nama_kota" aria-label="Hak Akses Naskah"
+                                                    data-control="select2" data-placeholder="Nama Kota / Kabupaten"
                                                     class="form-select form-select-solid">
                                                     <option></option>
                                                     <option>Internal</option>
@@ -151,19 +164,20 @@
                                             <div class="col-lg-4 mb-5">
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Jenis
                                                     Transportasi</label>
-                                                <select name="currency" aria-label="Hak Akses Naskah" data-control="select2"
-                                                    data-placeholder="Jenis Perjalanan Dinas"
-                                                    class="form-select form-select-solid">
-                                                    <option></option>
-                                                    <option>Internal</option>
-                                                    <option>Eksternal</option>
+                                                <select class="form-select form-select-solid" name="jenis_transportasi">
+                                                    <option value="" selected disabled>Pilih Jenis Transportasi
+                                                    </option>
+                                                    <option value="Tidak Ada">Tidak Ada</option>
+                                                    <option value="Angkutan Darat">Angkutan Darat</option>
+                                                    <option value="Angkutan Laut">Angkutan Laut</option>
+                                                    <option value="Angkutan Udara">Angkutan Udara</option>
                                                 </select>
                                             </div>
                                             <div class="col-lg-4 mb-5">
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Jenis
                                                     Pembiayaan Anggaran</label>
-                                                <select name="currency" aria-label="Hak Akses Naskah" data-control="select2"
-                                                    data-placeholder="Jenis Perjalanan Dinas"
+                                                <select name="jenis_pembiayaan" aria-label="Hak Akses Naskah"
+                                                    data-control="select2" data-placeholder="Jenis Perjalanan Dinas"
                                                     class="form-select form-select-solid">
                                                     <option></option>
                                                     <option>Internal</option>
@@ -177,30 +191,33 @@
                                                     Perjalanan
                                                     Dinas</label>
                                                 <input type="date" class="form-control form-control-solid"
-                                                    placeholder="Tanggal Nota Dinas">
+                                                    name="tgl_st_start" placeholder="Tanggal Nota Dinas">
                                             </div>
                                             <div class="col-lg-4 mb-5">
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Selesai
                                                     Perjalanan
                                                     Dinas</label>
                                                 <input type="date" class="form-control form-control-solid"
-                                                    placeholder="Tanggal Nota Dinas">
+                                                    name="tgl_st_end" placeholder="Tanggal Nota Dinas">
                                             </div>
                                         </div>
                                         <div class="row gx-10">
                                             <div class="col-lg-6 mb-5">
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Detail
                                                     Kegiatan</label>
-                                                <textarea class="form-control form-control-solid" placeholder="Detail Kegiatan"></textarea>
+                                                <textarea class="form-control form-control-solid" name="detail_kegiatan" placeholder="Detail Kegiatan"></textarea>
                                             </div>
                                             <div class="col-lg-6 mb-5">
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Capaian
                                                     Target Kinerja</label>
-                                                <textarea class="form-control form-control-solid" placeholder="Capaian Target Kinerja"></textarea>
+                                                <textarea class="form-control form-control-solid" name="target_kinerja" placeholder="Capaian Target Kinerja"></textarea>
                                             </div>
                                         </div>
                                     </div>
 
+                                    <div>
+                                        <button type="submit" class="btn btn-primary">Coba Simpan</button>
+                                    </div>
                             </div>
                             <!--end::Wrapper-->
                             </form>

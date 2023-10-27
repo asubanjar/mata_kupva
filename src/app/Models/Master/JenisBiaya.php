@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Models\Master;
 
-use App\Models\Traits\Uuids;
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class JenisBiaya extends Model
 {
-    use Uuids;
+    use HasUuids;
 
     protected $fillable = [
         'nama',
