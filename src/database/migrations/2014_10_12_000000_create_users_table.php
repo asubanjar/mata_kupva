@@ -31,7 +31,7 @@ return new class extends Migration
             $table->string('golongan')->nullable();
             $table->string('user_id')->nullable();
             $table->string('active')->default(true);
-            $table->string('simpeg_id')->nullable();
+            $table->bigInteger('simpeg_id')->nullable();
             $table->rememberToken();
             $table->timestamps();
 

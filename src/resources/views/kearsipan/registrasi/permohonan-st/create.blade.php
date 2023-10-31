@@ -120,8 +120,9 @@
                                             <div class="col-lg-4 mb-5">
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Nama Unit
                                                     Kerja</label>
-                                                <input type="text" class="form-control form-control-solid"
-                                                    name="unit_kerja" placeholder="Nama Unit Kerja">
+                                                <input type="text" readonly class="form-control form-control-solid"
+                                                    name="unit_kerja" placeholder="Nama Unit Kerja"
+                                                    value="{{ Auth::user()->unit_organisasi }}">
                                             </div>
                                             <div class="col-lg-4 mb-5">
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Nama
@@ -137,32 +138,6 @@
                                             </div>
                                             <div class="col-lg-4 mb-5">
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Jenis
-                                                    Perjalanan Dinas</label>
-                                                <select name="jenis_perjadin_id" aria-label="Hak Akses Naskah"
-                                                    data-control="select2" class="form-select form-select-solid">
-                                                    <option value="" selected disabled>Pilih Jenis Perjalanan Dinas
-                                                    </option>
-                                                    <?php foreach ($perjadins as $perjadin): ?>
-                                                    <option value="{{ $perjadin->id }}">
-                                                        {{ $perjadin->nama }}</option>
-                                                    <?php endforeach; ?>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="row gx-10">
-                                            <div class="col-lg-4 mb-5">
-                                                <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Nama
-                                                    Kota / Kabupaten</label>
-                                                <select name="nama_kota" aria-label="Hak Akses Naskah"
-                                                    data-control="select2" data-placeholder="Nama Kota / Kabupaten"
-                                                    class="form-select form-select-solid">
-                                                    <option></option>
-                                                    <option>Internal</option>
-                                                    <option>Eksternal</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-lg-4 mb-5">
-                                                <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Jenis
                                                     Transportasi</label>
                                                 <select class="form-select form-select-solid" name="jenis_transportasi">
                                                     <option value="" selected disabled>Pilih Jenis Transportasi
@@ -173,6 +148,44 @@
                                                     <option value="Angkutan Udara">Angkutan Udara</option>
                                                 </select>
                                             </div>
+                                        </div>
+                                        <div class="row gx-10">
+                                            <div class="col-lg-4 mb-5">
+                                                <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Jenis
+                                                    Perjalanan Dinas</label>
+                                                <select id="perjadin" name="jenis_perjadin_id"
+                                                    aria-label="Hak Akses Naskah" data-control="select2"
+                                                    class="form-select form-select-solid">
+                                                    <option value="" selected disabled>Pilih Jenis Perjalanan Dinas
+                                                    </option>
+                                                    <?php foreach ($perjadins as $perjadin): ?>
+                                                    <option value="{{ $perjadin->id }}">
+                                                        {{ $perjadin->nama }}</option>
+                                                    <?php endforeach; ?>
+                                                </select>
+                                            </div>
+                                            <div id="kotakab" class="col-lg-4 mb-5">
+                                                <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Nama
+                                                    Kota / Kabupaten</label>
+                                                <select class="form-select form-select-solid" data-control="select2"
+                                                    name="nama_kota">
+                                                    <option value="" selected disabled>Pilih Kota / Kabupaten
+                                                    </option>
+                                                    <?php foreach ($kotakabs as $kotakab): ?>
+                                                    <option value="{{ $kotakab->nama }}">
+                                                        {{ $kotakab->nama }}</option>
+                                                    <?php endforeach; ?>
+                                                </select>
+                                            </div>
+                                            <div id="negara" class="col-lg-4 mb-5">
+                                                <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Nama
+                                                    Negara</label>
+                                                <input id="nama_negara" type="text"
+                                                    class="form-control form-control-solid" name="nama_negara"
+                                                    placeholder="Nama Negara">
+                                            </div>
+                                        </div>
+                                        <div class="row gx-10">
                                             <div class="col-lg-4 mb-5">
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Jenis
                                                     Pembiayaan Anggaran</label>
@@ -239,5 +252,19 @@
 @endsection
 
 @section('script')
+    <script type="text/javascript">
+        $("#negara").hide();
+
+        $("#perjadin").on("change", function() {
+            if ($(this).find("[value=\"9A7F6AB8-F78D-459E-9C25-E65D0BDFE438\"]").is(":selected") == true) {
+                $("#negara").show();
+                $("#kotakab").hide();
+            } else {
+                $("#negara").hide();
+                $('#nama_negara').val(null);
+                $("#kotakab").show();
+            }
+        });
+    </script>
 
 @endsection

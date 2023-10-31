@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Kearsipan\Registrasi\PermohonanST;
 use App\Models\Master\JenisKegiatan;
 use App\Models\Master\JenisPerjadin;
+use App\Models\Master\KotaKabupaten;
 use Illuminate\Http\Request;
 
 class PermohonanSTController extends Controller
@@ -25,9 +26,10 @@ class PermohonanSTController extends Controller
     public function create()
     {
         $kegiatans = JenisKegiatan::all();
+        $kotakabs = KotaKabupaten::all();
         $perjadins = JenisPerjadin::all();
 
-        return view('kearsipan/registrasi/permohonan-st/create', compact(['kegiatans', 'perjadins']));
+        return view('kearsipan/registrasi/permohonan-st/create', compact(['kegiatans', 'kotakabs', 'perjadins']));
     }
 
     /**
@@ -48,7 +50,8 @@ class PermohonanSTController extends Controller
             'jenis_transportasi' => 'required',
             'jenis_pembiayaan'   => 'required',
             'target_kinerja'     => 'required',
-            'nama_kota'          => 'required',
+            'nama_kota'          => $request->get('nama_negara') ? 'nullable' : 'required',
+            'nama_negara'        => $request->get('nama_negara') ? 'required' : 'nullable',
             'tgl_st_start'       => 'required',
             'tgl_st_end'         => 'required',
         ]);
@@ -66,7 +69,8 @@ class PermohonanSTController extends Controller
             'jenis_transportasi' => $request->get('jenis_transportasi'),
             'jenis_pembiayaan'   => $request->get('jenis_pembiayaan'),
             'target_kinerja'     => $request->get('target_kinerja'),
-            'nama_kota'          => $request->get('nama_kota'),
+            'nama_kota'          => $request->get('nama_negara') ?
+                $request->get('nama_negara') : $request->get('nama_kota'),
             'tgl_st_start'       => $request->get('tgl_st_start'),
             'tgl_st_end'         => $request->get('tgl_st_end'),
 
