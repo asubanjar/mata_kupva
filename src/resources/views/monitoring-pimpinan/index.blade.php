@@ -22,18 +22,6 @@
                     <!--end::Breadcrumb-->
                 </div>
                 <!--end::Page title-->
-                <!--begin::Actions-->
-                <div class="d-flex align-items-center gap-lg-3 gap-2">
-                    <!--begin::Secondary button-->
-                    <a href="#" class="btn btn-sm fw-bold btn-secondary" data-bs-toggle="modal"
-                        data-bs-target="#kt_modal_create_app">Rollover</a>
-                    <!--end::Secondary button-->
-                    <!--begin::Primary button-->
-                    <a href="#" class="btn btn-sm fw-bold btn-primary" data-bs-toggle="modal"
-                        data-bs-target="#kt_modal_new_target">Add Target</a>
-                    <!--end::Primary button-->
-                </div>
-                <!--end::Actions-->
             </div>
             <!--end::Toolbar container-->
         </div>
@@ -385,26 +373,6 @@
                                 <!--begin::Title-->
                                 <h3 class="card-title fw-bold text-gray-800">Grafik Rencana Aksi</h3>
                                 <!--end::Title-->
-                                <!--begin::Toolbar-->
-                                <div class="card-toolbar">
-                                    <!--begin::Daterangepicker(defined in src/js/layout/app.js)-->
-                                    <div data-kt-daterangepicker="true" data-kt-daterangepicker-opens="left"
-                                        class="btn btn-sm btn-light d-flex align-items-center px-4">
-                                        <!--begin::Display range-->
-                                        <div class="fw-bold text-gray-600">Loading date range...</div>
-                                        <!--end::Display range-->
-                                        <i class="ki-duotone ki-calendar-8 fs-1 me-0 ms-2">
-                                            <span class="path1"></span>
-                                            <span class="path2"></span>
-                                            <span class="path3"></span>
-                                            <span class="path4"></span>
-                                            <span class="path5"></span>
-                                            <span class="path6"></span>
-                                        </i>
-                                    </div>
-                                    <!--end::Daterangepicker-->
-                                </div>
-                                <!--end::Toolbar-->
                             </div>
                             <!--end::Header-->
                             <!--begin::Card body-->
@@ -430,8 +398,8 @@
                                 </div>
                                 <!--end::Info-->
                                 <!--begin::Chart-->
-                                <div id="kt_charts_widget_26" class="min-h-auto pe-6 ps-4"
-                                    data-kt-chart-info="Transactions" style="height: 300px"></div>
+                                <div id="action_chart" class="min-h-auto pe-6 ps-4" data-kt-chart-info="Transactions"
+                                    style="height: 600px"></div>
                                 <!--end::Chart-->
                             </div>
                             <!--end::Card body-->
@@ -450,10 +418,6 @@
 @endsection
 
 @section('script')
-    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/radar.js"></script>
 
     <!--begin::Vendors Javascript(used for this page only)-->
     <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
@@ -771,200 +735,122 @@
     </script>
 
     <script>
-        // Class definition
-        var KTChartsWidget26 = function() {
-            var chart = {
-                self: null,
-                rendered: false
-            };
+        am5.ready(function() {
 
-            // Private methods
-            var initChart = function() {
-                var element = document.getElementById("kt_charts_widget_26");
+            // Create root element
+            // https://www.amcharts.com/docs/v5/getting-started/#Root_element
+            var root = am5.Root.new("action_chart");
 
-                if (!element) {
-                    return;
-                }
+            // Set themes
+            // https://www.amcharts.com/docs/v5/concepts/themes/
+            root.setThemes([
+                am5themes_Animated.new(root)
+            ]);
 
-                var height = parseInt(KTUtil.css(element, 'height'));
-                var labelColor = KTUtil.getCssVariableValue('--bs-gray-500');
-                var borderColor = KTUtil.getCssVariableValue('--bs-border-dashed-color');
-                var baseColor = KTUtil.getCssVariableValue('--bs-primary');
-                var lightColor = KTUtil.getCssVariableValue('--bs-primary');
-                var chartInfo = element.getAttribute('data-kt-chart-info');
+            // Create chart
+            // https://www.amcharts.com/docs/v5/charts/xy-chart/
+            var chart = root.container.children.push(am5xy.XYChart.new(root, {
+                panX: true,
+                panY: false,
+                wheelX: "panX",
+                wheelY: "zoomX",
+                layout: root.verticalLayout
+            }));
 
-                var options = {
-                    series: [{
-                        name: chartInfo,
-                        data: [34.5, 34.5, 35, 35, 35.5, 35.5, 35, 35, 35.5, 35.5, 35, 35, 34.5, 34.5,
-                            35, 35, 35.5, 35.5, 35
-                        ]
-                    }],
-                    chart: {
-                        fontFamily: 'inherit',
-                        type: 'area',
-                        height: height,
-                        toolbar: {
-                            show: false
-                        }
+            var data = [
+                @foreach ($statistic_jabatans as $statistic_jabatan)
+                    {
+                        jabatan: "{{ $statistic_jabatan->name }}",
+                        action_selesai: {{ $statistic_jabatan->total_action_finish }},
+                        action_proses: {{ $statistic_jabatan->total_action - $statistic_jabatan->total_action_finish }},
                     },
-                    plotOptions: {
+                @endforeach
+            ];
 
-                    },
-                    legend: {
-                        show: false
-                    },
-                    dataLabels: {
-                        enabled: false
-                    },
-                    fill: {
-                        type: "gradient",
-                        gradient: {
-                            shadeIntensity: 1,
-                            opacityFrom: 0.4,
-                            opacityTo: 0,
-                            stops: [0, 80, 100]
-                        }
-                    },
-                    stroke: {
-                        curve: 'smooth',
-                        show: true,
-                        width: 3,
-                        colors: [baseColor]
-                    },
-                    xaxis: {
-                        categories: ['', 'Apr 02', 'Apr 03', 'Apr 04', 'Apr 05', 'Apr 06', 'Apr 07', 'Apr 08',
-                            'Apr 09', 'Apr 10', 'Apr 11', 'Apr 12', 'Apr 13', 'Apr 14', 'Apr 17', 'Apr 18',
-                            'Apr 19', 'Apr 21', ''
-                        ],
-                        axisBorder: {
-                            show: false,
-                        },
-                        axisTicks: {
-                            show: false
-                        },
-                        tickAmount: 6,
-                        labels: {
-                            rotate: 0,
-                            rotateAlways: true,
-                            style: {
-                                colors: labelColor,
-                                fontSize: '12px'
-                            }
-                        },
-                        crosshairs: {
-                            position: 'front',
-                            stroke: {
-                                color: baseColor,
-                                width: 1,
-                                dashArray: 3
-                            }
-                        },
-                        tooltip: {
-                            enabled: true,
-                            formatter: undefined,
-                            offsetY: 0,
-                            style: {
-                                fontSize: '12px'
-                            }
-                        }
-                    },
-                    yaxis: {
-                        max: 36.3,
-                        min: 33,
-                        tickAmount: 6,
-                        labels: {
-                            style: {
-                                colors: labelColor,
-                                fontSize: '12px'
-                            },
-                            formatter: function(val) {
-                                return '$' + parseInt(10 * val)
-                            }
-                        }
-                    },
-                    states: {
-                        normal: {
-                            filter: {
-                                type: 'none',
-                                value: 0
-                            }
-                        },
-                        hover: {
-                            filter: {
-                                type: 'none',
-                                value: 0
-                            }
-                        },
-                        active: {
-                            allowMultipleDataPointsSelection: false,
-                            filter: {
-                                type: 'none',
-                                value: 0
-                            }
-                        }
-                    },
-                    tooltip: {
-                        style: {
-                            fontSize: '12px'
-                        },
-                        y: {
-                            formatter: function(val) {
-                                return '$' + parseInt(10 * val)
-                            }
-                        }
-                    },
-                    colors: [lightColor],
-                    grid: {
-                        borderColor: borderColor,
-                        strokeDashArray: 4,
-                        yaxis: {
-                            lines: {
-                                show: true
-                            }
-                        }
-                    },
-                    markers: {
-                        strokeColor: baseColor,
-                        strokeWidth: 3
-                    }
-                };
+            // Create axes
+            // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
+            var xRenderer = am5xy.AxisRendererX.new(root, {
+                minGridDistance: 70
+            });
 
-                chart.self = new ApexCharts(element, options);
+            var xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, {
+                categoryField: "jabatan",
+                renderer: xRenderer,
+                tooltip: am5.Tooltip.new(root, {
+                    themeTags: ["axis"],
+                    animationDuration: 200
+                })
+            }));
 
-                // Set timeout to properly get the parent elements width
-                setTimeout(function() {
-                    chart.self.render();
-                    chart.rendered = true;
-                }, 200);
-            }
+            xRenderer.grid.template.setAll({
+                location: 1
+            })
 
-            // Public methods
-            return {
-                init: function() {
-                    initChart();
+            xAxis.data.setAll(data);
 
-                    // Update chart on theme mode change
-                    KTThemeMode.on("kt.thememode.change", function() {
-                        if (chart.rendered) {
-                            chart.self.destroy();
-                        }
+            var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+                min: 0,
+                renderer: am5xy.AxisRendererY.new(root, {
+                    strokeOpacity: 0.1
+                })
+            }));
 
-                        initChart();
-                    });
-                }
-            }
-        }();
+            // Add series
+            // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
 
-        // Webpack support
-        if (typeof module !== 'undefined') {
-            module.exports = KTChartsWidget26;
-        }
+            var series0 = chart.series.push(am5xy.ColumnSeries.new(root, {
+                name: "Income",
+                xAxis: xAxis,
+                yAxis: yAxis,
+                valueYField: "action_selesai",
+                categoryXField: "jabatan",
+                clustered: false,
+                tooltip: am5.Tooltip.new(root, {
+                    labelText: "selesai: {valueY}"
+                })
+            }));
 
-        // On document ready
-        KTUtil.onDOMContentLoaded(function() {
-            KTChartsWidget26.init();
-        });
+            series0.columns.template.setAll({
+                fill: am5.color("#2ecc71"),
+                width: am5.percent(80),
+                tooltipY: 0,
+                strokeOpacity: 0
+            });
+
+            series0.data.setAll(data);
+
+
+            var series1 = chart.series.push(am5xy.ColumnSeries.new(root, {
+                name: "Income",
+                xAxis: xAxis,
+                yAxis: yAxis,
+                valueYField: "action_proses",
+                categoryXField: "jabatan",
+                clustered: false,
+                tooltip: am5.Tooltip.new(root, {
+                    labelText: "proses: {valueY}"
+                })
+            }));
+
+            series1.columns.template.setAll({
+                fill: am5.color("#F1416C"),
+                width: am5.percent(50),
+                tooltipY: 0,
+                strokeOpacity: 0
+            });
+
+            series1.data.setAll(data);
+
+            var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {}));
+
+
+            // Make stuff animate on load
+            // https://www.amcharts.com/docs/v5/concepts/animations/
+            chart.appear(1000, 100);
+            series0.appear();
+            series1.appear();
+
+        }); // end am5.ready()
     </script>
 
 @endsection
