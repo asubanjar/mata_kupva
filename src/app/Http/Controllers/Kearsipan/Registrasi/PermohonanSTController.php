@@ -56,7 +56,7 @@ class PermohonanSTController extends Controller
             'tgl_st_end'         => 'required',
         ]);
 
-        PermohonanST::create([
+        $PermohonanST = PermohonanST::create([
             'unit_kerja'         => $request->get('unit_kerja'),
             'no_nodis'           => $request->get('no_nodis'),
             'tgl_nodis'          => $request->get('tgl_nodis'),
@@ -76,8 +76,17 @@ class PermohonanSTController extends Controller
 
         ]);
 
-        return redirect('kearsipan/registrasi/permohonan-st/create')->with('success', 'Sukses menambahkan SR');
-        // return redirect?('/master/jenis-biaya')->with('success', 'Sukses menambahkan Jenis Biaya');
+        foreach (($request->get('array_anggaran')) as $anggaran) {
+            $PermohonanST->pembiayaan->insert([
+                'kode_akun'          => $anggaran['kode_akun'],
+                'nama_akun'          => $anggaran['nama_akun'],
+                'pagu_anggaran'      => $anggaran['pagu_anggaran'],
+                'perkiraan_anggaran' => $anggaran['perkiraan_anggaran'],
+                'realisasi'          => $anggaran['realisasi'],
+            ]);
+        }
+
+        return redirect('kearsipan/registrasi/permohonan-st/create')->with('success', 'Sukses menambahkan ST');
     }
 
     /**

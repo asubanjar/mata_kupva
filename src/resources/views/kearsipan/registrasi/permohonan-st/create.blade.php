@@ -186,16 +186,83 @@
                                             </div>
                                         </div>
                                         <div class="row gx-10">
-                                            <div class="col-lg-4 mb-5">
+                                            <div id="anggaran" class="col-lg-4 mb-5">
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Jenis
                                                     Pembiayaan Anggaran</label>
-                                                <select name="jenis_pembiayaan" aria-label="Hak Akses Naskah"
-                                                    data-control="select2" data-placeholder="Jenis Perjalanan Dinas"
+                                                <select name="jenis_pembiayaan" data-control="select2"
                                                     class="form-select form-select-solid">
-                                                    <option></option>
-                                                    <option>Internal</option>
-                                                    <option>Eksternal</option>
+                                                    <option value="" selected disabled>Pilih Jenis Pembiayaan
+                                                        Anggaran
+                                                    </option>
+                                                    <option value="Tanpa Biaya">Tanpa Biaya</option>
+                                                    <option value="Biaya PPATK">Biaya PPATK</option>
+                                                    <option value="Biaya Pusdiklat">Biaya Pusdiklat</option>
+                                                    <option value="Biaya Non PPATK">Biaya Non PPATK</option>
                                                 </select>
+                                            </div>
+                                        </div>
+                                        <div id="kt_docs_repeater_basic" style="display: none">
+                                            <div class="col-lg-4 mb-5">
+                                                <a href="javascript:;" data-repeater-create class="btn btn-light-primary">
+                                                    <i class="ki-duotone ki-plus fs-3"></i>
+                                                    Add
+                                                </a>
+                                            </div>
+                                            <div data-repeater-list="array_anggaran">
+                                                <div data-repeater-item class="card mb-5 p-8">
+                                                    <div class="row gx-10">
+                                                        <div class="col-lg-3 mb-5">
+                                                            <label
+                                                                class="form-label fs-6 fw-bold required mb-3 text-gray-700">Kode
+                                                                Akun</label>
+                                                            <input type="text" class="form-control form-control-solid"
+                                                                name="kode_akun" placeholder="Kode Akun">
+                                                        </div>
+                                                        <div class="col-lg-3 mb-5">
+                                                            <label
+                                                                class="form-label fs-6 fw-bold required mb-3 text-gray-700">Nama
+                                                                Akun</label>
+                                                            <input type="text" class="form-control form-control-solid"
+                                                                name="nama_akun" placeholder="Nama Akun">
+                                                        </div>
+                                                        <div class="col-lg-3 mb-5">
+                                                            <label
+                                                                class="form-label fs-6 fw-bold required mb-3 text-gray-700">Pagu
+                                                                Anggaran</label>
+                                                            <input type="text" class="form-control form-control-solid"
+                                                                name="pagu_anggaran" placeholder="Pagu Anggaran">
+                                                        </div>
+                                                        <div class="col-lg-3 mb-5">
+                                                            <a href="javascript:;" data-repeater-delete
+                                                                class="btn btn-sm btn-light-danger mt-md-8 mt-3">
+                                                                <i class="ki-duotone ki-trash fs-5"><span
+                                                                        class="path1"></span><span
+                                                                        class="path2"></span><span
+                                                                        class="path3"></span><span
+                                                                        class="path4"></span><span
+                                                                        class="path5"></span></i>
+                                                                Delete
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row gx-10">
+                                                        <div class="col-lg-3 mb-5">
+                                                            <label
+                                                                class="form-label fs-6 fw-bold required mb-3 text-gray-700">Realisasi
+                                                                s/d {{ date('M Y') }}</label>
+                                                            <input type="text" class="form-control form-control-solid"
+                                                                name="realisasi" placeholder="Realiasi">
+                                                        </div>
+                                                        <div class="col-lg-3 mb-5">
+                                                            <label
+                                                                class="form-label fs-6 fw-bold required mb-3 text-gray-700">Perkiraan
+                                                                Penggunaan Anggaran</label>
+                                                            <input type="text" class="form-control form-control-solid"
+                                                                name="perkiraan_anggaran"
+                                                                placeholder="Perkiraan Penggunaan Anggaran">
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="row gx-10">
@@ -252,8 +319,11 @@
 @endsection
 
 @section('script')
+    <script src="{{ asset('assets/plugins/custom/formrepeater/formrepeater.bundle.js') }}"></script>
+
     <script type="text/javascript">
         $("#negara").hide();
+        // $("#kt_docs_repeater_basic").hide();
 
         $("#perjadin").on("change", function() {
             if ($(this).find("[value=\"9A7F6AB8-F78D-459E-9C25-E65D0BDFE438\"]").is(":selected") == true) {
@@ -263,6 +333,30 @@
                 $("#negara").hide();
                 $('#nama_negara').val(null);
                 $("#kotakab").show();
+            }
+        });
+
+        $("#anggaran").on("change", function() {
+            if ($(this).find("[value=\"Biaya PPATK\"]").is(":selected") == true) {
+                $("#kt_docs_repeater_basic").show();
+            } else {
+                $("#kt_docs_repeater_basic").hide();
+            }
+        });
+
+        $('#kt_docs_repeater_basic').repeater({
+            initEmpty: false,
+
+            defaultValues: {
+                'text-input': 'foo'
+            },
+
+            show: function() {
+                $(this).slideDown();
+            },
+
+            hide: function(deleteElement) {
+                $(this).slideUp(deleteElement);
             }
         });
     </script>

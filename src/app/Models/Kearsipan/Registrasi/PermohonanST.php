@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Models\Kearsipan\Registrasi;
 
+use App\Models\Kearsipan\Registrasi\Pembiayaan;
 use App\Models\Master\JenisKegiatan;
 use App\Models\Master\JenisPerjadin;
 use App\Models\User;
@@ -69,7 +70,7 @@ class PermohonanST extends Model
 
     public function generateCode(): string
     {
-        $st = DB::table('surat_tugases')->latest('id')->whereNotNull('no_st')->first();
+        $st = DB::table('surat_tugases')->latest('no_st')->whereNotNull('no_st')->first();
 
         if (!$st) {
             $codeNumber = 1;
@@ -93,5 +94,10 @@ class PermohonanST extends Model
     public function jenisPerjadin(): Relations\BelongsTo
     {
         return $this->belongsTo(JenisPerjadin::class, 'jenis_perjadin_id');
+    }
+
+    public function pembiayaan(): Relations\HasMany
+    {
+        return $this->hasMany(Pembiayaan::class);
     }
 }
