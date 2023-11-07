@@ -16,8 +16,9 @@ class SuratTugasController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(): void
+    public function index()
     {
+        return view('kearsipan/kotak-keluar/surat-tugas/index');
     }
 
     /**

@@ -20,6 +20,7 @@ Route::prefix('kearsipan')->group(function (): void {
         Route::resource('kotak-masuk/disposisi', DisposisiController::class);
 
         Route::resource('kotak-keluar/naskah-dinas', NaskahDinasController::class);
+        Route::resource('kotak-keluar/surat-tugas', SuratTugasController::class);
 
         Route::get(
             'surat_tugas/{surat_tugas}/peserta',

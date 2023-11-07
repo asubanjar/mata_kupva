@@ -203,6 +203,18 @@
                                     <!--end:Menu link-->
                                 </div>
                                 <!--end:Menu item-->
+                                <!--begin:Menu item-->
+                                <div class="menu-item">
+                                    <!--begin:Menu link-->
+                                    <a class="menu-link" href="{{ url('/kearsipan/kotak-keluar/surat-tugas') }}">
+                                        <span class="menu-bullet">
+                                            <span class="bullet bullet-dot"></span>
+                                        </span>
+                                        <span class="menu-title">Surat Tugas</span>
+                                    </a>
+                                    <!--end:Menu link-->
+                                </div>
+                                <!--end:Menu item-->
                             </div>
                             <!--end:Menu sub-->
                         </div>

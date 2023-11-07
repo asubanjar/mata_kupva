@@ -12,7 +12,7 @@ class DisposisiController extends Controller
      */
     public function index()
     {
-        return view('kearsipan/kotak-masuk/disposisi/list');
+        return view('kearsipan/kotak-masuk/disposisi/index');
     }
 
     /**

@@ -12,7 +12,7 @@ class NaskahDinasController extends Controller
      */
     public function index()
     {
-        return view('kearsipan/kotak-keluar/naskah-dinas/list');
+        return view('kearsipan/kotak-keluar/naskah-dinas/index');
     }
 
     /**
