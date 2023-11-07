@@ -86,7 +86,9 @@ class SuratTugasController extends Controller
             ]);
         }
 
-        return redirect('kearsipan/registrasi/permohonan-st/create')->with('success', 'Sukses menambahkan ST');
+        return redirect(
+            'kearsipan/surat_tugas/' . $suratTugas->id . '/peserta'
+        )->with('success', 'Sukses menambahkan ST, silahkan menambahkan peserta');
     }
 
     /**

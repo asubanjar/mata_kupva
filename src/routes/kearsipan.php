@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Http\Controllers\Kearsipan\Kedinasan\Peserta\SuratTugasPesertaController;
 use App\Http\Controllers\Kearsipan\KotakKeluar\NaskahDinasController;
 use App\Http\Controllers\Kearsipan\KotakMasuk\DisposisiController;
 use App\Http\Controllers\Kearsipan\Registrasi\NotaDinasController;
@@ -19,4 +20,9 @@ Route::prefix('kearsipan')->group(function (): void {
         Route::resource('kotak-masuk/disposisi', DisposisiController::class);
 
         Route::resource('kotak-keluar/naskah-dinas', NaskahDinasController::class);
+
+        Route::get(
+            'surat_tugas/{surat_tugas}/peserta',
+            SuratTugasPesertaController::class
+        )->name('kearsipan.surat-tugas.peserta');
 });
