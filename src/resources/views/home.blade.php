@@ -417,7 +417,7 @@
                                                                             class="fa fa-paper-plane fs-2x fs-lg-2hx ms-n1 text-gray-500"></i>
                                                                         <!--end::Icon-->
                                                                         <!--begin::Desc-->
-                                                                        <div class="fw-bold fs-5 pt-4">Naskah Dinas Keluar
+                                                                        <div class="fw-bold fs-5 pt-4">Pencatatan Naskah Dinas
                                                                         </div>
                                                                         <!--end::Desc-->
                                                                     </a>

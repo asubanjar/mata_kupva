@@ -247,6 +247,7 @@
                                          </td>
                                          <td>
                                              <div class="text-hover-primary mb-1 text-gray-800">T/668/TI.01/X/2023</div>
+                                             <div class="badge badge-light-info fw-bold mb-2">Disposisi</div>
                                          </td>
                                          <td>
                                              <div class="text-hover-primary mb-2 text-gray-800">Penyampaian Peraturan
@@ -296,6 +297,7 @@
                                          </td>
                                          <td>
                                              <div class="text-hover-primary mb-1 text-gray-800">T/412/TI.01/II/2023</div>
+                                             <div class="badge badge-light-info fw-bold mb-2">Disposis</div>
                                          </td>
                                          <td>
                                              <div class="text-hover-primary mb-2 text-gray-800">Penyampaian Progres

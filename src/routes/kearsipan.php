@@ -5,6 +5,8 @@ declare(strict_types=1);
 use App\Http\Controllers\Kearsipan\Kedinasan\Peserta\SuratTugasPesertaController;
 use App\Http\Controllers\Kearsipan\KotakKeluar\NaskahDinasController;
 use App\Http\Controllers\Kearsipan\KotakMasuk\DisposisiController;
+use App\Http\Controllers\Kearsipan\KotakMasuk\NaskahMasukEksternalController;
+use App\Http\Controllers\Kearsipan\KotakMasuk\NaskahMasukInternalController;
 use App\Http\Controllers\Kearsipan\Registrasi\NotaDinasController;
 use App\Http\Controllers\Kearsipan\Registrasi\SuratDinasController;
 use App\Http\Controllers\Kearsipan\Registrasi\SuratTugasController;
@@ -18,6 +20,8 @@ Route::prefix('kearsipan')->group(function (): void {
         Route::resource('registrasi/permohonan-st', SuratTugasController::class);
 
         Route::resource('kotak-masuk/disposisi', DisposisiController::class);
+        Route::resource('kotak-masuk/naskah-masuk-internal', NaskahMasukInternalController::class);
+        Route::resource('kotak-masuk/naskah-masuk-eksternal', NaskahMasukEksternalController::class);
 
         Route::resource('kotak-keluar/naskah-dinas', NaskahDinasController::class);
         Route::resource('kotak-keluar/surat-tugas', SuratTugasController::class);

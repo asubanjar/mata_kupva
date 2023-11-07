@@ -1,5 +1,5 @@
      @extends('layouts.app')
-     @section('title', 'Daftar Naskah Dinas Keluar')
+     @section('title', 'Daftar Pencatatan Surat Tugas')
      @section('content')
          <!--begin::Content wrapper-->
          <div class="d-flex flex-column flex-column-fluid">
@@ -13,7 +13,7 @@
                          <div class="page-title d-flex flex-column justify-content-center me-3 gap-1">
                              <!--begin::Title-->
                              <h1 class="page-heading d-flex flex-column justify-content-center text-dark fw-bold fs-3 m-0">
-                                 Naskah Dinas Keluar</h1>
+                                 Pencatatan Surat Tugas</h1>
                              <!--end::Title-->
                              <!--begin::Breadcrumb-->
                              <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0">
@@ -35,7 +35,7 @@
                                  </li>
                                  <!--end::Item-->
                                  <!--begin::Item-->
-                                 <li class="breadcrumb-item text-muted">Naskah Dinas</li>
+                                 <li class="breadcrumb-item text-muted">Surat Tugas</li>
                                  <!--end::Item-->
                              </ul>
                              <!--end::Breadcrumb-->
@@ -337,7 +337,7 @@
                                          <td>
                                              <div class="text-hover-primary mb-2 text-gray-800">Lorem ipsum dolor sit amet
                                                  !</div>
-                                             <div class="badge badge-light-warning fw-bold mb-2">Belum Dikirim</div>
+                                             <div class="badge badge-light-danger fw-bold mb-2">Belum Dikirim</div>
                                              <div>
                                                  Token:
                                                  <div class="badge badge-light-info fw-bold mb-2">7ASK64AH</div>
