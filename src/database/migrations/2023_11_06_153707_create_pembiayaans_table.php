@@ -20,13 +20,13 @@ return new class extends Migration
             $table->string('nama_akun');
             $table->string('pagu_anggaran');
             $table->string('perkiraan_anggaran');
-            $table->string('relisasi');
+            $table->string('realisasi');
             $table->softDeletes();
             $table->timestamps();
 
             $table->foreign('surat_tugas_id')
             ->references('id')
-            ->on('surat_tugases')
+            ->on('surat_tugas')
             ->onDelete('cascade');
         });
     }

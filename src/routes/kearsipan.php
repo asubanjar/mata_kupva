@@ -5,8 +5,8 @@ declare(strict_types=1);
 use App\Http\Controllers\Kearsipan\KotakKeluar\NaskahDinasController;
 use App\Http\Controllers\Kearsipan\KotakMasuk\DisposisiController;
 use App\Http\Controllers\Kearsipan\Registrasi\NotaDinasController;
-use App\Http\Controllers\Kearsipan\Registrasi\PermohonanSTController;
 use App\Http\Controllers\Kearsipan\Registrasi\SuratDinasController;
+use App\Http\Controllers\Kearsipan\Registrasi\SuratTugasController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('kearsipan')->group(function (): void {
@@ -14,7 +14,7 @@ Route::prefix('kearsipan')->group(function (): void {
 
         Route::resource('registrasi/surat-dinas', SuratDinasController::class);
 
-        Route::resource('registrasi/permohonan-st', PermohonanSTController::class);
+        Route::resource('registrasi/permohonan-st', SuratTugasController::class);
 
         Route::resource('kotak-masuk/disposisi', DisposisiController::class);
 

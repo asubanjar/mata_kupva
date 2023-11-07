@@ -5,13 +5,13 @@ declare(strict_types=1);
 namespace App\Http\Controllers\Kearsipan\Registrasi;
 
 use App\Http\Controllers\Controller;
-use App\Models\Kearsipan\Registrasi\PermohonanST;
+use App\Models\Kearsipan\Registrasi\SuratTugas;
 use App\Models\Master\JenisKegiatan;
 use App\Models\Master\JenisPerjadin;
 use App\Models\Master\KotaKabupaten;
 use Illuminate\Http\Request;
 
-class PermohonanSTController extends Controller
+class SuratTugasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -56,7 +56,7 @@ class PermohonanSTController extends Controller
             'tgl_st_end'         => 'required',
         ]);
 
-        $PermohonanST = PermohonanST::create([
+        $suratTugas = SuratTugas::create([
             'unit_kerja'         => $request->get('unit_kerja'),
             'no_nodis'           => $request->get('no_nodis'),
             'tgl_nodis'          => $request->get('tgl_nodis'),
@@ -77,7 +77,7 @@ class PermohonanSTController extends Controller
         ]);
 
         foreach (($request->get('array_anggaran')) as $anggaran) {
-            $PermohonanST->pembiayaan->insert([
+            $suratTugas->pembiayaan()->create([
                 'kode_akun'          => $anggaran['kode_akun'],
                 'nama_akun'          => $anggaran['nama_akun'],
                 'pagu_anggaran'      => $anggaran['pagu_anggaran'],

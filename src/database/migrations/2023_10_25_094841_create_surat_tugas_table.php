@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('surat_tugases', function (Blueprint $table): void {
+        Schema::create('surat_tugas', function (Blueprint $table): void {
             $table->uuid('id')->primary();
             $table->string('user_id')->nullable();
             $table->string('unit_kerja');
@@ -45,6 +45,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('surat_tugases');
+        Schema::dropIfExists('surat_tugas');
     }
 };

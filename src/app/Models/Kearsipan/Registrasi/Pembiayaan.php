@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Models\Kearsipan\Registrasi;
 
-use App\Models\Kearsipan\Registrasi\PermohonanST;
+use App\Models\Kearsipan\Registrasi\SuratTugas;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -24,8 +24,8 @@ class Pembiayaan extends Model
         'realisasi',
     ];
 
-    public function permohonanSt(): Relations\BelongsTo
+    public function suratTugas(): Relations\BelongsTo
     {
-        return $this->belongsTo(PermohonanST::class, 'surat_tugas_id');
+        return $this->belongsTo(SuratTugas::class, 'surat_tugas_id');
     }
 }

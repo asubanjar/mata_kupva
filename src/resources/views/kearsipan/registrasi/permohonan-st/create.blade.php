@@ -296,7 +296,7 @@
                                     </div>
 
                                     <div>
-                                        <button type="submit" class="btn btn-primary">Coba Simpan</button>
+                                        <button type="submit" class="btn btn-primary">Simpan</button>
                                     </div>
                             </div>
                             <!--end::Wrapper-->

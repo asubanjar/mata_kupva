@@ -15,12 +15,10 @@ use Illuminate\Database\Eloquent\Relations;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
-class PermohonanST extends Model
+class SuratTugas extends Model
 {
     use HasFactory;
     use HasUuids;
-
-    protected $table = 'surat_tugases';
 
     protected $casts = [
         'tgl_nodis'    => 'datetime',
@@ -70,7 +68,7 @@ class PermohonanST extends Model
 
     public function generateCode(): string
     {
-        $st = DB::table('surat_tugases')->latest('no_st')->whereNotNull('no_st')->first();
+        $st = DB::table('surat_tugas')->latest('no_st')->whereNotNull('no_st')->first();
 
         if (!$st) {
             $codeNumber = 1;
