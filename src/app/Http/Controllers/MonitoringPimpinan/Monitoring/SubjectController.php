@@ -5,7 +5,9 @@ namespace App\Http\Controllers\MonitoringPimpinan\Monitoring;
 use App\Http\Controllers\Controller;
 use App\Models\Master\SubjectType;
 use App\Models\MonitoringPimpinan\Monitoring\Subject;
+use App\Models\MonitoringPimpinan\Monitoring\Upload\SubjectAttachment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class SubjectController extends Controller
 {
@@ -61,12 +63,30 @@ class SubjectController extends Controller
             'opened'          => 'required|date',
         ]);
 
-        Subject::create([
-            'name'            => $request->name,
-            'comment'         => $request->comment,
-            'subject_type_id' => $request->subject_type_id,
-            'opened'          => $request->opened,
+        $subject = Subject::create([
+            'name'            => $request->get('name'),
+            'comment'         => $request->get('comment'),
+            'subject_type_id' => $request->get('subject_type_id'),
+            'opened'          => $request->get('opened'),
         ]);
+
+        $lampirans = SubjectAttachment::where('uniqid', $request->get('uniqid'))->get();
+
+        foreach ($lampirans as $lampiran) {
+            $path = storage_path('app/subject/');
+
+            $source = $lampiran->temp_path;
+            $destination = 'uploads/subject/' . $lampiran->uniqid . '-' . $lampiran->filename;
+
+            if (Storage::disk('local')->exists($source)) {
+                Storage::copy($source, $destination);
+
+                $lampiran->update([
+                    'subject_id' => $subject->id,
+                    'path'       => $path . $lampiran->uniqid . '-' . $lampiran->filename,
+                ]);
+            }
+        }
 
         return redirect('/monitoring-pimpinan/monitoring/subject')->with('success', 'Sukses menambahkan subjek');
     }

@@ -13,6 +13,7 @@ use App\Http\Controllers\MonitoringPimpinan\Monitoring\SubjectDetailActionContro
 use App\Http\Controllers\MonitoringPimpinan\Monitoring\SubjectDetailActionStoreController;
 use App\Http\Controllers\MonitoringPimpinan\Monitoring\SubjectDetailController;
 use App\Http\Controllers\MonitoringPimpinan\Monitoring\SubjectDetailStoreController;
+use App\Http\Controllers\MonitoringPimpinan\Monitoring\Upload\SubjectUploadController;
 use App\Http\Controllers\MonitoringPimpinan\Statistic\ActionController as StatisticActionController;
 use Illuminate\Support\Facades\Route;
 
@@ -58,4 +59,9 @@ Route::prefix('monitoring-pimpinan')->group(function (): void {
             'monitoring/subject/action/{action}/check',
             ActionCheckController::class
         )->name('monitoring.subject-action.check');
+
+        Route::post(
+            'monitoring/upload/subject/{uniqid}',
+            SubjectUploadController::class
+        )->name('monitoring.upload.subject');
 });
