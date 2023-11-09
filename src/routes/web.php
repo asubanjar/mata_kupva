@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -34,4 +35,6 @@ Route::group(['middleware' => ['auth']], function (): void {
     Route::group([], base_path('routes/user.php'));
 
     Route::group([], base_path('routes/master.php'));
+
+    Route::post('upload/{uniqid}/{class}', UploadController::class);
 });

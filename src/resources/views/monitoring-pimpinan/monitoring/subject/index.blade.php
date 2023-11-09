@@ -620,9 +620,9 @@
         previewNode.parentNode.removeChild(previewNode);
 
         var myDropzone = new Dropzone(id, { // Make the whole body a dropzone
-            url: "/monitoring-pimpinan/monitoring/upload/subject/{{ $uniqid }}", // Set the url for your upload script location
+            url: "/upload/{{ $uniqid }}/subject_attachments", // Set the url for your upload script location
             parallelUploads: 20,
-            maxFilesize: 1, // Max filesize in MB
+            maxFilesize: 5, // Max filesize in MB
             headers: {
                 'X-CSRF-TOKEN': "{{ csrf_token() }}"
             },

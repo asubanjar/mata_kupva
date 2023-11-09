@@ -73,10 +73,10 @@ class SubjectController extends Controller
         $lampirans = SubjectAttachment::where('uniqid', $request->get('uniqid'))->get();
 
         foreach ($lampirans as $lampiran) {
-            $path = storage_path('app/subject/');
+            $path = 'app/subject/';
 
             $source = $lampiran->temp_path;
-            $destination = 'uploads/subject/' . $lampiran->uniqid . '-' . $lampiran->filename;
+            $destination = 'uploads/subject_attachments/' . $lampiran->uniqid . '-' . $lampiran->filename;
 
             if (Storage::disk('local')->exists($source)) {
                 Storage::copy($source, $destination);
