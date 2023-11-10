@@ -9,6 +9,6 @@ enum SystemRoleEnum: string
     case KEARSIPAN = 'Kearsipan';
     case MONITORING_PIMPINAN = 'Monitoring_Pimpinan';
     case ADMIN_KEDINASAN = 'Admin_Kedinasan';
-    case ADMIN_KEARSIAPN = 'Admin_Kearsipan';
+    case ADMIN_KEARSIPAN = 'Admin_Kearsipan';
     case KONSEPTOR_KEDINASAN = 'Konseptor_Kedinasan';
 }

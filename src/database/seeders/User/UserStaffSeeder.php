@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Database\Seeders;
+namespace Database\Seeders\User;
 
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -15,7 +15,7 @@ class UserStaffSeeder extends Seeder
     {
         DB::unprepared('SET IDENTITY_INSERT users ON');
 
-        $content = file_get_contents(__DIR__ . '/data/pegawai-staff.csv');
+        $content = file_get_contents(database_path('seeders/data/pegawai-staff.csv'));
 
         Assert::stringNotEmpty($content, 'Content invalid');
 

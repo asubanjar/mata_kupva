@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Seeders;
+namespace Database\Seeders\User;
 
 use App\CsvSeed;
 use App\Seeder;
@@ -17,7 +17,7 @@ class PermissionSeeder extends Seeder
 
         $this->setTable('permissions');
 
-        $seed = new CsvSeed(__DIR__ . '/data/permission.csv');
+        $seed = new CsvSeed(database_path('seeders/data/permission.csv'));
 
         $this->sync($seed, 'name');
     }
