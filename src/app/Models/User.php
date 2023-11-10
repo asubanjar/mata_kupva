@@ -36,7 +36,6 @@ class User extends Authenticatable
         'name',
         'nik',
         'nip',
-        'password',
         'phone',
         'position',
         'simpeg_id',
@@ -46,18 +45,10 @@ class User extends Authenticatable
     ];
 
     /**
-     * The attributes that should be hidden for serialization.
-     */
-    protected $hidden = [
-        'password',
-    ];
-
-    /**
      * The attributes that should be cast.
      */
     protected $casts = [
         'active'   => 'boolean',
-        'password' => 'hashed',
     ];
 
     public function jabatan(): Relations\BelongsTo

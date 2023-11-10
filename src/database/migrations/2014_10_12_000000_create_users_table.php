@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('username');
-            $table->string('password');
             $table->string('unit_organisasi')->nullable();
             $table->string('position')->nullable();
             $table->string('jabatan_code')->nullable();

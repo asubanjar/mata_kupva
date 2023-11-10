@@ -9,13 +9,13 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Webmozart\Assert\Assert;
 
-class UserSeeder extends Seeder
+class UserStrukturalSeeder extends Seeder
 {
     public function run(): void
     {
         DB::unprepared('SET IDENTITY_INSERT users ON');
 
-        $content = file_get_contents(__DIR__ . '/data/peopleupdate.csv');
+        $content = file_get_contents(__DIR__ . '/data/pegawai-struktural.csv');
 
         Assert::stringNotEmpty($content, 'Content invalid');
 
@@ -43,7 +43,6 @@ class UserSeeder extends Seeder
                 'id'              => $row['id'],
                 'name'            => $data_pegawai ? $data_pegawai->nama : $row['name'],
                 'username'        => $row['username'],
-                'password'        => $row['password'],
                 'unit_organisasi' => $data_pegawai ? $data_pegawai->unit_organisasi : null,
                 'position'        => $data_pegawai ? $data_pegawai->jabatan : $row['position'],
                 'jabatan_code'    => $row['jabatan_code'],
@@ -53,7 +52,7 @@ class UserSeeder extends Seeder
                 'approval_name'   => $data_pegawai ? $data_pegawai->nama : $row['approval_name'],
                 'email'           => $row['email'],
                 'nik'             => $data_pegawai ? $data_pegawai->nik : $row['nik'],
-                'phone'           => $row['phone'],
+                'phone'           => '6287812625858',
                 'golongan'        => $data_pegawai ? $data_pegawai->golongan : $row['golongan'],
                 'user_id'         => $row['user_id'],
                 'active'          => $data_pegawai ? ($data_pegawai->status_pegawai === '1') : false,
@@ -62,7 +61,7 @@ class UserSeeder extends Seeder
 
             $user = User::Create($people_array);
 
-            $user->assignRole('Super Admin');
+            $user->assignRole('Super_Admin');
 
             $progress->advance(1);
         });
