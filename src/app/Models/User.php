@@ -7,6 +7,7 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
 use App\Models\Master\Jabatan;
+use App\Models\Master\UnitKerja;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -39,6 +40,7 @@ class User extends Authenticatable
         'phone',
         'position',
         'simpeg_id',
+        'unit_kerja',
         'unit_organisasi',
         'username',
         'user_id',
@@ -59,5 +61,10 @@ class User extends Authenticatable
     public function atasan(): Relations\BelongsTo
     {
         return $this->belongsTo(Jabatan::class, 'atasan_code', 'code');
+    }
+
+    public function unitKerja(): Relations\BelongsTo
+    {
+        return $this->belongsTo(UnitKerja::class, 'unit_kerja', 'nama');
     }
 }

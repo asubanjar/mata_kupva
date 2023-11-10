@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('username');
             $table->string('unit_organisasi')->nullable();
             $table->string('position')->nullable();
+            $table->string('unit_kerja')->nullable();
             $table->string('jabatan_code')->nullable();
             $table->unsignedBigInteger('group_id')->nullable();
             $table->string('atasan_code')->nullable();

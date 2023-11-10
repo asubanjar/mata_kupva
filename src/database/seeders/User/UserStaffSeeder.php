@@ -45,6 +45,7 @@ class UserStaffSeeder extends Seeder
                 'username'        => $row['username'],
                 'unit_organisasi' => $data_pegawai ? $data_pegawai->unit_organisasi : null,
                 'position'        => $data_pegawai ? $data_pegawai->jabatan : $row['position'],
+                'unit_kerja'      => $row['unit_kerja'] !== '' ? $row['unit_kerja'] : null,
                 'jabatan_code'    => $row['jabatan_code'],
                 'group_id'        => $row['group_id'],
                 'atasan_code'     => $row['atasan_code'],
