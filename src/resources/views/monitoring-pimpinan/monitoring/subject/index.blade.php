@@ -612,7 +612,6 @@
         // set the dropzone container id
         const id = "#kt_dropzonejs_example_3";
         const dropzone = document.querySelector(id);
-
         // set the preview element template
         var previewNode = dropzone.querySelector(".dropzone-item");
         previewNode.id = "";
@@ -620,6 +619,7 @@
         previewNode.parentNode.removeChild(previewNode);
 
         var myDropzone = new Dropzone(id, { // Make the whole body a dropzone
+            addRemoveLinks: true,
             url: "/upload/{{ $uniqid }}/subject_attachments", // Set the url for your upload script location
             parallelUploads: 20,
             maxFilesize: 5, // Max filesize in MB
@@ -666,6 +666,23 @@
                     progressBar.querySelector('.progress').style.opacity = "0";
                 });
             }, 300);
+        });
+
+        myDropzone.on("removedfile", function(file) {
+            var name = file.name;
+            // alert(name);
+
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': "{{ csrf_token() }}"
+                },
+                type: 'POST',
+                url: '/upload-delete/{{ $uniqid }}/subject_attachments',
+                data: {
+                    filename: name
+                },
+                dataType: 'html'
+            });
         });
     </script>
 @endsection

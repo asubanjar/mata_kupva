@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\DeleteUploadController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Auth;
@@ -37,4 +38,6 @@ Route::group(['middleware' => ['auth']], function (): void {
     Route::group([], base_path('routes/master.php'));
 
     Route::post('upload/{uniqid}/{class}', UploadController::class);
+
+    Route::post('upload-delete/{uniqid}/{class}', DeleteUploadController::class);
 });
