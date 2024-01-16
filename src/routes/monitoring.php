@@ -8,6 +8,7 @@ use App\Http\Controllers\MonitoringPimpinan\Monitoring\ActionCheckStoreControlle
 use App\Http\Controllers\MonitoringPimpinan\Monitoring\ActionController;
 use App\Http\Controllers\MonitoringPimpinan\Monitoring\CheckController;
 use App\Http\Controllers\MonitoringPimpinan\Monitoring\CheckFinishController;
+use App\Http\Controllers\MonitoringPimpinan\Monitoring\SubjectAttachmentController;
 use App\Http\Controllers\MonitoringPimpinan\Monitoring\SubjectController;
 use App\Http\Controllers\MonitoringPimpinan\Monitoring\SubjectDetailActionController;
 use App\Http\Controllers\MonitoringPimpinan\Monitoring\SubjectDetailActionStoreController;
@@ -28,6 +29,14 @@ Route::prefix('monitoring-pimpinan')->group(function (): void {
         Route::resource('monitoring/action', ActionController::class)->only('index', 'update', 'destroy');
 
         Route::resource('monitoring/check', CheckController::class);
+
+        Route::get('subject-attachment/{subject}', SubjectAttachmentController::class . '@index')
+            ->name('subject-attachment.index');
+
+        Route::post('subject-attachment/{subject}', SubjectAttachmentController::class . '@store')
+            ->name('subject-attachment.store');
+
+        Route::resource('subject-attachment', SubjectAttachmentController::class)->only('destroy');
 
         Route::put(
             'monitoring/subject-detail/{subject_detail}/action',

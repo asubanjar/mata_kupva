@@ -14,7 +14,8 @@ class DeleteUploadController extends Controller
     {
         DB::table($class)
                 ->where('filename', $request->get('filename'))
-                ->where('uniqid', $uniqid)->delete();
+                ->where('uniqid', $uniqid)
+                ->whereNull('subject_id')->delete();
 
         return response()->json([
             'filename' => $request->get('filename'),

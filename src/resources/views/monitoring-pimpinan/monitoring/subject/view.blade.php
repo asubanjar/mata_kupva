@@ -74,6 +74,9 @@
                                         <div class="d-flex align-items-center mb-1">
                                             <div class="text-hover-primary fs-2 fw-bold me-3 text-gray-800">
                                                 {{ $subject->name }}</div>
+
+                                            <span
+                                                class="badge badge-light-primary me-auto">{{ $subject->subjectType->name }}</span>
                                             @if ($subject->closed)
                                                 <span class="badge badge-light-success me-auto">Selesai</span>
                                             @else
@@ -90,7 +93,7 @@
                                     <!--begin::Actions-->
                                     <div class="d-flex mb-4">
                                         <a href="#" class="btn btn-sm btn-primary me-3" data-bs-toggle="modal"
-                                            data-bs-target="#kt_modal_new_target">Ubah Subjek</a>
+                                            data-bs-target="#modal_edit_subject">Ubah Subjek</a>
                                         <!--begin::Menu-->
                                         <div class="me-0">
                                             <button class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary"
@@ -369,133 +372,71 @@
                     <!--end::Col-->
                     <!--begin::Col-->
                     <div class="col-xl-6">
-                        <!--begin::Chart widget 17-->
-                        <div class="card card-flush h-xl-100">
-                            <!--begin::Header-->
-                            <div class="card-header pt-7">
-                                <!--begin::Title-->
-                                <h3 class="card-title align-items-start flex-column">
-                                    <span class="card-label fw-bold text-dark">Performa</span>
-                                    <span class="fw-semibold fs-6 pt-2 text-gray-400">Terdapat 16 unit kerja
-                                        terlibat</span>
-                                </h3>
-                                <!--end::Title-->
-                                <!--begin::Toolbar-->
-                                <div class="card-toolbar">
-                                    <!--begin::Menu-->
-                                    <button
-                                        class="btn btn-icon btn-color-gray-400 btn-active-color-primary justify-content-end"
-                                        data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end"
-                                        data-kt-menu-overflow="true">
-                                        <i class="ki-duotone ki-dots-square fs-1 me-n1 text-gray-400">
+                        <!--begin::Card-->
+                        <div class="card">
+                            <!--begin::Card header-->
+                            <div class="card-header border-0 pt-6">
+                                <!--begin::Card title-->
+                                <div class="card-title">
+                                    <!--begin::Search-->
+                                    <div class="d-flex align-items-center position-relative my-1">
+                                        <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-5">
                                             <span class="path1"></span>
                                             <span class="path2"></span>
-                                            <span class="path3"></span>
-                                            <span class="path4"></span>
                                         </i>
-                                    </button>
-                                    <!--begin::Menu 3-->
-                                    <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-200px py-3"
-                                        data-kt-menu="true">
-                                        <!--begin::Heading-->
-                                        <div class="menu-item px-3">
-                                            <div class="menu-content text-muted fs-7 text-uppercase px-3 pb-2">Payments
-                                            </div>
-                                        </div>
-                                        <!--end::Heading-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3">Create Invoice</a>
-                                        </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link flex-stack px-3">Create Payment
-                                                <span class="ms-2" data-bs-toggle="tooltip"
-                                                    title="Specify a target name for future usage and reference">
-                                                    <i class="ki-duotone ki-information fs-6">
-                                                        <span class="path1"></span>
-                                                        <span class="path2"></span>
-                                                        <span class="path3"></span>
-                                                    </i>
-                                                </span></a>
-                                        </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3">Generate Bill</a>
-                                        </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3" data-kt-menu-trigger="hover"
-                                            data-kt-menu-placement="right-end">
-                                            <a href="#" class="menu-link px-3">
-                                                <span class="menu-title">Subscription</span>
-                                                <span class="menu-arrow"></span>
-                                            </a>
-                                            <!--begin::Menu sub-->
-                                            <div class="menu-sub menu-sub-dropdown w-175px py-4">
-                                                <!--begin::Menu item-->
-                                                <div class="menu-item px-3">
-                                                    <a href="#" class="menu-link px-3">Plans</a>
-                                                </div>
-                                                <!--end::Menu item-->
-                                                <!--begin::Menu item-->
-                                                <div class="menu-item px-3">
-                                                    <a href="#" class="menu-link px-3">Billing</a>
-                                                </div>
-                                                <!--end::Menu item-->
-                                                <!--begin::Menu item-->
-                                                <div class="menu-item px-3">
-                                                    <a href="#" class="menu-link px-3">Statements</a>
-                                                </div>
-                                                <!--end::Menu item-->
-                                                <!--begin::Menu separator-->
-                                                <div class="separator my-2"></div>
-                                                <!--end::Menu separator-->
-                                                <!--begin::Menu item-->
-                                                <div class="menu-item px-3">
-                                                    <div class="menu-content px-3">
-                                                        <!--begin::Switch-->
-                                                        <label
-                                                            class="form-check form-switch form-check-custom form-check-solid">
-                                                            <!--begin::Input-->
-                                                            <input class="form-check-input w-30px h-20px" type="checkbox"
-                                                                value="1" checked="checked" name="notifications" />
-                                                            <!--end::Input-->
-                                                            <!--end::Label-->
-                                                            <span class="form-check-label text-muted fs-6">Recuring</span>
-                                                            <!--end::Label-->
-                                                        </label>
-                                                        <!--end::Switch-->
-                                                    </div>
-                                                </div>
-                                                <!--end::Menu item-->
-                                            </div>
-                                            <!--end::Menu sub-->
-                                        </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item my-1 px-3">
-                                            <a href="#" class="menu-link px-3">Settings</a>
-                                        </div>
-                                        <!--end::Menu item-->
+                                        <input type="text" id="custom-search-box-attachment"
+                                            class="form-control form-control-solid w-250px ps-13"
+                                            placeholder="Search Lampiran" />
                                     </div>
-                                    <!--end::Menu 3-->
-                                    <!--end::Menu-->
+                                    <!--end::Search-->
                                 </div>
-                                <!--end::Toolbar-->
+                                <!--begin::Card title-->
+                                <!--begin::Card toolbar-->
+                                <div class="card-toolbar">
+                                    <!--begin::Toolbar-->
+                                    <div class="d-flex justify-content-end" data-table-toolbar="base">
+                                        <!--end::Filter-->
+                                        <!--begin::Add Lampiran-->
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                            data-bs-target="#modal_add_lampiran">Tambah Lampiran</button>
+                                        <!--end::Add Lampiran-->
+                                    </div>
+                                    <!--end::Toolbar-->
+                                    <!--begin::Group actions-->
+                                    <div class="d-flex justify-content-end align-items-center d-none"
+                                        data-table-toolbar="selected">
+                                        <div class="fw-bold me-5">
+                                            <span class="me-2" data-table-select="selected_count"></span>Selected
+                                        </div>
+                                        <button type="button" class="btn btn-danger"
+                                            data-table-select="delete_selected">Delete
+                                            Selected</button>
+                                    </div>
+                                    <!--end::Group actions-->
+                                </div>
+                                <!--end::Card toolbar-->
                             </div>
-                            <!--end::Header-->
-                            <!--begin::Body-->
-                            <div class="card-body pt-5">
-                                <!--begin::Chart container-->
-                                <div id="kt_charts_widget_17_chart" class="w-100 h-400px"></div>
-                                <!--end::Chart container-->
+                            <!--end::Card header-->
+                            <!--begin::Card body-->
+                            <div class="card-body pt-0">
+                                <!--begin::Table-->
+                                <table class="table-row-dashed fs-6 gy-5 table align-middle" id="attachments">
+                                    <thead>
+                                        <tr class="fw-bold fs-7 text-uppercase gs-0 text-start text-gray-400">
+                                            <th class="w-10px pe-2">
+                                                No
+                                            </th>
+                                            <th class="min-w-125px">Nama</th>
+                                            <th class="min-w-125px">Ukuran File</th>
+                                            <th class="min-w-70px text-end">Aksi</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                                <!--end::Table-->
                             </div>
-                            <!--end::Body-->
+                            <!--end::Card body-->
                         </div>
-                        <!--end::Chart widget 17-->
+                        <!--end::Card-->
                     </div>
                     <!--end::Col-->
                 </div>
@@ -643,6 +584,96 @@
                 <!--end::Card-->
 
                 <!--begin::Modals-->
+                <!--begin::Modal - Subject  - Edit-->
+                <div class="modal fade" tabindex="-1" id="modal_edit_subject">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 class="modal-title">Ubah Subject</h3>
+                                <!--begin::Close-->
+                                <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal"
+                                    aria-label="Close">
+                                    <i class="ki-duotone ki-cross fs-1"><span class="path1"></span><span
+                                            class="path2"></span></i>
+                                </div>
+                                <!--end::Close-->
+                            </div>
+                            <form id="add_form" method="post" action="{{ route('subject.update', $subject->id) }}"
+                                class="needs-validation" enctype="multipart/form-data" novalidate="">
+                                @csrf
+                                @method('PUT')
+                                {{ csrf_field() }}
+                                <div class="modal-body">
+                                    <div class="fv-row mb-10">
+                                        <label for="exampleFormControlInput1" class="required form-label">Nama</label>
+                                        <input type="text" class="form-control form-control-solid" name="name"
+                                            value="{{ $subject->name }}" placeholder="Nama Kegiatan atau Subjek" />
+                                    </div>
+                                    <div class="fv-row mb-10">
+                                        <label for="exampleFormControlInput1" class="required form-label">Jenis
+                                            Kegiatan/Subjek</label>
+                                        <select class="form-select form-select-solid" aria-label="Select example"
+                                            name="subject_type_id">
+                                            <option value="">Pilih..
+                                            </option>
+                                            @foreach ($subject_types as $subject_type)
+                                                <option @selected($subject_type->id == $subject->subject_type_id) value="{{ $subject_type->id }}">
+                                                    {{ $subject_type->name }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="fv-row mb-10">
+                                        <label for="exampleFormControlInput1"
+                                            class="required form-label">Keterangan</label>
+                                        <textarea rows="10" class="form-control form-control-solid" name="comment">{{ $subject->comment }}</textarea>
+                                    </div>
+                                    <div class="fv-row mb-10">
+                                        <label for="exampleFormControlInput1" class="form-label">Tanggal Mulai</label>
+                                        <div class="fv-row input-group mb-10" id="subject_start"
+                                            data-td-target-input="nearest" data-td-target-toggle="nearest">
+                                            <input id="subject_start" type="text" class="form-control"
+                                                data-td-target="#subject_start" name="opened"
+                                                value="{{ $subject->opened }}" />
+                                            <span class="input-group-text" data-td-target="#subject_start"
+                                                data-td-toggle="datetimepicker">
+                                                <i class="ki-duotone ki-calendar fs-2"><span class="path1"></span><span
+                                                        class="path2"></span></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="fv-row mb-10">
+                                        <label for="exampleFormControlInput1" class="form-label">Selesai</label>
+                                        <div class="fv-row input-group mb-10" id="subject_end"
+                                            data-td-target-input="nearest" data-td-target-toggle="nearest">
+                                            <input id="subject_end" type="text" class="form-control"
+                                                data-td-target="#subject_end" name="closed"
+                                                value="{{ $subject->closed }}" />
+                                            <span class="input-group-text" data-td-target="#subject_end"
+                                                data-td-toggle="datetimepicker">
+                                                <i class="ki-duotone ki-calendar fs-2"><span class="path1"></span><span
+                                                        class="path2"></span></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="mb-10">
+                                        <input class="form-check-input" type="checkbox" value="" name="active"
+                                            {{ $subject->active ? 'checked' : '' }} />
+                                        <label class="form-check-label" for="active">
+                                            Aktif
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!--end::Modal - Subject - Edit-->
 
                 <!--begin::Modal - Action - Add-->
                 <div class="modal fade" tabindex="-1" id="modal_add">
@@ -675,7 +706,8 @@
                                         <textarea rows="10" class="form-control form-control-solid" name="comment"></textarea>
                                     </div>
                                     <div class="fv-row mb-10">
-                                        <label for="exampleFormControlInput1" class="required form-label">Mulai</label>
+                                        <label for="exampleFormControlInput1" class="required form-label">Target
+                                            Mulai</label>
                                         <div class="fv-row input-group mb-10" id="kt_td_picker_date_only_start"
                                             data-td-target-input="nearest" data-td-target-toggle="nearest">
                                             <input id="kt_td_picker_date_only_start" type="text" class="form-control"
@@ -714,6 +746,92 @@
                     </div>
                 </div>
                 <!--end::Modal - Action - Add-->
+
+                <!--begin::Modal - Action - Add-->
+                <div class="modal fade" tabindex="-1" id="modal_add_lampiran">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 class="modal-title">Tambah Lampiran</h3>
+
+                                <!--begin::Close-->
+                                <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal"
+                                    aria-label="Close">
+                                    <i class="ki-duotone ki-cross fs-1"><span class="path1"></span><span
+                                            class="path2"></span></i>
+                                </div>
+                                <!--end::Close-->
+                            </div>
+                            <form id="add_form_lampiran" method="post"
+                                action="{{ route('subject-attachment.store', $subject->id) }}" class="needs-validation"
+                                novalidate="">
+                                @csrf
+                                <div class="modal-body">
+                                    <input type="hidden" id="uniqid" name="uniqid"
+                                        value="{{ $uniqid = uniqid() }}">
+                                    <div class="fv-row mb-10">
+                                        <!--begin::Dropzone-->
+                                        <div class="dropzone dropzone-queue mb-2" id="dropzone_lampiran">
+                                            <!--begin::Controls-->
+                                            <div class="dropzone-panel mb-lg-0 mb-2">
+                                                <a class="dropzone-select btn btn-sm btn-primary me-2">Attach files</a>
+                                                <a class="dropzone-remove-all btn btn-sm btn-light-primary">Remove All</a>
+                                            </div>
+                                            <!--end::Controls-->
+
+                                            <!--begin::Items-->
+                                            <div class="dropzone-items wm-200px">
+                                                <div class="dropzone-item" style="display:none">
+                                                    <!--begin::File-->
+                                                    <div class="dropzone-file">
+                                                        <div class="dropzone-filename" title="some_image_file_name.jpg">
+                                                            <span data-dz-name>some_image_file_name.jpg</span>
+                                                            <strong>(<span data-dz-size>340kb</span>)</strong>
+                                                        </div>
+
+                                                        <div class="dropzone-error" data-dz-errormessage></div>
+                                                    </div>
+                                                    <!--end::File-->
+
+                                                    <!--begin::Progress-->
+                                                    <div class="dropzone-progress">
+                                                        <div class="progress">
+                                                            <div class="progress-bar bg-primary" role="progressbar"
+                                                                aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"
+                                                                data-dz-uploadprogress>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--end::Progress-->
+
+                                                    <!--begin::Toolbar-->
+                                                    <div class="dropzone-toolbar">
+                                                        <span class="dropzone-delete" data-dz-remove><i
+                                                                class="bi bi-x fs-1"></i></span>
+                                                    </div>
+                                                    <!--end::Toolbar-->
+                                                </div>
+                                            </div>
+                                            <!--end::Items-->
+                                        </div>
+                                        <!--end::Dropzone-->
+
+                                        <!--begin::Hint-->
+                                        <span class="form-text text-muted">Max file size is 1MB and max number of files is
+                                            5.</span>
+                                        <!--end::Hint-->
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!--end::Modal - Action - Add - Lampiran-->
 
                 <!--end::Modals-->
             </div>
@@ -913,129 +1031,6 @@
             List.init();
         });
     </script>
-    <script src="{{ asset('assets/js/custom/apps/chat/chat.js') }}"></script>
-    <!--begin::Vendors Javascript(used for this page only)-->
-    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/radar.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
-
-    <script>
-        // Class definition
-        var KTChartsWidget17 = (function() {
-            // Private methods
-            var initChart = function() {
-                // Check if amchart library is included
-                if (typeof am5 === "undefined") {
-                    return;
-                }
-
-                var element = document.getElementById("kt_charts_widget_17_chart");
-
-                if (!element) {
-                    return;
-                }
-
-                var root;
-
-                var init = function() {
-                    // Create root element
-                    // https://www.amcharts.com/docs/v5/getting-started/#Root_element
-                    root = am5.Root.new(element);
-
-                    // Set themes
-                    // https://www.amcharts.com/docs/v5/concepts/themes/
-                    root.setThemes([am5themes_Animated.new(root)]);
-
-                    // Create chart
-                    // https://www.amcharts.com/docs/v5/charts/percent-charts/pie-chart/
-                    // start and end angle must be set both for chart and series
-                    var chart = root.container.children.push(
-                        am5percent.PieChart.new(root, {
-                            startAngle: 180,
-                            endAngle: 360,
-                            layout: root.verticalLayout,
-                            innerRadius: am5.percent(50),
-                        })
-                    );
-
-                    // Create series
-                    // https://www.amcharts.com/docs/v5/charts/percent-charts/pie-chart/#Series
-                    // start and end angle must be set both for chart and series
-                    var series = chart.series.push(
-                        am5percent.PieSeries.new(root, {
-                            startAngle: 180,
-                            endAngle: 360,
-                            valueField: "value",
-                            categoryField: "category",
-                            alignLabels: false,
-                        })
-                    );
-
-                    series.labels.template.setAll({
-                        fontWeight: "400",
-                        fontSize: 13,
-                        fill: am5.color(KTUtil.getCssVariableValue('--bs-gray-500'))
-                    });
-
-                    series.states.create("hidden", {
-                        startAngle: 180,
-                        endAngle: 180,
-                    });
-
-                    series.slices.template.setAll({
-                        cornerRadius: 5,
-                    });
-
-                    series.ticks.template.setAll({
-                        forceHidden: true,
-                    });
-
-                    // Set data
-                    // https://www.amcharts.com/docs/v5/charts/percent-charts/pie-chart/#Setting_data
-                    series.data.setAll([{
-                            value: {{ $subject_detail_pending->count() }},
-                            category: "Dalam Proses",
-                            fill: am5.color(KTUtil.getCssVariableValue('--bs-success'))
-                        },
-                        {
-                            value: {{ $subject_detail_done->count() }},
-                            category: "Selesai",
-                            fill: am5.color("#00ff00")
-                        },
-                    ]);
-
-                    series.appear(1000, 100);
-                }
-
-                am5.ready(function() {
-                    init();
-                });
-
-                // Update chart on theme mode change
-                KTThemeMode.on("kt.thememode.change", function() {
-                    // Destroy chart
-                    root.dispose();
-
-                    // Reinit chart
-                    init();
-                });
-            };
-
-            // Public methods
-            return {
-                init: function() {
-                    initChart();
-                },
-            };
-        })();
-
-        // Webpack support
-        if (typeof module !== "undefined") {
-            module.exports = KTChartsWidget17;
-        }
-    </script>
     <script>
         new tempusDominus.TempusDominus(document.getElementById("kt_td_picker_date_only_start"), {
             localization: {
@@ -1049,6 +1044,213 @@
             localization: {
                 format: "yyyy/MM/dd"
             }
+        });
+    </script>
+
+    <script>
+        new tempusDominus.TempusDominus(document.getElementById("subject_start"), {
+            localization: {
+                format: "yyyy/MM/dd"
+            }
+        });
+    </script>
+
+    <script>
+        new tempusDominus.TempusDominus(document.getElementById("subject_end"), {
+            localization: {
+                format: "yyyy/MM/dd"
+            }
+        });
+    </script>
+
+    <script>
+        // set the dropzone container id
+        const id = "#dropzone_lampiran";
+        const dropzone = document.querySelector(id);
+        // set the preview element template
+        var previewNode = dropzone.querySelector(".dropzone-item");
+        previewNode.id = "";
+        var previewTemplate = previewNode.parentNode.innerHTML;
+        previewNode.parentNode.removeChild(previewNode);
+
+        var myDropzone = new Dropzone(id, { // Make the whole body a dropzone
+            addRemoveLinks: true,
+            url: "/upload/{{ $uniqid }}/subject_attachments", // Set the url for your upload script location
+            parallelUploads: 20,
+            maxFilesize: 5, // Max filesize in MB
+            headers: {
+                'X-CSRF-TOKEN': "{{ csrf_token() }}"
+            },
+            previewTemplate: previewTemplate,
+            previewsContainer: id + " .dropzone-items", // Define the container to display the previews
+            clickable: id +
+                " .dropzone-select" // Define the element that should be used as click trigger to select files.
+        });
+
+        myDropzone.on("addedfile", function(file) {
+            // Hookup the start button
+            const dropzoneItems = dropzone.querySelectorAll('.dropzone-item');
+            dropzoneItems.forEach(dropzoneItem => {
+                dropzoneItem.style.display = '';
+            });
+        });
+
+        // Update the total progress bar
+        myDropzone.on("totaluploadprogress", function(progress) {
+            const progressBars = dropzone.querySelectorAll('.progress-bar');
+            progressBars.forEach(progressBar => {
+                progressBar.style.width = progress + "%";
+            });
+        });
+
+        myDropzone.on("sending", function(file) {
+            // Show the total progress bar when upload starts
+            const progressBars = dropzone.querySelectorAll('.progress-bar');
+            progressBars.forEach(progressBar => {
+                progressBar.style.opacity = "1";
+            });
+        });
+
+        // Hide the total progress bar when nothing"s uploading anymore
+        myDropzone.on("complete", function(progress) {
+            const progressBars = dropzone.querySelectorAll('.dz-complete');
+
+            setTimeout(function() {
+                progressBars.forEach(progressBar => {
+                    progressBar.querySelector('.progress-bar').style.opacity = "0";
+                    progressBar.querySelector('.progress').style.opacity = "0";
+                });
+            }, 300);
+        });
+
+        myDropzone.on("removedfile", function(file) {
+            var name = file.name;
+
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': "{{ csrf_token() }}"
+                },
+                type: 'POST',
+                url: '/upload-delete/{{ $uniqid }}/subject_attachments',
+                data: {
+                    filename: name
+                },
+                dataType: 'html'
+            });
+        });
+    </script>
+
+    <script>
+        $(function() {
+            var attachmentTable = $('#attachments').DataTable({
+                processing: true,
+                serverSide: true,
+                searching: true,
+                ajax: "{{ route('subject-attachment.index', ['subject' => $subject->id]) }}",
+                columns: [{
+                        data: null,
+                        name: 'rownum',
+                        searchable: false,
+                        orderable: false,
+                        render: function(data, type, row, meta) {
+                            return meta.row + meta.settings._iDisplayStart + 1;
+                        }
+                    },
+                    {
+                        data: 'filename',
+                        name: 'filename',
+                        searchable: true,
+                        orderable: true,
+                    },
+                    {
+                        data: 'filesize',
+                        name: 'filesize',
+                        searchable: true,
+                        orderable: true,
+                    },
+                    {
+                        data: null,
+                        name: 'action',
+                        orderable: false,
+                        searchable: false,
+                        render: function(data, type, row) {
+                            return '<button class="delete-button" data-id="' + row.id +
+                                '">Delete</button>';
+                        }
+                    }
+                ]
+            });
+
+            //Search Attachment
+            $('#custom-search-box-attachment').keyup(function() {
+                attachmentTable.search($(this).val()).draw();
+            });
+
+            //Insert Attachment
+            $('#add_form_lampiran').submit(function(event) {
+                event.preventDefault();
+
+                if (this.checkValidity() === false) {
+                    event.stopPropagation();
+                } else {
+                    var formData = new FormData(this);
+
+                    $.ajax({
+                        url: $(this).attr('action'), // or your specific URL
+                        type: 'POST',
+                        data: formData,
+                        contentType: false,
+                        processData: false,
+                        success: function(response) {
+                            $('#modal_add_lampiran').modal('hide');
+
+                            attachmentTable.ajax.reload();
+
+                            // Reset the form fields
+                            $('#add_form_lampiran')[0].reset();
+
+                            // Reset Dropzone if used
+                            if (typeof Dropzone !== 'undefined' && $('#dropzone_lampiran').get(
+                                    0).dropzone) {
+                                $('#dropzone_lampiran').get(0).dropzone.removeAllFiles();
+                            }
+
+                            alert('Attachment added successfully');
+                        },
+                        error: function(xhr, status, error) {
+                            alert('An error occurred');
+                        }
+                    });
+                }
+                this.classList.add('was-validated');
+            });
+
+            //Delete Attachment
+            $('#attachments').on('click', '.delete-button', function() {
+                var id = $(this).data('id'); // Get the ID of the record to delete
+
+                // Confirm before delete
+                if (!confirm('Are you sure you want to delete this record?')) {
+                    return;
+                }
+
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': "{{ csrf_token() }}"
+                    }
+                });
+
+                $.ajax({
+                    url: '/monitoring-pimpinan/subject-attachment/' + id,
+                    type: 'DELETE',
+                    success: function(result) {
+                        attachmentTable.ajax.reload();
+                    },
+                    error: function(xhr, status, error) {
+                        alert('Error occurred while deleting the record.');
+                    }
+                });
+            });
         });
     </script>
 @endsection

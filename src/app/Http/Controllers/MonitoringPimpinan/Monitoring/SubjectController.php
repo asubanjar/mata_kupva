@@ -7,6 +7,7 @@ use App\Models\Master\SubjectType;
 use App\Models\MonitoringPimpinan\Monitoring\Subject;
 use App\Models\MonitoringPimpinan\Monitoring\Upload\SubjectAttachment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class SubjectController extends Controller
@@ -84,6 +85,7 @@ class SubjectController extends Controller
                 $lampiran->update([
                     'subject_id' => $subject->id,
                     'path'       => $path . $lampiran->uniqid . '-' . $lampiran->filename,
+                    'user_id'    => Auth::user()->id,
                 ]);
             }
         }
@@ -96,6 +98,8 @@ class SubjectController extends Controller
      */
     public function show(Subject $subject)
     {
+        $subject_types = SubjectType::all();
+
         $subject_details = $subject->subjectDetails;
 
         $subject_detail_pending = $subject->subjectDetails->whereNull('finish');
@@ -106,7 +110,8 @@ class SubjectController extends Controller
             'subject',
             'subject_details',
             'subject_detail_done',
-            'subject_detail_pending'
+            'subject_detail_pending',
+            'subject_types'
         ));
     }
 
@@ -120,8 +125,26 @@ class SubjectController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id): void
+    public function update(Request $request, Subject $subject)
     {
+        $request->validate([
+            'name'            => 'required|max:50',
+            'subject_type_id' => 'required|exists:subject_types,id',
+            'opened'          => 'required|date',
+            'closed'          => 'nullable|date',
+        ]);
+
+        $subject->update([
+            'name'            => $request->get('name'),
+            'comment'         => $request->get('comment'),
+            'subject_type_id' => $request->get('subject_type_id'),
+            'opened'          => $request->get('opened'),
+            'closed'          => $request->get('closed'),
+        ]);
+
+        return redirect(
+            '/monitoring-pimpinan/monitoring/subject/' . $subject->id
+        )->with('success', 'Sukses mengubah detail aksi');
     }
 
     /**

@@ -3,6 +3,7 @@
 namespace App\Models\MonitoringPimpinan\Monitoring;
 
 use App\Models\Master\SubjectType;
+use App\Models\MonitoringPimpinan\Monitoring\Upload\SubjectAttachment;
 use App\Models\Traits;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -50,5 +51,10 @@ class Subject extends Model
     public function subjectDetails(): Relations\HasMany
     {
         return $this->hasMany(SubjectDetail::class);
+    }
+
+    public function attachments(): Relations\HasMany
+    {
+        return $this->hasMany(SubjectAttachment::class);
     }
 }

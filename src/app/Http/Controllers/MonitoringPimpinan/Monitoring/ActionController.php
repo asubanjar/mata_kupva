@@ -48,13 +48,13 @@ class ActionController extends Controller
         ]);
 
         $action->update([
-            'name'       => $request->name,
-            'comment'    => $request->comment,
-            'start'      => $request->start,
-            'end'        => $request->end,
+            'name'       => $request->get('name'),
+            'comment'    => $request->get('comment'),
+            'start'      => $request->get('start'),
+            'end'        => $request->get('end'),
             'active'     => $request->has('active'),
-            'jabatan_id' => $request->jabatan_id,
-            'finish'     => $request->finish,
+            'jabatan_id' => $request->get('jabatan_id'),
+            'finish'     => $request->get('finish'),
         ]);
 
         return redirect(
