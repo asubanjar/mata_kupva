@@ -1,10 +1,17 @@
 parameters:
-    level: 5
     paths:
-        - database
         - app
+        - database
         - routes
         - tests
+
+    level: 5
+
+#    ignoreErrors:
+#        - '#PHPDoc tag @var#'
+
     excludePaths:
         - bin/*
         - vendor/*
+
+#    checkMissingIterableValueType: false

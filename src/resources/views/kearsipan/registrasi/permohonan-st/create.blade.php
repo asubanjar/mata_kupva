@@ -33,13 +33,6 @@
                     <!--end::Breadcrumb-->
                 </div>
                 <!--end::Page title-->
-                <!--begin::Actions-->
-                {{-- <div class="d-flex align-items-center gap-lg-3 gap-2">
-                    <!--begin::Primary button-->
-                    <button type="submit" class="btn btn-primary">Simpan Coba</button>
-                    <!--end::Primary button-->
-                </div> --}}
-                <!--end::Actions-->
             </div>
             <!--end::Toolbar container-->
         </div>
@@ -150,6 +143,20 @@
                                             </div>
                                         </div>
                                         <div class="row gx-10">
+                                            <div id="anggaran" class="col-lg-4 mb-5">
+                                                <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Jenis
+                                                    Pembiayaan Anggaran</label>
+                                                <select id="pembiayaan" name="jenis_pembiayaan" data-control="select2"
+                                                    class="form-select form-select-solid">
+                                                    <option value="" selected disabled>Pilih Jenis Pembiayaan
+                                                        Anggaran
+                                                    </option>
+                                                    <option value="Tanpa Biaya">Tanpa Biaya</option>
+                                                    <option value="Biaya PPATK">Biaya PPATK</option>
+                                                    <option value="Biaya Pusdiklat">Biaya Pusdiklat</option>
+                                                    <option value="Biaya Non PPATK">Biaya Non PPATK</option>
+                                                </select>
+                                            </div>
                                             <div class="col-lg-4 mb-5">
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Jenis
                                                     Perjalanan Dinas</label>
@@ -177,28 +184,12 @@
                                                     <?php endforeach; ?>
                                                 </select>
                                             </div>
-                                            <div id="negara" class="col-lg-4 mb-5">
+                                            <div id="negara" class="col-lg-4 mb-5" style="display: none">
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Nama
                                                     Negara</label>
                                                 <input id="nama_negara" type="text"
                                                     class="form-control form-control-solid" name="nama_negara"
                                                     placeholder="Nama Negara">
-                                            </div>
-                                        </div>
-                                        <div class="row gx-10">
-                                            <div id="anggaran" class="col-lg-4 mb-5">
-                                                <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Jenis
-                                                    Pembiayaan Anggaran</label>
-                                                <select name="jenis_pembiayaan" data-control="select2"
-                                                    class="form-select form-select-solid">
-                                                    <option value="" selected disabled>Pilih Jenis Pembiayaan
-                                                        Anggaran
-                                                    </option>
-                                                    <option value="Tanpa Biaya">Tanpa Biaya</option>
-                                                    <option value="Biaya PPATK">Biaya PPATK</option>
-                                                    <option value="Biaya Pusdiklat">Biaya Pusdiklat</option>
-                                                    <option value="Biaya Non PPATK">Biaya Non PPATK</option>
-                                                </select>
                                             </div>
                                         </div>
                                         <div id="kt_docs_repeater_basic" style="display: none">
@@ -298,9 +289,9 @@
                                     <div>
                                         <button type="submit" class="btn btn-primary">Simpan</button>
                                     </div>
+                                </form>
+                                <!--end::Wrapper-->
                             </div>
-                            <!--end::Wrapper-->
-                            </form>
                             <!--end::Form-->
                         </div>
                         <!--end::Card body-->
@@ -322,11 +313,8 @@
     <script src="{{ asset('assets/plugins/custom/formrepeater/formrepeater.bundle.js') }}"></script>
 
     <script type="text/javascript">
-        $("#negara").hide();
-        // $("#kt_docs_repeater_basic").hide();
-
         $("#perjadin").on("change", function() {
-            if ($(this).find("[value=\"9A7F6AB8-F78D-459E-9C25-E65D0BDFE438\"]").is(":selected") == true) {
+            if ($(this).find("[value=\"9B64BF0C-C48E-4D84-8AE8-F1607016B47F\"]").is(":selected") == true) {
                 $("#negara").show();
                 $("#kotakab").hide();
             } else {

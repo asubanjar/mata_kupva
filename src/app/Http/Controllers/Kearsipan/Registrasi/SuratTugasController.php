@@ -9,16 +9,22 @@ use App\Models\Kearsipan\Registrasi\SuratTugas;
 use App\Models\Master\JenisKegiatan;
 use App\Models\Master\JenisPerjadin;
 use App\Models\Master\KotaKabupaten;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
+
+use function redirect;
+use function view;
 
 class SuratTugasController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): View
     {
-        return view('kearsipan/kotak-keluar/surat-tugas/index');
+        $data = ['surat_tugas' => SuratTugas::all()->sortByDesc('created_at')];
+
+        return view('kearsipan/kotak-keluar/surat-tugas/index', $data);
     }
 
     /**
@@ -26,11 +32,13 @@ class SuratTugasController extends Controller
      */
     public function create()
     {
-        $kegiatans = JenisKegiatan::all();
-        $kotakabs = KotaKabupaten::all();
-        $perjadins = JenisPerjadin::all();
+        $data = [
+            'kegiatans' => JenisKegiatan::all(),
+            'kotakabs'  => KotaKabupaten::all(),
+            'perjadins' => JenisPerjadin::all(),
+        ];
 
-        return view('kearsipan/registrasi/permohonan-st/create', compact(['kegiatans', 'kotakabs', 'perjadins']));
+        return view('kearsipan/registrasi/permohonan-st/create', $data);
     }
 
     /**
@@ -77,7 +85,7 @@ class SuratTugasController extends Controller
 
         ]);
 
-        foreach (($request->get('array_anggaran')) as $anggaran) {
+        foreach ($request->get('array_anggaran') as $anggaran) {
             $suratTugas->pembiayaan()->create([
                 'kode_akun'          => $anggaran['kode_akun'],
                 'nama_akun'          => $anggaran['nama_akun'],
@@ -88,7 +96,7 @@ class SuratTugasController extends Controller
         }
 
         return redirect(
-            'kearsipan/surat_tugas/' . $suratTugas->id . '/peserta'
+            'kearsipan/surat-tugas/' . $suratTugas->id . '/peserta',
         )->with('success', 'Sukses menambahkan ST, silahkan menambahkan peserta');
     }
 

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Models\Kearsipan\Registrasi;
 
-use App\Models\Kearsipan\Registrasi\Pembiayaan;
 use App\Models\Master\JenisKegiatan;
 use App\Models\Master\JenisPerjadin;
 use App\Models\User;
@@ -14,6 +13,9 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+
+use function date;
+use function explode;
 
 class SuratTugas extends Model
 {
@@ -47,8 +49,8 @@ class SuratTugas extends Model
 
     protected static function booted(): void
     {
-        static::creating(function (self $surat_tugas): void {
-            if (!empty($surat_tugas->user_id)) {
+        static::creating(static function (self $surat_tugas): void {
+            if (! empty($surat_tugas->user_id)) {
                 return;
             }
 
@@ -57,7 +59,7 @@ class SuratTugas extends Model
             $surat_tugas->fill(['user_id' => $user->id]);
         });
 
-        static::created(function (self $surat_tugas): void {
+        static::created(static function (self $surat_tugas): void {
             $surat_tugas->syncOriginal();
 
             $surat_tugas->no_st = $surat_tugas->no_st;
@@ -70,16 +72,16 @@ class SuratTugas extends Model
     {
         $st = DB::table('surat_tugas')->latest('no_st')->whereNotNull('no_st')->first();
 
-        if (!$st) {
+        if (! $st) {
             $codeNumber = 1;
         } else {
             $codeNumber = (int) explode('/', $st->no_st)[2] + 1;
         }
 
-        return 'RT.01' . '/' . '01.1' . '/' . $codeNumber . '/' . date('Y');
+        return "RT.01/01.1/{$codeNumber}/" . date('Y');
     }
 
-    public function getNoStAttribute(string $value = null): string
+    public function getNoStAttribute(string|null $value = null): string
     {
         return $value ?: $this->generateCode();
     }
@@ -97,5 +99,10 @@ class SuratTugas extends Model
     public function pembiayaan(): Relations\HasMany
     {
         return $this->hasMany(Pembiayaan::class);
+    }
+
+    public function peserta(): Relations\HasMany
+    {
+        return $this->hasMany(Peserta::class);
     }
 }
