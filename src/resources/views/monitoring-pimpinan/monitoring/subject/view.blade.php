@@ -1174,8 +1174,8 @@
                         orderable: false,
                         searchable: false,
                         render: function(data, type, row) {
-                            return '<button class="delete-button" data-id="' + row.id +
-                                '">Delete</button>';
+                            return '<button class="delete-button btn btn-icon btn-active-light-danger w-40px h-40px me-3" data-id="' + row.id +
+                                '"><i class="ki-solid ki-trash fs-1"></i></button>';
                         }
                     }
                 ]
