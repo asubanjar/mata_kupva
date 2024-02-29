@@ -35,45 +35,6 @@
         <!--end::Toolbar-->
         <!--begin::Content-->
         <div id="kt_app_content" class="app-content flex-column-fluid">
-
-            {{-- <div id="kt_app_content_container2" class="app-container container-xxl py-5">
-                <div class="card">
-                    <div class="card-body">
-                        <form id="add_form" method="post" action="{{ url('/master/dipa') }}" class="needs-validation"
-                            novalidate="">
-                            @csrf
-                            <div class="mb-5">
-                                <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Jenis
-                                    Perjalanan Dinas</label>
-                                <select class="form-select form-select-solid" data-control="select2"
-                                    data-allow-clear="true">
-                                    <option value="" selected disabled>Pilih Jenis Perjalanan Dinas
-                                    </option>
-                                    @foreach ($users as $user)
-                                        <option value="{{ $user->id }}">
-                                            {{ $user->name }}
-                                        </option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="fv-row mb-10">
-                                <label class="required form-label">Tahun</label>
-                                <input type="text" class="form-control form-control-solid" name="tahun"
-                                    placeholder="Contoh: 2023" />
-                            </div>
-                            <div class="fv-row mb-10">
-                                <label class="required form-label">Pembiayaan</label>
-                                <select class="form-select form-select-solid" name="pembiayaan">
-                                    <option value="" selected disabled>Pilih Pembiayaan</option>
-                                    <option value="PPATK Pusat">PPATK Pusat</option>
-                                    <option value="Pusdiklat APUPPT">Pusdiklat APUPPT</option>
-                                </select>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div> --}}
-
             <!--begin::Content container-->
             <div id="kt_app_content_container" class="app-container container-xxl">
                 <!--begin::Card-->
@@ -113,16 +74,20 @@
                                 <tr class="text-muted fw-bold fs-7 text-uppercase gs-0 text-start">
                                     <th class="min-w-125px">Nama Peserta</th>
                                     <th class="min-w-100px">Unit Organisasi</th>
+                                    <th class="min-w-100px">Tanggal Dinas</th>
                                 </tr>
                             </thead>
                             <tbody class="fw-semibold text-gray-600">
                                 @foreach ($pesertas as $peserta)
                                     <tr>
                                         <td>
-                                            {{ $peserta->peserta->name }}
+                                            {{ $peserta->nama_peserta }}
                                         </td>
                                         <td>
                                             {{ $peserta->unit_organisasi }}
+                                        </td>
+                                        <td>
+                                            {{ $peserta->tanggalTugas->tanggal->format('d F Y') }}
                                         </td>
                                     </tr>
                                 @endforeach
@@ -142,7 +107,7 @@
 
     <!--begin::Modal - Peserta - Add-->
     <div class="modal fade" tabindex="-1" id="modal_add">
-        <div class="modal-xl modal-dialog modal-dialog-centered">
+        <div class="modal-lg modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
                     <h3 class="modal-title">Tambah Peserta</h3>
@@ -181,16 +146,32 @@
                                 </div>
                             </div>
                             <div class="row gx-10">
+                                <input id="nama" type="hidden" class="form-control form-control-solid"
+                                    name="nama" />
                                 <div id="namaPesertaContainer" class="col-lg-4 mb-5">
                                     <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Nama
                                         Peserta</label>
-
+                                </div>
+                                <div class="col-lg-4 mb-5">
+                                    <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">NIP</label>
+                                    <input id="nip" type="text" class="form-control form-control-solid"
+                                        name="nip" placeholder="NIP" />
+                                </div>
+                                <div class="col-lg-4 mb-5">
+                                    <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Golongan</label>
+                                    <input id="golongan" type="text" class="form-control form-control-solid"
+                                        name="golongan" placeholder="Golongan" />
+                                </div>
+                                <div class="col-lg-4 mb-5">
+                                    <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Jabatan</label>
+                                    <input id="jabatan" type="text" class="form-control form-control-solid"
+                                        name="jabatan" placeholder="Jabatan" />
                                 </div>
                                 <div class="col-lg-4 mb-5">
                                     <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Unit
                                         Organisasi</label>
                                     <input id="unit_organisasi" type="text" class="form-control form-control-solid"
-                                        name="unit_organisasi" placeholder="Contoh: 2023" />
+                                        name="unit_organisasi" placeholder="Unit Organisasi" />
                                 </div>
                             </div>
                             <div class="row gx-10">
@@ -204,28 +185,70 @@
                                     </select>
                                 </div>
                                 <div class="col-lg-4 mb-5">
-                                    <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Mulai
+                                    <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Tanggal
                                         Perjalanan Dinas</label>
-                                    <input id="dateInput" name="start[]" type="date"
-                                        class="form-control form-control-solid" placeholder="Tanggal Nota Dinas" multiple>
+                                    @foreach ($surat_tugas->TanggalTugas as $tgl)
+                                        <div class="form-check mb-2">
+                                            <input name="tanggal[]" class="form-check-input" type="checkbox"
+                                                value="{{ $tgl->id }}" id="flexCheckDefault" />
+                                            <div class="form-check-label" for="flexCheckDefault">
+                                                {{ $tgl->tanggal->format('d F Y') }}
+                                            </div>
+                                        </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
+                        <button type="submit" class="btn btn-primary">Simpan</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-    <!--end::Modal - DIPA - Add-->
+    <!--end::Modal - Peserta - Add-->
 @endsection
 
 @section('script')
     <script type="text/javascript">
+        var tbl = $("#table-user").DataTable({
+            "order": [
+                [2, "asc"]
+            ]
+        });
+
+        document.querySelector('[data-kt-user-table-filter="search"]').addEventListener("keyup", function(e) {
+            tbl.search(e.target.value).draw();
+        })
+
+        $(document).on('change', '#namaPeserta', function() {
+            var instansiPeserta = $('#instansiPeserta').val();
+
+            if (instansiPeserta === 'PPATK') {
+                var id = $(this).val();
+                var url = '{{ route('kearsipan.detailpeserta', ':id') }}';
+                url = url.replace(':id', id);
+
+                $.ajax({
+                    url: url,
+                    type: 'get',
+                    dataType: 'json',
+                    success: function(response) {
+                        if (response != null) {
+                            $('#golongan').val(response.data.golongan);
+                            $('#jabatan').val(response.data.position);
+                            $('#nama').val(response.data.name);
+                            $('#nip').val(response.data.nip);
+                            $('#unit_organisasi').val(response.data.unit_organisasi);
+                        }
+                    }
+                });
+            }
+        });
+
         function handleChange() {
             var instansiPesertaSelect = document.getElementById("instansiPeserta");
             var namaPesertaContainer = document.getElementById("namaPesertaContainer");
@@ -234,6 +257,12 @@
                 namaPesertaContainer.innerHTML =
                     `<label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Nama Peserta</label>
                     <input type="text" name="nama_peserta" class="form-control form-control-solid" placeholder="Nama Peserta">`;
+
+                $('#golongan').val(null);
+                $('#jabatan').val(null);
+                $('#nama').val(null);
+                $('#nip').val(null);
+                $('#unit_organisasi').val(null);
             } else {
                 namaPesertaContainer.innerHTML =
                     `<label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Nama Peserta</label>
@@ -250,44 +279,5 @@
                 $('#namaPeserta').select2();
             }
         }
-
-        var tbl = $("#table-user").DataTable({
-            "order": [
-                [0, "desc"]
-            ]
-        });
-
-        document.querySelector('[data-kt-user-table-filter="search"]').addEventListener("keyup", function(e) {
-            tbl.search(e.target.value).draw();
-        })
-
-        $(document).on('change', '#namaPeserta', function() {
-            console.log('masuk');
-            var id = $(this).val();
-            var url = '{{ route('kearsipan.detailpeserta', ':id') }}';
-            url = url.replace(':id', id);
-
-
-            $.ajax({
-                url: url,
-                type: 'get',
-                dataType: 'json',
-                success: function(response) {
-                    if (response != null) {
-                        $('#unit_organisasi').val(response.data.unit_organisasi);
-                    }
-                }
-            });
-        });
-
-        const input = document.getElementById('dateInput');
-
-        input.addEventListener('change', function() {
-            // Get the selected dates from the input value
-            const selectedDates = input.value.split(',');
-
-            // Log the selected dates
-            console.log(selectedDates);
-        });
     </script>
 @endsection

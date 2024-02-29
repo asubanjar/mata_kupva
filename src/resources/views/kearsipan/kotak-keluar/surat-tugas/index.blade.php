@@ -122,8 +122,12 @@
                                         </td>
                                         <td>
                                             <div class="text-hover-primary mb-2 text-gray-800">
-                                                {{ $st->tgl_st_start->format('d M Y') }} -
-                                                {{ $st->tgl_st_end->format('d M Y') }}</div>
+                                                @foreach ($st->tanggalTugas()->orderBy('tanggal')->get() as $tgl)
+                                                    <li>
+                                                        {{ $tgl->tanggal->format('d M Y') }}
+                                                    </li>
+                                                @endforeach
+                                            </div>
                                         </td>
                                         <td>
                                             <div class="text-hover-primary mb-2 text-gray-800">
@@ -141,9 +145,16 @@
                                                 data-kt-menu="true">
                                                 <!--begin::Menu item-->
                                                 <div class="menu-item px-3">
+                                                    <a href="{{ url('/kearsipan/surat-tugas/' . $st->id) }}"
+                                                        data-toggle="tooltip" data-original-title="Tambah Peserta"
+                                                        class="menu-link px-3">Detail</a>
+                                                </div>
+                                                <!--end::Menu item-->
+                                                <!--begin::Menu item-->
+                                                <div class="menu-item px-3">
                                                     <a href="{{ url('/kearsipan/surat-tugas/' . $st->id . '/peserta') }}"
-                                                        data-toggle="tooltip" data-original-title="Lihat"
-                                                        class="menu-link px-3">Lihat</a>
+                                                        data-toggle="tooltip" data-original-title="Tambah Peserta"
+                                                        class="menu-link px-3">Tambah Peserta</a>
                                                 </div>
                                                 <!--end::Menu item-->
                                                 <!--begin::Menu item-->
@@ -154,14 +165,8 @@
                                                 <!--end::Menu item-->
                                                 <!--begin::Menu item-->
                                                 <div class="menu-item px-3">
-                                                    <a href="../../demo42/dist/apps/user-management/users/view.html"
-                                                        class="menu-link px-3">Chat</a>
-                                                </div>
-                                                <!--end::Menu item-->
-                                                <!--begin::Menu item-->
-                                                <div class="menu-item px-3">
                                                     <a href="#" class="menu-link px-3"
-                                                        data-kt-users-table-filter="delete_row">Delete</a>
+                                                        data-kt-users-table-filter="delete_row">Hapus</a>
                                                 </div>
                                                 <!--end::Menu item-->
                                             </div>

@@ -9,9 +9,11 @@ use App\Models\Kearsipan\Registrasi\SuratTugas;
 use App\Models\Master\JenisKegiatan;
 use App\Models\Master\JenisPerjadin;
 use App\Models\Master\KotaKabupaten;
+use Carbon\Carbon;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
+use function explode;
 use function redirect;
 use function view;
 
@@ -61,8 +63,6 @@ class SuratTugasController extends Controller
             'target_kinerja'     => 'required',
             'nama_kota'          => $request->get('nama_negara') ? 'nullable' : 'required',
             'nama_negara'        => $request->get('nama_negara') ? 'required' : 'nullable',
-            'tgl_st_start'       => 'required',
-            'tgl_st_end'         => 'required',
         ]);
 
         $suratTugas = SuratTugas::create([
@@ -80,19 +80,24 @@ class SuratTugasController extends Controller
             'target_kinerja'     => $request->get('target_kinerja'),
             'nama_kota'          => $request->get('nama_negara') ?
                 $request->get('nama_negara') : $request->get('nama_kota'),
-            'tgl_st_start'       => $request->get('tgl_st_start'),
-            'tgl_st_end'         => $request->get('tgl_st_end'),
 
         ]);
 
-        foreach ($request->get('array_anggaran') as $anggaran) {
-            $suratTugas->pembiayaan()->create([
-                'kode_akun'          => $anggaran['kode_akun'],
-                'nama_akun'          => $anggaran['nama_akun'],
-                'pagu_anggaran'      => $anggaran['pagu_anggaran'],
-                'perkiraan_anggaran' => $anggaran['perkiraan_anggaran'],
-                'realisasi'          => $anggaran['realisasi'],
-            ]);
+        if ($request->get('jenis_pembiayaan') === 'Biaya PPATK') {
+            foreach ($request->get('array_anggaran') as $anggaran) {
+                $suratTugas->pembiayaan()->create([
+                    'kode_akun'          => $anggaran['kode_akun'],
+                    'nama_akun'          => $anggaran['nama_akun'],
+                    'pagu_anggaran'      => $anggaran['pagu_anggaran'],
+                    'perkiraan_anggaran' => $anggaran['perkiraan_anggaran'],
+                    'realisasi'          => $anggaran['realisasi'],
+                ]);
+            }
+        }
+
+        foreach (explode(', ', $request->get('tgl_st_start')) as $tgl) {
+            $formattedDate = Carbon::createFromFormat('Y-m-d', $tgl)->format('Y-m-d');
+            $suratTugas->tanggalTugas()->create(['tanggal' => $formattedDate]);
         }
 
         return redirect(
@@ -103,8 +108,13 @@ class SuratTugasController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id): void
+    public function show(string $id): View
     {
+        $data = [
+            'st' => SuratTugas::findOrFail($id),
+        ];
+
+        return view('kearsipan/kotak-keluar/surat-tugas/detail', $data);
     }
 
     /**

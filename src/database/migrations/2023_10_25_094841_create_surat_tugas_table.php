@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('surat_tugas', function (Blueprint $table): void {
+        Schema::create('surat_tugas', static function (Blueprint $table): void {
             $table->uuid('id')->primary();
             $table->string('user_id')->nullable();
             $table->string('unit_kerja');
@@ -30,8 +30,6 @@ return new class extends Migration
             $table->text('target_kinerja');
             $table->string('nama_kota');
             $table->string('no_st')->nullable();
-            $table->date('tgl_st_start');
-            $table->date('tgl_st_end');
             $table->string('status')->nullable();
             $table->timestamps();
 

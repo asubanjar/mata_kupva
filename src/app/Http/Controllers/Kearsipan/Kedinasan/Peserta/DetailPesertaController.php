@@ -8,6 +8,8 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 
+use function response;
+
 class DetailPesertaController extends Controller
 {
     /**

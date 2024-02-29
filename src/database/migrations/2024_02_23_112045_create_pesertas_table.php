@@ -13,17 +13,22 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pesertas', function (Blueprint $table): void {
+        Schema::create('pesertas', static function (Blueprint $table): void {
             $table->uuid('id')->primary();
-            $table->uuid('surat_tugas_id');
-            $table->string('pegawai_id');
+            $table->uuid('tanggal_tugas_id');
+            $table->string('nama_peserta');
+            $table->string('status_peserta');
+            $table->string('instansi_peserta');
+            $table->string('nip');
+            $table->string('golongan');
+            $table->string('jabatan');
             $table->string('unit_organisasi');
             $table->softDeletes();
             $table->timestamps();
 
-            $table->foreign('surat_tugas_id')
+            $table->foreign('tanggal_tugas_id')
             ->references('id')
-            ->on('surat_tugas')
+            ->on('tanggal_tugas')
             ->onDelete('cascade');
         });
     }

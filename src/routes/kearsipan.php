@@ -14,7 +14,7 @@ use App\Http\Controllers\Kearsipan\Registrasi\SuratDinasController;
 use App\Http\Controllers\Kearsipan\Registrasi\SuratTugasController;
 use Illuminate\Support\Facades\Route;
 
-Route::prefix('kearsipan')->group(function (): void {
+Route::prefix('kearsipan')->group(static function (): void {
         Route::resource('registrasi/nota-dinas', NotaDinasController::class);
 
         Route::resource('registrasi/surat-dinas', SuratDinasController::class);
@@ -28,9 +28,11 @@ Route::prefix('kearsipan')->group(function (): void {
         Route::resource('kotak-keluar/naskah-dinas', NaskahDinasController::class);
         Route::resource('kotak-keluar/surat-tugas', SuratTugasController::class);
 
+        Route::get('/surat-tugas/{suratTugas}', SuratTugasController::class . '@show')->name('kearsipan.surat-tugas.show');
+
         Route::get(
             'surat-tugas/{surat_tugas}/peserta',
-            SuratTugasPesertaController::class
+            SuratTugasPesertaController::class,
         )->name('kearsipan.surat-tugas.peserta');
 
         Route::post('surat-tugas/{suratTugas}/peserta', PesertaController::class . '@store')

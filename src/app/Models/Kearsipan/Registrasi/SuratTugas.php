@@ -22,11 +22,7 @@ class SuratTugas extends Model
     use HasFactory;
     use HasUuids;
 
-    protected $casts = [
-        'tgl_nodis'    => 'datetime',
-        'tgl_st_start' => 'datetime',
-        'tgl_st_end'   => 'datetime',
-    ];
+    protected $casts = ['tgl_nodis' => 'datetime'];
 
     protected $fillable = [
         'user_id',
@@ -43,8 +39,6 @@ class SuratTugas extends Model
         'jenis_pembiayaan',
         'target_kinerja',
         'nama_kota',
-        'tgl_st_start',
-        'tgl_st_end',
     ];
 
     protected static function booted(): void
@@ -101,8 +95,13 @@ class SuratTugas extends Model
         return $this->hasMany(Pembiayaan::class);
     }
 
-    public function peserta(): Relations\HasMany
+    public function peserta(): Relations\HasManyThrough
     {
-        return $this->hasMany(Peserta::class);
+        return $this->hasManyThrough(Peserta::class, TanggalTugas::class);
+    }
+
+    public function tanggalTugas(): Relations\HasMany
+    {
+        return $this->hasMany(TanggalTugas::class);
     }
 }

@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table): void {
+        Schema::create('users', static function (Blueprint $table): void {
             $table->id();
             $table->string('name');
             $table->string('username');
@@ -28,6 +28,7 @@ return new class extends Migration
             $table->string('email')->nullable();
             $table->string('nik')->nullable();
             $table->string('phone')->nullable();
+            $table->string('pangkat')->nullable();
             $table->string('golongan')->nullable();
             $table->string('user_id')->nullable();
             $table->string('active')->default(true);

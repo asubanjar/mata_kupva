@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Http\Controllers\Kearsipan\Kedinasan\Peserta;
 
 use App\Http\Controllers\Controller;
+use App\Models\Kearsipan\Registrasi\Peserta;
 use App\Models\Kearsipan\Registrasi\SuratTugas;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -19,23 +20,30 @@ class PesertaController extends Controller
     public function store(Request $request, SuratTugas $suratTugas): RedirectResponse
     {
         $request->validate([
-            'nama_pegawai_id' => 'required',
-            'unit_organisasi' => 'required',
+            'nama_peserta'      => 'required',
+            'status_peserta'    => 'required',
+            'instansi_peserta'  => 'required',
+            'nip'               => 'nullable',
+            'golongan'          => 'nullable',
+            'jabatan'           => 'nullable',
+            'unit_organisasi'   => 'nullable',
+            'tanggal'           => 'required',
         ]);
 
-        $suratTugas->peserta()->create([
-            'pegawai_id'      => $request->get('nama_pegawai_id'),
-            'unit_organisasi' => $request->get('unit_organisasi'),
-        ]);
+        foreach ($request->get('tanggal') as $tanggal) {
+            $peserta                   = new Peserta();
+            $peserta->tanggal_tugas_id = $tanggal;
+            $peserta->nama_peserta     = $request->get('instansi_peserta') === 'PPATK'
+                ? $request->get('nama')
+                : $request->get('nama_peserta');
+            $peserta->status_peserta   = $request->get('status_peserta');
+            $peserta->instansi_peserta = $request->get('instansi_peserta');
+            $peserta->nip              = $request->get('nip');
+            $peserta->golongan         = $request->get('golongan');
+            $peserta->jabatan          = $request->get('jabatan');
+            $peserta->unit_organisasi  = $request->get('unit_organisasi');
 
-        foreach ($request->get('array_anggaran') as $anggaran) {
-            $suratTugas->pembiayaan()->create([
-                'kode_akun'          => $anggaran['kode_akun'],
-                'nama_akun'          => $anggaran['nama_akun'],
-                'pagu_anggaran'      => $anggaran['pagu_anggaran'],
-                'perkiraan_anggaran' => $anggaran['perkiraan_anggaran'],
-                'realisasi'          => $anggaran['realisasi'],
-            ]);
+            $peserta->save();
         }
 
         return redirect(

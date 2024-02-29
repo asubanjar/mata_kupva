@@ -72,7 +72,7 @@
                                             <div class="col-lg-4 mb-5">
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Tanggal
                                                     Nota Dinas</label>
-                                                <input type="date" class="form-control form-control-solid"
+                                                <input id="tanggalNodis" class="form-control form-control-solid"
                                                     name="tgl_nodis" placeholder="Tanggal Nota Dinas">
                                             </div>
                                             <div class="col-lg-4 mb-5">
@@ -258,18 +258,11 @@
                                         </div>
                                         <div class="row gx-10">
                                             <div class="col-lg-4 mb-5">
-                                                <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Mulai
+                                                <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Tanggal
                                                     Perjalanan
                                                     Dinas</label>
-                                                <input type="date" class="form-control form-control-solid"
-                                                    name="tgl_st_start" placeholder="Tanggal Nota Dinas">
-                                            </div>
-                                            <div class="col-lg-4 mb-5">
-                                                <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Selesai
-                                                    Perjalanan
-                                                    Dinas</label>
-                                                <input type="date" class="form-control form-control-solid"
-                                                    name="tgl_st_end" placeholder="Tanggal Nota Dinas">
+                                                <input id="startDinas" class="form-control form-control-solid"
+                                                    name="tgl_st_start" placeholder="Tanggal Perjalanan Dinas">
                                             </div>
                                         </div>
                                         <div class="row gx-10">
@@ -313,8 +306,14 @@
     <script src="{{ asset('assets/plugins/custom/formrepeater/formrepeater.bundle.js') }}"></script>
 
     <script type="text/javascript">
+        $("#tanggalNodis").flatpickr();
+        $("#startDinas").flatpickr({
+            minDate: "today",
+            mode: "multiple",
+        });
+
         $("#perjadin").on("change", function() {
-            if ($(this).find("[value=\"9B64BF0C-C48E-4D84-8AE8-F1607016B47F\"]").is(":selected") == true) {
+            if ($(this).find("[value=\"9B652C20-66F7-4F38-9DA0-3C34C9C96ED4\"]").is(":selected") == true) {
                 $("#negara").show();
                 $("#kotakab").hide();
             } else {
