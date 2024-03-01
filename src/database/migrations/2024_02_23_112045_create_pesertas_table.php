@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('pesertas', static function (Blueprint $table): void {
             $table->uuid('id')->primary();
-            $table->uuid('tanggal_tugas_id');
             $table->string('nama_peserta');
             $table->string('status_peserta');
             $table->string('instansi_peserta');
@@ -25,11 +24,6 @@ return new class extends Migration
             $table->string('unit_organisasi');
             $table->softDeletes();
             $table->timestamps();
-
-            $table->foreign('tanggal_tugas_id')
-            ->references('id')
-            ->on('tanggal_tugas')
-            ->onDelete('cascade');
         });
     }
 

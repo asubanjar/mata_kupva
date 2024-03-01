@@ -30,21 +30,22 @@ class PesertaController extends Controller
             'tanggal'           => 'required',
         ]);
 
-        foreach ($request->get('tanggal') as $tanggal) {
-            $peserta                   = new Peserta();
-            $peserta->tanggal_tugas_id = $tanggal;
-            $peserta->nama_peserta     = $request->get('instansi_peserta') === 'PPATK'
+        $tanggalTugas = $request->get('tanggal');
+
+        $peserta                   = new Peserta();
+        $peserta->nama_peserta     = $request->get('instansi_peserta') === 'PPATK'
                 ? $request->get('nama')
                 : $request->get('nama_peserta');
-            $peserta->status_peserta   = $request->get('status_peserta');
-            $peserta->instansi_peserta = $request->get('instansi_peserta');
-            $peserta->nip              = $request->get('nip');
-            $peserta->golongan         = $request->get('golongan');
-            $peserta->jabatan          = $request->get('jabatan');
-            $peserta->unit_organisasi  = $request->get('unit_organisasi');
+        $peserta->status_peserta   = $request->get('status_peserta');
+        $peserta->instansi_peserta = $request->get('instansi_peserta');
+        $peserta->nip              = $request->get('nip');
+        $peserta->golongan         = $request->get('golongan');
+        $peserta->jabatan          = $request->get('jabatan');
+        $peserta->unit_organisasi  = $request->get('unit_organisasi');
 
-            $peserta->save();
-        }
+        $peserta->save();
+
+        $peserta->tanggalTugas()->attach($tanggalTugas);
 
         return redirect(
             'kearsipan/surat-tugas/' . $suratTugas->id . '/peserta',

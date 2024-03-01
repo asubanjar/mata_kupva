@@ -26,9 +26,9 @@ class Peserta extends Model
         'unit_organisasi',
     ];
 
-    public function tanggalTugas(): Relations\BelongsTo
+    public function tanggalTugas(): Relations\BelongsToMany
     {
-        return $this->belongsTo(TanggalTugas::class, 'tanggal_tugas_id');
+        return $this->belongsToMany(TanggalTugas::class);
     }
 
     public function pegawai(): Relations\BelongsTo
