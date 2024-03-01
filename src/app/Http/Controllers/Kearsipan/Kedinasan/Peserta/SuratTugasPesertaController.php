@@ -18,7 +18,7 @@ class SuratTugasPesertaController extends Controller
      */
     public function __invoke(Request $request, SuratTugas $suratTugas)
     {
-        $pesertas = $suratTugas->tanggalTugas->flatMap(static fn ($tanggal) => $tanggal->peserta);
+        $pesertas = $suratTugas->tanggalTugas()->with('pesertas')->get()->pluck('pesertas')->flatten()->unique('id');
 
         // dd($pesertas);
 

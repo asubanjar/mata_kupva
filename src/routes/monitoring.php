@@ -36,6 +36,9 @@ Route::prefix('monitoring-pimpinan')->group(function (): void {
         Route::post('subject-attachment/{subject}', SubjectAttachmentController::class . '@store')
             ->name('subject-attachment.store');
 
+        Route::get('subject-attachment/{subject_attachment}/download', SubjectAttachmentController::class . '@show')
+            ->name('subject-attachment.show');
+
         Route::resource('subject-attachment', SubjectAttachmentController::class)->only('destroy');
 
         Route::put(

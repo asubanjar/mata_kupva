@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Throwable;
+use Illuminate\Support\Facades\Response;
 use Yajra\DataTables\Facades\DataTables;
 
 class SubjectAttachmentController extends Controller
@@ -37,7 +38,7 @@ class SubjectAttachmentController extends Controller
         $lampirans = SubjectAttachment::where('uniqid', $request->get('uniqid'))->get();
 
         foreach ($lampirans as $lampiran) {
-            $path = 'app/subject/';
+            $path = 'app/uploads/subject_attachments/';
 
             $source = $lampiran->temp_path;
             $destination = 'uploads/subject_attachments/' . $lampiran->uniqid . '-' . $lampiran->filename;
@@ -57,8 +58,21 @@ class SubjectAttachmentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id): void
+    public function show(SubjectAttachment $subject_attachment)
     {
+        $path = storage_path($subject_attachment->path);
+
+        if (!Storage::exists($subject_attachment->$path)) {
+            abort(404, 'File not found');
+        }
+
+        $headers = [
+            'Content-Type' => Storage::mimeType($subject_attachment->mimetype),
+            'Content-Disposition' => 'attachment; filename="' . $subject_attachment->filename . '"',
+        ];
+
+        return Response::download($path, $subject_attachment->filename, $headers);
+
     }
 
     /**

@@ -87,7 +87,12 @@
                                             {{ $peserta->unit_organisasi }}
                                         </td>
                                         <td>
-                                            {{ $peserta->tanggalTugas->tanggal->format('d F Y') }}
+                                            @foreach ( $peserta->tanggalTugas as $tanggal)
+                                                <li>
+                                                    {{ $tanggal->tanggal }}
+                                                </li>
+                                            @endforeach
+                                            
                                         </td>
                                     </tr>
                                 @endforeach

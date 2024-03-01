@@ -26,7 +26,7 @@ class TanggalTugas extends Model
         return $this->belongsTo(SuratTugas::class, 'surat_tugas_id');
     }
 
-    public function peserta(): Relations\BelongsToMany
+    public function pesertas(): Relations\BelongsToMany
     {
         return $this->belongsToMany(Peserta::class);
     }
