@@ -441,9 +441,9 @@
                                                     <th class="w-10px pe-2">
                                                         No
                                                     </th>
-                                                    <th class="min-w-125px">Nama</th>
-                                                    <th class="min-w-125px">Ukuran File</th>
-                                                    <th class="min-w-70px">Aksi</th>
+                                                    <th class="min-w-200px">Nama</th>
+                                                    <th class="min-w-50px">Ukuran File</th>
+                                                    <th class="min-w-50px">Aksi</th>
                                                 </tr>
                                             </thead>
                                         </table>
