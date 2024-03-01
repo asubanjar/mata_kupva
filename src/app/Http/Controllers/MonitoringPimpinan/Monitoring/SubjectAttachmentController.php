@@ -38,7 +38,6 @@ class SubjectAttachmentController extends Controller
         $lampirans = SubjectAttachment::where('uniqid', $request->get('uniqid'))->get();
 
         foreach ($lampirans as $lampiran) {
-            $path = 'app/uploads/subject_attachments/';
 
             $source = $lampiran->temp_path;
             $destination = 'uploads/subject_attachments/' . $lampiran->uniqid . '-' . $lampiran->filename;
@@ -48,7 +47,7 @@ class SubjectAttachmentController extends Controller
 
                 $lampiran->update([
                     'subject_id' => $subject->id,
-                    'path'       => $path . $lampiran->uniqid . '-' . $lampiran->filename,
+                    'path'       => $destination,
                     'user_id'    => Auth::user()->id,
                 ]);
             }
@@ -60,18 +59,18 @@ class SubjectAttachmentController extends Controller
      */
     public function show(SubjectAttachment $subject_attachment)
     {
-        $path = storage_path($subject_attachment->path);
+        $path = storage_path("app/{$subject_attachment->path}");
 
-        if (!Storage::exists($subject_attachment->$path)) {
+        if (!Storage::disk('local')->exists($subject_attachment->path)) {
             abort(404, 'File not found');
         }
 
         $headers = [
             'Content-Type' => Storage::mimeType($subject_attachment->mimetype),
-            'Content-Disposition' => 'attachment; filename="' . $subject_attachment->filename . '"',
+            'Content-Disposition' => 'inline; filename="' . $subject_attachment->filename . '"',
         ];
-
-        return Response::download($path, $subject_attachment->filename, $headers);
+    
+        return Response::file($path, $headers);
 
     }
 

@@ -1198,7 +1198,7 @@
                             return '<button class="delete-button btn btn-icon btn-active-light-danger w-40px h-40px me-3" data-id="' + row.id +
                                 '"><i class="ki-solid ki-trash fs-1"></i></button> ' + 
                                 '<button class="show-button btn btn-icon btn-active-light-warning w-40px h-40px me-3" data-id="' + row.id +
-                                '" target="_blank"><i class="ki-solid ki-eye fs-1"></i></button>';
+                                '"><i class="ki-solid ki-eye fs-1"></i></button>';
                         }
                     }
                 ]
@@ -1277,18 +1277,11 @@
 
             //Show Attachment
             $('#attachments').on('click', '.show-button', function() {
-                var id = $(this).data('id'); // Get the ID of the record to delete
+                var id = $(this).data('id');
 
-                $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': "{{ csrf_token() }}"
-                    }
-                });
+                var url = '/monitoring-pimpinan/subject-attachment/' + id + '/download';
 
-                $.ajax({
-                    url: '/monitoring-pimpinan/subject-attachment/' + id + '/download',
-                    type: 'GET',
-                });
+                window.open(url, '_blank');
             });
         });
     </script>
