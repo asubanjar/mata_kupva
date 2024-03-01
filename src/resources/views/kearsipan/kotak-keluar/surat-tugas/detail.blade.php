@@ -189,7 +189,7 @@
                                     <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Tanggal
                                         Perjalanan
                                         Dinas</label>
-                                    @foreach ($st->TanggalTugas as $tgl)
+                                    @foreach ($st->TanggalTugas()->orderBy('tanggal')->get() as $tgl)
                                         <div class="form-check mb-2">
                                             <input id="flexCheckCheckedDisabled" name="tanggal[]"
                                                 class="form-check-input" type="checkbox" checked disabled />

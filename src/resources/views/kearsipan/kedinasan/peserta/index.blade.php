@@ -87,12 +87,11 @@
                                             {{ $peserta->unit_organisasi }}
                                         </td>
                                         <td>
-                                            @foreach ( $peserta->tanggalTugas as $tanggal)
+                                            @foreach ($peserta->tanggalTugas()->orderBy('tanggal')->get() as $tgl)
                                                 <li>
-                                                    {{ $tanggal->tanggal }}
+                                                    {{ $tgl->tanggal->format('d M Y') }}
                                                 </li>
                                             @endforeach
-                                            
                                         </td>
                                     </tr>
                                 @endforeach
@@ -192,7 +191,7 @@
                                 <div class="col-lg-4 mb-5">
                                     <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Tanggal
                                         Perjalanan Dinas</label>
-                                    @foreach ($surat_tugas->TanggalTugas as $tgl)
+                                    @foreach ($surat_tugas->TanggalTugas()->orderBy('tanggal')->get() as $tgl)
                                         <div class="form-check mb-2">
                                             <input name="tanggal[]" class="form-check-input" type="checkbox"
                                                 value="{{ $tgl->id }}" id="flexCheckDefault" />

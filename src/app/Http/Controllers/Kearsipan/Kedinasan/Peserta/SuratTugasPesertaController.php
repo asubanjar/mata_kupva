@@ -18,9 +18,13 @@ class SuratTugasPesertaController extends Controller
      */
     public function __invoke(Request $request, SuratTugas $suratTugas)
     {
-        $pesertas = $suratTugas->tanggalTugas()->with('pesertas')->get()->pluck('pesertas')->flatten()->unique('id');
-
-        // dd($pesertas);
+        $pesertas = $suratTugas
+            ->tanggalTugas()
+            ->with('pesertas')
+            ->get()
+            ->pluck('pesertas')
+            ->flatten()
+            ->unique('id');
 
         $data = [
             'surat_tugas' => $suratTugas,
