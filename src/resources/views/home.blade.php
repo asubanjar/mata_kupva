@@ -12,7 +12,7 @@
             <!--begin::App-->
             <div class="d-flex flex-column flex-root app-root" id="kt_app_root">
                 <!--begin::Page-->
-                <div class="app-page flex-column flex-column-fluid" id="kt_app_page">
+                <div class="app-page flex-column flex-column-fluid mt-15" id="kt_app_page">
                     <!--begin::Navbar-->
                     <div class="app-container container-fluid">
                         <div class="card mb-xxl-8 mb-5">
@@ -417,7 +417,8 @@
                                                                             class="fa fa-paper-plane fs-2x fs-lg-2hx ms-n1 text-gray-500"></i>
                                                                         <!--end::Icon-->
                                                                         <!--begin::Desc-->
-                                                                        <div class="fw-bold fs-5 pt-4">Pencatatan Naskah Dinas
+                                                                        <div class="fw-bold fs-5 pt-4">Pencatatan Naskah
+                                                                            Dinas
                                                                         </div>
                                                                         <!--end::Desc-->
                                                                     </a>
