@@ -95,9 +95,9 @@ class SuratTugas extends Model
         return $this->hasMany(Pembiayaan::class);
     }
 
-    public function peserta(): Relations\HasManyThrough
+    public function peserta(): Relations\HasMany
     {
-        return $this->hasManyThrough(Peserta::class, TanggalTugas::class);
+        return $this->hasMany(Peserta::class);
     }
 
     public function tanggalTugas(): Relations\HasMany

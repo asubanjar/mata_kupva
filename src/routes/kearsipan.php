@@ -26,17 +26,19 @@ Route::prefix('kearsipan')->group(static function (): void {
         Route::resource('kotak-masuk/naskah-masuk-eksternal', NaskahMasukEksternalController::class);
 
         Route::resource('kotak-keluar/naskah-dinas', NaskahDinasController::class);
-        Route::resource('kotak-keluar/surat-tugas', SuratTugasController::class);
+        Route::resource('kotak-keluar/surat-tugas', SuratTugasController::class)->parameters(['surat-tugas' => 'suratTugas']);
 
         Route::get('/surat-tugas/{suratTugas}', SuratTugasController::class . '@show')->name('kearsipan.surat-tugas.show');
 
         Route::get(
-            'surat-tugas/{surat_tugas}/peserta',
+            'surat-tugas/{suratTugas}/peserta',
             SuratTugasPesertaController::class,
         )->name('kearsipan.surat-tugas.peserta');
 
         Route::post('surat-tugas/{suratTugas}/peserta', PesertaController::class . '@store')
         ->name('kearsipan.surat-tugas.peserta.store');
+
+        Route::resource('surat-tugas/peserta', PesertaController::class)->parameters(['peserta' => 'peserta']);
 
         Route::get('detail-peserta/{user}', DetailPesertaController::class)->name('kearsipan.detailpeserta');
 });

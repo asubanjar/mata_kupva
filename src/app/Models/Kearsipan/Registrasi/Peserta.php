@@ -16,7 +16,7 @@ class Peserta extends Model
     use HasUuids;
 
     protected $fillable = [
-        'tanggal_tugas_id',
+        'surat_tugas_id',
         'nama_peserta',
         'status_peserta',
         'instansi_peserta',
@@ -24,7 +24,13 @@ class Peserta extends Model
         'golongan',
         'jabatan',
         'unit_organisasi',
+        'pembiayaan_anggaran',
     ];
+
+    public function suratTugas(): Relations\BelongsTo
+    {
+        return $this->belongsTo(SuratTugas::class);
+    }
 
     public function tanggalTugas(): Relations\BelongsToMany
     {

@@ -27,7 +27,7 @@ return new class extends Migration
             $table->foreign('tanggal_tugas_id')
             ->references('id')
             ->on('tanggal_tugas')
-            ->onDelete('cascade');
+            ->onDelete('no action');
         });
     }
 

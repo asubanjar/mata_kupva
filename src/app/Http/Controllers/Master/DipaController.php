@@ -8,6 +8,11 @@ use App\Http\Controllers\Controller;
 use App\Models\Master\Dipa;
 use Illuminate\Http\Request;
 
+use function date;
+use function redirect;
+use function response;
+use function view;
+
 class DipaController extends Controller
 {
     public function __construct()
@@ -17,9 +22,9 @@ class DipaController extends Controller
 
     public function index()
     {
-        $dipas = Dipa::all();
+        $data = ['dipas' => Dipa::all()];
 
-        return view('master/dipa/index', compact('dipas'));
+        return view('master/dipa/index', $data);
     }
 
     /**

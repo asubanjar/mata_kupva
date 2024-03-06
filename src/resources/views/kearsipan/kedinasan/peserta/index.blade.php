@@ -13,7 +13,7 @@
                     <div class="page-title d-flex flex-column justify-content-center me-3 gap-1">
                         <!--begin::Title-->
                         <h1 class="page-heading d-flex flex-column justify-content-center text-dark fw-bold fs-3 m-0">
-                            Tambah Data Peserta - {{ $surat_tugas->perihal_nodis }}</h1>
+                            Data Peserta - {{ $surat_tugas->perihal_nodis }}</h1>
                         <!--end::Title-->
                         <!--begin::Breadcrumb-->
                         <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0">
@@ -56,10 +56,10 @@
                         <div class="card-toolbar">
                             <!--begin::Toolbar-->
                             <div class="d-flex justify-content-end" data-table-toolbar="base">
-                                <!--begin::Add DIPA-->
+                                <!--begin::Add Peserta-->
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                     data-bs-target="#modal_add">Tambah Peserta</button>
-                                <!--end::Add DIPA-->
+                                <!--end::Add Peserta-->
                             </div>
                             <!--end::Toolbar-->
                         </div>
@@ -75,6 +75,7 @@
                                     <th class="min-w-125px">Nama Peserta</th>
                                     <th class="min-w-100px">Unit Organisasi</th>
                                     <th class="min-w-100px">Tanggal Dinas</th>
+                                    <th class="min-w-100px">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody class="fw-semibold text-gray-600">
@@ -92,6 +93,24 @@
                                                     {{ $tgl->tanggal->format('d M Y') }}
                                                 </li>
                                             @endforeach
+                                        </td>
+                                        <td>
+                                            <a href="{{ url('/kearsipan/surat-tugas/peserta/' . $peserta->id) . '/edit' }}"
+                                                data-toggle="tooltip" data-original-title="Edit Peserta" class="menu-link">
+                                                <button class="btn btn-icon btn-active-light-primary w-40px h-40px ms-auto">
+                                                    <i class="ki-duotone ki-pencil fs-1">
+                                                        <span class="path1"></span>
+                                                        <span class="path2"></span>
+                                                    </i>
+                                                </button>
+                                            </a>
+                                            <a href="#" class="menu-link delete-dipa px-3"
+                                                data-id="{{ $peserta->id }}" data-nama="{{ $peserta->nama_peserta }}"
+                                                data-csrf="{{ csrf_token() }}" data-table-filter="delete_row">
+                                                <button class="btn btn-icon btn-active-light-danger w-40px h-40px ms-auto">
+                                                    <i class="ki-solid ki-trash fs-1"></i>
+                                                </button>
+                                            </a>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -283,5 +302,44 @@
                 $('#namaPeserta').select2();
             }
         }
+
+        $(document).on('click', '.delete-dipa', function(e) {
+            e.preventDefault();
+
+            let id = $(this).data("id");
+            let nama = $(this).data("nama");
+            let token = $(this).data("csrf");
+
+            Swal.fire({
+                text: "Apakah Anda yakin akan menghapus data peserta " + nama + "?",
+                icon: "warning",
+                showCancelButton: !0,
+                buttonsStyling: !1,
+                confirmButtonText: "Ya, hapus!",
+                cancelButtonText: "Tidak, batalkan",
+                customClass: {
+                    confirmButton: "btn fw-bold btn-danger",
+                    cancelButton: "btn fw-bold btn-active-light-primary",
+                },
+            }).then(function(e) {
+                if (e.value) {
+                    $.ajax({
+                        url: `/kearsipan/surat-tugas/peserta/${id}`,
+                        cache: false,
+                        method: "DELETE",
+                        data: {
+                            // _method: "DELETE",
+                            _token: token,
+                        },
+                        success: function(response) {
+                            window.location.reload();
+                        },
+                        error: function(response) {
+                            window.location.reload();
+                        },
+                    })
+                };
+            })
+        });
     </script>
 @endsection
