@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Http\Controllers\Kearsipan\HomeController;
 use App\Http\Controllers\Kearsipan\Kedinasan\Peserta\DetailPesertaController;
 use App\Http\Controllers\Kearsipan\Kedinasan\Peserta\PesertaController;
 use App\Http\Controllers\Kearsipan\Kedinasan\Peserta\SuratTugasPesertaController;
@@ -15,6 +16,7 @@ use App\Http\Controllers\Kearsipan\Registrasi\SuratTugasController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('kearsipan')->group(static function (): void {
+        Route::resource('home', HomeController::class);
         Route::resource('registrasi/nota-dinas', NotaDinasController::class);
 
         Route::resource('registrasi/surat-dinas', SuratDinasController::class);
