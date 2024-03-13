@@ -50,9 +50,8 @@
                             <!--begin::Card body-->
                             <div class="card-body p-8">
                                 <!--begin::Form-->
-                                <form id="add_form" method="post"
-                                    action="{{ url('/kearsipan/registrasi/permohonan-st') }}" class="needs-validation"
-                                    novalidate="">
+                                <form id="add_form" method="post" action="{{ route('permohonan-st.store') }}"
+                                    class="needs-validation" novalidate="">
                                     @csrf
                                     <!--begin::Wrapper-->
                                     <div class="d-flex flex-column align-items-start flex-xxl-row">
@@ -63,19 +62,19 @@
                                     <div class="mb-5">
                                         <div class="row gx-10">
                                             <!--begin::Col-->
-                                            <div class="col-lg-4 mb-5">
+                                            <div class="fv-row col-lg-4 mb-5">
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Nomor
                                                     Nota Dinas</label>
                                                 <input type="text" class="form-control form-control-solid"
                                                     name="no_nodis" placeholder="Nomor Nota Dinas">
                                             </div>
-                                            <div class="col-lg-4 mb-5">
+                                            <div class="fv-row col-lg-4 mb-5">
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Tanggal
                                                     Nota Dinas</label>
                                                 <input id="tanggalNodis" class="form-control form-control-solid"
                                                     name="tgl_nodis" placeholder="Tanggal Nota Dinas">
                                             </div>
-                                            <div class="col-lg-4 mb-5">
+                                            <div class="fv-row col-lg-4 mb-5">
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Dasar
                                                     Penugasan</label>
                                                 <select class="form-select form-select-solid" name="dasar_penugasan">
@@ -90,12 +89,12 @@
                                             </div>
                                         </div>
                                         <div class="row gx-10">
-                                            <div class="col-lg-6 mb-5">
+                                            <div class="fv-row col-lg-6 mb-5">
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Perihal
                                                     Nota Dinas</label>
                                                 <textarea class="form-control form-control-solid" name="perihal_nodis" placeholder="Perihal Nota Dinas"></textarea>
                                             </div>
-                                            <div class="col-lg-6 mb-5">
+                                            <div class="fv-row col-lg-6 mb-5">
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Detail
                                                     Penugasan</label>
                                                 <textarea class="form-control form-control-solid" name="detail_penugasan" placeholder="Detail Penugasan"></textarea>
@@ -110,14 +109,14 @@
 
                                     <div class="mb-5">
                                         <div class="row gx-10">
-                                            <div class="col-lg-4 mb-5">
+                                            <div class="fv-row col-lg-4 mb-5">
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Nama Unit
                                                     Kerja</label>
                                                 <input type="text" readonly class="form-control form-control-solid"
                                                     name="unit_kerja" placeholder="Nama Unit Kerja"
                                                     value="{{ Auth::user()->unit_organisasi }}">
                                             </div>
-                                            <div class="col-lg-4 mb-5">
+                                            <div class="fv-row col-lg-4 mb-5">
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Nama
                                                     Kegiatan</label>
                                                 <select name="nama_kegiatan_id" aria-label="Hak Akses Naskah"
@@ -129,7 +128,7 @@
                                                     <?php endforeach; ?>
                                                 </select>
                                             </div>
-                                            <div class="col-lg-4 mb-5">
+                                            <div class="fv-row col-lg-4 mb-5">
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Jenis
                                                     Transportasi</label>
                                                 <select class="form-select form-select-solid" name="jenis_transportasi">
@@ -143,7 +142,7 @@
                                             </div>
                                         </div>
                                         <div class="row gx-10">
-                                            <div id="anggaran" class="col-lg-4 mb-5">
+                                            <div id="anggaran" class="fv-row col-lg-4 mb-5">
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Jenis
                                                     Pembiayaan Anggaran</label>
                                                 <select id="pembiayaan" name="jenis_pembiayaan" data-control="select2"
@@ -157,7 +156,7 @@
                                                     <option value="Biaya Non PPATK">Biaya Non PPATK</option>
                                                 </select>
                                             </div>
-                                            <div class="col-lg-4 mb-5">
+                                            <div class="fv-row col-lg-4 mb-5">
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Jenis
                                                     Perjalanan Dinas</label>
                                                 <select id="perjadin" name="jenis_perjadin_id"
@@ -171,7 +170,7 @@
                                                     <?php endforeach; ?>
                                                 </select>
                                             </div>
-                                            <div id="kotakab" class="col-lg-4 mb-5">
+                                            <div id="kotakab" class="fv-row col-lg-4 mb-5">
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Nama
                                                     Kota / Kabupaten</label>
                                                 <select class="form-select form-select-solid" data-control="select2"
@@ -184,7 +183,7 @@
                                                     <?php endforeach; ?>
                                                 </select>
                                             </div>
-                                            <div id="negara" class="col-lg-4 mb-5" style="display: none">
+                                            <div id="negara" class="fv-row col-lg-4 mb-5" style="display: none">
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Nama
                                                     Negara</label>
                                                 <input id="nama_negara" type="text"
@@ -202,21 +201,21 @@
                                             <div data-repeater-list="array_anggaran">
                                                 <div data-repeater-item class="card mb-5 p-8">
                                                     <div class="row gx-10">
-                                                        <div class="col-lg-3 mb-5">
+                                                        <div class="fv-row col-lg-3 mb-5">
                                                             <label
                                                                 class="form-label fs-6 fw-bold required mb-3 text-gray-700">Kode
                                                                 Akun</label>
                                                             <input type="text" class="form-control form-control-solid"
                                                                 name="kode_akun" placeholder="Kode Akun">
                                                         </div>
-                                                        <div class="col-lg-3 mb-5">
+                                                        <div class="fv-row col-lg-3 mb-5">
                                                             <label
                                                                 class="form-label fs-6 fw-bold required mb-3 text-gray-700">Nama
                                                                 Akun</label>
                                                             <input type="text" class="form-control form-control-solid"
                                                                 name="nama_akun" placeholder="Nama Akun">
                                                         </div>
-                                                        <div class="col-lg-3 mb-5">
+                                                        <div class="fv-row col-lg-3 mb-5">
                                                             <label
                                                                 class="form-label fs-6 fw-bold required mb-3 text-gray-700">Pagu
                                                                 Anggaran</label>
@@ -237,14 +236,14 @@
                                                         </div>
                                                     </div>
                                                     <div class="row gx-10">
-                                                        <div class="col-lg-3 mb-5">
+                                                        <div class="fv-row col-lg-3 mb-5">
                                                             <label
                                                                 class="form-label fs-6 fw-bold required mb-3 text-gray-700">Realisasi
                                                                 s/d {{ date('M Y') }}</label>
                                                             <input type="text" class="form-control form-control-solid"
                                                                 name="realisasi" placeholder="Realiasi">
                                                         </div>
-                                                        <div class="col-lg-3 mb-5">
+                                                        <div class="fv-row col-lg-3 mb-5">
                                                             <label
                                                                 class="form-label fs-6 fw-bold required mb-3 text-gray-700">Perkiraan
                                                                 Penggunaan Anggaran</label>
@@ -257,7 +256,7 @@
                                             </div>
                                         </div>
                                         <div class="row gx-10">
-                                            <div class="col-lg-4 mb-5">
+                                            <div class="fv-row col-lg-4 mb-5">
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Tanggal
                                                     Perjalanan
                                                     Dinas</label>
@@ -266,12 +265,12 @@
                                             </div>
                                         </div>
                                         <div class="row gx-10">
-                                            <div class="col-lg-6 mb-5">
+                                            <div class="fv-row col-lg-6 mb-5">
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Detail
                                                     Kegiatan</label>
                                                 <textarea class="form-control form-control-solid" name="detail_kegiatan" placeholder="Detail Kegiatan"></textarea>
                                             </div>
-                                            <div class="col-lg-6 mb-5">
+                                            <div class="fv-row col-lg-6 mb-5">
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Capaian
                                                     Target Kinerja</label>
                                                 <textarea class="form-control form-control-solid" name="target_kinerja" placeholder="Capaian Target Kinerja"></textarea>
@@ -280,7 +279,15 @@
                                     </div>
 
                                     <div>
-                                        <button type="submit" class="btn btn-primary">Simpan</button>
+                                        <button id="submitPerjadin" type="submit" class="btn btn-primary">
+                                            <span class="indicator-label">
+                                                Simpan
+                                            </span>
+                                            <span class="indicator-progress">
+                                                Please wait... <span
+                                                    class="spinner-border spinner-border-sm ms-2 align-middle"></span>
+                                            </span>
+                                        </button>
                                     </div>
                                 </form>
                                 <!--end::Wrapper-->
@@ -304,6 +311,7 @@
 
 @section('script')
     <script src="{{ asset('assets/plugins/custom/formrepeater/formrepeater.bundle.js') }}"></script>
+    <script src="{{ asset('assets/js/pages/permohonan-st/validate.js') }}"></script>
 
     <script type="text/javascript">
         $("#tanggalNodis").flatpickr();

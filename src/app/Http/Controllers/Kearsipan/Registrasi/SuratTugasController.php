@@ -120,8 +120,11 @@ class SuratTugasController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id): void
+    public function edit(SuratTugas $suratTugas): view
     {
+        $data = ['st' => $suratTugas];
+
+        return view('kearsipan/kedinasan/peserta/edit', $data);
     }
 
     /**
@@ -134,7 +137,8 @@ class SuratTugasController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id): void
+    public function destroy(SuratTugas $suratTugas): void
     {
+        $suratTugas->delete();
     }
 }

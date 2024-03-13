@@ -4,7 +4,7 @@
     <!--begin::Content wrapper-->
     <div class="d-flex flex-column flex-column-fluid">
         <!--begin::Toolbar-->
-        <div id="kt_app_toolbar" class="app-toolbar py-lg-1">
+        <div id="kt_app_toolbar" class="app-toolbar py-lg-1 mt-15">
             <!--begin::Toolbar container-->
             <div id="kt_app_toolbar_container" class="app-container container-fluid d-flex flex-stack flex-wrap">
                 <!--begin::Toolbar wrapper-->
@@ -56,12 +56,12 @@
                         </div>
                     </div>
                     <div class="card-body table-responsive py-4">
-                        <form action="{{ route('peserta.update', $peserta->id) }}" method="POST">
+                        <form id="peserta-edit" action="{{ route('peserta.update', $peserta->id) }}" method="POST">
                             @csrf
                             @method('PUT')
                             <div class="mb-5">
                                 <div class="row gx-10">
-                                    <div class="col-lg-4 mb-5">
+                                    <div class="fv-row col-lg-4 mb-5">
                                         <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Status
                                             Peserta</label>
                                         <select name="status_peserta" class="form-select form-select-solid">
@@ -74,7 +74,7 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="col-lg-4 mb-5">
+                                    <div class="fv-row col-lg-4 mb-5">
                                         <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Pembiayaan
                                             Anggaran</label>
                                         <select name="pembiayaan_anggaran" class="form-select form-select-solid">
@@ -114,13 +114,14 @@
                 </div>
             </div>
         </div>
-        <!--end::Content wrapper-->
-    @endsection
+    </div>
+    <!--end::Content wrapper-->
+@endsection
 
-    @section('script')
-        <script type="text/javascript">
-            function goBack() {
-                window.history.back();
-            }
-        </script>
-    @endsection
+@section('script')
+    <script type="text/javascript">
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+@endsection

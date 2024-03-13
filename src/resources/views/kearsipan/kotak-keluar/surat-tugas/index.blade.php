@@ -146,7 +146,7 @@
                                                 <!--begin::Menu item-->
                                                 <div class="menu-item px-3">
                                                     <a href="{{ url('/kearsipan/surat-tugas/' . $st->id) }}"
-                                                        data-toggle="tooltip" data-original-title="Tambah Peserta"
+                                                        data-toggle="tooltip" data-original-title="Detail"
                                                         class="menu-link px-3">Detail</a>
                                                 </div>
                                                 <!--end::Menu item-->
@@ -165,8 +165,12 @@
                                                 <!--end::Menu item-->
                                                 <!--begin::Menu item-->
                                                 <div class="menu-item px-3">
-                                                    <a href="#" class="menu-link px-3"
-                                                        data-kt-users-table-filter="delete_row">Hapus</a>
+                                                    <a href="#" class="menu-link delete-st px-3"
+                                                        data-id="{{ $st->id }}"
+                                                        data-perihal="{{ $st->perihal_nodis }}"
+                                                        data-csrf="{{ csrf_token() }}" data-table-filter="delete_row">
+                                                        Hapus
+                                                    </a>
                                                 </div>
                                                 <!--end::Menu item-->
                                             </div>
@@ -201,5 +205,56 @@
         document.querySelector('[data-kt-user-table-filter="search"]').addEventListener("keyup", function(e) {
             tbl.search(e.target.value).draw();
         })
+
+        $(document).on("click", ".delete-st", function(e) {
+            e.preventDefault();
+
+            let id = $(this).data("id");
+            let perihal = $(this).data("perihal");
+            let token = $(this).data("csrf");
+
+            console.log(id);
+
+            Swal.fire({
+                text: "Apakah Anda yakin akan menghapus permohonan ST terkait " + perihal + "?",
+                icon: "warning",
+                showCancelButton: !0,
+                buttonsStyling: !1,
+                confirmButtonText: "Ya, hapus!",
+                cancelButtonText: "Tidak, batalkan",
+                customClass: {
+                    confirmButton: "btn fw-bold btn-danger",
+                    cancelButton: "btn fw-bold btn-active-light-primary",
+                },
+            }).then(function(e) {
+                if (e.value) {
+                    $.ajax({
+                        url: `/kearsipan/kotak-keluar/surat-tugas/${id}`,
+                        cache: false,
+                        method: "DELETE",
+                        data: {
+                            // _method: "DELETE",
+                            _token: token,
+                        },
+                        success: function(response) {
+                            Swal.fire({
+                                text: "Data Berhasil Dihapus",
+                                icon: "success",
+                                buttonsStyling: !1,
+                                confirmButtonText: "OK",
+                                customClass: {
+                                    confirmButton: "btn fw-bold btn-active-light-success",
+                                },
+                            }).then(function() {
+                                window.location.reload();
+                            });
+                        },
+                        error: function(response) {
+                            window.location.reload();
+                        },
+                    });
+                }
+            });
+        });
     </script>
 @endsection
