@@ -12,7 +12,7 @@
             <!--begin::App-->
             <div class="d-flex flex-column flex-root app-root" id="kt_app_root">
                 <!--begin::Page-->
-                <div class="app-page flex-column flex-column-fluid mt-15" id="kt_app_page">
+                <div class="app-page flex-column flex-column-fluid" id="kt_app_page">
                     <!--begin::Navbar-->
                     <div class="app-container container-fluid">
                         <div class="card mb-xxl-8 mb-5">
@@ -5106,7 +5106,7 @@
                                         </div>
                                         <!--end::Users-->
                                         <!--begin::Actions-->
-                                        <div class="d-flex flex-center mt-15">
+                                        <div class="d-flex flex-center">
                                             <button type="reset" id="kt_modal_users_search_reset"
                                                 data-bs-dismiss="modal"
                                                 class="btn btn-active-light me-3">Cancel</button>
