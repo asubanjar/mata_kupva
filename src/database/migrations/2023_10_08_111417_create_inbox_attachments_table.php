@@ -13,11 +13,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('subject_attachments', static function (Blueprint $table): void {
+        Schema::create('inbox_attachments', static function (Blueprint $table): void {
             $table->string('id')->primary();
-            $table->string('subject_id')
-                  ->nullable();
-            $table->string('filename');
+            $table->string('gir_id')->nullable();
+            $table->string('nid')->nullable();
+            $table->string('filename'); //FileName_Real
+            $table->string('filename_fake')->nullable(); //FileName_Fake
             $table->string('mimetype')->nullable();
             $table->bigInteger('filesize');
             $table->string('temp_path')
@@ -25,7 +26,10 @@ return new class extends Migration
             $table->string('path')
                   ->nullable();
             $table->string('uniqid');
+            $table->string('status')->default('available');
+            $table->string('keterangan');
             $table->unsignedBigInteger('user_id')->nullable();
+            $table->string('people_role_id')->nullable();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->nullable();
 

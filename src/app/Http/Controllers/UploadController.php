@@ -1,10 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+
+use function file_exists;
+use function mkdir;
+use function response;
+use function storage_path;
+use function trim;
 
 class UploadController extends Controller
 {
@@ -16,7 +24,7 @@ class UploadController extends Controller
         $path = storage_path('app/tmp/uploads/' . $class . '/' . $uniqid . '/');
 
         //TODO cari cara jangan 777
-        if (!file_exists($path)) {
+        if (! file_exists($path)) {
             mkdir($path, 0777, true);
         }
 

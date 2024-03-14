@@ -10,6 +10,7 @@ use App\Http\Controllers\Kearsipan\KotakKeluar\NaskahDinasController;
 use App\Http\Controllers\Kearsipan\KotakMasuk\DisposisiController;
 use App\Http\Controllers\Kearsipan\KotakMasuk\NaskahMasukEksternalController;
 use App\Http\Controllers\Kearsipan\KotakMasuk\NaskahMasukInternalController;
+use App\Http\Controllers\Kearsipan\NaskahUploadController;
 use App\Http\Controllers\Kearsipan\Registrasi\NotaDinasController;
 use App\Http\Controllers\Kearsipan\Registrasi\SuratDinasController;
 use App\Http\Controllers\Kearsipan\Registrasi\SuratTugasController;
@@ -43,4 +44,7 @@ Route::prefix('kearsipan')->group(static function (): void {
         Route::resource('surat-tugas/peserta', PesertaController::class)->parameters(['peserta' => 'peserta']);
 
         Route::get('detail-peserta/{user}', DetailPesertaController::class)->name('kearsipan.detailpeserta');
+
+        //UPLOAD
+        Route::post('upload-naskah/{uniqid}/{type}', NaskahUploadController::class);
 });

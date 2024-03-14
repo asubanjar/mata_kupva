@@ -1,9 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+
+use function response;
 
 class DeleteUploadController extends Controller
 {
@@ -14,8 +18,7 @@ class DeleteUploadController extends Controller
     {
         DB::table($class)
                 ->where('filename', $request->get('filename'))
-                ->where('uniqid', $uniqid)
-                ->whereNull('subject_id')->delete();
+                ->where('uniqid', $uniqid)->delete();
 
         return response()->json([
             'filename' => $request->get('filename'),
