@@ -8,6 +8,7 @@ namespace App\Models;
 
 use App\Models\Master\Jabatan;
 use App\Models\Master\UnitKerja;
+use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -49,9 +50,12 @@ class User extends Authenticatable
     /**
      * The attributes that should be cast.
      */
-    protected $casts = [
-        'active'   => 'boolean',
-    ];
+    protected $casts = ['active' => 'boolean'];
+
+    protected static function booted(): void
+    {
+        static::addGlobalScope('active', static fn (Builder $builder) => $builder->where('active', 1));
+    }
 
     public function jabatan(): Relations\BelongsTo
     {

@@ -13,13 +13,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sifats', static function (Blueprint $table): void {
+        Schema::create('jenis_naskahs', static function (Blueprint $table): void {
             $table->id();
             $table->string('code')->nullable()->unique();
             $table->string('name');
-            $table->string('code_name');
+            $table->string('description')->nullable();
             $table->boolean('active')->default(true);
-            $table->softDeletes();
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('urgensis');
+        Schema::dropIfExists('jenis_naskahs');
     }
 };

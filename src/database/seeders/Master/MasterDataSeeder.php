@@ -25,5 +25,8 @@ class MasterDataSeeder extends Seeder
         $this->call(UrgensiSeeder::class);
         $this->call(GroupSeeder::class);
         $this->call(UnitKerjaSeeder::class);
+        $this->call(ClassificationSeeder::class);
+        $this->call(SatuanUnitSeeder::class);
+        $this->call(JenisNaskahSeeder::class);
     }
 }

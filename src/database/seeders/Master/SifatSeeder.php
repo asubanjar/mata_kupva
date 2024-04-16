@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Seeders\Master;
 
 use App\Models\Master\Sifat;
@@ -12,7 +14,7 @@ class SifatSeeder extends Seeder
      */
     public function run(): void
     {
-        $urgensis = [
+        $sifats = [
             [
                 'code'      => 'XxJyPn38Yh.1',
                 'name'      => 'Biasa',
@@ -35,11 +37,11 @@ class SifatSeeder extends Seeder
             ],
         ];
 
-        foreach ($urgensis as $urgensi) {
+        foreach ($sifats as $sifat) {
             Sifat::create([
-                'code'      => $urgensi['code'],
-                'name'      => $urgensi['name'],
-                'code_name' => $urgensi['code_name'],
+                'code'      => $sifat['code'],
+                'name'      => $sifat['name'],
+                'code_name' => $sifat['code_name'],
             ]);
         }
     }

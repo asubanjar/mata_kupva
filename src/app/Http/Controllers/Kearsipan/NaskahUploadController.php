@@ -22,7 +22,7 @@ class NaskahUploadController extends Controller
      */
     public function __invoke(Request $request, string $uniqid, string|null $type = null)
     {
-        $path = storage_path('app/tmp/uploads/naskah/draft/' . $uniqid . '/');
+        $path = storage_path('app/uploads/naskah/draft/' . $uniqid . '/');
 
         //TODO cari cara jangan 777
         if (! file_exists($path)) {
@@ -44,7 +44,7 @@ class NaskahUploadController extends Controller
             'filename'          => $name,
             'mimetype'          => $mimetype,
             'filesize'          => $filesize,
-            'temp_path'         => 'tmp/uploads/naskah/draft/' . $uniqid . '/' . $name,
+            'temp_path'         => 'uploads/naskah/draft/' . $uniqid . '/' . $name,
             'uniqid'            => $uniqid,
             'keterangan'        => $type,
             'user_id'           => $request->user()->id,
