@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models\Master;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -9,9 +11,7 @@ class Sifat extends Model
 {
     use HasFactory;
 
-    protected $casts = [
-        'active'        => 'boolean',
-    ];
+    protected $casts = ['active' => 'boolean'];
 
     protected $fillable = [
         'active',
@@ -22,7 +22,7 @@ class Sifat extends Model
 
     protected static function booted(): void
     {
-        static::created(function (self $sifat): void {
+        static::created(static function (self $sifat): void {
             $sifat->syncOriginal();
 
             $sifat->code = $sifat->code;
@@ -31,7 +31,7 @@ class Sifat extends Model
         });
     }
 
-    public function getCodeAttribute(string $value = null): string
+    public function getCodeAttribute(string|null $value = null): string
     {
         return $value ?? 'XxJyPn38Yh' . '.' . $this->id;
     }

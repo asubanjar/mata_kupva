@@ -81,7 +81,7 @@
                         <!--end:Menu item-->
                         <!--begin:Menu item-->
                         <div data-kt-menu-trigger="click"
-                            class="menu-item {{ request()->is('*kearsipan/registrasi*') ? 'here show' : '' }} menu-accordion">
+                            class="menu-item {{ request()->is('*kearsipan*') ? 'here show' : '' }} menu-accordion">
                             <!--begin:Menu link-->
                             <span class="menu-link">
                                 <span class="menu-icon">
@@ -100,11 +100,11 @@
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link" href="{{ url('/kearsipan/registrasi/nota-dinas/create') }}">
+                                    <a class="menu-link" href="{{ url('/kearsipan/registrasi/naskah-dinas/create') }}">
                                         <span class="menu-bullet">
                                             <span class="bullet bullet-dot"></span>
                                         </span>
-                                        <span class="menu-title">Nota Dinas</span>
+                                        <span class="menu-title">Naskah Dinas</span>
                                     </a>
                                     <!--end:Menu link-->
                                 </div>
@@ -219,7 +219,7 @@
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link" href="{{ url('/kearsipan/kotak-keluar/naskah-dinas') }}">
+                                    <a class="menu-link" href="{{ url('/kearsipan/registrasi/naskah-dinas') }}">
                                         <span class="menu-bullet">
                                             <span class="bullet bullet-dot"></span>
                                         </span>

@@ -1,18 +1,15 @@
 // Define form element
 const form = document.getElementById("add_form2");
-console.log(form);
 
 var validator = FormValidation.formValidation(form, {
     fields: {
-        jenis_naskah: {
+        jenis_naskah_code: {
             validators: {
                 notEmpty: {
                     message: "Jenis naskah mohon diisi.",
                 },
             },
         },
-    },
-    fields: {
         is_public: {
             validators: {
                 notEmpty: {
@@ -20,93 +17,80 @@ var validator = FormValidation.formValidation(form, {
                 },
             },
         },
-    },
-    fields: {
-        no_surat: {
+        nomor_naskah: {
             validators: {
                 notEmpty: {
-                    message: "Nomor surat mohon diisi.",
+                    message: "Nomor Surat Mohon diisi.",
                 },
             },
         },
-    },
-    fields: {
-        tgl_naskah: {
+        tanggal_naskah: {
             validators: {
                 notEmpty: {
-                    message: "Tanggal surat mohon diisi.",
+                    message: "Tanggal Naskah Mohon diisi.",
                 },
             },
         },
-    },
-    fields: {
-        kode_klasifikasi: {
+        classification_code: {
             validators: {
                 notEmpty: {
-                    message: "Tanggal surat mohon diisi.",
+                    message: "Kode Klasifikasi Mohon diisi.",
                 },
             },
         },
-    },
-    fields: {
-        tingkat_urgensi: {
+        urgensi_code: {
             validators: {
                 notEmpty: {
-                    message: "Tanggal surat mohon diisi.",
+                    message: "Tingkat Urgensi Mohon diisi.",
                 },
             },
         },
-    },
-    fields: {
-        tingkat_urgensi: {
+        sifat_code: {
             validators: {
                 notEmpty: {
-                    message: "Tanggal surat mohon diisi.",
+                    message: "Sifat Naskah Mohon diisi.",
                 },
             },
         },
-    },
-    fields: {
-        sifat: {
+        hal: {
             validators: {
                 notEmpty: {
-                    message: "Sifat naskah mohon diisi.",
+                    message: "Perihal Naskah Mohon diisi.",
                 },
             },
         },
-    },
-    fields: {
-        sifat: {
+        jabatan_to_code: {
             validators: {
                 notEmpty: {
-                    message: "Perihal mohon diisi.",
+                    message: "Tujuan Naskah Mohon diisi.",
                 },
             },
         },
-    },
-    fields: {
-        ttd_naskah: {
+        signer_id: {
             validators: {
                 notEmpty: {
-                    message: "Penandatangan naskah mohon diisi.",
+                    message: "Penandatangan Naskah Mohon diisi.",
                 },
             },
         },
-    },
-    fields: {
         jenjang: {
             validators: {
                 notEmpty: {
-                    message: "Jenjang mohon diisi.",
+                    message: "Jenjang Persetujuan Mohon diisi.",
                 },
             },
         },
-    },
-    fields: {
-        hal_ttd: {
+        ttd_page: {
             validators: {
                 notEmpty: {
-                    message: "Halaman tandatangan mohon diisi.",
+                    message: "Halaman Tandatangan Mohon diisi.",
+                },
+            },
+        },
+        signer_quantity: {
+            validators: {
+                notEmpty: {
+                    message: "Jumlah Penandatangan Mohon diisi.",
                 },
             },
         },
@@ -124,8 +108,6 @@ var validator = FormValidation.formValidation(form, {
 
 // Submit button handler
 const submitButton = document.getElementById("submitNaskahDinas");
-
-console.log(submitButton);
 submitButton.addEventListener("click", function (e) {
     // Prevent default button action
     e.preventDefault();

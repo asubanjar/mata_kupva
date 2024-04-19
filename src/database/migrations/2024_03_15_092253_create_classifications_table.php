@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('classifications', static function (Blueprint $table): void {
             $table->id();
             $table->unsignedBigInteger('parent_id')->nullable();
-            $table->string('code');
+            $table->string('code')->unique();
             $table->string('name');
             $table->string('description');
             $table->integer('retensi_tahun_aktif')
