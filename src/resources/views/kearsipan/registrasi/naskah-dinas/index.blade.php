@@ -4,7 +4,7 @@
          <!--begin::Content wrapper-->
          <div class="d-flex flex-column flex-column-fluid">
              <!--begin::Toolbar-->
-             <div id="kt_app_toolbar" class="app-toolbar py-lg-1">
+             <div id="kt_app_toolbar" class="app-toolbar py-lg-6 py-3">
                  <!--begin::Toolbar container-->
                  <div id="kt_app_toolbar_container" class="app-container container-fluid d-flex flex-stack flex-wrap">
                      <!--begin::Toolbar wrapper-->
@@ -16,11 +16,10 @@
                                  Pencatatan Naskah Dinas</h1>
                              <!--end::Title-->
                              <!--begin::Breadcrumb-->
-                             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0">
+                             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
                                  <!--begin::Item-->
                                  <li class="breadcrumb-item text-muted">
-                                     <a href="../../demo42/dist/index.html"
-                                         class="text-muted text-hover-primary">Kearsipan</a>
+                                     <a href="{{ url('/home') }}" class="text-muted text-hover-primary">Home</a>
                                  </li>
                                  <!--end::Item-->
                                  <!--begin::Item-->
@@ -29,13 +28,17 @@
                                  </li>
                                  <!--end::Item-->
                                  <!--begin::Item-->
-                                 <li class="breadcrumb-item text-muted">Kotak Keluar</li>
+                                 <li class="breadcrumb-item text-muted">
+                                     <a href="{{ url('/kearsipan') }}" class="text-muted text-hover-primary">Kearsiapan</a>
+                                 </li>
+                                 <!--end::Item-->
+                                 <!--begin::Item-->
                                  <li class="breadcrumb-item">
                                      <span class="bullet w-5px h-2px bg-gray-400"></span>
                                  </li>
                                  <!--end::Item-->
                                  <!--begin::Item-->
-                                 <li class="breadcrumb-item text-muted">Naskah Dinas</li>
+                                 <li class="breadcrumb-item text-muted"><a href="#">Naskah Dinas</a></li>
                                  <!--end::Item-->
                              </ul>
                              <!--end::Breadcrumb-->

@@ -7,16 +7,19 @@ namespace App\Http\Controllers\Kearsipan\Registrasi;
 use App\Enums\JenisNaskahEnum;
 use App\Enums\StatusNaskahDinasEnum;
 use App\Http\Controllers\Controller;
-use App\Models\Kearsipan\KonsepNaskah;
+use App\Models\Kearsipan\InboxAttachment;
+use App\Models\Kearsipan\NaskahDinas;
 use App\Models\Master\Classification;
 use App\Models\Master\JenisNaskah;
 use App\Models\Master\SatuanUnit;
 use App\Models\Master\Sifat;
 use App\Models\Master\Urgensi;
 use App\Models\User;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Throwable;
 use Yajra\DataTables\Facades\DataTables;
 
@@ -34,13 +37,6 @@ class NaskahDinasController extends Controller
      */
     public function index()
     {
-        // $data = KonsepNaskah::with(
-        //     'jenisNaskah',
-        //     'penandatangan',
-        // )->get();
-
-        // dd($data[0]);
-
         return view('kearsipan/registrasi/naskah-dinas/index');
     }
 
@@ -49,7 +45,7 @@ class NaskahDinasController extends Controller
      */
     public function data(): JsonResponse
     {
-        $data = KonsepNaskah::with(
+        $data = NaskahDinas::with(
             'jenisNaskah',
             'penandatangan',
         )->get();
@@ -87,85 +83,108 @@ class NaskahDinasController extends Controller
      */
     public function store(Request $request)
     {
-        $user = Auth::user();
+        try {
+        DB::transaction(static function () use ($request): void {
+            $user = Auth::user();
 
-        $request->validate([
-            'jenis_naskah_code'     => 'required|exists:jenis_naskahs,code',
-            'nomor_naskah'          => 'required',
-            'tanggal_naskah'        => 'required',
-            'is_public'             => 'required',
-            'jumlah_lampiran'       => 'nullable',
-            'satuan_unit_code'      => $request->get('jumlah') ? 'required' : 'nullable',
-            'classification_id'     => 'required|exists:classifications,id',
-            'urgensi_code'          => 'required|exists:urgensis,code',
-            'sifat_code'            => 'required|exists:sifats,code',
-            'hal'                   => 'required',
-            'jabatan_to_code'       => 'required',
-            'jabatan_cc_code'       => 'nullable',
-            'signer_id'             => 'required|exists:users,id',
-            'jenjang'               => 'required',
-            'ttd_page'              => 'required|numeric',
-            'signer_quantity'       => 'required|numeric',
-            'note'                  => 'nullable',
-        ]);
+            $request->validate([
+                'jenis_naskah_code'     => 'required|exists:jenis_naskahs,code',
+                'nomor_naskah'          => 'required',
+                'tanggal_naskah'        => 'required',
+                'is_public'             => 'required',
+                'jumlah_lampiran'       => 'nullable',
+                'satuan_unit_code'      => $request->get('jumlah') ? 'required' : 'nullable',
+                'classification_id'     => 'required|exists:classifications,id',
+                'urgensi_code'          => 'required|exists:urgensis,code',
+                'sifat_code'            => 'required|exists:sifats,code',
+                'hal'                   => 'required',
+                'jabatan_to_code'       => 'required',
+                'jabatan_cc_code'       => 'nullable',
+                'signer_id'             => 'required|exists:users,id',
+                'jenjang'               => 'required',
+                'ttd_page'              => 'required|numeric',
+                'signer_quantity'       => 'required|numeric',
+                'note'                  => 'nullable',
+            ]);
 
-        $nid = $user->id . date('YmdHis') . rand(10000000000000, 99999999999999);
+            $nid = $user->id . date('YmdHis') . rand(10000000000000, 99999999999999);
 
-        if ($request->get('jenjang') === 'AL') {
-            $approverId = User::where('group_id', '3')
+            $attachments = InboxAttachment::where('uniqid', $request->get('uniqid'))->get();
+
+            foreach ($attachments as $attachment) {
+                $attachment->update([
+                    'nid'       => $nid,
+                    'gir_id'    => $nid,
+                ]);
+            }
+
+            if ($request->get('jenjang') === 'AL') {
+                $approverId = User::where('group_id', '3')
                             ->where('jabatan_code', $user->atasan_code)
                             ->firstOrFail()->id;
-        } elseif ($request->get('jenjang') === 'L') {
-            $approverId = $request->get('approver_id');
-        } else {
-            $approverId = $user->id;
+            } elseif ($request->get('jenjang') === 'L') {
+                $approverId = $request->get('approver_id');
+            } else {
+                $approverId = $user->id;
+            }
+
+            NaskahDinas::create([
+                'nid'                   => $nid,
+                'gir_id'                => $nid,
+                'jenis_naskah_code'     => $request->get('jenis_naskah_code'),
+                'jumlah_lampiran'       => $request->get('jumlah_lampiran'),
+                'satuan_unit_code'      => $request->get('satuan_unit_code'),
+                'sifat_code'            => $request->get('sifat_code'),
+                'urgensi_code'          => $request->get('urgensi_code'),
+                'receiver_as'           => JenisNaskahEnum::NASKAH_DINAS_UPLOAD,
+                'classification_id'     => $request->get('classification_id'),
+                'jabatan_from_code'     => $user->jabatan_code,
+                'jabatan_to_code'       => ! empty($request->get('jabatan_to_code')) ? implode(
+                    ',',
+                    $request->get('jabatan_to_code'),
+                ) : null,
+                'jabatan_cc_code'       => ! empty($request->get('jabatan_cc_code')) ? implode(
+                    ',',
+                    $request->get('jabatan_cc_code'),
+                ) : null,
+                'approve_people_id'     => $approverId,
+                'jenjang'               => $request->get('jenjang'),
+                'status_naskah'         => StatusNaskahDinasEnum::DRAFT,
+                'registration_date'     => date('Y-m-d H:i:s'),
+                'hal'                   => $request->get('hal'),
+                'tanggal_naskah'        => $request->get('tanggal_naskah'),
+                'created_by'            => $user->id,
+                'nomor_naskah'          => $request->get('nomor_naskah'),
+                'location'              => 'Jakarta',
+                'ttd_page'              => $request->get('ttd_page'),
+                'signer_id'             => $request->get('signer_id'),
+                'note'                  => $request->get('note'),
+                'is_public'             => $request->get('is_public') === 'true' ? 1 : 0,
+                'signer_quantity'       => $request->get('signer_quantity'),
+            ]);
+        });
+
+            return redirect(
+                'kearsipan/registrasi/naskah-dinas',
+            )->withSuccess('Sukses melakukan registrasi naskah dinas');
+        } catch (Throwable $e) {
+            return redirect(
+                'kearsipan/registrasi/naskah-dinas',
+            )->withErrors($e->getMessage());
         }
-
-        KonsepNaskah::create([
-            'nid'                   => $nid,
-            'gir_id'                => $nid,
-            'jenis_naskah_code'     => $request->get('jenis_naskah_code'),
-            'jumlah_lampiran'       => $request->get('jumlah_lampiran'),
-            'satuan_unit_code'      => $request->get('satuan_unit_code'),
-            'sifat_code'            => $request->get('sifat_code'),
-            'urgensi_code'          => $request->get('urgensi_code'),
-            'receiver_as'           => JenisNaskahEnum::NASKAH_DINAS_UPLOAD,
-            'classification_id'     => $request->get('classification_id'),
-            'jabatan_from_code'     => $user->jabatan_code,
-            'jabatan_to_code'       => ! empty($request->get('jabatan_to_code')) ? implode(
-                ',',
-                $request->get('jabatan_to_code'),
-            ) : null,
-            'jabatan_cc_code'       => ! empty($request->get('jabatan_cc_code')) ? implode(
-                ',',
-                $request->get('jabatan_cc_code'),
-            ) : null,
-            'approve_people_id'     => $approverId,
-            'jenjang'               => $request->get('jenjang'),
-            'status_naskah'         => StatusNaskahDinasEnum::DRAFT,
-            'registration_date'     => date('Y-m-d H:i:s'),
-            'hal'                   => $request->get('hal'),
-            'tanggal_naskah'        => $request->get('tanggal_naskah'),
-            'created_by'            => $user->id,
-            'nomor_naskah'          => $request->get('nomor_naskah'),
-            'location'              => 'Jakarta',
-            'ttd_page'              => $request->get('ttd_page'),
-            'signer_id'             => $request->get('signer_id'),
-            'note'                  => $request->get('note'),
-            'is_public'             => $request->get('is_public'),
-            'signer_quantity'       => $request->get('signer_quantity'),
-        ]);
-
-        return redirect(
-            'kearsipan/registrasi/naskah-dinas',
-        )->with('success', 'Sukses melakukan registrasi naskah dinas');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id): void
+    public function show(NaskahDinas $naskah_dina): View
     {
+        $data = [
+            'naskah_dinas' => $naskah_dina,
+            'attachments'  => InboxAttachment::where('nid', $naskah_dina->nid)->get(),
+        ];
+
+        return view('kearsipan/registrasi/naskah-dinas/view', $data);
     }
 
     /**
@@ -185,7 +204,7 @@ class NaskahDinasController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(KonsepNaskah $naskah_dina): JsonResponse
+    public function destroy(NaskahDinas $naskah_dina): JsonResponse
     {
         try {
             $naskah_dina->delete();

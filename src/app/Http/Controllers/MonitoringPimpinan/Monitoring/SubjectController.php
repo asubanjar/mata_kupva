@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers\MonitoringPimpinan\Monitoring;
 
 use App\Http\Controllers\Controller;
@@ -9,6 +11,10 @@ use App\Models\MonitoringPimpinan\Monitoring\Upload\SubjectAttachment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+
+use function compact;
+use function redirect;
+use function view;
 
 class SubjectController extends Controller
 {
@@ -31,7 +37,7 @@ class SubjectController extends Controller
         $subject_closeds = Subject::whereNotNull('closed');
 
         $progress_percentage = $subject_closeds->count()
-            ? ($subject_closeds->count() / $subjects->count()) * 100
+            ? $subject_closeds->count() / $subjects->count() * 100
             : 0;
 
         return view(
@@ -42,7 +48,7 @@ class SubjectController extends Controller
                 'subject_closeds',
                 'subject_openeds',
                 'subject_types',
-            )
+            ),
         );
     }
 
@@ -76,18 +82,20 @@ class SubjectController extends Controller
         foreach ($lampirans as $lampiran) {
             $path = 'app/subject/';
 
-            $source = $lampiran->temp_path;
+            $source      = $lampiran->temp_path;
             $destination = 'uploads/subject_attachments/' . $lampiran->uniqid . '-' . $lampiran->filename;
 
-            if (Storage::disk('local')->exists($source)) {
-                Storage::copy($source, $destination);
-
-                $lampiran->update([
-                    'subject_id' => $subject->id,
-                    'path'       => $path . $lampiran->uniqid . '-' . $lampiran->filename,
-                    'user_id'    => Auth::user()->id,
-                ]);
+            if (! Storage::disk('local')->exists($source)) {
+                continue;
             }
+
+            Storage::copy($source, $destination);
+
+            $lampiran->update([
+                'subject_id' => $subject->id,
+                'path'       => $path . $lampiran->uniqid . '-' . $lampiran->filename,
+                'user_id'    => Auth::user()->id,
+            ]);
         }
 
         return redirect('/monitoring-pimpinan/monitoring/subject')->with('success', 'Sukses menambahkan subjek');
@@ -111,7 +119,7 @@ class SubjectController extends Controller
             'subject_details',
             'subject_detail_done',
             'subject_detail_pending',
-            'subject_types'
+            'subject_types',
         ));
     }
 
@@ -143,7 +151,7 @@ class SubjectController extends Controller
         ]);
 
         return redirect(
-            '/monitoring-pimpinan/monitoring/subject/' . $subject->id
+            '/monitoring-pimpinan/monitoring/subject/' . $subject->id,
         )->with('success', 'Sukses mengubah detail aksi');
     }
 

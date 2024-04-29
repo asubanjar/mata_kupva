@@ -381,11 +381,14 @@
                 <div class="accordion mb-xl-9 mb-6" id="kt_accordion_1">
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="kt_accordion_1_header_3">
-                            <button class="accordion-button fs-4 fw-semibold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#kt_accordion_1_body_3" aria-expanded="false" aria-controls="kt_accordion_1_body_3">
-                            Lampiran
+                            <button class="accordion-button fs-4 fw-semibold collapsed" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#kt_accordion_1_body_3" aria-expanded="false"
+                                aria-controls="kt_accordion_1_body_3">
+                                Lampiran
                             </button>
                         </h2>
-                        <div id="kt_accordion_1_body_3" class="accordion-collapse collapse" aria-labelledby="kt_accordion_1_header_3" data-bs-parent="#kt_accordion_1">
+                        <div id="kt_accordion_1_body_3" class="accordion-collapse collapse"
+                            aria-labelledby="kt_accordion_1_header_3" data-bs-parent="#kt_accordion_1">
                             <div class="accordion-body">
                                 <!--begin::Card-->
                                 <div class="card mb-xl-9 mb-6">
@@ -421,7 +424,8 @@
                                             <div class="d-flex justify-content-end align-items-center d-none"
                                                 data-table-toolbar="selected">
                                                 <div class="fw-bold me-5">
-                                                    <span class="me-2" data-table-select="selected_count"></span>Selected
+                                                    <span class="me-2"
+                                                        data-table-select="selected_count"></span>Selected
                                                 </div>
                                                 <button type="button" class="btn btn-danger"
                                                     data-table-select="delete_selected">Delete
@@ -1173,8 +1177,8 @@
                         }
                     },
                     {
-                        data: 'filename',
-                        name: 'filename',
+                        data: 'id',
+                        name: 'id',
                         searchable: true,
                         orderable: true,
                     },
@@ -1183,7 +1187,7 @@
                         name: 'filesize',
                         searchable: true,
                         orderable: true,
-                        render: function (data, type, row) {
+                        render: function(data, type, row) {
                             // Convert filesize from bytes to megabytes
                             var fileSizeInMB = (row.filesize / (1024 * 1024)).toFixed(2);
                             return fileSizeInMB + ' MB';
@@ -1195,9 +1199,11 @@
                         orderable: false,
                         searchable: false,
                         render: function(data, type, row) {
-                            return '<button class="delete-button btn btn-icon btn-active-light-danger w-40px h-40px me-3" data-id="' + row.id +
-                                '"><i class="ki-solid ki-trash fs-1"></i></button> ' + 
-                                '<button class="show-button btn btn-icon btn-active-light-warning w-40px h-40px me-3" data-id="' + row.id +
+                            return '<button class="delete-button btn btn-icon btn-active-light-danger w-40px h-40px me-3" data-id="' +
+                                row.id +
+                                '"><i class="ki-solid ki-trash fs-1"></i></button> ' +
+                                '<button class="show-button btn btn-icon btn-active-light-warning w-40px h-40px me-3" data-id="' +
+                                row.id +
                                 '"><i class="ki-solid ki-eye fs-1"></i></button>';
                         }
                     }
@@ -1250,6 +1256,7 @@
 
             //Delete Attachment
             $('#attachments').on('click', '.delete-button', function() {
+                console.log($(this).data('id'));
                 var id = $(this).data('id'); // Get the ID of the record to delete
 
                 // Confirm before delete

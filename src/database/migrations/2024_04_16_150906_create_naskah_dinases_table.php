@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('konsep_naskahs', static function (Blueprint $table): void {
+        Schema::create('naskah_dinases', static function (Blueprint $table): void {
             $table->string('id')->primary();
             $table->string('nid');
             $table->string('gir_id');

@@ -67,7 +67,7 @@
                         <!--begin:Menu item-->
                         <div class="menu-item">
                             <!--begin:Menu item-->
-                            <a class="menu-link" href="{{ url('/kearsipan/home') }}">
+                            <a class="menu-link" href="{{ url('/kearsipan') }}">
                                 <span class="menu-icon">
                                     <i class="ki-duotone ki-rocket fs-2">
                                         <span class="path1"></span>

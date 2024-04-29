@@ -562,36 +562,7 @@
                                         </tr>
                                     </thead>
                                     <tbody class="fw-semibold text-gray-600">
-                                        @foreach ($subjects as $subject)
-                                            <tr>
-                                                <td>
-                                                    <div
-                                                        class="form-check form-check-sm form-check-custom form-check-solid">
-                                                        <input class="form-check-input" type="checkbox" value="1" />
-                                                    </div>
-                                                </td>
-                                                <td>{{ $subject->name }}</td>
-                                                <td class="text-end">
-                                                    <a href="#"
-                                                        class="btn btn-sm btn-light btn-flex btn-center btn-active-light-primary"
-                                                        data-kt-menu-trigger="click"
-                                                        data-kt-menu-placement="bottom-end">Aksi
-                                                        <i class="ki-duotone ki-down fs-5 ms-1"></i></a>
-                                                    <!--begin::Menu-->
-                                                    <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-125px py-4"
-                                                        data-kt-menu="true">
-                                                        <!--begin::Menu item-->
-                                                        <div class="menu-item px-3">
-                                                            <a href="#" class="menu-link px-3" data-id=""
-                                                                data-csrf="{{ csrf_token() }}"
-                                                                data-table-filter="delete_row">Hapus</a>
-                                                        </div>
-                                                        <!--end::Menu item-->
-                                                    </div>
-                                                    <!--end::Menu-->
-                                                </td>
-                                            </tr>
-                                        @endforeach
+
                                     </tbody>
                                     <!--end::Table body-->
                                 </table>

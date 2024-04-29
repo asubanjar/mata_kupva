@@ -16,6 +16,7 @@ use Throwable;
 use Yajra\DataTables\Facades\DataTables;
 
 use function abort;
+use function dd;
 use function response;
 use function storage_path;
 
@@ -99,6 +100,7 @@ class SubjectAttachmentController extends Controller
      */
     public function destroy(SubjectAttachment $subject_attachment)
     {
+        dd($subject_attachment);
         try {
             $subject_attachment->delete();
 
