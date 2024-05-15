@@ -40,6 +40,13 @@
                         <!--end::Breadcrumb-->
                     </div>
                     <!--end::Page title-->
+                    <div class="d-flex align-items-center gap-lg-3 gap-2">
+                        <!--begin::Primary button-->
+                        <a href="{{ route('permohonan-st.create') }}" class="btn btn-sm fw-bold btn-primary">
+                            Tambah
+                        </a>
+                        <!--end::Primary button-->
+                    </div>
 
                 </div>
                 <!--end::Toolbar wrapper-->

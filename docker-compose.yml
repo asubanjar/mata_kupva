@@ -2,6 +2,7 @@ x-php-environment: &php-environment
   APP_ENV:
   APP_SECRET:
   DATABASE_URL: ${DB_ENGINE:-sqlsrv}://sa:${DB_PASSWORD:-!ChangeMe123!}@${DB_HOST:-database}:${DB_PORT:-1433}/${DB_DATABASE:-dinamis}?serverVersion=${DB_VERSION:-2022}&charset=UTF-8
+  TIMEZONE: Asia/Jakarta
 x-php-buildargs: &php-buildargs
   APP_ENV:
   DEBIAN_APT_MIRROR:
@@ -19,9 +20,8 @@ services:
         INSTALL_NODEJS: current
         INSTALL_OPENSSH_CLIENT: ${WORKSPACE_INSTALL_OPENSSH_CLIENT:-false}
         INSTALL_SUDO: true
-        INSTALL_SYMFONY_CLI: ${WORKSPACE_INSTALL_SYMFONY_CLI:-false}
         INSTALL_VIM: true
-        INSTALL_XDEBUG: ${WORKSPACE_INSTALL_XDEBUG:-false}
+        INSTALL_ZSH: ${WORKSPACE_INSTALL_ZSH:-false}
     user: ${UID:-1000}
     command: >
       bash -c '

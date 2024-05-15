@@ -29,7 +29,7 @@ RUN useradd -ms /bin/bash dinamis \
     libicu-dev \
     libpng-dev \
     libldap2-dev \
-    librabbitmq-dev \
+    # librabbitmq-dev \
     libzip-dev \
     locales \
     unzip \
@@ -59,7 +59,7 @@ RUN curl https://composer.github.io/installer.sig | tr -d '\n' > installer.sig \
 ################################################################################
 RUN docker-php-ext-install iconv intl bcmath gd zip ldap
 
-RUN pecl install amqp && docker-php-ext-enable amqp
+# RUN pecl install amqp && docker-php-ext-enable amqp
 
 ################################################################################
 # INSTALL LESS:
@@ -69,6 +69,32 @@ ARG INSTALL_LESS=false
 RUN if [ ${INSTALL_LESS} = true ]; then \
     apt install -y --no-install-recommends less \
     ;fi
+
+################################################################################
+# INSTALL MSSQL:
+################################################################################
+RUN set -eux; \
+    ########################################################################
+    #  The following steps were taken from
+    #  https://github.com/Microsoft/msphpsql/wiki/Install-and-configuration
+    ########################################################################
+    curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - \
+    && printf "deb [arch=amd64,arm64,armhf] https://packages.microsoft.com/debian/12/prod bookworm main" | tee /etc/apt/sources.list.d/mssql-release.list \
+    && apt update -yqq \
+    && ACCEPT_EULA=Y apt install -yqq msodbcsql18 mssql-tools unixodbc unixodbc-dev libgss3 odbcinst locales \
+    && ln -sfn /opt/mssql-tools/bin/sqlcmd /usr/bin/sqlcmd \
+    && ln -sfn /opt/mssql-tools/bin/bcp /usr/bin/bcp \
+    && printf "en_US.UTF-8 UTF-8" > /etc/locale.gen \
+    && locale-gen \
+    && if [ $(php -r "echo PHP_MAJOR_VERSION;") = "8" ] && [ $(php -r "echo PHP_MINOR_VERSION;") = "1" ]; then \
+    pecl install pdo_sqlsrv-5.11.0 sqlsrv-5.11.0 \
+    ;else \
+    pecl install pdo_sqlsrv sqlsrv \
+    ;fi \
+    && printf "extension=sqlsrv.so"     > /usr/local/etc/php/conf.d/20-sqlsrv.ini \
+    && printf "extension=pdo_sqlsrv.so" > /usr/local/etc/php/conf.d/20-pdo_sqlsrv.ini \
+    && php -m | grep -q 'sqlsrv' \
+    && php -m | grep -q 'pdo_sqlsrv'
 
 ################################################################################
 # INSTALL NETCAT:
@@ -89,43 +115,6 @@ RUN if [ "$INSTALL_NODEJS" = "current" ]; then \
     curl -fsSL https://deb.nodesource.com/setup_current.x | bash - && apt install -y nodejs \
     ;elif [ "$INSTALL_NODEJS" = "lts" ]; then \
     curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - && apt install -y nodejs \
-    ;fi
-
-################################################################################
-# INSTALL MSSQL:
-################################################################################
-RUN set -eux; \
-    if [ $(php -r "echo PHP_MAJOR_VERSION;") = "5" ]; then \
-    apt install -yqq php5.6-sybase freetds-bin freetds-common libsybdb5 \
-    && php -m | grep -q 'mssql' \
-    && php -m | grep -q 'pdo_dblib' \
-    ;else \
-    ########################################################################
-    #  The following steps were taken from
-    #  https://github.com/Microsoft/msphpsql/wiki/Install-and-configuration
-    ########################################################################
-    curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - && \
-    curl https://packages.microsoft.com/config/ubuntu/22.04/prod.list > /etc/apt/sources.list.d/mssql-release.list && \
-    apt update -yqq && \
-    ACCEPT_EULA=Y apt install -yqq msodbcsql17 mssql-tools unixodbc unixodbc-dev libgss3 odbcinst locales && \
-    ln -sfn /opt/mssql-tools/bin/sqlcmd /usr/bin/sqlcmd && \
-    ln -sfn /opt/mssql-tools/bin/bcp /usr/bin/bcp && \
-    echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && \
-    locale-gen && \
-    if [ $(php -r "echo PHP_MAJOR_VERSION;") = "7" ] && [ $(php -r "echo PHP_MINOR_VERSION;") = "2" ]; then \
-    pecl install pdo_sqlsrv-5.8.1 sqlsrv-5.8.1 \
-    ;elif [ $(php -r "echo PHP_MAJOR_VERSION;") = "7" ] && [ $(php -r "echo PHP_MINOR_VERSION;") = "1" ]; then \
-    pecl install pdo_sqlsrv-5.6.1 sqlsrv-5.6.1 \
-    ;elif [ $(php -r "echo PHP_MAJOR_VERSION;") = "7" ] && [ $(php -r "echo PHP_MINOR_VERSION;") = "0" ]; then \
-    pecl install pdo_sqlsrv-5.3.0 sqlsrv-5.3.0 \
-    ;elif [ $(php -r "echo PHP_MAJOR_VERSION;") = "8" ] && [ $(php -r "echo PHP_MINOR_VERSION;") = "1" ]; then \
-    pecl install pdo_sqlsrv-5.11.0 sqlsrv-5.11.0 \
-    ;else \
-    pecl install pdo_sqlsrv sqlsrv \
-    ;fi && \
-    echo "extension=sqlsrv.so"     > /usr/local/etc/php/conf.d/20-sqlsrv.ini && \
-    echo "extension=pdo_sqlsrv.so" > /usr/local/etc/php/conf.d/20-pdo_sqlsrv.ini && \
-    php -m | grep -q 'sqlsrv' && php -m | grep -q 'pdo_sqlsrv' \
     ;fi
 
 ################################################################################
@@ -158,16 +147,6 @@ RUN if [ ${INSTALL_SUPERVISOR} = true ]; then \
     ;fi
 
 ################################################################################
-# INSTALL SYMFONY_CLI:
-################################################################################
-ARG INSTALL_SYMFONY_CLI=false
-
-RUN if [ ${INSTALL_SYMFONY_CLI} = true ]; then \
-    curl -1sLf 'https://dl.cloudsmith.io/public/symfony/stable/setup.deb.sh' | bash \
-    && apt install -y --no-install-recommends symfony-cli \
-    ;fi
-
-################################################################################
 # INSTALL VIM:
 ################################################################################
 ARG INSTALL_VIM=false
@@ -177,13 +156,25 @@ RUN if [ ${INSTALL_VIM} = true ]; then \
     ;fi
 
 ################################################################################
-# INSTALL XDEBUG:
+# INSTALL ZSH:
 ################################################################################
-ARG INSTALL_XDEBUG=false
+ARG INSTALL_ZSH=false
 
-RUN if [ ${INSTALL_XDEBUG} = true ]; then \
-    pecl install xdebug && docker-php-ext-enable xdebug \
+RUN if [ ${INSTALL_ZSH} = true ]; then \
+    apt install -y --no-install-recommends zsh \
+    && usermod --shell /bin/zsh dinamis \
+    && usermod --shell /bin/zsh root \
     ;fi
+
+################################################################################
+# SET TIMEZONE
+################################################################################
+
+ARG TIMEZONE=UTC
+ENV TIMEZONE=${TIMEZONE}
+
+RUN ln -snf /usr/share/zoneinfo/$TIMEZONE /etc/localtime \
+    && printf $TIMEZONE > /etc/timezone
 
 ################################################################################
 
