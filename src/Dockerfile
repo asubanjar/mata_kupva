@@ -29,7 +29,7 @@ RUN useradd -ms /bin/bash dinamis \
     libicu-dev \
     libpng-dev \
     libldap2-dev \
-    # librabbitmq-dev \
+    librabbitmq-dev \
     libzip-dev \
     locales \
     unzip \
@@ -59,7 +59,7 @@ RUN curl https://composer.github.io/installer.sig | tr -d '\n' > installer.sig \
 ################################################################################
 RUN docker-php-ext-install iconv intl bcmath gd zip ldap
 
-# RUN pecl install amqp && docker-php-ext-enable amqp
+RUN pecl install amqp && docker-php-ext-enable amqp
 
 ################################################################################
 # INSTALL LESS:
