@@ -11,6 +11,18 @@
             margin-top: 20px;
         }
     }
+
+    @font-face {
+    font-family: 'Inter';
+    src: url('{{ asset('assets/fonts/inter/static/Inter-Regular.ttf') }}') format('truetype');
+    font-weight: normal;
+    font-style: normal;    
+}
+
+
+    body {
+        font-family: 'Inter', sans-serif;
+    }
 </style>
 
 <html lang="en">
@@ -23,7 +35,6 @@
         <meta property="og:locale" content="en_US" />
         <meta property="og:type" content="article" />
         <link rel="shortcut icon" href="{{ asset('assets/img/ppatk.ico') }}" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
         <link href="{{ asset('assets/plugins/custom/fullcalendar/fullcalendar.bundle.css') }}" rel="stylesheet"
             type="text/css" />
         <link href="{{ asset('assets/plugins/custom/datatables/datatables.bundle.css') }}" rel="stylesheet"
