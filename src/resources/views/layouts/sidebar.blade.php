@@ -1,15 +1,22 @@
 <html>
+
+<style>
+    .menu-title{
+        color: #000 !important;
+    }
+
+</style>
     <!--begin::Sidebar-->
-    <div id="kt_app_sidebar" class="app-sidebar flex-column" data-kt-drawer="true" data-kt-drawer-name="app-sidebar"
+    <div id="kt_app_sidebar" class="app-sidebar flex-column bg-light-primary" data-kt-drawer="true" data-kt-drawer-name="app-sidebar"
         data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="225px"
         data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
         <!--begin::Logo-->
-        <div class="app-sidebar-logo px-6" id="kt_app_sidebar_logo">
+        <div class="app-sidebar-logo px-6" id="kt_app_sidebar_logo" style="border-bottom: none !important">
             <!--begin::Logo image-->
             <a href="{{ url('/home') }}">
-                <img alt="Logo" src="{{ asset('assets/media/logos/dinamis-line-white.svg') }}"
+                <img alt="Logo" src="{{ asset('assets/media/logos/dinamis-line-black.svg') }}"
                     class="h-60px app-sidebar-logo-default" />
-                <img alt="Logo" src="{{ asset('assets/media/logos/default-small.svg') }}"
+                <img alt="Logo" src="{{ asset('assets/media/logos/dinamis-logo-black.svg') }}"
                     class="h-20px app-sidebar-logo-minimize" />
             </a>
             <!--end::Logo image-->
@@ -42,10 +49,10 @@
                         <!--begin:Menu item-->
                         <div class="menu-item">
                             <!--begin:Menu item-->
-                            <a class="menu-link {{ (request()->is('home') ? 'active' : request()->is('home/*')) ? 'active' : '' }}"
+                            <a class="menu-link"
                                 href="{{ url('/home') }}">
                                 <span class="menu-icon">
-                                    <i class="ki-duotone ki-rocket fs-2">
+                                    <i class="ki-duotone ki-star fs-2">
                                         <span class="path1"></span>
                                         <span class="path2"></span>
                                     </i>
@@ -69,7 +76,7 @@
                             <!--begin:Menu item-->
                             <a class="menu-link" href="{{ url('/kearsipan') }}">
                                 <span class="menu-icon">
-                                    <i class="ki-duotone ki-rocket fs-2">
+                                    <i class="ki-duotone ki-home fs-2">
                                         <span class="path1"></span>
                                         <span class="path2"></span>
                                     </i>
@@ -81,14 +88,11 @@
                         <!--end:Menu item-->
                         <!--begin:Menu item-->
                         <div data-kt-menu-trigger="click"
-                            class="menu-item {{ request()->is('*kearsipan*') ? 'here show' : '' }} menu-accordion">
+                            class="menu-item">
                             <!--begin:Menu link-->
                             <span class="menu-link">
                                 <span class="menu-icon">
-                                    <i class="fa fa-pen-clip fs-2">
-                                        <span class="path1"></span>
-                                        <span class="path2"></span>
-                                        <span class="path3"></span>
+                                    <i class="ki-solid ki-notepad-edit fs-2">
                                     </i>
                                 </span>
                                 <span class="menu-title">Registrasi Naskah</span>
@@ -104,7 +108,7 @@
                                         <span class="menu-bullet">
                                             <span class="bullet bullet-dot"></span>
                                         </span>
-                                        <span class="menu-title">Naskah Dinas</span>
+                                        <span class="menu-title">Naskah Internal</span>
                                     </a>
                                     <!--end:Menu link-->
                                 </div>
@@ -116,7 +120,7 @@
                                         <span class="menu-bullet">
                                             <span class="bullet bullet-dot"></span>
                                         </span>
-                                        <span class="menu-title">Surat Dinas</span>
+                                        <span class="menu-title">Naskah Eksternal</span>
                                     </a>
                                     <!--end:Menu link-->
                                 </div>
@@ -139,7 +143,7 @@
                         <!--end:Menu item-->
                         <!--begin:Menu item-->
                         <div data-kt-menu-trigger="click"
-                            class="menu-item {{ request()->is('*kearsipan/kotak-masuk*') ? 'here show' : '' }} menu-accordion">
+                            class="menu-item">
                             <!--begin:Menu link-->
                             <span class="menu-link">
                                 <span class="menu-icon">
@@ -198,7 +202,7 @@
                         </div>
                         <!--end:Menu item-->
                         <!--begin:Menu item-->
-                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                        <div data-kt-menu-trigger="click" class="menu-item">
                             <!--begin:Menu link-->
                             <span class="menu-link">
                                 <span class="menu-icon">
@@ -261,7 +265,7 @@
                             <a class="menu-link {{ request()->is('monitoring-pimpinan/dashboard*') ? 'active' : '' }}"
                                 href="{{ url('/monitoring-pimpinan/dashboard') }}">
                                 <span class="menu-icon">
-                                    <i class="ki-duotone ki-rocket fs-2">
+                                    <i class="ki-duotone ki-home fs-2">
                                         <span class="path1"></span>
                                         <span class="path2"></span>
                                     </i>
@@ -273,11 +277,11 @@
                         <!--end:Menu item-->
                         <!--begin:Menu item-->
                         <div data-kt-menu-trigger="click"
-                            class="menu-item {{ request()->is('*monitoring-pimpinan/statistic*') ? 'here show' : '' }} menu-accordion">
+                            class="menu-item">
                             <!--begin:Menu link-->
                             <span class="menu-link">
                                 <span class="menu-icon">
-                                    <i class="ki-duotone ki-element-plus fs-2">
+                                    <i class="ki-duotone ki-chart-simple-2 fs-2">
                                         <span class="path1"></span>
                                         <span class="path2"></span>
                                         <span class="path3"></span>
@@ -309,11 +313,11 @@
                         </div>
                         <!--end:Menu item-->
                         <!--begin:Menu item-->
-                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                        <div data-kt-menu-trigger="click" class="menu-item">
                             <!--begin:Menu link-->
                             <span class="menu-link">
                                 <span class="menu-icon">
-                                    <i class="ki-duotone ki-address-book fs-2">
+                                    <i class="ki-duotone ki-calendar fs-2">
                                         <span class="path1"></span>
                                         <span class="path2"></span>
                                         <span class="path3"></span>
@@ -343,11 +347,11 @@
                         <!--end:Menu item-->
                         <!--begin:Menu item-->
                         <div data-kt-menu-trigger="click"
-                            class="menu-item {{ request()->is('*monitoring-pimpinan/monitoring*') ? 'here show' : '' }} menu-accordion">
+                            class="menu-item">
                             <!--begin:Menu link-->
                             <span class="menu-link">
                                 <span class="menu-icon">
-                                    <i class="ki-duotone ki-element-plus fs-2">
+                                    <i class="ki-duotone ki-note-2 fs-2">
                                         <span class="path1"></span>
                                         <span class="path2"></span>
                                         <span class="path3"></span>
@@ -407,7 +411,7 @@
                             <!--begin:Menu link-->
                             <span class="menu-link">
                                 <span class="menu-icon">
-                                    <i class="ki-duotone ki-address-book fs-2">
+                                    <i class="ki-duotone ki-user-tick fs-2">
                                         <span class="path1"></span>
                                         <span class="path2"></span>
                                         <span class="path3"></span>
@@ -439,11 +443,11 @@
                         <!--begin:Menu item-->
                         @can('master')
                             <div data-kt-menu-trigger="click"
-                                class="menu-item {{ request()->is('*master*') ? 'here show' : '' }} menu-accordion">
+                                class="menu-item">
                                 <!--begin:Menu link-->
                                 <span class="menu-link">
                                     <span class="menu-icon">
-                                        <i class="ki-duotone ki-element-plus fs-2">
+                                        <i class="ki-duotone ki-folder-added fs-2">
                                             <span class="path1"></span>
                                             <span class="path2"></span>
                                             <span class="path3"></span>
