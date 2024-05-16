@@ -265,7 +265,7 @@
                                                                         class="btn btn-active-color-primary w-100 px-7 py-6 text-start">
                                                                         <!--begin::Icon-->
                                                                         <i
-                                                                            class="fas fa-mouse fs-2x fs-lg-2hx ms-n1 text-gray-500"></i>
+                                                                            class="fas fa-paste fs-2x fs-lg-2hx ms-n1 text-gray-500"></i>
                                                                         <!--end::Icon-->
                                                                         <!--begin::Desc-->
                                                                         <div class="fw-bold fs-5 pt-4">Persetujuan</div>
@@ -372,11 +372,11 @@
                                                         <!--begin::Col-->
                                                         <div class="col-7 ps-xl-10 pe-5">
                                                             <!--begin::Title-->
-                                                            <div class="fs-2qx fw-bold mb-6 text-white">Pengumuman</div>
+                                                            <div class="fs-2qx fw-bold mb-10 text-white">Pengumuman</div>
                                                             <!--end::Title-->
                                                             <!--begin::Text-->
                                                             <span
-                                                                class="fw-semibold fs-6 d-block mb-10 text-white opacity-75">Terdapat
+                                                                class="fw-semibold fs-6 d-block mb-10 text-white lh-base">Terdapat
                                                                 penambahan fitur multiple sign yang dapat digunakan untuk
                                                                 lebih dari satu penandatangan dalam satu naskah</span>
                                                             <!--end::Text-->
