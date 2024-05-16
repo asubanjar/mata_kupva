@@ -14,9 +14,9 @@
         <div class="app-sidebar-logo px-6" id="kt_app_sidebar_logo" style="border-bottom: none !important">
             <!--begin::Logo image-->
             <a href="{{ url('/home') }}">
-                <img alt="Logo" src="{{ asset('assets/media/logos/dinamis-line-black.svg') }}"
+                <img alt="Logo" src="{{ asset('assets/media/logos/dinamis-line-grey.svg') }}"
                     class="h-100px app-sidebar-logo-default" />
-                <img alt="Logo" src="{{ asset('assets/media/logos/dinamis-logo-black.svg') }}"
+                <img alt="Logo" src="{{ asset('assets/media/logos/dinamis-logo-grey.svg') }}"
                     class="h-20px app-sidebar-logo-minimize" />
             </a>
             <!--end::Logo image-->
