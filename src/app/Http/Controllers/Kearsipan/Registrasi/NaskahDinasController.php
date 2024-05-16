@@ -180,8 +180,15 @@ class NaskahDinasController extends Controller
     public function show(NaskahDinas $naskah_dina): View
     {
         $data = [
-            'naskah_dinas' => $naskah_dina,
-            'attachments'  => InboxAttachment::where('nid', $naskah_dina->nid)->get(),
+            'naskah_dinas'      => $naskah_dina,
+            'attachments'       => InboxAttachment::where('nid', $naskah_dina->nid)->get(),
+            'classifications'   => Classification::all(),
+            'jenis_naskahs'     => JenisNaskah::all(),
+            'receivers'         => User::whereIn('group_id', ['3'])->get(),
+            'satuan_units'      => SatuanUnit::all(),
+            'sifats'            => Sifat::all(),
+            'signers'           => User::all(),
+            'urgensis'          => Urgensi::all(),
         ];
 
         return view('kearsipan/registrasi/naskah-dinas/view', $data);
@@ -197,8 +204,62 @@ class NaskahDinasController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id): void
+    public function update(Request $request, NaskahDinas $naskah_dina): void
     {
+        $user = Auth::user();
+
+        $request->validate([
+            'jenis_naskah_code'     => 'required|exists:jenis_naskahs,code',
+            'nomor_naskah'          => 'required',
+            'tanggal_naskah'        => 'required',
+            'is_public'             => 'required',
+            'jumlah_lampiran'       => 'nullable',
+            'satuan_unit_code'      => $request->get('jumlah') ? 'required' : 'nullable',
+            'classification_id'     => 'required|exists:classifications,id',
+            'urgensi_code'          => 'required|exists:urgensis,code',
+            'sifat_code'            => 'required|exists:sifats,code',
+            'hal'                   => 'required',
+            'jabatan_to_code'       => 'required',
+            'jabatan_cc_code'       => 'nullable',
+            'signer_id'             => 'required|exists:users,id',
+            'approve_people_id'     => 'required|exists:users,id',
+            'ttd_page'              => 'required|numeric',
+            'signer_quantity'       => 'required|numeric',
+            'note'                  => 'nullable',
+        ]);
+
+            NaskahDinas::create([
+                'jenis_naskah_code'     => $request->get('jenis_naskah_code'),
+                'jumlah_lampiran'       => $request->get('jumlah_lampiran'),
+                'satuan_unit_code'      => $request->get('satuan_unit_code'),
+                'sifat_code'            => $request->get('sifat_code'),
+                'urgensi_code'          => $request->get('urgensi_code'),
+                'receiver_as'           => JenisNaskahEnum::NASKAH_DINAS_UPLOAD,
+                'classification_id'     => $request->get('classification_id'),
+                'jabatan_from_code'     => $user->jabatan_code,
+                'jabatan_to_code'       => ! empty($request->get('jabatan_to_code')) ? implode(
+                    ',',
+                    $request->get('jabatan_to_code'),
+                ) : null,
+                'jabatan_cc_code'       => ! empty($request->get('jabatan_cc_code')) ? implode(
+                    ',',
+                    $request->get('jabatan_cc_code'),
+                ) : null,
+                'approve_people_id'     => $request->get('approve_people_id'),
+                'jenjang'               => $request->get('jenjang'),
+                'status_naskah'         => StatusNaskahDinasEnum::DRAFT,
+                'registration_date'     => date('Y-m-d H:i:s'),
+                'hal'                   => $request->get('hal'),
+                'tanggal_naskah'        => $request->get('tanggal_naskah'),
+                'created_by'            => $user->id,
+                'nomor_naskah'          => $request->get('nomor_naskah'),
+                'location'              => 'Jakarta',
+                'ttd_page'              => $request->get('ttd_page'),
+                'signer_id'             => $request->get('signer_id'),
+                'note'                  => $request->get('note'),
+                'is_public'             => $request->get('is_public') === 'true' ? 1 : 0,
+                'signer_quantity'       => $request->get('signer_quantity'),
+            ]);
     }
 
     /**

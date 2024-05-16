@@ -1,5 +1,5 @@
 // Define form element
-const form = document.getElementById("add_form2");
+const form = document.getElementById("add_form");
 
 var validator = FormValidation.formValidation(form, {
     fields: {

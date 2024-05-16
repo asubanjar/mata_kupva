@@ -61,7 +61,7 @@
         <div id="kt_app_content" class="app-content flex-column-fluid">
             <!--begin::Content container-->
             <div id="kt_app_content_container" class="app-container container-fluid">
-                <form id="add_form2" method="post" action="{{ route('naskah-dinas.store') }}" class="needs-validation"
+                <form id="add_form" method="post" action="{{ route('naskah-dinas.store') }}" class="needs-validation"
                     novalidate="">
                     @csrf
                     <!--begin::Layout-->
@@ -109,11 +109,11 @@
                                                         class="form-select form-select-solid">
                                                         <option value="" selected>Pilih Jenis Naskah
                                                         </option>
-                                                        <?php foreach ($jenis_naskahs as $jenis_naskah): ?>
-                                                        <option value="{{ $jenis_naskah->code }}">
-                                                            {{ $jenis_naskah->name }}
-                                                        </option>
-                                                        <?php endforeach; ?>
+                                                        @foreach ($jenis_naskahs as $jenis_naskah)
+                                                            <option value="{{ $jenis_naskah->code }}">
+                                                                {{ $jenis_naskah->name }}
+                                                            </option>
+                                                        @endforeach
                                                     </select>
                                                     <!--end::Select-->
                                                 </div>
@@ -169,17 +169,16 @@
                                                             class="form-select form-select-solid">
                                                             <option value="" selected>Pilih Jenis Lampiran
                                                             </option>
-                                                            <?php foreach ($satuan_units as $satuan_unit): ?>
-                                                            <option value="{{ $satuan_unit->code }}">
-                                                                {{ $satuan_unit->name }}
-                                                            </option>
-                                                            <?php endforeach; ?>
+                                                            @foreach ($satuan_units as $satuan_unit)
+                                                                <option value="{{ $satuan_unit->code }}">
+                                                                    {{ $satuan_unit->name }}
+                                                                </option>
+                                                            @endforeach
                                                         </select>
                                                         <!--end::Select-->
                                                     </div>
                                                 </div>
                                                 <!--end::Input group-->
-
                                                 <!--begin::Input group-->
                                                 <div class="fv-row mb-5">
                                                     <label
@@ -191,16 +190,16 @@
                                                         class="form-select form-select-solid">
                                                         <option value="" selected disabled>Pilih Kode Klasifikasi
                                                         </option>
-                                                        <?php foreach ($classifications as $classification): ?>
-                                                        <option value="{{ $classification->id }}">
-                                                            {{ $classification->code }} - {{ $classification->name }}
-                                                        </option>
-                                                        <?php endforeach; ?>
+                                                        @foreach ($classifications as $classification)
+                                                            <option value="{{ $classification->id }}">
+                                                                {{ $classification->code }} - {{ $classification->name }}
+                                                            </option>
+                                                        @endforeach
                                                     </select>
                                                     <!--end::Select-->
                                                 </div>
                                                 <!--end::Input group-->
-
+                                                <!--begin::Input group-->
                                                 <div class="fv-row mb-5">
                                                     <label
                                                         class="form-label fs-6 fw-bold required mb-3 text-gray-700">Tingkat
@@ -210,11 +209,11 @@
                                                         class="form-select form-select-solid">
                                                         <option value="" selected disabled>Pilih Urgensi
                                                         </option>
-                                                        <?php foreach ($urgensis as $urgensi): ?>
-                                                        <option value="{{ $urgensi->code }}">
-                                                            {{ $urgensi->name }}
-                                                        </option>
-                                                        <?php endforeach; ?>
+                                                        @foreach ($urgensis as $urgensi)
+                                                            <option value="{{ $urgensi->code }}">
+                                                                {{ $urgensi->name }}
+                                                            </option>
+                                                        @endforeach
                                                     </select>
                                                     <!--end::Select-->
                                                 </div>
@@ -229,14 +228,15 @@
                                                         class="form-select form-select-solid">
                                                         <option value="" selected disabled>Pilih Urgensi
                                                         </option>
-                                                        <?php foreach ($sifats as $sifat): ?>
-                                                        <option value="{{ $sifat->code }}">
-                                                            {{ $sifat->name }}
-                                                        </option>
-                                                        <?php endforeach; ?>
+                                                        @foreach ($sifats as $sifat)
+                                                            <option value="{{ $sifat->code }}">
+                                                                {{ $sifat->name }}
+                                                            </option>
+                                                        @endforeach
                                                     </select>
                                                     <!--end::Select-->
                                                 </div>
+                                                <!--end::Input group-->
                                             </div>
                                             <!--end::Col-->
                                         </div>
@@ -352,11 +352,11 @@
                                                 id="jabatan_to_code" multiple="multiple" data-kt-select2="true"
                                                 data-close-on-select="false" data-placeholder="Kepada"
                                                 data-allow-clear="true">
-                                                <?php foreach ($receivers as $receiver): ?>
-                                                <option value="{{ $receiver->jabatan_code }}">
-                                                    {{ $receiver->position }}
-                                                </option>
-                                                <?php endforeach; ?>
+                                                @foreach ($receivers as $receiver)
+                                                    <option value="{{ $receiver->jabatan_code }}">
+                                                        {{ $receiver->position }}
+                                                    </option>
+                                                @endforeach
                                             </select>
                                         </div>
                                         <div class="mb-5">
@@ -365,11 +365,11 @@
                                                 id="jabatan_cc_code" multiple="multiple" data-kt-select2="true"
                                                 data-close-on-select="false" data-placeholder="Tembusan"
                                                 data-allow-clear="true">
-                                                <?php foreach ($receivers as $receiver): ?>
-                                                <option value="{{ $receiver->jabatan_code }}">
-                                                    {{ $receiver->position }}
-                                                </option>
-                                                <?php endforeach; ?>
+                                                @foreach ($receivers as $receiver)
+                                                    <option value="{{ $receiver->jabatan_code }}">
+                                                        {{ $receiver->position }}
+                                                    </option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
@@ -410,11 +410,11 @@
                                                 class="form-select form-select-solid">
                                                 <option value="" selected disabled>Pilih Penandatangan
                                                 </option>
-                                                <?php foreach ($signers as $signer): ?>
-                                                <option value="{{ $signer->id }}">
-                                                    {{ $signer->name }} - {{ $signer->position }}
-                                                </option>
-                                                <?php endforeach; ?>
+                                                @foreach ($signers as $signer)
+                                                    <option value="{{ $signer->id }}">
+                                                        {{ $signer->name }} - {{ $signer->position }}
+                                                    </option>
+                                                @endforeach
                                             </select>
                                         </div>
                                         <div id="jenjang" class="fv-row mb-5">
@@ -454,11 +454,11 @@
                                                         class="form-select form-select-solid">
                                                         <option value="" selected disabled>Pilih Penandatangan
                                                         </option>
-                                                        <?php foreach ($signers as $signer): ?>
-                                                        <option value="{{ $signer->id }}">
-                                                            {{ $signer->name }} - {{ $signer->position }}
-                                                        </option>
-                                                        <?php endforeach; ?>
+                                                        @foreach ($signers as $signer)
+                                                            <option value="{{ $signer->id }}">
+                                                                {{ $signer->name }} - {{ $signer->position }}
+                                                            </option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
                                             </div>
@@ -559,7 +559,8 @@
 
     <script>
         $("#tanggalNaskah").flatpickr({
-            minDate: "today",
+            enableTime: false,
+            dateFormat: "d-m-Y",
         });
     </script>
 

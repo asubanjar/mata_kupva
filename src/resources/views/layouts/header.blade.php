@@ -5,9 +5,9 @@
         }
     </style>
     <!--begin::Header-->
-    <div id="kt_app_header" class="app-header bg-light-primary" data-kt-sticky="true" data-kt-sticky-activate="{default: true, lg: true}"
-        data-kt-sticky-name="app-header-minimize" data-kt-sticky-offset="{default: '200px', lg: '0'}"
-        data-kt-sticky-animation="false">
+    <div id="kt_app_header" class="app-header bg-light-primary" data-kt-sticky="true"
+        data-kt-sticky-activate="{default: true, lg: true}" data-kt-sticky-name="app-header-minimize"
+        data-kt-sticky-offset="{default: '200px', lg: '0'}" data-kt-sticky-animation="false">
         <!--begin::Header container-->
         <div class="app-container container-fluid d-flex align-items-stretch justify-content-between"
             id="kt_app_header_container">
@@ -56,8 +56,8 @@
                             </i>
                         </div>
                         <!--begin::Menu-->
-                        <div class="menu menu-sub menu-sub-dropdown menu-column w-350px w-lg-375px"
-                            data-kt-menu="true" id="kt_menu_notifications">
+                        <div class="menu menu-sub menu-sub-dropdown menu-column w-350px w-lg-375px" data-kt-menu="true"
+                            id="kt_menu_notifications">
                             <!--begin::Heading-->
                             <div class="d-flex flex-column bgi-no-repeat rounded-top"
                                 style="background-image:url('assets/media/misc/menu-header-bg.jpg')">
@@ -889,8 +889,7 @@
                             <!--end::Menu item-->
                             <!--begin::Menu item-->
                             <div class="menu-item px-5">
-                                <a href="{{ Route('logout') }}"
-                                    class="menu-link px-5">Sign Out</a>
+                                <a href="{{ Route('logout') }}" class="menu-link px-5">Sign Out</a>
                             </div>
                             <!--end::Menu item-->
                         </div>

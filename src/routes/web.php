@@ -25,7 +25,7 @@ Route::post('custom-login', [LoginController::class, 'customLogin'])->name('logi
 
 Auth::routes();
 
-Route::group(['middleware' => ['auth']], function (): void {
+Route::group(['middleware' => ['auth']], static function (): void {
     Route::get('/logout', [LoginController::class, 'logout']);
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 
