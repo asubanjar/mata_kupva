@@ -11,13 +11,13 @@
         data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="225px"
         data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
         <!--begin::Logo-->
-        <div class="app-sidebar-logo px-8" id="kt_app_sidebar_logo" style="border-bottom: none !important">
+        <div class="app-sidebar-logo" id="kt_app_sidebar_logo" style="border-bottom: none !important">
             <!--begin::Logo image-->
             <a href="{{ url('/home') }}">
                 <img alt="Logo" src="{{ asset('assets/media/logos/dinamis-line-grey.svg') }}"
-                    class="h-90px app-sidebar-logo-default" />
+                    class="h-90px app-sidebar-logo-default px-8" />
                 <img alt="Logo" src="{{ asset('assets/media/logos/dinamis-logo-grey.svg') }}"
-                    class="h-20px app-sidebar-logo-minimize" />
+                    class="h-20px app-sidebar-logo-minimize px-6" />
             </a>
             <!--end::Logo image-->
             <!--begin::Sidebar toggle-->
