@@ -15,7 +15,7 @@
             <!--begin::Logo image-->
             <a href="{{ url('/home') }}">
                 <img alt="Logo" src="{{ asset('assets/media/logos/dinamis-line-black.svg') }}"
-                    class="h-60px app-sidebar-logo-default" />
+                    class="h-100px app-sidebar-logo-default" />
                 <img alt="Logo" src="{{ asset('assets/media/logos/dinamis-logo-black.svg') }}"
                     class="h-20px app-sidebar-logo-minimize" />
             </a>

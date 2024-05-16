@@ -97,7 +97,7 @@
                                                     <label class="form-label fs-6 fw-bold mb-3 text-gray-700">Pengunggah
                                                         Naskah</label>
                                                     <input type="text" disabled
-                                                        class="form-control form-control-solid disabled"
+                                                        class="form-control  disabled"
                                                         placeholder="{{ Auth::user()->name }}">
                                                 </div>
                                                 <div class="fv-row mb-5">
@@ -106,7 +106,7 @@
                                                     <!--begin::Select-->
                                                     <select name="jenis_naskah_code" aria-label="Jenis Naskah"
                                                         data-control="select2" data-placeholder="Jenis Naskah"
-                                                        class="form-select form-select-solid">
+                                                        class="form-select ">
                                                         <option value="" selected>Pilih Jenis Naskah
                                                         </option>
                                                         @foreach ($jenis_naskahs as $jenis_naskah)
@@ -121,7 +121,7 @@
                                                     <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Nomor
                                                         Naskah</label>
                                                     <input name="nomor_naskah" type="text"
-                                                        class="form-control form-control-solid"
+                                                        class="form-control "
                                                         placeholder="Nomor Naskah, contoh: T/642/DL.02.04/X/2024" />
                                                 </div>
                                                 <div class="fv-row mb-5">
@@ -129,7 +129,7 @@
                                                         class="form-label fs-6 fw-bold required mb-3 text-gray-700">Tanggal
                                                         Naskah</label>
                                                     <input id="tanggalNaskah" name="tanggal_naskah"
-                                                        class="form-control form-control-solid" name="tgl_naskah"
+                                                        class="form-control " name="tgl_naskah"
                                                         placeholder="Tanggal Naskah">
                                                 </div>
                                                 <div class="fv-row mb-5">
@@ -138,7 +138,7 @@
                                                         Naskah</label>
                                                     <select name="is_public" aria-label="Hak Akses Naskah"
                                                         data-control="select2" data-placeholder="Hak Akses Naskah"
-                                                        class="form-select form-select-solid">
+                                                        class="form-select ">
                                                         <option value="false">
                                                             Internal
                                                         </option>
@@ -157,7 +157,7 @@
                                                     <label
                                                         class="form-label fs-6 fw-bold mb-3 text-gray-700">Lampiran</label>
                                                     <div class="col-lg-6">
-                                                        <input class="form-control form-control-solid" type="number"
+                                                        <input class="form-control " type="number"
                                                             min="0" name="jumlah_lampiran"
                                                             placeholder="Jumlah Lampiran" value=""
                                                             data-kt-element="lampiran" />
@@ -166,7 +166,7 @@
                                                         <!--begin::Select-->
                                                         <select name="satuan_unit_code" aria-label="Jenis Lampiran"
                                                             data-control="select2" data-placeholder="Jenis Lampiran"
-                                                            class="form-select form-select-solid">
+                                                            class="form-select ">
                                                             <option value="" selected>Pilih Jenis Lampiran
                                                             </option>
                                                             @foreach ($satuan_units as $satuan_unit)
@@ -187,7 +187,7 @@
                                                     <!--begin::Select-->
                                                     <select name="classification_id" aria-label="Kode Klasifikasi"
                                                         data-control="select2" data-placeholder="Klasifikasi Arsip"
-                                                        class="form-select form-select-solid">
+                                                        class="form-select ">
                                                         <option value="" selected disabled>Pilih Kode Klasifikasi
                                                         </option>
                                                         @foreach ($classifications as $classification)
@@ -206,7 +206,7 @@
                                                         Urgensi</label>
                                                     <select name="urgensi_code" aria-label="Tingkat Urgensi"
                                                         data-control="select2" data-placeholder="Tingkat Urgensi"
-                                                        class="form-select form-select-solid">
+                                                        class="form-select ">
                                                         <option value="" selected disabled>Pilih Urgensi
                                                         </option>
                                                         @foreach ($urgensis as $urgensi)
@@ -225,7 +225,7 @@
                                                         Naskah</label>
                                                     <select name="sifat_code" aria-label="Sifat Naskah"
                                                         data-control="select2" data-placeholder="Sifat Naskah"
-                                                        class="form-select form-select-solid">
+                                                        class="form-select ">
                                                         <option value="" selected disabled>Pilih Urgensi
                                                         </option>
                                                         @foreach ($sifats as $sifat)
@@ -250,7 +250,7 @@
                                                     <label
                                                         class="form-label fs-6 fw-bold required mb-3 text-gray-700">Perihal</label>
                                                     <input name="hal" type="text"
-                                                        class="form-control form-control-solid" placeholder="Perihal" />
+                                                        class="form-control " placeholder="Perihal" />
                                                 </div>
                                                 <!--end::Input group-->
                                             </div>
@@ -348,7 +348,7 @@
                                         <div class="fv-row mb-5">
                                             <label class="form-label fs-6 fw-bold required text-gray-700">Kepada
                                                 Yth.</label>
-                                            <select name="jabatan_to_code[]" class="form-select form-select-solid"
+                                            <select name="jabatan_to_code[]" class="form-select "
                                                 id="jabatan_to_code" multiple="multiple" data-kt-select2="true"
                                                 data-close-on-select="false" data-placeholder="Kepada"
                                                 data-allow-clear="true">
@@ -361,7 +361,7 @@
                                         </div>
                                         <div class="mb-5">
                                             <label class="form-label fs-6 fw-bold text-gray-700">Tembusan Yth.</label>
-                                            <select name="jabatan_cc_code[]" class="form-select form-select-solid"
+                                            <select name="jabatan_cc_code[]" class="form-select "
                                                 id="jabatan_cc_code" multiple="multiple" data-kt-select2="true"
                                                 data-close-on-select="false" data-placeholder="Tembusan"
                                                 data-allow-clear="true">
@@ -407,7 +407,7 @@
                                                 Naskah</label>
                                             <select name="signer_id" aria-label="Penandatangan Naskah"
                                                 data-control="select2" data-placeholder="Penandatangan Naskah"
-                                                class="form-select form-select-solid">
+                                                class="form-select ">
                                                 <option value="" selected disabled>Pilih Penandatangan
                                                 </option>
                                                 @foreach ($signers as $signer)
@@ -423,7 +423,7 @@
                                                 <div class="col-lg-3">
                                                     <select id="jenjang" name="jenjang" aria-label="Jenjang"
                                                         data-control="select2" data-placeholder="Pilih Jenjang"
-                                                        class="form-select form-select-solid">
+                                                        class="form-select ">
                                                         <option value="" selected disabled>Pilih Jenjang
                                                         </option>
                                                         <option value="AL">
@@ -440,18 +440,18 @@
                                                 <div id="jenjang_atasan_langsung" class="col-lg-9 mb-5"
                                                     style="display: none">
                                                     <input type="text" disabled
-                                                        class="form-control form-control-solid disabled"
+                                                        class="form-control  disabled"
                                                         placeholder="{{ Auth::user()->atasan->name }}">
                                                 </div>
                                                 <div id="jenjang_sendiri" class="col-lg-9 mb-5" style="display: none">
                                                     <input type="text" disabled
-                                                        class="form-control form-control-solid disabled"
+                                                        class="form-control  disabled"
                                                         placeholder="{{ Auth::user()->name }}">
                                                 </div>
                                                 <div id="jenjang_lainnya" class="col-lg-9 mb-5" style="display: none">
                                                     <select name="approver_id" aria-label="Penandatangan Naskah"
                                                         data-control="select2" data-placeholder="Penandatangan Naskah"
-                                                        class="form-select form-select-solid">
+                                                        class="form-select ">
                                                         <option value="" selected disabled>Pilih Penandatangan
                                                         </option>
                                                         @foreach ($signers as $signer)
@@ -468,7 +468,7 @@
                                                 <div class="fv-row mb-5">
                                                     <label class="form-label fs-6 fw-bold required text-gray-700">Halaman
                                                         Tandatangan</label>
-                                                    <input name="ttd_page" class="form-control form-control-solid"
+                                                    <input name="ttd_page" class="form-control "
                                                         type="number" min="1" placeholder="Halaman Tandatangan"
                                                         value="" data-kt-element="hal_ttd" />
                                                 </div>
@@ -479,7 +479,7 @@
                                                         class="form-label fs-6 fw-bold required mb-3 text-gray-700">Jumlah
                                                         Penandatangan</label>
                                                     <input name="signer_quantity" type="number"
-                                                        class="form-control form-control-solid"
+                                                        class="form-control "
                                                         placeholder="Jumlah Penandatangan" value="1" />
                                                 </div>
                                             </div>
@@ -488,7 +488,7 @@
                                         <!--begin::Notes-->
                                         <div class="mb-5">
                                             <label class="form-label fs-6 fw-bold text-gray-700">Catatan</label>
-                                            <textarea name="note" class="form-control form-control-solid" rows="2" placeholder="Catatan"></textarea>
+                                            <textarea name="note" class="form-control " rows="2" placeholder="Catatan"></textarea>
                                         </div>
                                         <!--end::Notes-->
                                     </div>

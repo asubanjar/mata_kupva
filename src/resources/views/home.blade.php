@@ -412,7 +412,7 @@
                                         </div>
                                         <!--end::Col-->
                                     </div>
-                                    <div class="col-xxl-12 col-md-4 mb-5 mb-lg-10">
+                                    <div class="col-xxl-12 col-md-12 mb-5 mb-lg-10">
                                         <!--begin::List Widget 5-->
                                 <div class="card">
                                     <!--begin::Header-->

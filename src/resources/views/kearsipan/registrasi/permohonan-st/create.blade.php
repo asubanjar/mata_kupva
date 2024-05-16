@@ -65,19 +65,19 @@
                                             <div class="fv-row col-lg-4 mb-5">
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Nomor
                                                     Nota Dinas</label>
-                                                <input type="text" class="form-control form-control-solid"
+                                                <input type="text" class="form-control "
                                                     name="no_nodis" placeholder="Nomor Nota Dinas">
                                             </div>
                                             <div class="fv-row col-lg-4 mb-5">
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Tanggal
                                                     Nota Dinas</label>
-                                                <input id="tanggalNodis" class="form-control form-control-solid"
+                                                <input id="tanggalNodis" class="form-control "
                                                     name="tgl_nodis" placeholder="Tanggal Nota Dinas">
                                             </div>
                                             <div class="fv-row col-lg-4 mb-5">
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Dasar
                                                     Penugasan</label>
-                                                <select class="form-select form-select-solid" name="dasar_penugasan">
+                                                <select class="form-select " name="dasar_penugasan">
                                                     <option value="" selected disabled>Pilih Dasar Penugasan
                                                     </option>
                                                     <option value="Arahan">Arahan</option>
@@ -92,12 +92,12 @@
                                             <div class="fv-row col-lg-6 mb-5">
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Perihal
                                                     Nota Dinas</label>
-                                                <textarea class="form-control form-control-solid" name="perihal_nodis" placeholder="Perihal Nota Dinas"></textarea>
+                                                <textarea class="form-control " name="perihal_nodis" placeholder="Perihal Nota Dinas"></textarea>
                                             </div>
                                             <div class="fv-row col-lg-6 mb-5">
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Detail
                                                     Penugasan</label>
-                                                <textarea class="form-control form-control-solid" name="detail_penugasan" placeholder="Detail Penugasan"></textarea>
+                                                <textarea class="form-control " name="detail_penugasan" placeholder="Detail Penugasan"></textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -112,7 +112,7 @@
                                             <div class="fv-row col-lg-4 mb-5">
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Nama Unit
                                                     Kerja</label>
-                                                <input type="text" readonly class="form-control form-control-solid"
+                                                <input type="text" readonly class="form-control "
                                                     name="unit_kerja" placeholder="Nama Unit Kerja"
                                                     value="{{ Auth::user()->unit_organisasi }}">
                                             </div>
@@ -120,7 +120,7 @@
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Nama
                                                     Kegiatan</label>
                                                 <select name="nama_kegiatan_id" aria-label="Hak Akses Naskah"
-                                                    data-control="select2" class="form-select form-select-solid">
+                                                    data-control="select2" class="form-select ">
                                                     <option value="" selected disabled>Pilih Kegiatan</option>
                                                     <?php foreach ($kegiatans as $kegiatan): ?>
                                                     <option value="{{ $kegiatan->id }}">
@@ -131,7 +131,7 @@
                                             <div class="fv-row col-lg-4 mb-5">
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Jenis
                                                     Transportasi</label>
-                                                <select class="form-select form-select-solid" name="jenis_transportasi">
+                                                <select class="form-select " name="jenis_transportasi">
                                                     <option value="" selected disabled>Pilih Jenis Transportasi
                                                     </option>
                                                     <option value="Tidak Ada">Tidak Ada</option>
@@ -146,7 +146,7 @@
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Jenis
                                                     Pembiayaan Anggaran</label>
                                                 <select id="pembiayaan" name="jenis_pembiayaan" data-control="select2"
-                                                    class="form-select form-select-solid">
+                                                    class="form-select ">
                                                     <option value="" selected disabled>Pilih Jenis Pembiayaan
                                                         Anggaran
                                                     </option>
@@ -161,7 +161,7 @@
                                                     Perjalanan Dinas</label>
                                                 <select id="perjadin" name="jenis_perjadin_id"
                                                     aria-label="Hak Akses Naskah" data-control="select2"
-                                                    class="form-select form-select-solid">
+                                                    class="form-select ">
                                                     <option value="" selected disabled>Pilih Jenis Perjalanan Dinas
                                                     </option>
                                                     <?php foreach ($perjadins as $perjadin): ?>
@@ -173,7 +173,7 @@
                                             <div id="kotakab" class="fv-row col-lg-4 mb-5">
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Nama
                                                     Kota / Kabupaten</label>
-                                                <select class="form-select form-select-solid" data-control="select2"
+                                                <select class="form-select " data-control="select2"
                                                     name="nama_kota">
                                                     <option value="" selected disabled>Pilih Kota / Kabupaten
                                                     </option>
@@ -187,7 +187,7 @@
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Nama
                                                     Negara</label>
                                                 <input id="nama_negara" type="text"
-                                                    class="form-control form-control-solid" name="nama_negara"
+                                                    class="form-control " name="nama_negara"
                                                     placeholder="Nama Negara">
                                             </div>
                                         </div>
@@ -205,21 +205,21 @@
                                                             <label
                                                                 class="form-label fs-6 fw-bold required mb-3 text-gray-700">Kode
                                                                 Akun</label>
-                                                            <input type="text" class="form-control form-control-solid"
+                                                            <input type="text" class="form-control "
                                                                 name="kode_akun" placeholder="Kode Akun">
                                                         </div>
                                                         <div class="fv-row col-lg-3 mb-5">
                                                             <label
                                                                 class="form-label fs-6 fw-bold required mb-3 text-gray-700">Nama
                                                                 Akun</label>
-                                                            <input type="text" class="form-control form-control-solid"
+                                                            <input type="text" class="form-control "
                                                                 name="nama_akun" placeholder="Nama Akun">
                                                         </div>
                                                         <div class="fv-row col-lg-3 mb-5">
                                                             <label
                                                                 class="form-label fs-6 fw-bold required mb-3 text-gray-700">Pagu
                                                                 Anggaran</label>
-                                                            <input type="text" class="form-control form-control-solid"
+                                                            <input type="text" class="form-control "
                                                                 name="pagu_anggaran" placeholder="Pagu Anggaran">
                                                         </div>
                                                         <div class="col-lg-3 mb-5">
@@ -240,14 +240,14 @@
                                                             <label
                                                                 class="form-label fs-6 fw-bold required mb-3 text-gray-700">Realisasi
                                                                 s/d {{ date('M Y') }}</label>
-                                                            <input type="text" class="form-control form-control-solid"
+                                                            <input type="text" class="form-control "
                                                                 name="realisasi" placeholder="Realiasi">
                                                         </div>
                                                         <div class="fv-row col-lg-3 mb-5">
                                                             <label
                                                                 class="form-label fs-6 fw-bold required mb-3 text-gray-700">Perkiraan
                                                                 Penggunaan Anggaran</label>
-                                                            <input type="text" class="form-control form-control-solid"
+                                                            <input type="text" class="form-control "
                                                                 name="perkiraan_anggaran"
                                                                 placeholder="Perkiraan Penggunaan Anggaran">
                                                         </div>
@@ -260,7 +260,7 @@
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Tanggal
                                                     Perjalanan
                                                     Dinas</label>
-                                                <input id="startDinas" class="form-control form-control-solid"
+                                                <input id="startDinas" class="form-control "
                                                     name="tgl_st_start" placeholder="Tanggal Perjalanan Dinas">
                                             </div>
                                         </div>
@@ -268,12 +268,12 @@
                                             <div class="fv-row col-lg-6 mb-5">
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Detail
                                                     Kegiatan</label>
-                                                <textarea class="form-control form-control-solid" name="detail_kegiatan" placeholder="Detail Kegiatan"></textarea>
+                                                <textarea class="form-control " name="detail_kegiatan" placeholder="Detail Kegiatan"></textarea>
                                             </div>
                                             <div class="fv-row col-lg-6 mb-5">
                                                 <label class="form-label fs-6 fw-bold required mb-3 text-gray-700">Capaian
                                                     Target Kinerja</label>
-                                                <textarea class="form-control form-control-solid" name="target_kinerja" placeholder="Capaian Target Kinerja"></textarea>
+                                                <textarea class="form-control " name="target_kinerja" placeholder="Capaian Target Kinerja"></textarea>
                                             </div>
                                         </div>
                                     </div>
