@@ -1,0 +1,79 @@
+KUPVA Audit & Monitoring system
+Sistem Audit Kepatuhan PVA
+intracklog
+
+Referensi Hackathon BI :
+1. SRA dan NRA terkait dengan PTTU di PVA : https://www.bi.go.id/id/fungsi-utama/sistem-pembayaran/anti-pencucian-uang-dan-pencegahan-pendanaan-terrorisme/default.aspx
+2. 
+
+
+A. LATAR BELAKANG MASALAH
+B. PROBLEM STATEMENTS
+Tema Utama:
+Empowering Indonesia's Digital Economy and Finance Landscape: "A Call for Data-driven Solutions through Implementation of AI & ML for the Integration of National Digital Economy and Finance"
+
+Subtema:
+Efficient Decision Making Process and Data Processing
+Dalam sub tema Hackathon ini, peserta perlu mengeksplorasi bagaimana AI/ML dapat memanfaatkan kehandalan dalam menangani data terstruktur maupun tidak terstruktur untuk meningkatkan proses pengambilan keputusan dalam institusi/perusahaan secara lebih cepat dan akurat.
+1. Bagaimana AI/ML dapat mendukung perumusan kebijakan, pengambilan keputusan dan respons manajemen suatu institusi/perusahaan?
+
+Risk Management and Customer Protection
+Dalam sub tema Hackathon ini, peserta perlu mengeksplorasi bagaimana AI/ML dapat menyediakan manajemen risiko, peringatan dini, rekomendasi, perlindungan pelanggan, dan dispute resolution yang lebih efektif dalam industri keuangan dan sistem pembayaran.
+1. Bagaimana AI/ML dapat mendukung deteksi anomali transaksi keuangan maupun pembayaran yang mengarah kepada fraud maupun kegiatan ilegal?
+2. Bagaimana AI/ML dapat mendukung pengawasan dan manajemen risiko di area sistem keuangan, dan sistem pembayaran?
+use case :Early warning system risiko stabilitas sistem keuangan Analisis laporan keuangan institusi keuangan menggunakan NLP dan Key Information Extraction
+
+1. Bank Indonesia mempunyai fungsi dalam bidang moneter. Guna mencapai dan memelihara kestabilan nilai rupiah sesuai dengan
+amanat Undang-Undang Nomor 23 Tahun 1999 tentang Bank Indonesia sebagaimana beberapa kali telah diubah, terakhir dengan Undang-Undang Nomor 6 Tahun 2009, Bank Indonesia memiliki kewenangan untuk melakukan pengendalian moneter
+Untuk mendukung efektivitas pengendalian moneter, perlu diatur mekanisme Pembawaan UKA dengan nilai paling sedikit setara dengan Rp1.000.000.000,00 (satu miliar rupiah) sehingga Bank Indonesia dapat memonitor secara baik jumlah pasokan dan kebutuhan UKA di domestik sekaligus memitigasi Pembawaan UKA yang tidak memiliki peruntukan transaksi yang wajar.
+
+
+2. Salah satunya adalah KUPVA
+3. Problem statement :
+	- KUPVA banyak digunakan sebagai sarana pencucian uang dan modus korupsi
+	- Kepemilikan KUPVA 
+	- Jumlah Uang Kertas Asing menjadi sulit terdeteksi 
+	- Laporan 
+
+Money changer, sebagai lembaga jasa keuangan yang sah, sayangnya dapat disalahgunakan oleh para kriminal untuk melakukan berbagai kejahatan. Berikut beberapa modus kejahatan yang umum dilakukan dengan memanfaatkan money changer:
+
+ 1. Pencucian Uang (TPPU):
+
+Menyamarkan Asal Usul Uang: Uang hasil kejahatan, seperti korupsi, narkoba, atau penipuan, ditukarkan ke mata uang asing di money changer, kemudian ditukarkan kembali ke rupiah di money changer lain. Transaksi ini bertujuan untuk menyamarkan asal usul uang dan membuatnya seolah-olah berasal dari sumber yang sah.
+Memecah Uang Besar: Uang dalam jumlah besar dipecah menjadi pecahan yang lebih kecil dan ditransaksikan melalui beberapa money changer untuk menghindari kecurigaan.
+Transaksi Berlapis: Uang ditransfer dari satu money changer ke money changer lain berkali-kali untuk mempersulit pelacakan aliran dana.
+ 2. Pendanaan Terorisme:
+
+Mentransfer Dana ke Kelompok Teroris: Money changer digunakan untuk mentransfer dana secara ilegal kepada kelompok teroris atau individu yang mendukung terorisme.
+Mencuci Uang Hasil Kegiatan Teroris: Uang yang diperoleh dari kegiatan teroris, seperti penculikan, pemerasan, atau penyelundupan, dicuci melalui money changer untuk menyembunyikan asal usulnya dan membiayai kegiatan terorisme lebih lanjut.
+ 3. Penipuan:
+
+Skema Ponzi: Penipu menggunakan money changer untuk mentransfer dana dari investor lama ke investor baru, menciptakan ilusi keuntungan tinggi.
+Penipuan Forex: Penipu memanipulasi nilai mata uang di platform trading forex dan menipu investor untuk melakukan transaksi yang merugikan.
+Penipuan Online: Penipu menggunakan money changer untuk menerima pembayaran dari korban penipuan online, seperti phishing atau scam.
+ 4. Cybercrime:
+
+Penjualan Barang Ilegal: Money changer digunakan untuk menerima pembayaran dari penjualan barang ilegal secara online, seperti narkoba, senjata, atau pornografi.
+Pencurian Data: Penjahat cyber menggunakan money changer untuk mencairkan uang yang diperoleh dari pencurian data, seperti kartu kredit atau informasi bank.
+ Pencegahan Kejahatan di Money Changer:
+
+Pemerintah: Memperkuat regulasi dan pengawasan terhadap money changer, serta meningkatkan kerjasama antar lembaga penegak hukum.
+Money Changer: Menerapkan Know Your Customer (KYC) dan Customer Due Diligence (CDD) secara ketat, serta melaporkan transaksi mencurigakan kepada pihak berwenang.
+Masyarakat: Berhati-hati saat bertransaksi di money changer, waspada terhadap tawaran yang tidak masuk akal, dan melaporkan transaksi mencurigakan kepada pihak berwenang.
+ Dengan memahami modus kejahatan yang umum dilakukan di money changer, kita dapat membantu mencegah terjadinya tindak kriminal dan melindungi diri dari kerugian finansial.
+
+Dataset :
+1. Jumlah PVA, Jumah mata uang asing
+2. Data PPATK : SRA , SRB PVA, kasus yang melibatkan PVA pada Laporan Tahunan
+3. Kasus Korupsi melibatkan PVA
+4. Putusan Korupsi melibatkan mata uang asing
+5. Contoh kasus PVA
+
+
+Solusi :
+
+
+
+Referensi :
+https://www.hukumonline.com/berita/a/bi-terbitkan-empat-aturan-terkait-valas-lt541abec22e047/
+
