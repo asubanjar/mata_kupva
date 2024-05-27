@@ -1,42 +1,38 @@
-# Author: axs004@NB250
-# File : doc_extractions.py
-# Time : 07-11-23 10:47 AM
-# Original Loc : PPATK-NB-250
+# Author : axs004 
+# File : doc_extraction.py
+# Original Loc : NB-250
+# Time : 21-05-24 1:40 PM
+# @mailto  : aman.subanjar@ppatk.go.id
 # Desc :
-# 1. membaca semua data yang ada di directory data_ltkm
-# 2. konversi semua file
-import shutil
+#   Python version : 8.x - 11.x
+#   Connect to Elasticsearch
 
+# Library setup
+import shutil
 import pytesseract
 import re
 import time
 from pdf2image import convert_from_path
-# import pandas as pd
+import pandas as pd
 # windows
 import sys
 import aspose.words as aw
 from os import listdir
 from os.path import isfile, join
 from pathlib import Path
-
 from kata_attributes import jenis_dokumen_ha, jenis_dokumen_transaksi, jenis_dokumen_putusan
 from kata_attributes.daftar_activities import set_list_activities
 from kata_attributes.daftar_pekerjaan import set_list_daftarpekerjaan
 from kata_attributes.daftar_pihak_pelapor import set_list_daftarbank, set_list_daftarbank_goaml, \
     set_list_daftarkelind_goaml
-from kata_attributes.daftar_pihak_pelapor_uu import set_list_daftarpelapor
 
+
+from kata_attributes.daftar_pihak_pelapor_uu import set_list_daftarpelapor
 from transformers import pipeline
 from transformers import AutoTokenizer, AutoModelForTokenClassification, AutoModel, AutoModelForSeq2SeqLM
-
 import torch
-
-
-# from controller.f_datainsert.datatext import bulk_insert_data_text
-
 if 'win' in sys.platform:
     pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
-
 # pd.set_option('mode.chained_assignment', None)
 config = ('-l eng --oem 1 --psm 3 --psm 13')
 import os
@@ -54,14 +50,14 @@ from nltk.corpus import stopwords
 from Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFactory, StopWordRemover, ArrayDictionary
 from nltk.tokenize import word_tokenize
 
-# variable
-# folder path
+
+# Variable setup
+# Folder path
 # path_dir_doc_ha = r'D:\2.CODE\PYTHON\AI\project_putusan\text_extraction\data_input\DOC Files'
-path_dir_doc_ha = r'D:\2.CODE\PYTHON\BI_HACKATHON_2024\mata_kupva\text_extraction\dataset\putusan_ma'
-path_dir_doc_ha = r'D:\2.CODE\PYTHON\BI_HACKATHON_2024\mata_kupva\text_extraction\dataset\putusan_ma'
-# path_dir_doc_ha = r'D:\2.CODE\PYTHON\AI\project_putusan\data_ltkm\2019'
-# path_dir_doc_ha = r'D:\2.CODE\PYTHON\AI\project_putusan\text_extraction\data_input\data_sample_ha'
+# path_dir_doc_ha = r'D:\2.CODE\PYTHON\BI_HACKATHON_2024\mata_kupva\text_extraction\dataset\putusan_ma'
+path_dir_doc_ha = r'D:\2.CODE\PYTHON\BI_HACKATHON_2024\mata_kupva\text_extraction\dataset\putusan_ma_1file'
 jumlah_batch_insert_es = 3
+
 
 def main():
     res = []
@@ -86,8 +82,29 @@ def main():
     print("======================================================")
     print("====================================================== \n")
     print("dir_path : ", str(dir_path))
-    model = AutoModelForTokenClassification.from_pretrained("cahya/xlm-roberta-large-indonesian-NER")
-    tokenizer = AutoTokenizer.from_pretrained("cahya/xlm-roberta-large-indonesian-NER")
+    # Use a pipeline as a high-level helper
+    from transformers import pipeline
+
+    # Use a pipeline as a high-level helper
+    from transformers import pipeline
+
+    pipe = pipeline("token-classification", model="kaniku/xlm-roberta-large-indonesian-NER-finetuned-ner")
+    # Load model directly
+    from transformers import AutoTokenizer, AutoModelForTokenClassification
+
+    tokenizer = AutoTokenizer.from_pretrained("kaniku/xlm-roberta-large-indonesian-NER-finetuned-ner")
+    model = AutoModelForTokenClassification.from_pretrained("kaniku/xlm-roberta-large-indonesian-NER-finetuned-ner")
+
+    # pipe = pipeline("token-classification", model="cahya/xlm-roberta-large-indonesian-NER")
+    # Load model directly
+    # from transformers import AutoTokenizer, AutoModelForTokenClassification
+
+    # tokenizer = AutoTokenizer.from_pretrained("cahya/xlm-roberta-large-indonesian-NER")
+    # model = AutoModelForTokenClassification.from_pretrained("cahya/xlm-roberta-large-indonesian-NER")
+
+
+    # model = AutoModelForTokenClassification.from_pretrained("cahya/xlm-roberta-large-indonesian-NER")
+    # tokenizer = AutoTokenizer.from_pretrained("cahya/xlm-roberta-large-indonesian-NER")
     ner_pipeline = pipeline("ner", model=model, tokenizer=tokenizer)
     # # Summarize Model
     # model_summary_name = "cahya/bert2gpt-indonesian-summarization"
@@ -104,8 +121,6 @@ def main():
     # model_summary.to(device)
     # summarizer = pipeline("summarization", model=model_summary,
     #                       tokenizer=tokenizer_summary)  # device=0 for the first GPU
-
-
 
     for (dir_path, dir_names, file_names) in walk(dir_path):
         res.extend(file_names)
@@ -215,12 +230,20 @@ def main():
             # word_tokens_no_stopwords = [w for w in t_kata if not w in stop_words]
             # # print(word_tokens_no_stopwords)
             # text_keywords = word_tokens_no_stopwords
-            ket_lain = "Doc HA Extraction Project 2023"
+            ket_lain = "Keterangan lain"
             ##
-            bulk_insert_data_text(fullpath_file,m_ti,clean_text,jenis_dok, str_who, str_when, str_where, str_what, str_howmuch,
+            print("########################################################################################################")
+            print(fullpath_file,m_ti,clean_text,jenis_dok, str_who, str_when, str_where, str_what, str_howmuch,
             combined_summary, text_keywords,ket_lain)
+            print("########################################################################################################")
+
+            # bulk_insert_data_text(fullpath_file, m_ti, clean_text, jenis_dok, str_who, str_when, str_where, str_what,
+            #                       str_howmuch,
+            #                       combined_summary, text_keywords, ket_lain)
+
+
             ##
-            ## memindahkan file
+            ## Moving filesex
             pathfilename = Path(fullpath_file)
             file_name = os.path.basename(pathfilename)
             dir_basename = os.path.basename(os.path.dirname(fullpath_file))
@@ -303,9 +326,9 @@ def remove_multispace(text):
         text1 = re.sub('[\n]+', '\n', str(text)) # Replacing one or more consecutive newlines with single \n
         text2 = re.sub(r"(\n)\1{2,}", "", text1).strip()
         text3 = text2.replace('"', '').replace('“','')
-        text3a = re.sub('[^a-zA-Z\d\s:][\n]','',text3)
-        text3b = re.sub('[^a-zA-Z\d\s:][^a-zA-Z\d\s:]','',text3a)
-        text4 = re.sub(r"Ev[a-zA-Z0-9- $&+,:;=?@#|'<>.^*()%!-]*on\.", '',text3b) # remove Evaluation text
+        text3a = re.sub('[^a-zA-Z0-9\t\n\r\f\v:][\n]', '', text3)
+        # text3b = re.sub('[^a-zA-Z\d\s:][^a-zA-Z\d\s:]','',text3a)
+        text4 = re.sub(r"Ev[a-zA-Z0-9- $&+,:;=?@#|'<>.^*()%!-]*on\.", '',text3a) # remove Evaluation text
         text4a = re.sub(r"Evaluation[a-zA-Z0-9- $&+,:;=?@#|'<>.^*()%!-]*", '',text4)
         text5 = re.sub('[\n]+', '\n', str(text4a))
         text_clean = text5
