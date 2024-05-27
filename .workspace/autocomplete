@@ -1,5 +1,0 @@
-eval "$(composer completion bash)"
-
-if [ -f "/workspace/src/vendor/bin/phpstan" ] ; then
-    eval "$(/workspace/src/vendor/bin/phpstan completion bash)"
-fi
