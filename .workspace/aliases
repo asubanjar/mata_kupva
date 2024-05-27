@@ -1,0 +1,11 @@
+if [ -f "/workspace/src/vendor/bin/phpstan" ] ; then
+    alias phpstan='vendor/bin/phpstan'
+fi
+
+if [ -f "/workspace/src/vendor/bin/phpunit" ] ; then
+    alias phpunit='vendor/bin/phpunit'
+fi
+
+if [ -f "/workspace/src/bin/console" ] ; then
+    alias console='/workspace/src/bin/console'
+fi

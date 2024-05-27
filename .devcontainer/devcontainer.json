@@ -1,0 +1,23 @@
+{
+    "customizations": {
+        "vscode": {
+            "settings": {},
+            "extensions": [
+                "bmewburn.vscode-intelephense-client",
+                "chouzz.vscode-better-align",
+                "dbaeumer.vscode-eslint",
+                "emallin.phpunit",
+                "esbenp.prettier-vscode",
+                "MehediDracula.php-namespace-resolver",
+                "SanderRonde.phpstan-vscode",
+                "valeryanm.vscode-phpsab"
+            ]
+        }
+    },
+    "dockerComposeFile": [
+        "../docker-compose.yml"
+    ],
+    "service": "workspace",
+    "shutdownAction": "none",
+    "workspaceFolder": "/workspace"
+}

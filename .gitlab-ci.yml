@@ -1,0 +1,65 @@
+image: container-registry.ppatk.go.id/bpas/sipandai/direktori-pihak-pelapor/workspace:latest
+variables:
+    DOCKER_REGISTRY: "container-registry.ppatk.go.id"
+    PHP_VERSION: "8.2"
+workflow:
+    rules:
+        - if: $CI_SERVER_HOST != 'git.ppatk.go.id'
+          when: never
+        - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+        - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+stages:
+    - build
+    - lint
+    - test
+cache:
+    paths:
+        - .cache/
+.install_composer: &install_composer
+    - composer config -g cache-dir "$(pwd)/.cache/composer" && composer install
+.install_npm: &install_npm
+    - npm config set cache "$(pwd)/.cache/npm --global" && npm install
+.install_dependency: &install_dependency
+    - *install_npm
+    - *install_composer
+phpcodesniffer:
+    stage: lint
+    script:
+        - cd src/
+        - *install_dependency
+        - ./vendor/bin/phpcs --warning-severity=0
+phpstan:
+    stage: lint
+    script:
+        - cd src/
+        - *install_dependency
+        - ./vendor/bin/phpstan analyse --memory-limit=2000M
+phpunit:
+    stage: test
+    variables:
+        XDEBUG_MODE: coverage
+    script:
+        - cd src/
+        - *install_dependency
+        - ./bin/phpunit --group UnitTest --coverage-text --colors=never --log-junit=phpunit-result.xml --coverage-cobertura=coverage.cobertura.xml
+    coverage: /^\s*Lines:\s*\d+.\d+\%/
+    artifacts:
+        when: always
+        reports:
+            junit: src/phpunit-result.xml
+            coverage_report:
+                coverage_format: cobertura
+                path: src/coverage.cobertura.xml
+workspace_build:
+    image: ${CI_DEPENDENCY_PROXY_GROUP_IMAGE_PREFIX}/docker:23.0.2
+    stage: build
+    rules:
+        - changes:
+              - src/Dockerfile
+              - .gitlab-ci.yml
+          allow_failure: true
+    services:
+        - docker:23.0.2-dind
+    script:
+        - docker build --build-arg="INSTALL_NODEJS=current" --build-arg="PHP_VERSION=$PHP_VERSION" -t $DOCKER_REGISTRY/bpas/sipandai/direktori-pihak-pelapor/workspace:latest -f src/Dockerfile .
+        - docker push $DOCKER_REGISTRY/bpas/sipandai/direktori-pihak-pelapor/workspace:latest

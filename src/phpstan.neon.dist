@@ -1,0 +1,10 @@
+parameters:
+    level: 8
+    paths:
+        - database
+        - app
+        - routes
+        - tests
+    excludePaths:
+        - bin/*
+        - vendor/*
