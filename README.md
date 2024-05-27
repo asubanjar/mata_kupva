@@ -1,11 +1,10 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 # mata_kupva
 =======
 ## Sistem Informasi Pengelolaan Data dan Informasi Pihak Pelapor
 =======
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
->>>>>>> 8cc9b588 (init: project)
+
 
 <p align="center">
 <a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
@@ -42,14 +41,6 @@ We would like to extend our thanks to the following sponsors for funding Laravel
 
 ### Premium Partners
 
-<<<<<<< HEAD
--   http://localhost:8181 (App/Symfony)
--   http://localhost:8182 (Database Administration)
--   http://localhost:8183 (Supervisord Web UI)
--   http://localhost:8184 (RabbitMQ Administration)
--   http://localhost:8133 (SQL Server)
->>>>>>> 5b71beb0 (Initial commit)
-=======
 - **[Vehikl](https://vehikl.com/)**
 - **[Tighten Co.](https://tighten.co)**
 - **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
@@ -79,4 +70,3 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
->>>>>>> 8cc9b588 (init: project)
