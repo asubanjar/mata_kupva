@@ -19,7 +19,6 @@
     font-style: normal;
 }
 
-
 body {
     font-family: 'Inter', sans-serif;
 }

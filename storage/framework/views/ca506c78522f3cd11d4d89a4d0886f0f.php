@@ -55,21 +55,7 @@
                 <!--begin::Menu-->
                 <div class="menu menu-column menu-rounded menu-sub-indention fw-semibold fs-6" id="#kt_app_sidebar_menu"
                     data-kt-menu="true" data-kt-menu-expand="false">
-                    <!--begin:Menu item-->
-                    <div class="menu-item">
-                        <!--begin:Menu item-->
-                        <a class="menu-link" href="<?php echo e(url('/home')); ?>">
-                            <span class="menu-icon">
-                                <i class="ki-duotone ki-star fs-2">
-                                    <span class="path1"></span>
-                                    <span class="path2"></span>
-                                </i>
-                            </span>
-                            <span class="menu-title">Utama</span>
-                        </a>
-                        <!--end:Menu item-->
-                    </div>
-                    <!--end:Menu item-->
+
                     <!--begin:Menu item-->
 
                     <!--MONITORING PIMPINAN -->
@@ -77,61 +63,9 @@
                     <div class="menu-item pt-5">
                         <!--begin:Menu content-->
                         <div class="menu-content">
-                            <span class="menu-heading fw-bold text-uppercase fs-7">Monitoring</span>
+                            <span class="menu-heading fw-bold text-uppercase fs-7">WATCHLIST</span>
                         </div>
                         <!--end:Menu content-->
-                    </div>
-                    <!--end:Menu item-->
-                    <!--begin:Menu item-->
-                    <div class="menu-item">
-                        <!--begin:Menu item-->
-                        <a class="menu-link <?php echo e(request()->is('watchlist/dashboard*') ? 'active' : ''); ?>"
-                            href="<?php echo e(url('/watchlist/dashboard')); ?>">
-                            <span class="menu-icon">
-                                <i class="ki-duotone ki-home fs-2">
-                                    <span class="path1"></span>
-                                    <span class="path2"></span>
-                                </i>
-                            </span>
-                            <span class="menu-title">Beranda</span>
-                        </a>
-                        <!--end:Menu item-->
-                    </div>
-                    <!--end:Menu item-->
-                    <!--begin:Menu item-->
-                    <div data-kt-menu-trigger="click" class="menu-item">
-                        <!--begin:Menu link-->
-                        <span class="menu-link">
-                            <span class="menu-icon">
-                                <i class="ki-duotone ki-chart-simple-2 fs-2">
-                                    <span class="path1"></span>
-                                    <span class="path2"></span>
-                                    <span class="path3"></span>
-                                    <span class="path4"></span>
-                                    <span class="path5"></span>
-                                </i>
-                            </span>
-                            <span class="menu-title">Statistik</span>
-                            <span class="menu-arrow"></span>
-                        </span>
-                        <!--end:Menu link-->
-                        <!--begin:Menu sub-->
-                        <div class="menu-sub menu-sub-accordion">
-                            <!--begin:Menu item-->
-                            <div class="menu-item">
-                                <!--begin:Menu link-->
-                                <a class="menu-link <?php echo e((request()->is('watchlist/statistic/action') ? 'active' : request()->is('watchlist/statistic/action/*')) ? 'active' : ''); ?>"
-                                    href="<?php echo e(url('/watchlist/statistic/action')); ?>">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Rencana Aksi</span>
-                                </a>
-                                <!--end:Menu link-->
-                            </div>
-                            <!--end:Menu item-->
-                        </div>
-                        <!--end:Menu sub-->
                     </div>
                     <!--end:Menu item-->
                     <!--begin:Menu item-->
@@ -150,6 +84,27 @@
                         <!--end:Menu item-->
                     </div>
                     <!--end:Menu item-->
+                    <!--begin:Menu item-->
+                    <div class="menu-item">
+                        <!--begin:Menu item-->
+                        <a class="menu-link <?php echo e(request()->is('watchlist/action') ? 'active' : ''); ?>"
+                            href="<?php echo e(url('/watchlist/action')); ?>">
+                            <span class="menu-icon">
+                                <i class="ki-duotone ki-chart-simple-2 fs-2">
+                                    <span class="path1"></span>
+                                    <span class="path2"></span>
+                                    <span class="path3"></span>
+                                    <span class="path4"></span>
+                                    <span class="path5"></span>
+
+                                </i>
+                            </span>
+                            <span class="menu-title">Statistik</span>
+                        </a>
+                        <!--end:Menu item-->
+                    </div>
+                    <!--end:Menu item-->
+
 
                     <!--ADMINISTRATOR -->
                     <!--begin:Menu item-->
@@ -196,7 +151,6 @@
                     </div>
                     <!--end:Menu item-->
                     <!--begin:Menu item-->
-                    <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('master')): ?>
                     <div data-kt-menu-trigger="click" class="menu-item">
                         <!--begin:Menu link-->
                         <span class="menu-link">
@@ -230,49 +184,7 @@
                                     <span class="menu-bullet">
                                         <span class="bullet bullet-dot"></span>
                                     </span>
-                                    <span class="menu-title">Sifat</span>
-                                </a>
-                                <a class="menu-link <?php echo e((request()->is('master/urgensi') ? 'active' : request()->is('master/urgensi/*')) ? 'active' : ''); ?>"
-                                    href="<?php echo e(url('/master/urgensi')); ?>">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Urgensi</span>
-                                </a>
-                                <a class="menu-link <?php echo e((request()->is('master/dipa') ? 'active' : request()->is('master/dipa/*')) ? 'active' : ''); ?>"
-                                    href="<?php echo e(url('/master/dipa')); ?>">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">DIPA</span>
-                                </a>
-                                <a class="menu-link <?php echo e((request()->is('master/akun-lembur') ? 'active' : request()->is('master/akun-lembur/*')) ? 'active' : ''); ?>"
-                                    href="<?php echo e(url('/master/akun-lembur')); ?>">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Akun Lembur</span>
-                                </a>
-                                <a class="menu-link <?php echo e((request()->is('master/jenis-biaya') ? 'active' : request()->is('master/jenis-biaya/*')) ? 'active' : ''); ?>"
-                                    href="<?php echo e(url('/master/jenis-biaya')); ?>">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Jenis Biaya</span>
-                                </a>
-                                <a class="menu-link <?php echo e((request()->is('master/jenis-kegiatan') ? 'active' : request()->is('master/jenis-kegiatan/*')) ? 'active' : ''); ?>"
-                                    href="<?php echo e(url('/master/jenis-kegiatan')); ?>">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Jenis Kegiatan</span>
-                                </a>
-                                <a class="menu-link <?php echo e((request()->is('master/jenis-perjadin') ? 'active' : request()->is('master/jenis-perjadin/*')) ? 'active' : ''); ?>"
-                                    href="<?php echo e(url('/master/jenis-perjadin')); ?>">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Jenis Perjadin</span>
+                                    <span class="menu-title">Jenis Valuta Asing</span>
                                 </a>
                                 <!--end:Menu link-->
                             </div>
@@ -280,7 +192,6 @@
                         </div>
                         <!--end:Menu sub-->
                     </div>
-                    <?php endif; ?>
                     <!--end:Menu item-->
                 </div>
                 <!--end::Menu-->

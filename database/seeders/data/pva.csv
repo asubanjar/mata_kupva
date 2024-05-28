@@ -1,0 +1,21 @@
+nama_pva,pemegang_saham,jumlah_aset,catatan_kasus,flag_anomali_transaksi,tingkat_kepatuhan
+PT Maju Jaya,John Doe,1000000.00,20.00,1,95.00
+PT Sukses Selalu,Mary Jane,1500000.00,15.00,0,90.00
+PT Untung Besar,Michael Smith,2000000.00,10.00,1,85.00
+PT Tani Makmur,Susan Lee,2500000.00,5.00,0,80.00
+PT Laut Biru,Robert Brown,3000000.00,25.00,1,75.00
+PT Baru Jaya,Emily Clark,3500000.00,30.00,0,70.00
+PT Mega Sukses,David Johnson,4000000.00,35.00,1,65.00
+PT Global Makmur,Jessica Davis,4500000.00,40.00,0,60.00
+PT Agung Sentosa,Daniel Martinez,5000000.00,45.00,1,55.00
+PT Indah Perkasa,Natalie Taylor,5500000.00,50.00,0,50.00
+PT Harmoni Jaya,Chris Anderson,6000000.00,55.00,1,45.00
+PT Prima Abadi,Karen Wilson,6500000.00,60.00,0,40.00
+PT Sejahtera,Brian Moore,7000000.00,65.00,1,35.00
+PT Berkah,Jennifer Thompson,7500000.00,70.00,0,30.00
+PT Sinar Terang,Kevin Lee,8000000.00,75.00,1,25.00
+PT Cahaya Abadi,Laura Martinez,8500000.00,80.00,0,20.00
+PT Mandiri,Jason White,9000000.00,85.00,1,15.00
+PT Gemilang,Stephanie Harris,9500000.00,90.00,0,10.00
+PT Sentosa,Megan Clark,10000000.00,95.00,1,5.00
+PT Bintang Jaya,Anthony Robinson,10500000.00,100.00,0,2.50

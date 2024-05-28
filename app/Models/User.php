@@ -28,21 +28,9 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'active',
-        'approval_name',
-        'atasan_code',
         'email',
-        'golongan',
-        'group_id',
         'id',
-        'jabatan_code',
         'name',
-        'nik',
-        'nip',
-        'phone',
-        'position',
-        'simpeg_id',
-        'unit_kerja',
-        'unit_organisasi',
         'username',
         'user_id',
     ];
@@ -57,18 +45,4 @@ class User extends Authenticatable
         static::addGlobalScope('active', static fn (Builder $builder) => $builder->where('active', 1));
     }
 
-    public function jabatan(): Relations\BelongsTo
-    {
-        return $this->belongsTo(Jabatan::class, 'jabatan_code', 'code');
-    }
-
-    public function atasan(): Relations\BelongsTo
-    {
-        return $this->belongsTo(Jabatan::class, 'atasan_code', 'code');
-    }
-
-    public function unitKerja(): Relations\BelongsTo
-    {
-        return $this->belongsTo(UnitKerja::class, 'unit_kerja', 'nama');
-    }
 }

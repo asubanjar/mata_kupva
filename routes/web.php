@@ -29,12 +29,7 @@ Route::group(['middleware' => ['auth']], static function (): void {
     Route::get('/logout', [LoginController::class, 'logout']);
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-
-    Route::group([], base_path('routes/watchlist.php'));
-
     Route::group([], base_path('routes/user.php'));
-
-    Route::group([], base_path('routes/master.php'));
 
     Route::post('upload/{uniqid}/{class}', UploadController::class);
 
