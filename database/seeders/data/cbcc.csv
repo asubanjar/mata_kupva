@@ -1,21 +1,21 @@
 nama_pembawa,nomor_identitas,alamat,provinsi,kabupaten,jenis_valuta_asing,jumlah_valuta_asing,jumlah_rupiah,negara_asal,negara_tujuan,tanggal_kedatangan,tujuan_pembawaan,kepemilikan
-John Doe,123456789,123 Main St,Jawa Barat,Bandung,USD,1000.00,14000000.00,USA,Indonesia,2024-01-01,Business,Self
-Jane Smith,987654321,456 Elm St,Jawa Timur,Surabaya,EUR,1500.00,21000000.00,Germany,Indonesia,2024-02-01,Vacation,Self
-Michael Johnson,234567891,789 Oak St,DKI Jakarta,Jakarta,JPY,2000.00,28000000.00,Japan,Indonesia,2024-03-01,Family,Self
-Emily Davis,345678912,101 Maple St,Jawa Tengah,Semarang,GBP,2500.00,35000000.00,UK,Indonesia,2024-04-01,Study,Self
-Robert Brown,456789123,202 Pine St,Bali,Denpasar,CHF,3000.00,42000000.00,Switzerland,Indonesia,2024-05-01,Business,Self
-Mary Wilson,567891234,303 Cedar St,Jawa Barat,Bogor,AUD,3500.00,49000000.00,Australia,Indonesia,2024-06-01,Vacation,Self
-William Taylor,678912345,404 Birch St,Jawa Timur,Malang,CAD,4000.00,56000000.00,Canada,Indonesia,2024-07-01,Family,Self
-Patricia Miller,789123456,505 Walnut St,DKI Jakarta,Jakarta,SGD,4500.00,63000000.00,Singapore,Indonesia,2024-08-01,Study,Self
-Linda Anderson,891234567,606 Willow St,Jawa Tengah,Surakarta,NZD,5000.00,70000000.00,New Zealand,Indonesia,2024-09-01,Business,Self
-James Martinez,912345678,707 Poplar St,Bali,Kuta,HKD,5500.00,77000000.00,Hong Kong,Indonesia,2024-10-01,Vacation,Self
-Barbara Thomas,123456780,808 Chestnut St,Jawa Barat,Bandung,KRW,6000.00,84000000.00,South Korea,Indonesia,2024-11-01,Family,Self
-Daniel Garcia,234567890,909 Spruce St,Jawa Timur,Surabaya,CNY,6500.00,91000000.00,China,Indonesia,2024-12-01,Study,Self
-Matthew Rodriguez,345678901,1010 Ash St,DKI Jakarta,Jakarta,INR,7000.00,98000000.00,India,Indonesia,2025-01-01,Business,Self
-Jennifer Hernandez,456789012,1111 Pine St,Jawa Tengah,Semarang,IDR,7500.00,105000000.00,Indonesia,Indonesia,2025-02-01,Vacation,Self
-Christopher Lee,567890123,1212 Maple St,Bali,Denpasar,MYR,8000.00,112000000.00,Malaysia,Indonesia,2025-03-01,Family,Self
-Amanda Walker,678901234,1313 Oak St,Jawa Barat,Bogor,THB,8500.00,119000000.00,Thailand,Indonesia,2025-04-01,Study,Self
-Joshua Harris,789012345,1414 Elm St,Jawa Timur,Malang,PHP,9000.00,126000000.00,Philippines,Indonesia,2025-05-01,Business,Self
-Sarah Clark,890123456,1515 Cedar St,DKI Jakarta,Jakarta,TWD,9500.00,133000000.00,Taiwan,Indonesia,2025-06-01,Vacation,Self
-David Lewis,901234567,1616 Birch St,Jawa Tengah,Surakarta,VND,10000.00,140000000.00,Vietnam,Indonesia,2025-07-01,Family,Self
-Nancy Robinson,112345678,1717 Poplar St,Bali,Kuta,BRL,10500.00,147000000.00,Brazil,Indonesia,2025-08-01,Study,Self
+John Doe,123456789,123 Main St,Jawa Barat,Bandung,USD,1000,14000000,USA,Indonesia,2024-01-01,Business,Self
+Jane Smith,987654321,456 Elm St,Jawa Timur,Surabaya,EUR,1500,21000000,Germany,Indonesia,2024-02-01,Vacation,Self
+Michael Johnson,234567891,789 Oak St,DKI Jakarta,Jakarta,JPY,2000,28000000,Japan,Indonesia,2024-03-01,Family,Self
+Emily Davis,345678912,101 Maple St,Jawa Tengah,Semarang,GBP,2500,35000000,UK,Indonesia,2024-04-01,Study,Self
+Robert Brown,456789123,202 Pine St,Bali,Denpasar,CHF,3000,42000000,Switzerland,Indonesia,2024-05-01,Business,Self
+Mary Wilson,567891234,303 Cedar St,Jawa Barat,Bogor,AUD,3500,49000000,Australia,Indonesia,2024-06-01,Vacation,Self
+William Taylor,678912345,404 Birch St,Jawa Timur,Malang,CAD,4000,56000000,Canada,Indonesia,2024-07-01,Family,Self
+Patricia Miller,789123456,505 Walnut St,DKI Jakarta,Jakarta,SGD,4500,63000000,Singapore,Indonesia,2024-08-01,Study,Self
+Linda Anderson,891234567,606 Willow St,Jawa Tengah,Surakarta,NZD,5000,70000000,New Zealand,Indonesia,2024-09-01,Business,Self
+James Martinez,912345678,707 Poplar St,Bali,Kuta,HKD,5500,77000000,Hong Kong,Indonesia,2024-10-01,Vacation,Self
+Barbara Thomas,123456780,808 Chestnut St,Jawa Barat,Bandung,KRW,6000,84000000,South Korea,Indonesia,2024-11-01,Family,Self
+Daniel Garcia,234567890,909 Spruce St,Jawa Timur,Surabaya,CNY,6500,91000000,China,Indonesia,2024-12-01,Study,Self
+Matthew Rodriguez,345678901,1010 Ash St,DKI Jakarta,Jakarta,INR,7000,98000000,India,Indonesia,2025-01-01,Business,Self
+Jennifer Hernandez,456789012,1111 Pine St,Jawa Tengah,Semarang,IDR,7500,105000000,Indonesia,Indonesia,2025-02-01,Vacation,Self
+Christopher Lee,567890123,1212 Maple St,Bali,Denpasar,MYR,8000,112000000,Malaysia,Indonesia,2025-03-01,Family,Self
+Amanda Walker,678901234,1313 Oak St,Jawa Barat,Bogor,THB,8500,119000000,Thailand,Indonesia,2025-04-01,Study,Self
+Joshua Harris,789012345,1414 Elm St,Jawa Timur,Malang,PHP,9000,126000000,Philippines,Indonesia,2025-05-01,Business,Self
+Sarah Clark,890123456,1515 Cedar St,DKI Jakarta,Jakarta,TWD,9500,133000000,Taiwan,Indonesia,2025-06-01,Vacation,Self
+David Lewis,901234567,1616 Birch St,Jawa Tengah,Surakarta,VND,10000,140000000,Vietnam,Indonesia,2025-07-01,Family,Self
+Nancy Robinson,112345678,1717 Poplar St,Bali,Kuta,BRL,10500,147000000,Brazil,Indonesia,2025-08-01,Study,Self

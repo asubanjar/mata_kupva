@@ -158,7 +158,11 @@ body {
     <!--begin::Global Javascript Bundle(mandatory for all pages)-->
     <script src="<?php echo e(asset('assets/plugins/global/plugins.bundle.js')); ?>"></script>
     <script src="<?php echo e(asset('assets/js/scripts.bundle.js')); ?>"></script>
+    <script src="<?php echo e(asset('assets/plugins/custom/datatables/datatables.bundle.js')); ?>"></script>
+    <script src="<?php echo e(asset('assets/js/custom/apps/user-management/users/list/table.js')); ?>"></script>
     <!--end::Global Javascript Bundle-->
+
+    <!--end::Vendors Javascript-->
     <!--begin::Vendors Javascript(used for this page only)-->
     <script src="<?php echo e(asset('assets/plugins/custom/fullcalendar/fullcalendar.bundle.js')); ?>"></script>
     <script src="<?php echo e(asset('assets/plugins/custom/datatables/datatables.bundle.js')); ?>"></script>

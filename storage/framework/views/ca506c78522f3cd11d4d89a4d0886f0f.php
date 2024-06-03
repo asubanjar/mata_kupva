@@ -22,7 +22,7 @@
     <!--begin::Logo-->
     <div class="app-sidebar-logo" id="kt_app_sidebar_logo" style="border-bottom: none !important">
         <!--begin::Logo image-->
-        <a href="<?php echo e(url('/home')); ?>">
+        <a href="<?php echo e(url('/dashboard')); ?>">
             <img alt="Logo" src="<?php echo e(asset('assets/media/logos/hackathon-line-white.svg')); ?>"
                 class="h-90px app-sidebar-logo-default px-8" />
             <img alt="Logo" src="<?php echo e(asset('assets/media/logos/hackathon-logo-small.svg')); ?>"
@@ -71,8 +71,8 @@
                     <!--begin:Menu item-->
                     <div class="menu-item">
                         <!--begin:Menu item-->
-                        <a class="menu-link <?php echo e(request()->is('watchlist/action') ? 'active' : ''); ?>"
-                            href="<?php echo e(url('/watchlist/action')); ?>">
+                        <a class="menu-link <?php echo e(request()->is('watchlists') ? 'active' : ''); ?>"
+                            href="<?php echo e(url('/watchlists')); ?>">
                             <span class="menu-icon">
                                 <i class="ki-duotone ki-note-2 fs-2">
                                     <span class="path1"></span>
@@ -84,27 +84,6 @@
                         <!--end:Menu item-->
                     </div>
                     <!--end:Menu item-->
-                    <!--begin:Menu item-->
-                    <div class="menu-item">
-                        <!--begin:Menu item-->
-                        <a class="menu-link <?php echo e(request()->is('watchlist/action') ? 'active' : ''); ?>"
-                            href="<?php echo e(url('/watchlist/action')); ?>">
-                            <span class="menu-icon">
-                                <i class="ki-duotone ki-chart-simple-2 fs-2">
-                                    <span class="path1"></span>
-                                    <span class="path2"></span>
-                                    <span class="path3"></span>
-                                    <span class="path4"></span>
-                                    <span class="path5"></span>
-
-                                </i>
-                            </span>
-                            <span class="menu-title">Statistik</span>
-                        </a>
-                        <!--end:Menu item-->
-                    </div>
-                    <!--end:Menu item-->
-
 
                     <!--ADMINISTRATOR -->
                     <!--begin:Menu item-->

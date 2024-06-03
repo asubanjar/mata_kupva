@@ -60,7 +60,7 @@ class LoginController extends Controller
         // Log in the user without checking the password
         Auth::login($user);
 
-        return redirect()->intended('home')
+        return redirect()->intended('dashboard')
                 ->withSuccess('Signed in');
     }
 

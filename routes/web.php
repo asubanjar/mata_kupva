@@ -2,12 +2,15 @@
 
 declare(strict_types=1);
 
-use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\DeleteUploadController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UploadController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\About\AboutController;
+use App\Http\Controllers\DeleteUploadController;
+use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Watchlist\WatchlistController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +30,10 @@ Auth::routes();
 
 Route::group(['middleware' => ['auth']], static function (): void {
     Route::get('/logout', [LoginController::class, 'logout']);
-    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+    Route::get('/watchlists', [WatchlistController::class, 'index'])->name('watchlists.index');
+    Route::get('/watchlists/{watchlist}', [WatchlistController::class, 'show'])->name('watchlists.show');
+    Route::get('/about', [AboutController::class, 'index'])->name('about.index');
 
     Route::group([], base_path('routes/user.php'));
 

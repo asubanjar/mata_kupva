@@ -18,7 +18,7 @@ class CreatePvaTable extends Migration
             $table->string('nama_pva');
             $table->string('pemegang_saham');
             $table->decimal('jumlah_aset', 15, 2);
-            $table->decimal('catatan_kasus', 5, 2); // Assuming percentage
+            $table->integer('catatan_kasus');
             $table->boolean('flag_anomali_transaksi');
             $table->decimal('tingkat_kepatuhan', 5, 2); // Assuming percentage
             $table->timestamps();
